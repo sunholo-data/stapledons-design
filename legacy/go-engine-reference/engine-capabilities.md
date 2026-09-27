@@ -1,0 +1,1552 @@
+# Engine Capabilities Reference
+
+**Status**: Active (Updated 2025-12-13 - LOD System)
+**Purpose**: Comprehensive reference for all Go/Ebiten engine capabilities
+**Audience**: Sprint executor, design docs, AI agents working on the game
+
+## Quick Reference
+
+| Capability | Location | Status |
+|------------|----------|--------|
+| DrawCmd rendering | `engine/render/` | Working |
+| Effect handlers | `engine/handlers/` | Working |
+| Asset loading | `engine/assets/` | Working |
+| Camera/viewport | `engine/camera/` | Working |
+| **Parallax layers** | `engine/depth/` | **Working** |
+| **Viewport compositing** | `engine/render/viewport*.go` | **Working** |
+| **Multi-level ship** | `engine/render/deck*.go, spire.go` | **Working** |
+| **Celestial system** | `sim/celestial.ail` | **Working** |
+| **LOD system** | `engine/lod/` | **Working** |
+| 3D scene (Tetra3D) | `engine/tetra/` | Working |
+| SR/GR physics | `engine/relativity/` | Working |
+| Shader effects | `engine/shader/` | Working |
+| Input capture | `engine/input/`, `engine/render/input.go` | Working |
+| **AILANG Input helpers** | `sim/input.ail` | **NEW** |
+| Display config | `engine/display/` | Working |
+| Save system | `engine/save/` | Working |
+| Screenshot/test | `engine/screenshot/` | Working |
+
+---
+
+## 1. DrawCmd Types (AILANG → Rendering)
+
+All defined in `sim/protocol.ail`, rendered by `engine/render/draw.go`.
+
+### Basic Commands
+
+| Command | Signature | Purpose | Space |
+|---------|-----------|---------|-------|
+| `Sprite` | `(id, x, y, z)` | Draw sprite at world position | World |
+| `Rect` | `(x, y, w, h, color, z)` | Solid rectangle | World |
+| `RectScreen` | `(x, y, w, h, color, z)` | Rectangle in screen space | Screen |
+| `Text` | `(text, x, y, fontSize, color, z)` | Draw text | Screen |
+| `TextWrapped` | `(text, x, y, maxWidth, fontSize, color, z)` | Word-wrapped text | Screen |
+| `Line` | `(x1, y1, x2, y2, color, width, z)` | Line with width | Screen |
+| `Circle` | `(x, y, radius, color, filled, z)` | Circle (filled or outline) | Screen |
+
+### Starmap Commands
+
+| Command | Signature | Purpose |
+|---------|-----------|---------|
+| `GalaxyBg` | `(opacity, z, skyViewMode, viewLon, viewLat, fov)` | Galaxy background with scrolling |
+| `Star` | `(x, y, spriteId, scale, alpha, z)` | Individual star with scale/alpha |
+| `SpireBg` | `(z)` | Spire silhouette background (Layer 6, 0.3x parallax) |
+| `CircleRGBA` | `(x, y, radius, rgba, filled, z)` | Circle with packed RGBA color |
+| `RectRGBA` | `(x, y, w, h, rgba, z)` | Rectangle with packed RGBA color |
+
+**RGBA Color Format:** `0xRRGGBBAA` (e.g., `0xFF0000FF` = opaque red)
+
+### Celestial System (AILANG)
+
+Planet and star system simulation defined in `sim/celestial.ail`:
+
+| Function | Signature | Purpose |
+|----------|-----------|---------|
+| `initSolSystem` | `() -> StarSystem` | Create Sol with 8 planets |
+| `stepSystem` | `(system, dt) -> StarSystem` | Update orbital positions |
+| `renderSolarSystem` | `(system) -> [DrawCmd]` | Render planets as CircleRGBA |
+
+**Planet Types:** `Rocky`, `GasGiant`, `IceGiant`, `Terrestrial`, `Ocean`, `Volcanic`, `Dwarf`
+
+**Star Types:** Spectral classes `O`, `B`, `A`, `F`, `G`, `K`, `M`
+
+### Parallax Layer Commands
+
+| Command | Signature | Purpose |
+|---------|-----------|---------|
+| `Marker` | `(x, y, w, h, rgba, parallaxLayer, z)` | Rectangle on selectable parallax layer (0-19) |
+
+**Marker Usage:** Place visual elements on any of the 20 depth layers. AILANG controls which layer via `parallaxLayer` field.
+
+### UI Commands
+
+| Command | Signature | Purpose |
+|---------|-----------|---------|
+| `Ui` | `(id, kind, x, y, w, h, text, spriteId, z, color, value)` | UI element |
+
+**UiKind Variants:**
+- `UiPanel` - Background container
+- `UiButton` - Clickable button with border
+- `UiLabel` - Text label
+- `UiPortrait` - Sprite display (scaled)
+- `UiSlider` - Value slider (0.0-1.0)
+- `UiProgressBar` - Progress indicator
+
+**UI Coordinates:** Normalized (0.0-1.0), scaled to screen pixels.
+
+### Color Palette
+
+Colors are indexed 0-15 via `biomeColors`:
+```
+0: Water blue    4: Savanna      8: Mountain     12: NPC cyan
+1: Desert tan    5: Forest       9: Snow         13: Player green
+2: Grassland     6: Rainforest   10: Structure   14: Highlight
+3: Tundra        7: Marsh        11: Road        15: UI background
+```
+
+---
+
+## 2. Effect Handlers (AILANG → Go)
+
+Defined in `sim_gen/handlers.go`, implemented in `engine/handlers/`.
+
+**CRITICAL:** Call `sim_gen.Init(handlers)` BEFORE any AILANG code runs.
+
+### Debug Effect
+
+**Interface:** `DebugHandler`
+**Implementation:** `sim_gen.NewDebugContext()` (built-in)
+
+```go
+type DebugHandler interface {
+    Log(msg, location string)
+    Assert(cond bool, msg, location string)
+    SetTimestamp(t int64)
+    Collect() DebugOutput  // Host-only
+    Reset()                // Host-only
+}
+```
+
+**AILANG Usage:**
+```ailang
+import std/debug (log, check)
+
+func example() -> () ! {Debug} {
+    Debug.log("message here");
+    Debug.check(x > 0, "x must be positive")
+}
+```
+
+### Rand Effect
+
+**Interface:** `RandHandler`
+**Implementations:** `engine/handlers/rand.go`
+- `NewDefaultRandHandler()` - Time-seeded
+- `NewSeededRandHandler(seed)` - Deterministic
+
+```go
+type RandHandler interface {
+    RandInt(min, max int64) int64
+    RandFloat(min, max float64) float64
+    RandBool() bool
+    SetSeed(seed int64)
+}
+```
+
+**AILANG Usage:**
+```ailang
+import std/rand (rand_int, rand_float, rand_bool, rand_seed)
+
+func example() -> int ! {Rand} {
+    rand_seed(42);
+    rand_int(1, 100)
+}
+```
+
+### Clock Effect
+
+**Interface:** `ClockHandler`
+**Implementation:** `engine/handlers/clock.go` - `EbitenClockHandler`
+
+```go
+type ClockHandler interface {
+    DeltaTime() float64   // Seconds since last frame
+    TotalTime() float64   // Total game time
+    FrameCount() int64    // Current frame number
+}
+```
+
+**Host Responsibility:** Call `clockHandler.Update(dt)` each frame BEFORE `sim_gen.Step()`.
+
+**AILANG Usage:**
+```ailang
+import std/game (delta_time, frame_count, total_time)
+
+func smooth_move(pos: float, target: float) -> float ! {Clock} {
+    let dt = delta_time();
+    pos + (target - pos) * dt * 5.0
+}
+```
+
+### AI Effect
+
+**Interface:** `AIHandler`
+**Implementations:** `engine/handlers/`
+- `ai.go` - `StubAIHandler` (testing)
+- `ai_claude.go` - Claude API
+- `ai_gemini.go` - Gemini API (multimodal, text/image/TTS)
+- `ai_gemini_tts.go` - TTS-specific handling (uses separate us-central1 client)
+- `ai_factory.go` - Auto-detection
+
+```go
+type AIHandler interface {
+    Call(input string) (string, error)
+}
+```
+
+**Request Format (JSON):**
+```json
+{
+  "messages": [
+    {"type": "text", "text": "prompt here"},
+    {"type": "image", "image_ref": "path/to/image.png"}
+  ],
+  "context": {"game_state": "..."},
+  "system": "You are an alien civilization..."
+}
+```
+
+**Response Format (JSON):**
+```json
+{
+  "content": [{"type": "text", "text": "response"}],
+  "error": ""
+}
+```
+
+**Provider Detection (auto):**
+1. `GOOGLE_CLOUD_PROJECT` → Vertex AI (Gemini)
+2. `GOOGLE_API_KEY` → Gemini API
+3. `ANTHROPIC_API_KEY` → Claude
+4. Fallback → Stub
+
+**Gemini Multimodal Features:**
+- Image generation: `"generate image"`, `"draw"`, `"imagen:"`
+  - Model: `gemini-2.5-flash-image`
+- Image editing: `"edit:"`, `"modify:"` + reference image
+- Text-to-speech: `"speak:"`, `"say:"`, `"tts:"`
+  - Model: `gemini-2.5-flash-tts` (default), `gemini-2.5-pro-tts` (higher quality)
+  - **Region: Requires us-central1** (separate client auto-created)
+  - 30 voices available with style/emotion control
+
+**📖 See [ai-capabilities.md](ai-capabilities.md) for complete reference** (all voices, image ratios, SSML, voice variation).
+
+**AILANG Usage:**
+```ailang
+import std/ai (ai_call)
+
+func ask_archive(question: string) -> string ! {AI} {
+    let input = encodeJson({"messages": [{"type": "text", "text": question}]});
+    let response = ai_call(input);
+    decodeJson(response).content[0].text
+}
+```
+
+### Optional Effects (Not Yet Needed)
+
+| Effect | Interface | Purpose |
+|--------|-----------|---------|
+| FS | `FSHandler` | File read/write |
+| Net | `NetHandler` | HTTP requests |
+| Env | `EnvHandler` | Environment variables |
+
+---
+
+## 3. Asset Systems
+
+All in `engine/assets/`, unified via `AssetManager`.
+
+### Sprite Manager
+
+**File:** `sprites.go`
+
+```go
+type SpriteManager interface {
+    LoadManifest(path string) error
+    Get(id int) *ebiten.Image
+    Has(id int) bool
+    GetAnimation(id int) *AnimationDef
+    HasAnimation(id int) bool
+}
+```
+
+**Manifest Format:** `assets/sprites/manifest.json`
+```json
+{
+  "sprites": {
+    "100": {
+      "file": "player.png",
+      "width": 32, "height": 48,
+      "type": "entity",
+      "animations": {
+        "idle": {"startFrame": 0, "frameCount": 4, "fps": 6.0},
+        "walk": {"startFrame": 4, "frameCount": 8, "fps": 12.0}
+      },
+      "frameWidth": 32, "frameHeight": 48
+    }
+  }
+}
+```
+
+### Audio Manager
+
+**File:** `audio.go`
+
+```go
+type AudioManager interface {
+    LoadManifest(path string) error
+    PlaySound(id int)
+    PlaySoundWithVolume(id int, vol float64)
+    StopSound(id int)
+    PlayMusic(id int)
+    StopMusic()
+    SetMusicVolume(vol float64)
+    IsMusicPlaying() bool
+}
+```
+
+**Manifest Format:** `assets/sounds/manifest.json`
+```json
+{
+  "sounds": {"100": {"file": "click.ogg", "volume": 1.0}},
+  "bgm": {"50": {"file": "theme.ogg", "loop": true, "volume": 0.7}}
+}
+```
+
+**Formats:** OGG Vorbis, WAV (44100 Hz)
+
+### Font Manager
+
+**File:** `fonts.go`
+
+```go
+type FontManager interface {
+    LoadManifest(path string) error
+    Get(name string) font.Face
+    GetDefault() font.Face
+    GetBySize(sizeIndex int) font.Face  // 0=small, 1=normal, 2=large, 3=title
+    SetScale(screenHeight int)
+}
+```
+
+**Standard Sizes (at 720p):**
+- 0 (Small): 16pt
+- 1 (Normal): 22pt
+- 2 (Large): 28pt
+- 3 (Title): 38pt
+
+**Fallback:** Embedded Go Mono (monospace sci-fi aesthetic)
+
+---
+
+## 4. Camera & Display
+
+### Camera Transform
+
+**File:** `engine/camera/transform.go`
+
+**AILANG Camera Type:**
+```ailang
+type Camera = { x: float, y: float, zoom: float }
+```
+
+**Go Transform:**
+```go
+type Transform struct {
+    CenterX, CenterY float64  // World position
+    Zoom             float64  // Scale factor
+    ScreenW, ScreenH int      // Screen dimensions
+}
+
+func (t *Transform) WorldToScreen(wx, wy float64) (sx, sy float64)
+func (t *Transform) ScreenToWorld(sx, sy float64) (wx, wy float64)
+```
+
+### Viewport Culling
+
+**File:** `engine/camera/viewport.go`
+
+```go
+type Viewport struct {
+    MinX, MinY, MaxX, MaxY float64  // World bounds
+}
+
+func (v *Viewport) Contains(x, y, margin float64) bool
+func (v *Viewport) ContainsRect(x, y, w, h float64) bool
+```
+
+### Display Configuration
+
+**File:** `engine/display/`
+
+```go
+type Config struct {
+    Width, Height int
+    Fullscreen    bool
+    VSync         bool
+    Scale         float64  // 0.5-4.0
+}
+```
+
+**Key Methods:**
+- `DefaultConfig()` → 1280×720, VSync on
+- `ToggleFullscreen()` → F11 support
+- `SetResolution(w, h)` → Resize window
+
+**Internal Resolution:** 1280×960 (fixed game coords, Ebiten scales)
+
+---
+
+## 4b. 3D Scene (Tetra3D)
+
+**Files:** `engine/tetra/scene.go`, `planet.go`, `ring.go`, `lighting.go`
+
+The engine wraps Tetra3D for 3D rendering (planets, rings, orbital views).
+
+### Scene Setup
+
+```go
+scene := tetra.NewScene(screenW, screenH)
+
+// Add objects
+planet := tetra.NewTexturedPlanet("saturn", radius, texture)
+planet.AddToScene(scene)
+planet.SetPosition(0, 0, 0)
+
+// Add lighting
+sun := tetra.NewSunLight()
+sun.SetPosition(30, 20, 30)
+sun.AddToScene(scene)
+
+// Render
+img := scene.Render()
+screen.DrawImage(img, nil)
+```
+
+### Camera LookAt
+
+**Critical Fix (2025-12-12):** The `LookAt` function was fixed to correctly orient the camera.
+
+```go
+// Position camera and look at target
+scene.SetCameraPosition(x, y, z)
+scene.LookAt(targetX, targetY, targetZ)
+```
+
+**How It Works:**
+
+Tetra3D cameras render along their local **-Z axis**. The `NewMatrix4LookAt(from, to, up)` function builds a rotation matrix where the Z row points from→to. To make the camera's -Z face the target, we swap the arguments:
+
+```go
+// Inside Scene.LookAt():
+// FIXED: Swap from/to so the Z row points AWAY from target.
+// Camera's -Z then points toward target (render direction).
+lookMatrix := tetra3d.NewMatrix4LookAt(to, from, up)  // Note: swapped!
+s.camera.SetLocalRotation(lookMatrix)
+```
+
+**Usage Patterns:**
+
+| Pattern | Code | Description |
+|---------|------|-------------|
+| Camera orbits object | `SetCameraPosition(cos(θ)*r, h, sin(θ)*r); LookAt(0,0,0)` | Camera moves, looks at origin |
+| Camera tracks object | `SetCameraPosition(0, 0, 10); LookAt(obj.x, obj.y, obj.z)` | Camera fixed, follows moving object |
+| First-person | `SetCameraPosition(player.pos); LookAt(player.pos + forward)` | Camera at player, looks forward |
+
+### 3D Objects
+
+| Type | Constructor | Description |
+|------|-------------|-------------|
+| Planet | `NewPlanet(name, radius, color)` | Solid-colored sphere |
+| Planet | `NewTexturedPlanet(name, radius, texture)` | Textured sphere |
+| Ring | `NewRing(name, inner, outer, texture)` | Planetary ring (nil texture = solid) |
+| SunLight | `NewSunLight()` | Directional light |
+| AmbientLight | `NewAmbientLight(r, g, b, intensity)` | Fill lighting |
+
+### Ring System
+
+**Simple Ring:**
+```go
+ring := tetra.NewRing("saturn_rings", innerRadius, outerRadius, nil)
+ring.AddToScene(scene)
+ring.SetPosition(0, 0, 0)  // Same as planet
+ring.SetTilt(27 * math.Pi / 180)  // Saturn's 27° tilt
+```
+
+**Multi-Band Dust Ring System (Saturn-style):**
+```go
+// Use preset Saturn ring bands (C, B, A rings with Cassini Division gap)
+ringBands := tetra.SaturnRingBands(planetRadius)
+ringSystem := tetra.NewRingSystem("saturn", ringBands)
+ringSystem.AddToScene(scene)
+ringSystem.SetPosition(0, 0, 0)
+ringSystem.SetTilt(27 * math.Pi / 180)
+
+// Or define custom bands:
+bands := []tetra.RingBand{
+    {InnerRadius: 1.24 * r, OuterRadius: 1.53 * r, Color: dusty, Opacity: 0.3, Density: 0.4},
+    {InnerRadius: 1.53 * r, OuterRadius: 1.95 * r, Color: cream, Opacity: 0.7, Density: 0.9},
+    {InnerRadius: 2.03 * r, OuterRadius: 2.27 * r, Color: tan, Opacity: 0.5, Density: 0.7},
+}
+ringSystem := tetra.NewRingSystem("custom", bands)
+```
+
+**RingBand Properties:**
+| Property | Type | Description |
+|----------|------|-------------|
+| InnerRadius | float64 | Inner edge distance from planet center |
+| OuterRadius | float64 | Outer edge distance from planet center |
+| Color | color.RGBA | Base color of the ring band |
+| Opacity | float64 | 0.0-1.0, transparency (lower = more dust-like) |
+| Density | float64 | 0.0-1.0, affects vertex color variation |
+
+**Dust Effect:** Rings use `TransparencyModeTransparent` with per-vertex color/alpha variation to simulate dust clumping. Inner vertices are slightly darker and more transparent; outer vertices are brighter.
+
+**Material Options:**
+- With texture: `TransparencyModeAlphaClip` for ring gaps
+- Without texture: Solid beige/tan color (`0.85, 0.75, 0.6`)
+- `Shadeless = true` (rings don't need lighting)
+- `BackfaceCulling = false` (render both sides)
+
+### Demo
+
+```bash
+bin/demo-game-saturn --screenshot 120     # Saturn with rings
+bin/demo-engine-lookat --mode camera-track # LookAt test
+```
+
+### 3D Interior Rooms
+
+**Files:** `engine/tetra/primitives.go`, `engine/render/draw_interior.go`
+**AILANG:** `sim/interior.ail`
+
+First-person 3D interior rendering for ship rooms.
+
+**Room Geometry:**
+```go
+room := tetra.NewRoomUV(width, depth, height, uvScale)
+room.SetFloorMaterial(floorMat)
+room.SetWallMaterial(wallMat)
+room.SetCeilingMaterial(ceilingMat)
+room.AddToScene(scene)
+```
+
+**⚠️ Tiled Floor/Ceiling (Critical for Rendering):**
+
+Due to Tetra3D's lack of triangle clipping, large triangles stretch unusually at viewport edges. The room uses a **4x4 grid of tiles** (16 tiles each) for floor and ceiling instead of single planes:
+
+```go
+// Internal structure - floor/ceiling are tile arrays
+type Room struct {
+    Floor      []*tetra3d.Model // 4x4 grid = 16 tiles
+    Ceiling    []*tetra3d.Model // 4x4 grid = 16 tiles
+    Walls      []*tetra3d.Model // 4 walls (single planes OK)
+    FloorTiles int              // Number of tiles per dimension (4)
+    ...
+}
+```
+
+This prevents texture "swimming" when looking up/down or moving near surfaces.
+
+**DrawCmd Types (AILANG → Go):**
+
+| Command | Purpose |
+|---------|---------|
+| `Camera3D(x, y, z, yaw, pitch, fov)` | Set first-person camera |
+| `Room3D(w, d, h, floorTex, wallTex, ceilTex, ...)` | Render room geometry |
+| `Prop3D(id, x, y, z, scaleX, scaleY, scaleZ, tex, color)` | Render furniture/console |
+| `Billboard3D(id, x, y, z, spriteId, scale)` | Render character sprite in 3D |
+
+**AILANG Usage:**
+```ailang
+import sim/interior (
+    InteriorState, initInterior, stepInterior, renderInterior,
+    makeRoomTextured, makeRoomTexturedScale
+)
+
+-- Create room with textures (UV scale 1.0 = 1 tile per meter)
+let room = makeRoomTextured(8.0, 6.0, 3.0,
+    "assets/textures/interior/bridge_floor.png",
+    "assets/textures/interior/bridge_wall.png",
+    "assets/textures/interior/bridge_ceiling.png"
+)
+
+-- Step and render each frame
+let newState = stepInterior(state, input)
+let cmds = renderInterior(newState)
+```
+
+**Texture Requirements:**
+- Floor/ceiling textures **MUST be seamless** (16 tiles visible)
+- See `asset_specs.md` for tiling requirements
+
+**Demo:**
+```bash
+go run ./cmd/demo-game-interior
+```
+
+---
+
+## 4c. Level of Detail (LOD) System
+
+**Files:** `engine/lod/` (config.go, manager.go, object.go, billboard.go, circles.go, points.go, camera.go)
+
+The LOD system enables rendering thousands of celestial objects efficiently by switching detail levels based on apparent screen size.
+
+### LOD Tiers
+
+| Tier | Condition | Rendering |
+|------|-----------|-----------|
+| **Full3D** | >= 12px radius | Tetra3D mesh with textures |
+| **Billboard** | >= 6px radius | 2D sprite (textured, spherical projection) |
+| **Circle** | >= 3px radius | Filled circle (texture-derived color) |
+| **Point** | >= 1px radius | Single pixel (scaled 1-3px near threshold) |
+| **Culled** | < 1px or off-screen | Not rendered |
+
+### Configuration
+
+```go
+config := lod.DefaultConfig()
+// Thresholds are apparent RADIUS in pixels
+config.Full3DPixels    = 12   // 24px diameter for 3D
+config.BillboardPixels = 6    // 12px diameter for billboard
+config.CirclePixels    = 3    // 6px diameter for circle
+config.PointPixels     = 1    // Below 1px = culled
+
+config.Hysteresis      = 0.2  // 20% buffer prevents flickering
+config.TransitionTime  = 0.3  // 300ms smooth fade between tiers
+config.Max3DObjects    = 30   // Limit expensive 3D renders
+config.UseApparentSize = true // Pixel-based (not distance-based)
+```
+
+**Preset Configurations:**
+| Config | Full3D | Billboard | Circle | Point | Use Case |
+|--------|--------|-----------|--------|-------|----------|
+| `DefaultConfig()` | 12px | 6px | 3px | 1px | General use |
+| `GalaxyConfig()` | 60px | 20px | 6px | 1.5px | Galaxy-scale |
+| `SystemConfig()` | 100px | 30px | 10px | 2px | Star system detail |
+
+### Hysteresis
+
+Prevents rapid tier flickering at boundaries:
+- **Upgrade** threshold: exact value (e.g., 12px)
+- **Downgrade** threshold: value × (1 - hysteresis) (e.g., 9.6px)
+
+Objects won't rapidly switch between tiers when hovering near a boundary.
+
+### LOD Manager
+
+```go
+manager := lod.NewManager(config)
+
+// Add objects
+obj := lod.NewObject("earth", position, radius, color)
+manager.Add(obj)
+
+// Update each frame (computes tiers, transitions)
+manager.UpdateWithDT(camera, deltaTime)
+
+// Get objects by tier for rendering
+points := manager.GetTierPoint()
+circles := manager.GetTierCircle()
+billboards := manager.GetTierBillboard()
+full3D := manager.GetTier3D()
+transitioning := manager.GetTransitioning()
+
+// Stats
+stats := manager.Stats()
+fmt.Printf("Visible: %d, Full3D: %d, Culled: %d",
+    stats.VisibleCount, stats.Full3DCount, stats.CulledCount)
+```
+
+### Renderers
+
+**PointRenderer:**
+```go
+pr := lod.NewPointRenderer()
+pr.RenderPointsDirect(screen, points)           // Single pixels
+pr.RenderPointsScaled(screen, points, 3.0)      // Size scales near threshold
+pr.RenderPointWithAlpha(screen, obj, 0.5)       // For transitions
+```
+
+**CircleRenderer:**
+```go
+cr := lod.NewCircleRenderer()
+cr.RenderCircles(screen, circles)               // Filled circles
+cr.RenderCirclesWithGlow(screen, circles, 1.5)  // With outer glow (stars)
+cr.RenderCircleWithAlpha(screen, obj, 0.5)      // For transitions
+```
+
+**BillboardRenderer:**
+```go
+br := lod.NewBillboardRenderer()
+br.SetDefaultSprite(defaultSprite)
+br.RenderBillboards(screen, billboards, spriteMap)
+br.RenderBillboardWithAlpha(screen, obj, 0.5, spriteMap)
+```
+
+### Texture-Derived Colors
+
+Extract average color from planet textures for consistent appearance across tiers:
+
+```go
+// Load planet texture
+texture := loadTexture("assets/planets/earth.jpg")
+
+// Extract average color for circles/points
+avgColor := lod.ExtractAverageColor(texture)
+lodObj.Color = avgColor  // Circle/point will match texture
+
+// Create billboard sprite from texture (spherical projection + lighting)
+billboard := lod.CreateBillboardFromTexture(texture, 128)
+```
+
+### Billboard Creation
+
+**From Texture (recommended):**
+```go
+// Spherical projection with lighting - looks like actual 3D planet
+billboard := lod.CreateBillboardFromTexture(texture, 128)
+```
+
+**Procedural:**
+```go
+// Simple gradient sphere
+planet := lod.CreateDefaultPlanetSprite(128, color.RGBA{50, 100, 200, 255})
+
+// Star with glow
+star := lod.CreateDefaultStarSprite(128, color.RGBA{255, 255, 200, 255})
+```
+
+### Smooth Transitions
+
+Objects transitioning between tiers are rendered with alpha blending:
+
+```go
+for _, obj := range manager.GetTransitioning() {
+    prevAlpha := obj.PreviousAlpha()  // 1.0 → 0.0 as transition completes
+
+    switch obj.PreviousTier {
+    case lod.TierPoint:
+        pointRenderer.RenderPointWithAlpha(screen, obj, prevAlpha)
+    case lod.TierCircle:
+        circleRenderer.RenderCircleWithAlpha(screen, obj, prevAlpha)
+    case lod.TierBillboard:
+        billboardRenderer.RenderBillboardWithAlpha(screen, obj, prevAlpha, sprites)
+    }
+}
+```
+
+### Simple Camera
+
+For LOD calculations (not Tetra3D):
+
+```go
+camera := lod.NewSimpleCamera(screenWidth, screenHeight)
+camera.Pos = lod.Vector3{X: 0, Y: 50, Z: 500}
+camera.LookAt = lod.Vector3{X: 0, Y: 0, Z: 0}
+camera.Fov = 60
+camera.Far = 20000
+```
+
+### Demo
+
+```bash
+bin/demo-lod --test              # 4 textured planets (Sun, Earth, Jupiter, Neptune)
+bin/demo-lod --objects 5000      # Random star field stress test
+```
+
+**Controls:**
+- WASD/Arrows: Move camera
+- Q/E: Up/down
+- Shift: Fast move
+- R: Reset position
+
+---
+
+## 5. Parallax Depth Layers
+
+**File:** `engine/depth/layer.go`
+
+The engine supports **20 depth layers (0-19)** for parallax rendering. Each layer has a configurable parallax factor that determines how fast it moves relative to the camera.
+
+### Layer Definitions
+
+| Layer | Parallax | Purpose |
+|-------|----------|---------|
+| L0 | 0.00 | Fixed at infinity (galaxy/space) |
+| L1 | 0.05 | Very distant stars |
+| L2 | 0.10 | Far spire segment |
+| L3 | 0.15 | Distant ship structure |
+| L4 | 0.20 | Opposite hull |
+| L5 | 0.25 | Far deck (5+ decks away) |
+| L6 | 0.30 | Mid-distance structure |
+| L7 | 0.40 | 4 decks away |
+| L8 | 0.50 | 3 decks away |
+| L9 | 0.60 | 2 decks away |
+| L10 | 0.70 | Adjacent deck |
+| L11 | 0.75 | Near background |
+| L12 | 0.80 | Same deck distant |
+| L13 | 0.85 | Same deck mid |
+| L14 | 0.90 | Same deck near |
+| L15 | 0.95 | Current deck background |
+| L16 | 1.00 | Main scene layer |
+| L17 | 1.00 | Scene overlay |
+| L18 | 1.00 | Foreground effects |
+| L19 | 1.00 | UI (screen-fixed) |
+
+### Convenience Aliases
+
+```go
+LayerDeepBackground = Layer0   // Galaxy, fixed at infinity
+LayerMidBackground  = Layer6   // Mid-distance, 0.3x
+LayerScene          = Layer16  // Main content, 1.0x
+LayerForeground     = Layer19  // UI, screen-fixed
+```
+
+### Parallax Math
+
+```
+parallax_offset = camera_position × parallax_factor × zoom
+```
+
+- **0.0x**: Fixed (doesn't move with camera) - stars at infinity
+- **0.5x**: Moves half as fast as camera - distant objects
+- **1.0x**: Moves with camera - scene layer
+
+### Runtime Configuration
+
+```go
+// Change parallax factor at runtime (e.g., for zoom-dependent effects)
+depth.SetParallax(depth.Layer5, 0.35)
+
+// Get all current factors
+factors := depth.GetAllParallax()
+```
+
+### AILANG Integration
+
+DrawCmds are routed to layers by type OR by explicit `parallaxLayer` field:
+
+| DrawCmd | Default Layer |
+|---------|---------------|
+| `GalaxyBg`, `SpaceBg`, `Star` | Layer0 (0.0x) |
+| `SpireBg` | Layer6 (0.3x) |
+| `Sprite` | Layer16 (1.0x) |
+| `Ui`, `Text`, `RectScreen` | Layer19 (UI) |
+| `Marker(parallaxLayer=N)` | LayerN (selectable) |
+
+### Enable Layer Rendering
+
+```go
+renderer.EnableLayers(screenW, screenH)  // Enable layer system
+renderer.ResizeLayers(screenW, screenH)  // Handle resize
+```
+
+### Demo
+
+```bash
+go run ./cmd/demo-game-parallax                    # Interactive demo
+go run ./cmd/demo-game-parallax -camx 400 --screenshot 5 --output test.png
+```
+
+---
+
+## 6. Viewport Compositing
+
+**Files:** `engine/render/viewport.go`, `viewport_render.go`, `viewport_compositor.go`
+
+The viewport compositing system enables rendering content through shaped viewports (domes, windows, portholes) with masking and edge blending.
+
+### Viewport Shapes
+
+| Shape | Parameters | Use Case |
+|-------|------------|----------|
+| `EllipseShape` | centerX, centerY, radiusX, radiusY | Porthole variations |
+| `CircleShape` | centerX, centerY, radius | Round portholes |
+| `RectShape` | x, y, width, height | Rectangular windows |
+| `DomeShape` | centerX, centerY, width, height, archHeight | Bridge observation dome |
+
+```go
+type ViewportShape interface {
+    GenerateMask(w, h int) *ebiten.Image
+    Contains(x, y float64) bool
+    Bounds() (x, y, w, h float64)
+}
+```
+
+### Content Types
+
+| Type | Parameters | Description |
+|------|------------|-------------|
+| `ContentSpaceView` | velocity, viewAngle | Space background with SR effects |
+| `ContentStarfield` | density, scroll | Simple parallax stars |
+| `ContentSolid` | rgba | Solid color fill |
+| `ContentNone` | - | Transparent |
+
+### Viewport Effects
+
+| Effect | Parameters | Description |
+|--------|------------|-------------|
+| `EffectNone` | - | No effect |
+| `EffectSRWarp` | velocity | SR warp within viewport bounds |
+| `EffectGRLensing` | mass, distance | Gravitational lensing |
+| `EffectTint` | rgba, intensity | Color overlay |
+| `EffectBlur` | radius | Blur effect |
+
+### ViewportCompositor
+
+The compositor manages multiple viewports and integrates with the depth layer system:
+
+```go
+compositor := render.NewViewportCompositor(shaderMgr, screenW, screenH)
+compositor.SetSRWarp(srWarp)
+
+// Add viewports (sorted by layer automatically)
+compositor.SetViewports([]ViewportConfig{
+    {ID: "dome", Shape: domeShape, Content: spaceContent, Layer: 90},
+    {ID: "porthole", Shape: circleShape, Content: starfieldContent, Layer: 15},
+})
+
+// Composite to screen
+compositor.Composite(screen, spaceDrawFunc)
+
+// Or composite to existing layer manager
+compositor.CompositeToLayers(layerManager, spaceDrawFunc)
+```
+
+### Layer Mapping
+
+Viewport `Layer` field (0-100) maps to depth layers:
+
+| Viewport Layer | Depth Layer | Purpose |
+|----------------|-------------|---------|
+| 0-24 | DeepBackground | Space, distant stars |
+| 25-49 | MidBackground | Nebulae, far objects |
+| 50-74 | Scene | Main game content |
+| 75-100 | Foreground | UI, overlays |
+
+### Edge Blend Shader
+
+The `edge_blend.kage` shader provides smooth viewport edge transitions:
+
+```kage
+var BlendAmount float  // 0.0 = hard edge, 1.0 = very soft
+
+func Fragment(dstPos vec4, srcPos vec2, color vec4) vec4 {
+    content := imageSrc0At(srcPos)
+    maskValue := imageSrc1At(srcPos).r
+    edge := smoothstep(0.0, BlendAmount+0.001, maskValue)
+    return vec4(content.rgb, content.a*edge)
+}
+```
+
+### AILANG Integration
+
+Viewport types defined in `sim/viewport.ail`:
+
+```ailang
+export type ViewportShape =
+    | ShapeEllipse(centerX: float, centerY: float, radiusX: float, radiusY: float)
+    | ShapeCircle(centerX: float, centerY: float, radius: float)
+    | ShapeRect(x: float, y: float, width: float, height: float)
+    | ShapeDome(centerX: float, centerY: float, width: float, height: float, archHeight: float)
+
+export type ViewportContent =
+    | ContentSpaceView(velocity: float, viewAngle: float)
+    | ContentStarfield(density: float, scroll: bool)
+    | ContentSolid(rgba: int)
+    | ContentNone
+
+export type ViewportEffect =
+    | EffectNone
+    | EffectSRWarp(velocity: float)
+    | EffectGRLensing(mass: float, distance: float)
+    | EffectTint(rgba: int, intensity: float)
+    | EffectBlur(radius: float)
+
+-- Factory functions
+export pure func bridgeDome(...) -> ViewportDef
+export pure func cabinWindow(...) -> ViewportDef
+export pure func porthole(...) -> ViewportDef
+
+-- Convert to DrawCmd
+export pure func viewportToDrawCmd(vp: ViewportDef, z: int) -> DrawCmd
+```
+
+### DrawCmd: Viewport
+
+Added to `sim/protocol.ail`:
+
+```ailang
+| Viewport(
+    id: string,
+    shapeType: int, shapeParams: [float],
+    contentType: int, contentParams: [float],
+    effectType: int, effectParams: [float],
+    layer: int, edgeBlend: float, opacity: float,
+    screenX: float, screenY: float, z: int
+)
+```
+
+---
+
+## 7. Multi-Level Ship System
+
+**Files:** `engine/render/deck_stack.go`, `deck_preview.go`, `deck_transition.go`, `spire.go`
+**AILANG:** `sim/ship_levels.ail`
+
+The multi-level ship system enables navigation between 5 ship decks with the Higgs Spire as central anchor.
+
+### Deck Types
+
+| Index | Deck | Description | Color |
+|-------|------|-------------|-------|
+| 0 | Core | Antimatter containment | Red |
+| 1 | Engineering | Propulsion & power | Orange |
+| 2 | Culture | Recreation & social | Green |
+| 3 | Habitat | Crew quarters | Blue |
+| 4 | Bridge | Command center | Purple |
+
+### DeckStackRenderer
+
+Renders multiple decks with parallax based on current position:
+
+```go
+renderer := render.NewDeckStackRenderer(screenW, screenH)
+
+// Render with parallax effect
+result := renderer.RenderDeckStack(
+    currentDeck,        // 0-4
+    transitionProgress, // 0.0-1.0
+    targetDeck,         // Target during transition
+    func(deckIndex int, buffer *ebiten.Image) {
+        // Render deck content to buffer
+    },
+)
+```
+
+**Parallax Behavior:**
+- Current deck: Full opacity (1.0)
+- Adjacent decks: Reduced opacity (0.6)
+- Distant decks: Faded (0.3-0.1)
+- Y offset: 50px per deck level
+
+### HiggsSpire
+
+Central visual anchor showing current deck position:
+
+```go
+spire := render.NewHiggsSpire(screenW, screenH)
+spire.SetGlowIntensity(0.5) // 0.0-1.0
+
+// Render spire with deck indication
+spire.Render(screen, currentDeck, transitionProgress, targetDeck)
+```
+
+**Visual Features:**
+- 5 segments (one per deck)
+- Active segment glows based on current deck
+- Color interpolation during transitions
+- Positioned at right edge of screen
+
+### DeckPreview
+
+Shows adjacent decks at screen edges:
+
+```go
+preview := render.NewDeckPreview(screenW, screenH)
+
+// Render top (deck above) and bottom (deck below) previews
+preview.RenderPreviews(screen, currentDeck, transitionProgress, targetDeck)
+```
+
+**Features:**
+- Deck above visible at top of screen
+- Deck below visible at bottom
+- Gradient fade into main view
+- Color-coded per deck
+
+### DeckTransition
+
+Smooth animated transitions between decks:
+
+```go
+transition := render.NewDeckTransition(screenW, screenH)
+
+// Start transition
+transition.StartTransition(fromDeck, toDeck, 0.5) // 0.5 second duration
+
+// Update each frame
+if transition.Update(deltaTime) {
+    // Still transitioning
+    progress := transition.GetProgress()
+    slideOffset := transition.GetSlideOffset()
+}
+
+// Apply fade overlay effect
+transition.ApplyTransitionEffect(screen)
+```
+
+**Transition Effects:**
+- Cubic ease-in-out easing
+- Fade overlay peaking at mid-transition
+- Direction indicator arrows
+- Configurable duration and slide amount
+
+### AILANG Integration
+
+```ailang
+import sim/ship_levels (
+    DeckType, DeckCore, DeckEngineering, DeckCulture, DeckHabitat, DeckBridge,
+    DeckInfo, ShipLevels, TransitionState, TransitionIdle, Transitioning,
+    init_ship_levels, get_deck_info, deck_index, deck_above, deck_below,
+    start_deck_transition, update_transition, get_transition_progress
+)
+
+-- Initialize in World
+let levels = init_ship_levels()  -- Starts on Bridge
+
+-- Transition to new deck
+let newLevels = start_deck_transition(levels, DeckEngineering)
+
+-- Update each frame
+let updatedLevels = update_transition(newLevels, deltaTime)
+```
+
+### Demo
+
+```bash
+go run ./cmd/demo-deck-nav    # Interactive deck navigation demo
+```
+
+---
+
+## 8. Relativity Physics
+
+### Special Relativity (SR)
+
+**File:** `engine/relativity/transform.go`
+
+**Core Functions:**
+```go
+// Lorentz factor: γ = 1/√(1-β²), clamped to 100
+func Gamma(beta float64) float64
+
+// Doppler factor: D = γ(1 - β·n), clamped [0.01, 100]
+func DopplerFactor(beta Vec3, viewDir Vec3, gamma float64) float64
+
+// Relativistic aberration
+func AberrationAngle(beta, angle, gamma float64) float64
+```
+
+**Color Shifting:** `engine/relativity/color.go`
+```go
+// Blackbody temperature → RGB (1000K-40000K)
+func TemperatureToRGB(kelvin float64) color.RGBA
+
+// Shift color by Doppler factor
+func DopplerShiftColor(baseRGB color.RGBA, dopplerFactor float64) color.RGBA
+
+// Relativistic beaming brightness: D³
+func BeamBrightness(dopplerFactor float64) float64
+
+// Complete star processing
+func ProcessStar(baseTemp float64, direction, velocity Vec3, gamma float64) (color.RGBA, float64)
+```
+
+**Spectral Classes:**
+| Class | Temperature | Color |
+|-------|-------------|-------|
+| O | 30000K | Blue |
+| B | 20000K | Blue-white |
+| A | 10000K | White |
+| F | 7500K | Yellow-white |
+| G (Sun) | 5800K | Yellow |
+| K | 4500K | Orange |
+| M | 3000K | Red |
+
+### General Relativity (GR)
+
+**File:** `engine/relativity/gr_context.go`
+
+**Massive Object Types:**
+```go
+const (
+    BlackHole = iota
+    NeutronStar
+    WhiteDwarf
+)
+```
+
+**GR Context:**
+```go
+type GRContext struct {
+    Active           bool
+    ObjectKind       MassiveObjectKind
+    Distance         float64  // Ship → object
+    Phi              float64  // Dimensionless potential: r_s/(2r)
+    TimeDilation     float64  // dτ/dt = √(1 - r_s/r)
+    RedshiftFactor   float64  // z = 1/√(1 - r_s/r)
+    TidalSeverity    float64  // 0.0-1.0
+    DangerLevel      GRDangerLevel
+    CanHoverSafely   bool
+    NearPhotonSphere bool
+    Rs               float64  // Schwarzschild radius
+}
+```
+
+**Danger Levels (based on Φ = r_s/2r):**
+| Level | Φ Range | Visual Effects |
+|-------|---------|----------------|
+| None | Φ < 1e-4 | SR only |
+| Subtle | 1e-4 ≤ Φ < 1e-3 | Light shading |
+| Strong | 1e-3 ≤ Φ < 1e-2 | Visible lensing |
+| Extreme | Φ ≥ 0.01 | Heavy distortion |
+
+**Key Formulas:**
+```
+Schwarzschild radius: r_s = 2GM/c² ≈ 2.95 km per M_sun
+Time dilation: dτ/dt = √(1 - r_s/r)
+Gravitational redshift: z = 1/√(1 - r_s/r)
+Photon sphere: r = 1.5 r_s (black holes only)
+```
+
+---
+
+## 9. Shader Effects
+
+**File:** `engine/shader/`
+
+### Effects Manager
+
+```go
+type Effects struct {
+    // Access methods
+    Manager() *Manager
+    Pipeline() *Pipeline
+    Bloom() *Bloom
+    SRWarp() *SRWarp
+    GRWarp() *GRWarp
+}
+```
+
+### Post-Processing Pipeline
+
+**Built-in Effects:**
+| Effect | Uniforms | Purpose |
+|--------|----------|---------|
+| `vignette` | Intensity, Softness | Edge darkening |
+| `crt` | ScanlineIntensity, Curvature, VignetteAmount | Retro CRT look |
+| `aberration` | Amount | RGB channel separation |
+
+```go
+pipeline.SetEnabled("vignette", true)
+pipeline.SetUniform("vignette", "Intensity", 0.5)
+```
+
+### Bloom (Glow)
+
+```go
+bloom.SetThreshold(0.7)   // Brightness threshold (0.0-1.0)
+bloom.SetIntensity(1.2)   // Glow intensity (0.0-2.0)
+bloom.SetBlurPasses(3)    // Blur quality (1-5)
+bloom.SetEnabled(true)
+```
+
+### SR Warp Effect
+
+```go
+srWarp.SetVelocity(0.0, 0.0, 0.9)  // 90% light speed forward
+srWarp.SetForwardVelocity(0.9)     // Convenience
+srWarp.SetFOV(1.57)                // ~90° FOV
+srWarp.SetViewAngle(0.0)           // Looking forward
+srWarp.SetEnabled(true)
+```
+
+**Applied Effects:**
+- Aberration (direction warping)
+- Doppler shift (color change)
+- Relativistic beaming (brightness)
+
+### GR Warp Effect
+
+```go
+grWarp.SetUniforms(relativity.GRShaderUniforms{...})
+grWarp.SetDemoMode(0.5, 0.5, 0.05, 0.05)  // centerX, Y, rs, phi
+grWarp.CycleDemoIntensity()  // Subtle → Strong → Extreme
+grWarp.SetEnabled(true)
+```
+
+**Applied Effects:**
+- Gravitational lensing
+- Chromatic aberration
+- Redshift coloring
+
+**Keyboard Shortcuts:**
+- F7: Toggle GR effects
+- F8: Cycle GR intensity (demo mode)
+
+---
+
+## 10. Input System
+
+**Files:** `engine/input/`, `engine/render/input.go`, `sim/input.ail`
+
+### Input Capture (Engine → AILANG)
+
+The engine captures all input and passes it to AILANG via `FrameInput`:
+
+```go
+func CaptureInputWithCamera(cam Transform, w, h int) FrameInput
+```
+
+**FrameInput Fields (from AILANG):**
+```ailang
+type FrameInput = {
+    mouse: MouseState,
+    keys: [KeyEvent],        -- All key events (press/down/up)
+    flight: FlightInput,     -- WASD/arrows pre-captured
+    clickedThisFrame: bool,
+    worldMouseX: float,
+    worldMouseY: float,
+    actionRequested: PlayerAction,
+    testMode: bool
+}
+
+type KeyEvent = {
+    key: int,      -- Ebiten key code
+    kind: string   -- "press" (edge), "down" (held), "up" (released)
+}
+```
+
+### AILANG Input Helpers (sim/input.ail)
+
+**The standard way to handle keyboard input in AILANG.** Do NOT handle keys in Go.
+
+```ailang
+import sim/input (is_key_just_pressed, is_key_held, KEY_V, KEY_TAB, KEY_ESCAPE)
+
+-- Edge detection: fires once per press (toggles, cycling)
+if is_key_just_pressed(input.keys, KEY_V()) then
+    { state | velocityIdx: (state.velocityIdx + 1) % 4 }
+else
+    state
+
+-- Continuous: fires every frame while held (movement)
+if is_key_held(input.keys, KEY_ESCAPE()) then
+    { state | shouldExit: true }
+else
+    state
+```
+
+**Available Functions:**
+
+| Function | When to Use |
+|----------|-------------|
+| `is_key_just_pressed(keys, keyCode)` | Toggles, mode switches, cycling values |
+| `is_key_held(keys, keyCode)` | Movement, acceleration, continuous actions |
+| `is_key_just_released(keys, keyCode)` | Charge attacks, release triggers |
+
+**Key Constants** (call as functions, e.g., `KEY_V()`):
+
+| Category | Constants |
+|----------|-----------|
+| Letters | `KEY_A()` through `KEY_Z()` |
+| Arrows | `KEY_UP()`, `KEY_DOWN()`, `KEY_LEFT()`, `KEY_RIGHT()` |
+| Numbers | `KEY_0()` through `KEY_9()` |
+| Control | `KEY_ESCAPE()`, `KEY_SPACE()`, `KEY_TAB()`, `KEY_ENTER()`, `KEY_SHIFT()` |
+| Function | `KEY_F1()` through `KEY_F12()` |
+
+**Generated Go API:**
+```go
+sim_gen.IsKeyJustPressed(keys []*KeyEvent, keyCode int64) bool
+sim_gen.IsKeyHeld(keys []*KeyEvent, keyCode int64) bool
+sim_gen.IsKeyJustReleased(keys []*KeyEvent, keyCode int64) bool
+sim_gen.KEYV() int64  // Returns 21
+sim_gen.KEYTAB() int64 // Returns 117
+// etc.
+```
+
+### FlightInput (Pre-captured WASD/Arrows)
+
+For movement, use the pre-captured `FlightInput` instead of checking keys manually:
+
+```ailang
+type FlightInput = {
+    w: bool, a: bool, s: bool, d: bool,
+    up: bool, down: bool, left: bool, right: bool,
+    shift: bool
+}
+
+-- Example: get movement direction
+if input.flight.w || input.flight.up then
+    move_forward(state)
+else if input.flight.s || input.flight.down then
+    move_backward(state)
+else
+    state
+```
+
+### PlayerAction (Legacy)
+
+Hardcoded I/B/X key mappings (may be deprecated):
+```ailang
+type PlayerAction =
+    | ActionNone
+    | ActionInspect    -- I key
+    | ActionBuild(StructureType)  -- B key
+    | ActionClear      -- X key
+```
+
+---
+
+## 11. Save System
+
+**File:** `engine/save/save.go`
+
+**Design:** Single save file (no slots) per Pillar 1 "Choices Are Final"
+
+```go
+type SaveManager interface {
+    SaveGame(world interface{}) error
+    LoadGame() (interface{}, error)
+    HasSave() bool
+    DeleteSave() error
+}
+```
+
+**Save File:** `saves/game.json`
+```json
+{
+  "version": "0.1.0",
+  "timestamp": 1701864000,
+  "playTime": 3600,
+  "world": {...}
+}
+```
+
+**Auto-save:** 5 minutes (configurable)
+
+---
+
+## 12. Screenshot & Testing
+
+### Screenshot Capture
+
+**File:** `engine/screenshot/screenshot.go`
+
+```go
+type Config struct {
+    Frames     int      // Frames before capture
+    OutputPath string   // PNG path
+    Seed       int64    // World seed
+    CameraX    float64  // Camera position
+    CameraY    float64
+    CameraZoom float64
+    TestMode   bool     // Strip UI for golden files
+    Effects    string   // Comma-separated effect names
+    DemoScene  bool     // Shader demo mode
+    Velocity   float64  // Ship velocity (0.0-0.99c)
+    ViewAngle  float64  // View direction (radians)
+}
+
+func Capture(cfg Config) (*image.RGBA, error)
+func CaptureToFile(cfg Config) error
+```
+
+### Scenario Testing
+
+**File:** `engine/scenario/`
+
+```json
+{
+  "name": "exploration-test",
+  "seed": 1234,
+  "events": [
+    {"frame": 0, "key": "W", "action": "down"},
+    {"frame": 30, "click": {"x": 640, "y": 360, "button": "left"}},
+    {"frame": 60, "capture": "screenshot.png"}
+  ]
+}
+```
+
+---
+
+## 13. Coordinate Systems
+
+| System | Range | Transform | Use |
+|--------|-------|-----------|-----|
+| World | unbounded float | Camera zoom/pan | Game logic |
+| Screen | 0 to width/height pixels | Direct | Mouse, UI |
+| 3D World | Vec3 (x, y, z) | Tetra3D projection | First-person 3D |
+| Normalized UI | 0.0-1.0 | Scale to screen | Resolution-independent UI |
+
+---
+
+## 14. Initialization Sequence
+
+**Order matters:**
+
+```go
+// 1. Asset Manager
+assetMgr, _ := assets.NewManager("assets")
+
+// 2. Display Manager
+displayMgr := display.NewManager("config/display.json")
+
+// 3. Effect Handlers
+clockHandler := handlers.NewEbitenClockHandler()
+randHandler := handlers.NewSeededRandHandler(seed)
+aiHandler, _ := handlers.NewAIHandlerFromEnv(ctx)
+
+// 4. CRITICAL: Initialize sim_gen BEFORE Step()
+sim_gen.Init(sim_gen.Handlers{
+    Debug: sim_gen.NewDebugContext(),
+    Rand:  randHandler,
+    Clock: clockHandler,
+    AI:    aiHandler,
+})
+
+// 5. Renderer
+renderer := render.NewRenderer(assetMgr)
+
+// 6. Shader Effects
+effects := shader.NewEffects()
+
+// 7. Now safe to call sim_gen.InitWorld() and Step()
+```
+
+---
+
+## 15. Z-Ordering & Depth
+
+### Z-Value Ranges
+
+| Range | Purpose |
+|-------|---------|
+| < 0 | Below terrain |
+| 0-999 | Game world |
+| 1000-9999 | UI overlay |
+| 10000+ | Reserved |
+
+### Depth Sorting
+
+- 3D rendering handled by Tetra3D depth buffer
+- 2D overlays sorted by Z value
+- UI always renders last (layer 1000+)
+
+---
+
+**Document created**: 2025-12-06
+**Last updated**: 2025-12-22 (AILANG Input Helpers: sim/input.ail with key constants and helper functions)
