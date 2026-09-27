@@ -24,7 +24,7 @@
 - Enables rich ship interiors with procedural AI-generated textures
 - Window system with real relativistic physics visible from inside the ship
 
-**Reference:** See [game-vision.md](../../../docs/game-vision.md)
+**Reference:** See [game-vision.md](../../vision/game-vision.md)
 
 ## Problem Statement
 
@@ -671,12 +671,12 @@ go run ./cmd/demo-game-interior --rooms 50 --lod
 
 ## References
 
-- [demo-game-interior main.go](../../cmd/demo-game-interior/main.go) - Current interior demo
-- [demo-lod main.go](../../cmd/demo-lod/main.go) - LOD and SR/GR shader reference
-- [sim/interior.ail](../../sim/interior.ail) - Current interior AILANG
-- [engine/render/draw_interior.go](../../engine/render/draw_interior.go) - Current 3D room renderer
-- [02-bridge-interior.md](phase2-core-views/02-bridge-interior.md) - Bridge design with observation dome
-- [asset-manager SKILL.md](../../.claude/skills/asset-manager/SKILL.md) - Current asset generation workflow
+- [demo-game-interior main.go](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/cmd/demo-game-interior/main.go) - Current interior demo
+- [demo-lod main.go](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/cmd/demo-lod/main.go) - LOD and SR/GR shader reference
+- [sim/interior.ail](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/sim/interior.ail) - Current interior AILANG
+- [engine/render/draw_interior.go](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/engine/render/draw_interior.go) - Current 3D room renderer
+- [02-bridge-interior.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/next/phase2-core-views/02-bridge-interior.md) - Bridge design with observation dome
+- [asset-manager SKILL.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/.claude/skills/asset-manager/SKILL.md) - Current asset generation workflow
 
 ## Future Work
 

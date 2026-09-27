@@ -190,6 +190,6 @@ This architecture enables:
 
 ## References
 
-- [engine-capabilities.md](../reference/engine-capabilities.md) - Ring rendering docs
-- [CLAUDE.md](../../CLAUDE.md) - AILANG-first architecture rules
+- [engine-capabilities.md](../legacy/go-engine-reference/engine-capabilities.md) - Ring rendering docs
+- [CLAUDE.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/CLAUDE.md) - AILANG-first architecture rules
 - `sim/celestial.ail` - Existing planet types

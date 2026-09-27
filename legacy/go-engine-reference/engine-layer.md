@@ -9,7 +9,7 @@
 ## Related Documents
 
 - [Architecture Overview](architecture.md) - Three-layer design context
-- [Evaluation System](eval-system.md) - Performance testing
+- [Evaluation System](../../reference/eval-system.md) - Performance testing
 
 ## Overview
 

@@ -447,8 +447,8 @@ After this demo validates the architecture:
 
 ## References
 
-- [celestial-lod-system.md](celestial-lod-system.md) - LOD tier design
+- [celestial-lod-system.md](../../features/celestial-lod-system.md) - LOD tier design
 - [light-lod-system.md](light-lod-system.md) - Light LOD (deferred)
-- [ailang-planet-ring-moon-data.md](ailang-planet-ring-moon-data.md) - AILANG data types
-- [protocol.ail](../../sim/protocol.ail) - DrawCmd, LightingContext, RelativityContext
-- [engine-capabilities.md](reference/engine-capabilities.md) - Engine features
+- [ailang-planet-ring-moon-data.md](../../features/ailang-planet-ring-moon-data.md) - AILANG data types
+- [protocol.ail](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/sim/protocol.ail) - DrawCmd, LightingContext, RelativityContext
+- [engine-capabilities.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/reference/engine-capabilities.md) - Engine features

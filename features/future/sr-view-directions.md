@@ -22,7 +22,7 @@
 
 **Feature type:** Engine (enabling tech for authentic SR visuals)
 
-**Reference:** See [game-vision.md](../../../docs/game-vision.md)
+**Reference:** See [game-vision.md](../../vision/game-vision.md)
 
 ## Problem Statement
 
@@ -257,9 +257,9 @@ Result: See what's actually to our left with correct neutral/mixed SR
 
 ## References
 
-- [sr_warp.kage](../../../engine/shader/shaders/sr_warp.kage) - Current SR shader (works, just needs correct inputs)
-- [demo-arrival/main.go](../../../cmd/demo-arrival/main.go) - Demo showing the bug
-- [engine-capabilities.md](../reference/engine-capabilities.md) - Available SR/GR effects
+- [sr_warp.kage](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/engine/shader/shaders/sr_warp.kage) - Current SR shader (works, just needs correct inputs)
+- [demo-arrival/main.go](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/cmd/demo-arrival/main.go) - Demo showing the bug
+- [engine-capabilities.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/reference/engine-capabilities.md) - Available SR/GR effects
 - Wikipedia: [Relativistic Doppler Effect](https://en.wikipedia.org/wiki/Relativistic_Doppler_effect)
 - Wikipedia: [Relativistic Aberration](https://en.wikipedia.org/wiki/Aberration_(astronomy)#Relativistic_aberration)
 

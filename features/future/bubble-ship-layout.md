@@ -4,7 +4,7 @@
 - **Status:** Planned
 - **Sprint:** Vision Integration - Sprint 2
 - **Priority:** P2 (Spaces serve gameplay, not critical path)
-- **Source:** [Interview: Bubble Ship Design](../../../docs/vision/interview-log.md#2025-12-06-session-bubble-ship-design-integration)
+- **Source:** [Interview: Bubble Ship Design](../../vision/interview-log.md#2025-12-06-session-bubble-ship-design-integration)
 
 ## Game Vision Alignment
 
@@ -25,7 +25,7 @@ The bubble ship is a **100-meter radius sphere** with nested functional layers. 
 
 ## Physical Structure
 
-From [input/bubble-ship-design.md](../input/bubble-ship-design.md):
+From [input/bubble-ship-design.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/input/bubble-ship-design.md):
 
 ```
            OBSERVATION DECK (top)
@@ -75,7 +75,7 @@ From [input/bubble-ship-design.md](../input/bubble-ship-design.md):
 - Viewing external universe
 - Captain's authority most visible here
 
-**Design Decision:** [Observation Deck as Decision Hub](../../../docs/vision/design-decisions.md)
+**Design Decision:** [Observation Deck as Decision Hub](../../vision/design-decisions.md)
 
 ---
 
@@ -108,7 +108,7 @@ From [input/bubble-ship-design.md](../input/bubble-ship-design.md):
 - Bubble society's culture crystallizes here
 - Memorial space for lost crew/Earth
 
-**Design Decision:** [Garden Cathedral](../../../docs/vision/design-decisions.md)
+**Design Decision:** [Garden Cathedral](../../vision/design-decisions.md)
 
 **Visual:** Greenery against the starfield. Living things in dead space.
 
@@ -126,7 +126,7 @@ From [input/bubble-ship-design.md](../input/bubble-ship-design.md):
 - Key revelations about spire/recursion
 - Can visit via terminal anywhere, but core room has significance
 
-**Design Decision:** [Archive: Distributed and Localized](../../../docs/vision/design-decisions.md)
+**Design Decision:** [Archive: Distributed and Localized](../../vision/design-decisions.md)
 
 ---
 
@@ -142,7 +142,7 @@ From [input/bubble-ship-design.md](../input/bubble-ship-design.md):
 - "Necessary but boring most of the time"
 - Where proto-tech is fabricated from mass budget
 
-**Design Decision:** [Engineering Deck: Background Access](../../../docs/vision/design-decisions.md)
+**Design Decision:** [Engineering Deck: Background Access](../../vision/design-decisions.md)
 
 ---
 
@@ -158,11 +158,11 @@ From [input/bubble-ship-design.md](../input/bubble-ship-design.md):
 - Tech tree progression may reveal more
 - May be constant across all universes
 
-**Design Decision:** [The Spire as Universal Constant](../../../docs/vision/design-decisions.md)
+**Design Decision:** [The Spire as Universal Constant](../../vision/design-decisions.md)
 
 ## Player Location System
 
-**Design Decision:** [Player Location Freedom](../../../docs/vision/design-decisions.md)
+**Design Decision:** [Player Location Freedom](../../vision/design-decisions.md)
 
 - Player chooses where to spend time
 - No micromanagement required

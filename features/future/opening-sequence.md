@@ -4,7 +4,7 @@
 - **Status:** Planned
 - **Sprint:** Vision Integration - Sprint 1
 - **Priority:** P1 (First player experience)
-- **Source:** [Interview: Black Hole Deep Dive](../../../docs/vision/interview-log.md#2025-12-02-session-black-hole-feature-deep-dive)
+- **Source:** [Interview: Black Hole Deep Dive](../../vision/interview-log.md#2025-12-02-session-black-hole-feature-deep-dive)
 
 ## Game Vision Alignment
 
@@ -63,7 +63,7 @@ This truth is discovered over multiple playthroughs:
 
 ## Ambiguity Levels
 
-From [open-questions.md](../../../docs/vision/open-questions.md#should-the-black-hole-origin-be-explicit-or-implicit):
+From [open-questions.md](../../vision/open-questions.md#should-the-black-hole-origin-be-explicit-or-implicit):
 
 | Level | What Player Knows | When |
 |-------|-------------------|------|
@@ -109,7 +109,7 @@ The Archive's confusion about the spire is a **clue mechanism**:
 
 ## Design Decisions
 
-From [design-decisions.md](../../../docs/vision/design-decisions.md):
+From [design-decisions.md](../../vision/design-decisions.md):
 
 | Decision | Relevance |
 |----------|-----------|

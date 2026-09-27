@@ -350,8 +350,8 @@ func shouldConsultAI(civ: Civ, timeSinceLastDecision: int) -> bool {
 
 ## References
 
-- [consumer-contract-v0.5.md](../../ailang_resources/consumer-contract-v0.5.md) - AI effect spec
-- [planet-state-transitions.md](planet-state-transitions.md) - Philosophy types
+- [consumer-contract-v0.5.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/ailang_resources/consumer-contract-v0.5.md) - AI effect spec
+- [planet-state-transitions.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/reference/planet-state-transitions.md) - Philosophy types
 
 ## Future Work
 

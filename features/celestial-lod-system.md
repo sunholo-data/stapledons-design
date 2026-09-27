@@ -395,6 +395,6 @@ func (g *SaturnGame) Draw(screen *ebiten.Image) {
 
 ## References
 
-- [engine-capabilities.md](../reference/engine-capabilities.md) - Current rendering
+- [engine-capabilities.md](../legacy/go-engine-reference/engine-capabilities.md) - Current rendering
 - [tetra3d docs](https://github.com/SolarLune/tetra3d) - 3D library
 - [Ebiten DrawTriangles](https://ebitengine.org/en/documents/performancetips.html) - Batch rendering

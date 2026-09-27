@@ -366,9 +366,9 @@ A feature should have:
 
 ## Related Documents
 
-- [ai-effect-npcs.md](ai-effect-npcs.md) - Full AI effect design
-- [performance-externs.md](performance-externs.md) - Full extern design
-- [consumer-contract-v0.5.md](../../ailang_resources/consumer-contract-v0.5.md) - AILANG contract
+- [ai-effect-npcs.md](../../reference/ai-effect-npcs.md) - Full AI effect design
+- [performance-externs.md](../../reference/performance-externs.md) - Full extern design
+- [consumer-contract-v0.5.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/ailang_resources/consumer-contract-v0.5.md) - AILANG contract
 
 ---
 

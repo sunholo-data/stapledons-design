@@ -8,9 +8,9 @@
 
 ## Related Documents
 
-- [Camera and Viewport](camera-viewport.md) - Viewport culling
-- [Asset Management](../v0_2_0/asset-management.md) - Tile sprite loading
-- [Engine Layer Design](../../implemented/v0_1_0/engine-layer.md) - Current rendering
+- [Camera and Viewport](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/future/camera-viewport.md) - Viewport culling
+- [Asset Management](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/v0_2_0/asset-management.md) - Tile sprite loading
+- [Engine Layer Design](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/implemented/v0_1_0/engine-layer.md) - Current rendering
 
 ## Problem Statement
 

@@ -233,7 +233,7 @@ func OctreeQuery(stars []sim_gen.Star, center sim_gen.Vec3, radius float64) []si
 
 ## References
 
-- [startmaps.md](startmaps.md) - Original design discussion
+- [startmaps.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/phase1-data-models/startmaps.md) - Original design discussion
 - [Gaia DR3 Documentation](https://www.cosmos.esa.int/web/gaia/dr3)
 - [Gaia Catalogue of Nearby Stars](https://www.cosmos.esa.int/web/gaia/gcns)
 

@@ -115,6 +115,6 @@ Switch to Ambient-only when:
 
 ## References
 
-- [engine/lod/types.go](../../engine/lod/types.go) - LODObject.Luminosity, LightColor
-- [engine/tetra/lighting.go](../../engine/tetra/lighting.go) - StarLight, AmbientLight implementations
-- [cmd/demo-lod/main.go](../../cmd/demo-lod/main.go) - Current lighting setup
+- [engine/lod/types.go](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/engine/lod/types.go) - LODObject.Luminosity, LightColor
+- [engine/tetra/lighting.go](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/engine/tetra/lighting.go) - StarLight, AmbientLight implementations
+- [cmd/demo-lod/main.go](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/cmd/demo-lod/main.go) - Current lighting setup

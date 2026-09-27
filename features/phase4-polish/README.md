@@ -19,9 +19,9 @@ These are **nice to have** after core gameplay works.
 |-----|-------------|-------------|----------|
 | [arrival-sequence.md](arrival-sequence.md) | Planet approach cinematics | YES (40%) | P2 |
 | [cinematic-arrival-system.md](cinematic-arrival-system.md) | Full cinematic framework | NO | P2 |
-| [tetra3d-planet-rendering.md](tetra3d-planet-rendering.md) | 3D textured planet spheres | YES (0%) | P2 |
-| [camera-lookat-fix.md](camera-lookat-fix.md) | Camera targeting issues | NO | P3 |
-| [camera-debugging-tools.md](camera-debugging-tools.md) | Debug visualization for cameras | NO | P3 |
+| [tetra3d-planet-rendering.md](../../legacy/go-engine-features/tetra3d-planet-rendering.md) | 3D textured planet spheres | YES (0%) | P2 |
+| [camera-lookat-fix.md](../../legacy/go-engine-features/camera-lookat-fix.md) | Camera targeting issues | NO | P3 |
+| [camera-debugging-tools.md](../../legacy/go-engine-features/camera-debugging-tools.md) | Debug visualization for cameras | NO | P3 |
 | [camera-targeting-system.md](camera-targeting-system.md) | Camera target tracking | NO | P3 |
 | [00-arrival-breakdown-analysis.md](00-arrival-breakdown-analysis.md) | Analysis of arrival dependencies | N/A | Reference |
 

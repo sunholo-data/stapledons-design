@@ -91,7 +91,7 @@ The game is built using:
 - **Go/Ebiten** - 2D game engine for rendering and input
 - **Mock simulation** - Hand-written Go for development while AILANG compiler is built
 
-See [DEVELOPMENT.md](../DEVELOPMENT.md) for technical details.
+See [DEVELOPMENT.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/DEVELOPMENT.md) for technical details.
 
 ## AI-Assisted Development
 

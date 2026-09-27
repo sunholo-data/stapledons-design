@@ -690,9 +690,9 @@ export pure func getGRIntensity(state: ArrivalState) -> float
 
 ## Related Documents
 
-- [engine-capabilities.md](engine-capabilities.md) - Go engine features (what can be rendered)
+- [engine-capabilities.md](../legacy/go-engine-reference/engine-capabilities.md) - Go engine features (what can be rendered)
 - [ai-capabilities.md](ai-capabilities.md) - AI features (text, image, TTS)
-- [demos.md](demos.md) - Demo index with run commands
+- [demos.md](../legacy/go-engine-reference/demos.md) - Demo index with run commands
 
 ---
 

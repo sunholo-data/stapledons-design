@@ -281,8 +281,8 @@ func runScenario(s Scenario) ScenarioResult {
 
 ## References
 
-- [consumer-contract-v0.5.md](../../ailang_resources/consumer-contract-v0.5.md) - Debug effect spec
-- [game-vision.md](../../docs/game-vision.md) - AI-assisted development section
+- [consumer-contract-v0.5.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/ailang_resources/consumer-contract-v0.5.md) - Debug effect spec
+- [game-vision.md](../vision/game-vision.md) - AI-assisted development section
 
 ---
 

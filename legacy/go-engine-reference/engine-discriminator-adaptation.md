@@ -210,8 +210,8 @@ If issues arise:
 
 ## References
 
-- [Consumer Contract v0.5](../../ailang_resources/consumer-contract-v0.5.md) - ADT specification
-- [CLAUDE.md](../../CLAUDE.md) - Build commands, mock vs codegen
+- [Consumer Contract v0.5](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/ailang_resources/consumer-contract-v0.5.md) - ADT specification
+- [CLAUDE.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/CLAUDE.md) - Build commands, mock vs codegen
 - [AILANG Prompt](run `ailang prompt`) - Language syntax reference
 
 ## Appendix: Full Type Mapping

@@ -4,7 +4,7 @@
 - **Status:** Planned
 - **Sprint:** Vision Integration - Sprint 3
 - **Priority:** P2 (Extends society simulation)
-- **Source:** [Interview: AI Integration](../../../docs/vision/interview-log.md#2025-12-06-session-ai-integration-archive--orchestrator)
+- **Source:** [Interview: AI Integration](../../vision/interview-log.md#2025-12-06-session-ai-integration-archive--orchestrator)
 
 ## Game Vision Alignment
 
@@ -28,7 +28,7 @@ The Archive is a **full NPC** with individual trust relationships:
 
 ## Design Decisions
 
-From [design-decisions.md](../../../docs/vision/design-decisions.md):
+From [design-decisions.md](../../vision/design-decisions.md):
 
 | Decision | Summary |
 |----------|---------|

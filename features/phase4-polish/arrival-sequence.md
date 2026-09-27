@@ -10,11 +10,11 @@
 ## Related Documents
 
 - [Opening Sequence](../future/opening-sequence.md) - Narrative context (emergence from structure)
-- [SR Effects](../../implemented/v0_1_0/sr-effects.md) - Special relativity effects (implemented)
-- [GR Effects](../../implemented/v0_1_0/gr-effects.md) - General relativity effects (implemented)
-- [Ship Exploration](ship-exploration.md) - Interior navigation (separate mode)
-- [Galaxy Map](galaxy-map.md) - Strategic navigation (accessed from bridge)
-- [Bubble Ship Design](../../input/bubble-ship-design.md) - Ship layout reference
+- [SR Effects](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/implemented/v0_1_0/sr-effects.md) - Special relativity effects (implemented)
+- [GR Effects](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/implemented/v0_1_0/gr-effects.md) - General relativity effects (implemented)
+- [Ship Exploration](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/phase4-polish/ship-exploration.md) - Interior navigation (separate mode)
+- [Galaxy Map](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/phase4-polish/galaxy-map.md) - Strategic navigation (accessed from bridge)
+- [Bubble Ship Design](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/input/bubble-ship-design.md) - Ship layout reference
 
 ## Game Vision Alignment
 
@@ -792,7 +792,7 @@ scenario := Scenario{
 **Sprint ID:** arrival-sequence
 **Status:** In Progress
 **Started:** 2025-12-06
-**Tracking:** [sprints/sprint-arrival-sequence.json](../../../sprints/sprint-arrival-sequence.json)
+**Tracking:** [sprints/sprint-arrival-sequence.json](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/sprints/sprint-arrival-sequence.json)
 
 ### Phase 1: Core Sequence (In Progress)
 

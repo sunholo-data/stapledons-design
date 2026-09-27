@@ -12,7 +12,7 @@
 - Dual coordinates still needed, but for scene rendering not player movement
 - AILANG will generate DrawCmds for 2D deck scenes, not 3D navigation
 
-**Replacement:** See design decision "[2025-12-20] Interior Ship Experience: Scene-Based Navigation" in [docs/vision/design-decisions.md](../../docs/vision/design-decisions.md)
+**Replacement:** See design decision "[2025-12-20] Interior Ship Experience: Scene-Based Navigation" in [docs/vision/design-decisions.md](../vision/design-decisions.md)
 
 ---
 
@@ -24,7 +24,7 @@
 
 ## Game Vision Alignment
 
-**Score against core pillars** ([core-pillars.md](../../docs/vision/core-pillars.md)):
+**Score against core pillars** ([core-pillars.md](../vision/core-pillars.md)):
 
 | Pillar | Relevance | Score | Notes |
 |--------|-----------|-------|-------|
@@ -48,8 +48,8 @@
 Need to validate the AILANG-first architecture for dual coordinate system rendering:
 
 **Current State:**
-- [demo-engine-dome](../../cmd/demo-engine-dome/main.go) - Working Go implementation showing dual coordinates
-- [sim/solar_demo.ail](../../sim/solar_demo.ail) - Working AILANG solar system with 60+ bodies
+- [demo-engine-dome](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/cmd/demo-engine-dome/main.go) - Working Go implementation showing dual coordinates
+- [sim/solar_demo.ail](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/sim/solar_demo.ail) - Working AILANG solar system with 60+ bodies
 
 **Gap:**
 - No AILANG demo showing dual coordinate system (player in meters, scene in astronomical units)
@@ -442,9 +442,9 @@ go run ./cmd/demo-ailang-dome
 
 ## References
 
-- [sim/solar_demo.ail](../../sim/solar_demo.ail) - Solar system scene to reuse
-- [demo-engine-dome/main.go](../../cmd/demo-engine-dome/main.go) - Go reference implementation
-- [engine-capabilities.md](../reference/engine-capabilities.md) - Available DrawCmd types
+- [sim/solar_demo.ail](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/sim/solar_demo.ail) - Solar system scene to reuse
+- [demo-engine-dome/main.go](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/cmd/demo-engine-dome/main.go) - Go reference implementation
+- [engine-capabilities.md](../legacy/go-engine-reference/engine-capabilities.md) - Available DrawCmd types
 - [design_docs/planned/bubble-ship-dome-system.md](./bubble-ship-dome-system.md) - Dual coordinate system design
 
 ## Future Work

@@ -9,10 +9,10 @@
 
 ## Related Documents
 
-- [Architecture Overview](../v0_1_0/architecture.md) - Data flow context
-- [Camera & Viewport](../v0_3_0/camera-viewport.md) - Rendering system
-- [NPC Movement](../v0_4_0/npc-movement.md) - Entity rendering
-- [Game Vision](../../../docs/game-vision.md) - Core gameplay loop
+- [Architecture Overview](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/v0_1_0/architecture.md) - Data flow context
+- [Camera & Viewport](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/v0_3_0/camera-viewport.md) - Rendering system
+- [NPC Movement](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/v0_4_0/npc-movement.md) - Entity rendering
+- [Game Vision](../../vision/game-vision.md) - Core gameplay loop
 
 ## Problem Statement
 

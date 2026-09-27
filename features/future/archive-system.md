@@ -4,7 +4,7 @@
 - **Status:** Planned
 - **Sprint:** Vision Integration - Sprint 4
 - **Priority:** P1 (Core NPC and narrative system)
-- **Source:** [Interview: AI Integration](../../../docs/vision/interview-log.md#2025-12-06-session-ai-integration-archive--orchestrator)
+- **Source:** [Interview: AI Integration](../../vision/interview-log.md#2025-12-06-session-ai-integration-archive--orchestrator)
 
 ## Game Vision Alignment
 
@@ -29,7 +29,7 @@ The Archive is the ship's AI - but treated as a **full NPC**:
 
 ## Design Decisions
 
-From [design-decisions.md](../../../docs/vision/design-decisions.md):
+From [design-decisions.md](../../vision/design-decisions.md):
 
 | Decision | Summary |
 |----------|---------|

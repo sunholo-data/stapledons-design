@@ -7,7 +7,7 @@
 
 ## Game Vision Alignment
 
-Scored against [core-pillars.md](../../docs/vision/core-pillars.md):
+Scored against [core-pillars.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/docs/vision/core-pillars.md):
 
 | Pillar | Score | Notes |
 |--------|-------|-------|
@@ -277,11 +277,11 @@ A tiny transparent sphere floating in space containing a miniature city/ship:
 
 ## References
 
-- [bubble-ship-design.md](../input/bubble-ship-design.md) - Full bubble ship physics/layout
-- [dome.go](../../engine/tetra/dome.go) - Existing dome/bubble implementation
-- [ring.go](../../engine/tetra/ring.go) - TransparencyModeTransparent usage example
-- [design-decisions.md](../../docs/vision/design-decisions.md) - Bubble transparency, boundary glow decisions
-- [core-pillars.md](../../docs/vision/core-pillars.md) - Game vision alignment
+- [bubble-ship-design.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/input/bubble-ship-design.md) - Full bubble ship physics/layout
+- [dome.go](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/engine/tetra/dome.go) - Existing dome/bubble implementation
+- [ring.go](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/engine/tetra/ring.go) - TransparencyModeTransparent usage example
+- [design-decisions.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/docs/vision/design-decisions.md) - Bubble transparency, boundary glow decisions
+- [core-pillars.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/docs/vision/core-pillars.md) - Game vision alignment
 
 ## Future Work
 

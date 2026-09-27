@@ -9,10 +9,10 @@
 
 ## Related Documents
 
-- [UI Modes Architecture](../v0_5_0/ui-modes.md) - Mode framework
-- [Journey Planning](../v0_6_0/journey-planning.md) - Triggered from star selection
-- [Civilization Detail](../v0_6_1/civilization-detail.md) - Opened from star click
-- [Game Vision](../../../docs/game-vision.md) - Galaxy-scale gameplay
+- [UI Modes Architecture](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/v0_5_0/ui-modes.md) - Mode framework
+- [Journey Planning](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/v0_6_0/journey-planning.md) - Triggered from star selection
+- [Civilization Detail](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/v0_6_1/civilization-detail.md) - Opened from star click
+- [Game Vision](../../vision/game-vision.md) - Galaxy-scale gameplay
 
 ## Problem Statement
 

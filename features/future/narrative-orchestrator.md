@@ -4,7 +4,7 @@
 - **Status:** Planned
 - **Sprint:** Vision Integration - Sprint 4
 - **Priority:** P2 (Backend system, invisible to player)
-- **Source:** [Interview: AI Integration](../../../docs/vision/interview-log.md#2025-12-06-session-ai-integration-archive--orchestrator)
+- **Source:** [Interview: AI Integration](../../vision/interview-log.md#2025-12-06-session-ai-integration-archive--orchestrator)
 
 ## Game Vision Alignment
 
@@ -30,13 +30,13 @@ The Narrative Orchestrator (M-NARRATOR) is a **behind-the-scenes DM**:
 
 ## Design Decisions
 
-From [design-decisions.md](../../../docs/vision/design-decisions.md):
+From [design-decisions.md](../../vision/design-decisions.md):
 
 | Decision | Summary |
 |----------|---------|
 | Narrative Orchestrator: Behind the Scenes | Player never sees it, devs monitor via logs |
 
-From [open-questions.md](../../../docs/vision/open-questions.md):
+From [open-questions.md](../../vision/open-questions.md):
 - Arc types TBC (not yet decided)
 - Event families TBC (starting points identified)
 
@@ -99,7 +99,7 @@ These are starting points, not final designs:
 
 ### Event Families (Starting Points)
 
-From [input/ai-the-archive.md](../input/ai-the-archive.md):
+From [input/ai-the-archive.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/input/ai-the-archive.md):
 
 | Family | Examples | Frequency |
 |--------|----------|-----------|

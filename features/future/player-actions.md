@@ -9,9 +9,9 @@
 
 ## Related Documents
 
-- [Player Interaction](../v0_2_0/player-interaction.md) - Selection system this builds on
-- [Engine Layer Design](../../implemented/v0_1_0/engine-layer.md) - Input capture
-- [Architecture Overview](../../implemented/v0_1_0/architecture.md) - Data flow context
+- [Player Interaction](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/v0_2_0/player-interaction.md) - Selection system this builds on
+- [Engine Layer Design](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/implemented/v0_1_0/engine-layer.md) - Input capture
+- [Architecture Overview](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/implemented/v0_1_0/architecture.md) - Data flow context
 
 ## Problem Statement
 

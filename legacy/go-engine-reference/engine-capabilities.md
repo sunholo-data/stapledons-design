@@ -239,7 +239,7 @@ type AIHandler interface {
   - **Region: Requires us-central1** (separate client auto-created)
   - 30 voices available with style/emotion control
 
-**📖 See [ai-capabilities.md](ai-capabilities.md) for complete reference** (all voices, image ratios, SSML, voice variation).
+**📖 See [ai-capabilities.md](../../reference/ai-capabilities.md) for complete reference** (all voices, image ratios, SSML, voice variation).
 
 **AILANG Usage:**
 ```ailang

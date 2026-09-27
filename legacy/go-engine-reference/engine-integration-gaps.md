@@ -416,10 +416,10 @@ make eval  # Runs all scenarios
 
 ## Related Documents
 
-- [camera-viewport.md](v0_3_0/camera-viewport.md) - Camera design
-- [audio-system.md](v0_2_0/audio-system.md) - Audio design
+- [camera-viewport.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/reference/v0_3_0/camera-viewport.md) - Camera design
+- [audio-system.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/reference/v0_2_0/audio-system.md) - Audio design
 - [ailang-testing-matrix.md](ailang-testing-matrix.md) - AILANG feature testing
-- [save-load-system.md](v0_5_0/save-load-system.md) - Save system design
+- [save-load-system.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/reference/v0_5_0/save-load-system.md) - Save system design
 
 ---
 

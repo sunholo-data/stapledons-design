@@ -404,8 +404,8 @@ here. They do not seem hostile. They seem... patient."
 
 ## References
 
-- [startmaps.md](startmaps.md) - Epistemic gap discussion
-- [resources.md](resources.md) - Alien biosphere science
+- [startmaps.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/future/startmaps.md) - Epistemic gap discussion
+- [resources.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/future/resources.md) - Alien biosphere science
 - Drake equation literature for timescale estimates
 - Great Filter hypothesis for collapse modeling
 

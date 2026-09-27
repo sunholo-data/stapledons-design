@@ -24,7 +24,7 @@
 - Directly player-facing (they see the dome constantly)
 - Enables core "bubble ship" concept from game vision
 
-**Reference:** See [game-vision.md](../../docs/game-vision.md)
+**Reference:** See [game-vision.md](../../vision/game-vision.md)
 
 ## Problem Statement
 
@@ -285,10 +285,10 @@ The dome mesh is a tessellated hemisphere:
 
 ## References
 
-- [Window3D implementation](../../engine/render/draw_interior.go) - Current flat window system
-- [SpaceView](../../engine/render/space_view.go) - Star catalog rendering
-- [SR effects design](implemented/v0_1_0/sr-effects.md) - Special relativity implementation
-- [GR effects design](implemented/v0_1_0/gr-effects.md) - General relativity implementation
+- [Window3D implementation](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/engine/render/draw_interior.go) - Current flat window system
+- [SpaceView](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/engine/render/space_view.go) - Star catalog rendering
+- [SR effects design](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/implemented/v0_1_0/sr-effects.md) - Special relativity implementation
+- [GR effects design](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/implemented/v0_1_0/gr-effects.md) - General relativity implementation
 - [Equirectangular projection](https://en.wikipedia.org/wiki/Equirectangular_projection) - Math reference
 
 ## Future Work

@@ -23,7 +23,7 @@
 
 **Feature type:** Gameplay (Meta-Game + Endgame + Navigation)
 
-**Reference:** See [game-vision.md](../../docs/game-vision.md), [core-pillars.md](../../docs/vision/core-pillars.md)
+**Reference:** See [game-vision.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/docs/game-vision.md), [core-pillars.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/docs/vision/core-pillars.md)
 
 ## Problem Statement
 
@@ -420,10 +420,10 @@ UI shows:
 
 ## References
 
-- [Design Decisions: Black Hole Interview](../../docs/vision/design-decisions.md) (2025-12-02 entries)
-- [Open Questions: BH Origin](../../docs/vision/open-questions.md)
-- [Core Pillars](../../docs/vision/core-pillars.md) (including Pillar 6)
-- [Interview Log: BH Deep Dive](../../docs/vision/interview-log.md)
+- [Design Decisions: Black Hole Interview](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/docs/vision/design-decisions.md) (2025-12-02 entries)
+- [Open Questions: BH Origin](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/docs/vision/open-questions.md)
+- [Core Pillars](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/docs/vision/core-pillars.md) (including Pillar 6)
+- [Interview Log: BH Deep Dive](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/docs/vision/interview-log.md)
 - Lee Smolin - Cosmological Natural Selection (theoretical basis for BH → new universe)
 - Asimov - "The Last Question" (thematic inspiration)
 

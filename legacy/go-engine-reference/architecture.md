@@ -9,7 +9,7 @@
 ## Related Documents
 
 - [Engine Layer Design](engine-layer.md) - Go/Ebiten implementation details
-- [Evaluation System Design](eval-system.md) - Benchmarks and scenarios
+- [Evaluation System Design](../../reference/eval-system.md) - Benchmarks and scenarios
 
 ## Overview
 
@@ -148,7 +148,7 @@ The Makefile enforces this:
 | Lists only (no arrays) | O(n) tile access | Keep world small (64x64 max) for v0.1.0 |
 | Recursion depth limits | Cannot iterate all tiles | Use bounded recursion patterns |
 
-**Reported to AILANG core:** See [ailang_resources/](../../../ailang_resources/) for feedback sent.
+**Reported to AILANG core:** See [ailang_resources/](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/../ailang_resources) for feedback sent.
 
 ## Success Criteria
 

@@ -4,7 +4,7 @@
 - Status: Planned
 - Priority: P1 (Architecture)
 - Complexity: Medium
-- Part of: [view-layer-ailang-migration.md](view-layer-ailang-migration.md)
+- Part of: [view-layer-ailang-migration.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/phase1-data-models/view-layer-ailang-migration.md)
 - Estimated: 1 day
 
 ## Problem Statement
@@ -343,5 +343,5 @@ make run
 
 ## References
 
-- [view-layer-ailang-migration.md](view-layer-ailang-migration.md) - Parent migration doc
-- [dome-state-migration.md](dome-state-migration.md) - Related dome state work
+- [view-layer-ailang-migration.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/phase1-data-models/view-layer-ailang-migration.md) - Parent migration doc
+- [dome-state-migration.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/phase1-data-models/dome-state-migration.md) - Related dome state work

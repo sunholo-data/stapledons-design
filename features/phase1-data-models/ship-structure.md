@@ -462,9 +462,9 @@ func (r *LevelRenderer) Draw(screen *ebiten.Image, level ShipLevel, camera Camer
 
 ## References
 
-- [docs/vision/design-decisions.md](../../../docs/vision/design-decisions.md) - All ship decisions logged 2025-12-08
-- [02-bridge-interior.md](02-bridge-interior.md) - Bridge as one level within this structure
-- [bubble-ship-design.md](../future/bubble-ship-design.md) - Original bubble physics
+- [docs/vision/design-decisions.md](../../vision/design-decisions.md) - All ship decisions logged 2025-12-08
+- [02-bridge-interior.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/phase1-data-models/02-bridge-interior.md) - Bridge as one level within this structure
+- [bubble-ship-design.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/future/bubble-ship-design.md) - Original bubble physics
 - Moebius artwork: Arzach, The Incal, Airtight Garage
 - Druillet artwork: Lone Sloane, Salammbô
 

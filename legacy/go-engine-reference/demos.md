@@ -155,8 +155,8 @@ go build -o bin/demo-game-YOURNAME ./cmd/demo-game-YOURNAME
 ## Related Documents
 
 - [engine-capabilities.md](engine-capabilities.md) - Go engine features
-- [game-capabilities.md](game-capabilities.md) - AILANG game features
-- [ai-capabilities.md](ai-capabilities.md) - AI features (voices, image gen)
+- [game-capabilities.md](../../reference/game-capabilities.md) - AILANG game features
+- [ai-capabilities.md](../../reference/ai-capabilities.md) - AI features (voices, image gen)
 
 ---
 

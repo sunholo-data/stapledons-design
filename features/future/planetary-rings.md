@@ -240,7 +240,7 @@ Narrow, separated dark rings perpendicular to orbit
 
 ## References
 
-- [03-3d-sphere-planets.md](../next/03-3d-sphere-planets.md) - Parent design doc
+- [03-3d-sphere-planets.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/next/03-3d-sphere-planets.md) - Parent design doc
 - [NASA Ring Systems](https://solarsystem.nasa.gov/planets/overview/) - Scientific reference
 - [Cassini Saturn Ring Images](https://photojournal.jpl.nasa.gov/catalog/PIA08389) - Saturn ring textures
 

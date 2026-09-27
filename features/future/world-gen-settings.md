@@ -274,8 +274,8 @@ let hardcore = Custom({
 
 ## References
 
-- [startmaps.md](startmaps.md) - Anthropic Luck discussion
-- [design-decisions.md](../../docs/vision/design-decisions.md) - "Anthropic Luck: World-Gen Only"
+- [startmaps.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/future/startmaps.md) - Anthropic Luck discussion
+- [design-decisions.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/docs/vision/design-decisions.md) - "Anthropic Luck: World-Gen Only"
 - Drake Equation parameters and real astrobiology estimates
 
 ## Future Work

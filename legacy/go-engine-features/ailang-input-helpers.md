@@ -24,7 +24,7 @@
 - Input helpers are enabling tech that allows game features to be built in AILANG
 - No negative scores; enables proper AILANG-first development
 
-**Reference:** See [game-vision.md](../../docs/game-vision.md)
+**Reference:** See [game-vision.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/docs/game-vision.md)
 
 ## Problem Statement
 
@@ -297,9 +297,9 @@ tests [
 
 ## References
 
-- [engine/render/input.go](../../engine/render/input.go) - Current input capture
-- [sim/protocol.ail](../../sim/protocol.ail) - KeyEvent and FrameInput types
-- [design_docs/planned/future/input-rebinding.md](future/input-rebinding.md) - Future rebinding system
+- [engine/render/input.go](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/engine/render/input.go) - Current input capture
+- [sim/protocol.ail](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/sim/protocol.ail) - KeyEvent and FrameInput types
+- [design_docs/planned/future/input-rebinding.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/next/future/input-rebinding.md) - Future rebinding system
 - Ebiten key codes: https://pkg.go.dev/github.com/hajimehoshi/ebiten/v2#Key
 
 ## Future Work

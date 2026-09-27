@@ -25,7 +25,7 @@
 - Visual grounding for human-scale experience vs cosmic scale
 - Enables all interior ship gameplay
 
-**Reference:** See [design decision 2025-12-20](../../docs/vision/design-decisions.md#2025-12-20-interior-ship-experience-scene-based-navigation-with-outwardinward-deck-types)
+**Reference:** See [design decision 2025-12-20](../vision/design-decisions.md#2025-12-20-interior-ship-experience-scene-based-navigation-with-outwardinward-deck-types)
 
 ## Problem Statement
 
@@ -587,10 +587,10 @@ func (dr *DeckRenderer) Render(screen *ebiten.Image, shipVelocity float64, shipP
 
 ## References
 
-- [Design Decision: Interior Ship Experience (2025-12-20)](../../docs/vision/design-decisions.md#2025-12-20-interior-ship-experience-scene-based-navigation-with-outwardinward-deck-types)
-- [Core Pillars](../../docs/vision/core-pillars.md) - Pillar 3 (Time Has Emotional Weight), Pillar 4 (The Ship Is Home), Pillar 6 (We Are Not Built For This)
+- [Design Decision: Interior Ship Experience (2025-12-20)](../vision/design-decisions.md#2025-12-20-interior-ship-experience-scene-based-navigation-with-outwardinward-deck-types)
+- [Core Pillars](../vision/core-pillars.md) - Pillar 3 (Time Has Emotional Weight), Pillar 4 (The Ship Is Home), Pillar 6 (We Are Not Built For This)
 - [Rejected: Bubble Ship Dome System](../rejected/bubble-ship-dome-system.md) - 3D approach, see why rejected
-- [engine-capabilities.md](../reference/engine-capabilities.md) - Existing engine DrawCmds and effects
+- [engine-capabilities.md](../legacy/go-engine-reference/engine-capabilities.md) - Existing engine DrawCmds and effects
 - [game-capabilities.md](../reference/game-capabilities.md) - AILANG features available
 
 ## Related Features

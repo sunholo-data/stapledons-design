@@ -12,7 +12,7 @@
 - Scene-based approach achieves same goals (observation deck, crew gathering) without 3D complexity
 - Quote preserved: "marrying internal player experience with accurate external physics" - but through layered 2D scenes + live starmap compositing
 
-**Replacement:** See design decision "[2025-12-20] Interior Ship Experience: Scene-Based Navigation" in [docs/vision/design-decisions.md](../../docs/vision/design-decisions.md)
+**Replacement:** See design decision "[2025-12-20] Interior Ship Experience: Scene-Based Navigation" in [docs/vision/design-decisions.md](../vision/design-decisions.md)
 
 **What to preserve:** The "most important scene" concept - observation deck where crew witnesses cosmos. Now implemented as outward-facing deck scenes with windowed starmap views.
 
@@ -40,7 +40,7 @@
 
 **User quote:** "This is the most important scene of the game - the marrying together of internal player movement with accurate physics of external objects outside the dome"
 
-**Reference:** See [game-vision.md](../../docs/game-vision.md)
+**Reference:** See [game-vision.md](../vision/game-vision.md)
 
 ## Problem Statement
 
@@ -404,14 +404,14 @@ ailang messages send user "Description of issue" \
 ## References
 
 ### Key Reference Implementations
-- [demo-engine-dome/main.go](../../cmd/demo-engine-dome/main.go) - Working Go dome implementation
+- [demo-engine-dome/main.go](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/cmd/demo-engine-dome/main.go) - Working Go dome implementation
   - Lines 138-146: Ship vs player coordinate separation
   - Lines 654-718: Dome strut generation
   - Lines 696-707: Coordinate system updates
   - Lines 1094-1101: Rendering with dual coordinates
 - [bubble-ship-dome-system.md](./bubble-ship-dome-system.md) - Dual coordinate architecture
-- [sim/solar_demo.ail](../../sim/solar_demo.ail) - Solar system data
-- [engine-capabilities.md](../reference/engine-capabilities.md) - Available DrawCmds
+- [sim/solar_demo.ail](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/sim/solar_demo.ail) - Solar system data
+- [engine-capabilities.md](../legacy/go-engine-reference/engine-capabilities.md) - Available DrawCmds
 
 ### DrawCmd Reference
 - `Camera3D(x, y, z, yaw, pitch, fov)` - First-person camera

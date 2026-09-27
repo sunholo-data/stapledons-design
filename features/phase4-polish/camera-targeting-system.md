@@ -23,7 +23,7 @@
 **Feature type:** Engine/Infrastructure
 - This is core enabling tech used by multiple game systems
 
-**Reference:** See [game-vision.md](../../../docs/game-vision.md)
+**Reference:** See [game-vision.md](../../vision/game-vision.md)
 
 ## Problem Statement
 
@@ -301,8 +301,8 @@ pure func startDialogue(npc: NPC, player: Entity) -> NPC {
 
 ## References
 
-- [tetra3d-planet-rendering.md](./next/tetra3d-planet-rendering.md) - Dependent feature
-- [engine-capabilities.md](../reference/engine-capabilities.md) - Current engine features
+- [tetra3d-planet-rendering.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/phase4-polish/next/tetra3d-planet-rendering.md) - Dependent feature
+- [engine-capabilities.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/reference/engine-capabilities.md) - Current engine features
 - [Tetra3D Node API](https://pkg.go.dev/github.com/solarlune/tetra3d#Node) - Built-in LookAt
 - [3D Math Primer](http://www.3dgep.com/understanding-the-view-matrix/) - View matrix explanation
 

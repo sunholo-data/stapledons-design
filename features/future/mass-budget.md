@@ -4,7 +4,7 @@
 - **Status:** Planned
 - **Sprint:** Vision Integration - Sprint 2
 - **Priority:** P2 (Resource system, not critical path)
-- **Source:** [Interview: Bubble Ship Design](../../../docs/vision/interview-log.md#2025-12-06-session-bubble-ship-design-integration)
+- **Source:** [Interview: Bubble Ship Design](../../vision/interview-log.md#2025-12-06-session-bubble-ship-design-integration)
 
 ## Game Vision Alignment
 
@@ -30,7 +30,7 @@ The bubble contains **finite internal mass**. Everything inside competes for the
 
 ## Design Decisions
 
-From [design-decisions.md](../../../docs/vision/design-decisions.md):
+From [design-decisions.md](../../vision/design-decisions.md):
 
 | Decision | Summary |
 |----------|---------|
@@ -75,7 +75,7 @@ From [design-decisions.md](../../../docs/vision/design-decisions.md):
 
 ## Visibility to Player
 
-From [open-questions.md](../../../docs/vision/open-questions.md#how-does-the-mass-budget-system-work):
+From [open-questions.md](../../vision/open-questions.md#how-does-the-mass-budget-system-work):
 
 **Options:**
 1. **Hidden:** Player sees symptoms (can't build X), not numbers

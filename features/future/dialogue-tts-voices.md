@@ -4,7 +4,7 @@
 **Target**: v0.6.0 (with Dialogue System)
 **Priority**: P1 (Enhances Core Interaction)
 **Estimated**: 3 days
-**Dependencies**: [dialogue-system.md](future/dialogue-system.md), [ai-handler-system.md](../implemented/v0_1_0/ai-handler-system.md)
+**Dependencies**: [dialogue-system.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/future/future/dialogue-system.md), [ai-handler-system.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/implemented/v0_1_0/ai-handler-system.md)
 
 ## Game Vision Alignment
 
@@ -25,7 +25,7 @@
 - Makes dialogue sequences more immersive
 - Critical for memorial scenes (crew deaths during journey)
 
-**Reference:** See [game-vision.md](../../docs/game-vision.md)
+**Reference:** See [game-vision.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/docs/game-vision.md)
 
 ## Problem Statement
 
@@ -92,7 +92,7 @@ AudioPlayer (existing)
 
 ### Voice Assignment by Archetype
 
-Using archetypes from [crew-psychology.md](future/crew-psychology.md) and Gemini's available voices:
+Using archetypes from [crew-psychology.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/future/future/crew-psychology.md) and Gemini's available voices:
 
 | Archetype | Voice | Rationale |
 |-----------|-------|-----------|
@@ -328,10 +328,10 @@ func memorialVoice(deceased: Crew, memory: string) -> [DrawCmd] ! {AI, Audio} {
 
 ## References
 
-- [ai-handler-system.md](../implemented/v0_1_0/ai-handler-system.md) - Existing TTS infrastructure
-- [dialogue-system.md](future/dialogue-system.md) - Dialogue state machine
-- [crew-psychology.md](future/crew-psychology.md) - Archetype definitions
-- [audio-system.md](../implemented/v0_1_0/audio-system.md) - Audio playback
+- [ai-handler-system.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/implemented/v0_1_0/ai-handler-system.md) - Existing TTS infrastructure
+- [dialogue-system.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/future/future/dialogue-system.md) - Dialogue state machine
+- [crew-psychology.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/future/future/crew-psychology.md) - Archetype definitions
+- [audio-system.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/implemented/v0_1_0/audio-system.md) - Audio playback
 - [Gemini TTS Voices](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/text-to-speech) - Voice reference
 
 ## Future Work

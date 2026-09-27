@@ -329,8 +329,8 @@ Player B can recreate exactly the same starting conditions.
 
 ## References
 
-- [consumer-contract-v0.5.md](../../ailang_resources/consumer-contract-v0.5.md) - RNG effect spec
-- [world-gen-settings.md](world-gen-settings.md) - Seed usage in world gen
+- [consumer-contract-v0.5.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/ailang_resources/consumer-contract-v0.5.md) - RNG effect spec
+- [world-gen-settings.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/reference/world-gen-settings.md) - Seed usage in world gen
 - PCG/xorshift literature for RNG quality
 
 ## Future Work

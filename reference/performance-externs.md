@@ -457,8 +457,8 @@ func influenceImpl(civs []sim_gen.Civ, g sim_gen.Galaxy, resolution int) sim_gen
 
 ## References
 
-- [consumer-contract-v0.5.md](../../ailang_resources/consumer-contract-v0.5.md) - Extern spec (section 7)
-- [ailang-integration.md](ailang-integration.md) - Overall AILANG/Go architecture
+- [consumer-contract-v0.5.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/ailang_resources/consumer-contract-v0.5.md) - Extern spec (section 7)
+- [ailang-integration.md](../legacy/go-engine-reference/ailang-integration.md) - Overall AILANG/Go architecture
 - [rng-determinism.md](rng-determinism.md) - Determinism requirements
 
 ## Future Work

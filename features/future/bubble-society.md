@@ -4,7 +4,7 @@
 - **Status:** Planned
 - **Sprint:** Vision Integration - Sprint 3
 - **Priority:** P1 (Core internal pressure mechanic)
-- **Source:** [Interview: Game Loop Origin](../../../docs/vision/interview-log.md#2025-12-06-session-game-loop-origin--bubble-constraint)
+- **Source:** [Interview: Game Loop Origin](../../vision/interview-log.md#2025-12-06-session-game-loop-origin--bubble-constraint)
 
 ## Game Vision Alignment
 
@@ -31,7 +31,7 @@ The bubble is not just a ship - it's a **living micro-civilization**:
 
 ## Design Decisions
 
-From [design-decisions.md](../../../docs/vision/design-decisions.md):
+From [design-decisions.md](../../vision/design-decisions.md):
 
 | Decision | Summary |
 |----------|---------|
@@ -197,7 +197,7 @@ Captain cannot:
 
 ## Open Questions
 
-From [open-questions.md](../../../docs/vision/open-questions.md):
+From [open-questions.md](../../vision/open-questions.md):
 
 1. **How many generations in 100 years?** (2-3 typical)
 2. **Do children inherit OCEAN tendencies?** (Partial, with drift)

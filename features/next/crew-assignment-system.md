@@ -10,7 +10,7 @@
 
 ## Game Vision Alignment
 
-Checked against [core-pillars.md](../../../docs/vision/core-pillars.md):
+Checked against [core-pillars.md](../../vision/core-pillars.md):
 
 | Pillar | Alignment | Rationale |
 |--------|-----------|-----------|
@@ -30,7 +30,7 @@ Checked against [core-pillars.md](../../../docs/vision/core-pillars.md):
 
 ## Prior Design Decisions
 
-Checked against [design-decisions.md](../../../docs/vision/design-decisions.md):
+Checked against [design-decisions.md](../../vision/design-decisions.md):
 
 - **Single save file (no slots):** Assignments are per-journey; new playthrough resets assignments
 - **Finite crew:** Crew ages over 100-year journey; assignments affect aging/stress
@@ -738,8 +738,8 @@ match (pref, role) {
 
 ## Related Features
 
-- [Interior Demo Iteration](interior-demo-iteration.md) - Shows crew in ship interior
-- [AILANG Input Helpers](ailang-input-helpers.md) - Input system for crew UI
+- [Interior Demo Iteration](../../legacy/go-engine-features/interior-demo-iteration.md) - Shows crew in ship interior
+- [AILANG Input Helpers](../../legacy/go-engine-features/ailang-input-helpers.md) - Input system for crew UI
 - Ship Relationships (planned v0.5.0) - Crew dialogue and personality
 
 ---

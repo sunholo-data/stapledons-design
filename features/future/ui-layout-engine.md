@@ -9,9 +9,9 @@
 
 ## Related Documents
 
-- [UI Modes](../v0_5_0/ui-modes.md) - Game UI state machine
-- [AILANG and Engine UI](../v0_5_0/ailang-and-engine-ui.md) - Boundary definition
-- [Display Config](../v0_2_0/display-config.md) - Screen resolution handling
+- [UI Modes](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/v0_5_0/ui-modes.md) - Game UI state machine
+- [AILANG and Engine UI](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/v0_5_0/ailang-and-engine-ui.md) - Boundary definition
+- [Display Config](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/v0_2_0/display-config.md) - Screen resolution handling
 
 ## Problem Statement
 

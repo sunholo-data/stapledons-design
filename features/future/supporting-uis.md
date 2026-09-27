@@ -9,9 +9,9 @@
 
 ## Related Documents
 
-- [UI Modes Architecture](../v0_5_0/ui-modes.md) - Mode framework
-- [Ship Exploration](../v0_5_1/ship-exploration.md) - Ship context
-- [Journey System](../v0_6_0/journey-system.md) - Time tracking
+- [UI Modes Architecture](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/v0_5_0/ui-modes.md) - Mode framework
+- [Ship Exploration](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/v0_5_1/ship-exploration.md) - Ship context
+- [Journey System](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/v0_6_0/journey-system.md) - Time tracking
 
 ## Overview
 

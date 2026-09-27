@@ -8,8 +8,8 @@
 
 ## Related Documents
 
-- [Architecture Overview](architecture.md) - System context
-- [Engine Layer Design](engine-layer.md) - Runtime integration
+- [Architecture Overview](../legacy/go-engine-reference/architecture.md) - System context
+- [Engine Layer Design](../legacy/go-engine-reference/engine-layer.md) - Runtime integration
 
 ## Overview
 

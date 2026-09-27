@@ -3,7 +3,7 @@
 **Status:** Planned
 **Pillars served:** The Ship Is Home, The Game Doesn't Judge, Time Has Emotional Weight, Grounded Strangeness
 **Dependencies:** AI dialogue system, end-screen UI
-**Related decisions:** See [design-decisions.md](../../docs/vision/design-decisions.md) (2025-11-30 entries)
+**Related decisions:** See [design-decisions.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/docs/vision/design-decisions.md) (2025-11-30 entries)
 
 ---
 
@@ -220,7 +220,7 @@ Player personality is emergent from choices. Broad category mappings:
 | Exploration style | O, E | Seek strange aliens, revisit known |
 | Resource management | C, A | Share freely, stockpile |
 
-**Open question:** Exact mappings TBD via playtesting or AI-contextual inference. See [open-questions.md](../../docs/vision/open-questions.md).
+**Open question:** Exact mappings TBD via playtesting or AI-contextual inference. See [open-questions.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/docs/vision/open-questions.md).
 
 ---
 
@@ -312,4 +312,4 @@ The legacy report includes a "Crew Evolution" section:
 
 - Big Five / OCEAN: Costa & McCrae (1992)
 - MBTI correlations used only for dialogue flavor, not gameplay mechanics
-- Design decisions: [design-decisions.md](../../docs/vision/design-decisions.md)
+- Design decisions: [design-decisions.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/docs/vision/design-decisions.md)

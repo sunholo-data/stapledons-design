@@ -24,7 +24,7 @@
 - This is enabling tech for visual quality improvements
 - N/A scores are acceptable for infrastructure features
 
-**Reference:** See [game-vision.md](../../../docs/game-vision.md)
+**Reference:** See [game-vision.md](../../vision/game-vision.md)
 
 ## Problem Statement
 
@@ -224,8 +224,8 @@ planet.SetLODDistances(
 
 ## References
 
-- [03-3d-sphere-planets.md](../../implemented/v0_2_0/03-3d-sphere-planets.md) - Parent feature (implemented)
-- [02-tetra3d-integration.md](../../implemented/v0_2_0/02-tetra3d-integration.md) - Tetra3D setup (implemented)
+- [03-3d-sphere-planets.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/implemented/v0_2_0/03-3d-sphere-planets.md) - Parent feature (implemented)
+- [02-tetra3d-integration.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/implemented/v0_2_0/02-tetra3d-integration.md) - Tetra3D setup (implemented)
 - [Fresnel equations (Wikipedia)](https://en.wikipedia.org/wiki/Fresnel_equations)
 - [Rayleigh scattering (Wikipedia)](https://en.wikipedia.org/wiki/Rayleigh_scattering)
 
@@ -241,4 +241,4 @@ Features that build on this but are out of scope:
 
 **Document created**: 2025-12-08
 **Last updated**: 2025-12-08
-**Deferred from**: [03-3d-sphere-planets.md](../../implemented/v0_2_0/03-3d-sphere-planets.md) Sprint Progress
+**Deferred from**: [03-3d-sphere-planets.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/implemented/v0_2_0/03-3d-sphere-planets.md) Sprint Progress

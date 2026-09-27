@@ -16,11 +16,11 @@ The engine layer (`engine/`) currently contains game-specific knowledge about St
 
 | File | Game-Specific Content | Priority |
 |------|----------------------|----------|
-| [engine/view/dome_renderer.go](../../engine/view/dome_renderer.go) | Solar system with Neptune, Saturn, Jupiter, Mars, Earth; Saturn's rings; `DomeViewState` | P1 |
-| [engine/render/deck_stack.go](../../engine/render/deck_stack.go) | Hardcoded 5 decks; DeckCore/Engineering/Culture/Habitat/Bridge names | P1 |
-| [engine/render/draw.go:478-518](../../engine/render/draw.go#L478-L518) | `getBridgeSpriteColor()` with pilot/comms/engineer/scientist/captain roles | P2 |
-| [engine/render/deck_preview.go](../../engine/render/deck_preview.go) | Deck names and colors | P2 |
-| [engine/screenshot/screenshot.go](../../engine/screenshot/screenshot.go) | `ArrivalState`, `GetArrivalPlanetName()` | P3 |
+| [engine/view/dome_renderer.go](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/engine/view/dome_renderer.go) | Solar system with Neptune, Saturn, Jupiter, Mars, Earth; Saturn's rings; `DomeViewState` | P1 |
+| [engine/render/deck_stack.go](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/engine/render/deck_stack.go) | Hardcoded 5 decks; DeckCore/Engineering/Culture/Habitat/Bridge names | P1 |
+| [engine/render/draw.go:478-518](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/engine/render/draw.go#L478-L518) | `getBridgeSpriteColor()` with pilot/comms/engineer/scientist/captain roles | P2 |
+| [engine/render/deck_preview.go](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/engine/render/deck_preview.go) | Deck names and colors | P2 |
+| [engine/screenshot/screenshot.go](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/engine/screenshot/screenshot.go) | `ArrivalState`, `GetArrivalPlanetName()` | P3 |
 
 ### Generic Content in Engine (Keep)
 

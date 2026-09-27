@@ -4,7 +4,7 @@
 - **Status:** Planned
 - **Sprint:** Vision Integration - Sprint 1
 - **Priority:** P1 (Core narrative mechanic)
-- **Source:** [Interview: Black Hole Deep Dive](../../../docs/vision/interview-log.md#2025-12-02-session-black-hole-feature-deep-dive)
+- **Source:** [Interview: Black Hole Deep Dive](../../vision/interview-log.md#2025-12-02-session-black-hole-feature-deep-dive)
 
 ## Game Vision Alignment
 
@@ -44,7 +44,7 @@ BH entry IS the New Game+ system:
 
 ## Design Decisions
 
-From [design-decisions.md](../../../docs/vision/design-decisions.md):
+From [design-decisions.md](../../vision/design-decisions.md):
 
 | Decision | Summary |
 |----------|---------|
@@ -123,7 +123,7 @@ After a significant time skip:
 
 ## Open Questions
 
-From [open-questions.md](../../../docs/vision/open-questions.md):
+From [open-questions.md](../../vision/open-questions.md):
 
 1. **BH Origin Explicit/Implicit?** - Does player know they emerged from BH?
 2. **Universe-Hopper Rarity** - How rare are encounters with others like you?

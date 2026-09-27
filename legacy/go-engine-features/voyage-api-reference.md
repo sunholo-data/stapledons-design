@@ -7,7 +7,7 @@
 
 ## Game Vision Alignment
 
-Checked against [core-pillars.md](../../docs/vision/core-pillars.md):
+Checked against [core-pillars.md](../../vision/core-pillars.md):
 
 | Pillar | Alignment | Notes |
 |--------|-----------|-------|
@@ -227,4 +227,4 @@ func main() {
 
 - Go AST package: https://pkg.go.dev/go/ast
 - Go parser package: https://pkg.go.dev/go/parser
-- Existing engine docs: [engine-capabilities.md](../reference/engine-capabilities.md)
+- Existing engine docs: [engine-capabilities.md](../go-engine-reference/engine-capabilities.md)

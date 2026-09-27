@@ -10,9 +10,9 @@
 ## Related Documents
 
 - [Black Holes](black-holes.md) - Core black hole mechanics, time dilation gameplay
-- [SR Effects](../implemented/v0_5_0/sr-effects.md) - Special relativity effects (implemented)
-- [Shader System](../implemented/v0_4_5/shader-system.md) - Kage shader pipeline (implemented)
-- [Journey System](v0_6_0/journey-system.md) - Travel system (SR effects active during journey)
+- [SR Effects](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/implemented/v0_5_0/sr-effects.md) - Special relativity effects (implemented)
+- [Shader System](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/implemented/v0_4_5/shader-system.md) - Kage shader pipeline (implemented)
+- [Journey System](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/future/v0_6_0/journey-system.md) - Travel system (SR effects active during journey)
 
 ## Game Vision Alignment
 
@@ -31,7 +31,7 @@
 
 **Feature type:** Engine/Rendering + AILANG Simulation
 
-**Reference:** See [game-vision.md](../../docs/game-vision.md), [black-holes.md](black-holes.md)
+**Reference:** See [game-vision.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/docs/game-vision.md), [black-holes.md](black-holes.md)
 
 ## Goals
 
@@ -583,8 +583,8 @@ GRContext = {
 ## References
 
 - [Black Holes Design Doc](black-holes.md) - Core BH mechanics
-- [SR Rendering Design Doc](sr-rendering.md) - Special relativity effects
-- [Relativistic Visual Effects](relativistic-visual-effects.md) - SR implementation
+- [SR Rendering Design Doc](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/future/sr-rendering.md) - Special relativity effects
+- [Relativistic Visual Effects](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/future/relativistic-visual-effects.md) - SR implementation
 - Misner, Thorne, Wheeler - *Gravitation* (Schwarzschild geometry)
 - [Interstellar VFX](https://www.dneg.com/projects/interstellar/) - GR rendering reference
 - [Black Hole Visualization (NASA)](https://svs.gsfc.nasa.gov/13326) - Reference imagery

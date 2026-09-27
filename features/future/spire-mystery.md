@@ -4,7 +4,7 @@
 - **Status:** Planned
 - **Sprint:** Vision Integration - Sprint 4
 - **Priority:** P3 (Late-game revelation system)
-- **Source:** [Interview: Bubble Ship Design](../../../docs/vision/interview-log.md#2025-12-06-session-bubble-ship-design-integration)
+- **Source:** [Interview: Bubble Ship Design](../../vision/interview-log.md#2025-12-06-session-bubble-ship-design-integration)
 
 ## Game Vision Alignment
 
@@ -28,14 +28,14 @@ The Higgs Generator Spire is the **source of mystery**:
 
 ## Design Decisions
 
-From [design-decisions.md](../../../docs/vision/design-decisions.md):
+From [design-decisions.md](../../vision/design-decisions.md):
 
 | Decision | Summary |
 |----------|---------|
 | The Spire as Universal Constant | Same across all universes, explains uniqueness |
 | Archive as Spire Interface | Archive confusion = clue mechanism |
 
-From [open-questions.md](../../../docs/vision/open-questions.md):
+From [open-questions.md](../../vision/open-questions.md):
 
 | Question | Status |
 |----------|--------|

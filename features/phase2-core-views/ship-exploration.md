@@ -9,10 +9,10 @@
 
 ## Related Documents
 
-- [UI Modes Architecture](../v0_5_0/ui-modes.md) - Mode framework
-- [NPC Movement](../v0_4_0/npc-movement.md) - Crew entity movement
-- [Dialogue System](../v0_5_3/dialogue-system.md) - Triggered from crew interaction
-- [Game Vision](../../../docs/game-vision.md) - Ship as story space
+- [UI Modes Architecture](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/v0_5_0/ui-modes.md) - Mode framework
+- [NPC Movement](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/v0_4_0/npc-movement.md) - Crew entity movement
+- [Dialogue System](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/v0_5_3/dialogue-system.md) - Triggered from crew interaction
+- [Game Vision](../../vision/game-vision.md) - Ship as story space
 
 ## Problem Statement
 

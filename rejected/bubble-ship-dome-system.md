@@ -12,7 +12,7 @@
 - **AI asset constraints:** AI excels at generating 2D images, struggles with 3D dimensions
 - **Over-engineering:** Interior experience is for conversations and visual contrast, not 3D exploration
 
-**Replacement:** See design decision "[2025-12-20] Interior Ship Experience: Scene-Based Navigation" in [docs/vision/design-decisions.md](../../docs/vision/design-decisions.md)
+**Replacement:** See design decision "[2025-12-20] Interior Ship Experience: Scene-Based Navigation" in [docs/vision/design-decisions.md](../vision/design-decisions.md)
 
 **What worked:** Exterior space visualization (starmaps, SR/GR effects) - these are kept and enhanced in new approach
 
@@ -42,16 +42,16 @@
 - Enables observation deck gameplay features
 - Required for realistic space observation from inside bubble ship
 
-**Reference:** See [game-vision.md](../../../docs/game-vision.md)
+**Reference:** See [game-vision.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/../docs/game-vision.md)
 
 ## Problem Statement
 
 The 100m radius bubble ship needs to reconcile two incompatible rendering systems:
 
 **Current State:**
-- [demo-engine-lod](cmd/demo-engine-lod/main.go): Works well for space travel (ship velocity affects starfield with SR/GR effects)
-- [demo-game-interior](cmd/demo-game-interior/main.go): Works well for player movement (WASD through 3D rooms)
-- [demo-engine-dome](cmd/demo-engine-dome/main.go): **BROKEN** - player movement (WASD) affects BOTH interior AND exterior
+- [demo-engine-lod](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/rejected/cmd/demo-engine-lod/main.go): Works well for space travel (ship velocity affects starfield with SR/GR effects)
+- [demo-game-interior](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/rejected/cmd/demo-game-interior/main.go): Works well for player movement (WASD through 3D rooms)
+- [demo-engine-dome](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/rejected/cmd/demo-engine-dome/main.go): **BROKEN** - player movement (WASD) affects BOTH interior AND exterior
   - Lines 696-707: Sky sphere, platform, and struts all follow camera position
   - Player walking 1m inside ship shouldn't move distant stars
   - Ship traveling at 0.8c shouldn't move the floor under your feet
@@ -269,16 +269,16 @@ Result: Ship velocity determines SR effects, player can look anywhere (correct!)
 
 ## References
 
-- [demo-engine-lod/main.go](../../cmd/demo-engine-lod/main.go) - Working space travel with SR/GR
-- [demo-game-interior/main.go](../../cmd/demo-game-interior/main.go) - Working player movement
-- [demo-engine-dome/main.go](../../cmd/demo-engine-dome/main.go) - Current broken implementation
-- [engine/render/space_view.go](../../engine/render/space_view.go) - Sky sphere texture generation
+- [demo-engine-lod/main.go](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/cmd/demo-engine-lod/main.go) - Working space travel with SR/GR
+- [demo-game-interior/main.go](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/cmd/demo-game-interior/main.go) - Working player movement
+- [demo-engine-dome/main.go](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/cmd/demo-engine-dome/main.go) - Current broken implementation
+- [engine/render/space_view.go](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/engine/render/space_view.go) - Sky sphere texture generation
 
 ## Future Work
 
 ### AILANG Integration API
 
-When porting to AILANG, use **existing engine APIs** (see [engine-capabilities.md](../../design_docs/reference/engine-capabilities.md)) with this dual coordinate pattern:
+When porting to AILANG, use **existing engine APIs** (see [engine-capabilities.md](../legacy/go-engine-reference/engine-capabilities.md)) with this dual coordinate pattern:
 
 **Key Concept: Dual Coordinate State**
 

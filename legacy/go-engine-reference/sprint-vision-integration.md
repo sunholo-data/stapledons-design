@@ -23,8 +23,8 @@ This sprint plan organizes design documents derived from vision interviews into 
 
 | Doc | Purpose | Pillars |
 |-----|---------|---------|
-| [black-hole-mechanics.md](future/black-hole-mechanics.md) | Time weapon, endgame choice, New Game+ | 1, 3, 6 |
-| [opening-sequence.md](future/opening-sequence.md) | Emergence from mysterious structure | 2, 5, 6 |
+| [black-hole-mechanics.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/reference/future/black-hole-mechanics.md) | Time weapon, endgame choice, New Game+ | 1, 3, 6 |
+| [opening-sequence.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/reference/future/opening-sequence.md) | Emergence from mysterious structure | 2, 5, 6 |
 
 **Key Decisions:**
 - BH entry = New Game+ (abandon universe, seed next)
@@ -39,9 +39,9 @@ This sprint plan organizes design documents derived from vision interviews into 
 
 | Doc | Purpose | Pillars |
 |-----|---------|---------|
-| [bubble-constraint.md](future/bubble-constraint.md) | What crosses the boundary | 4, 5 |
-| [bubble-ship-layout.md](future/bubble-ship-layout.md) | Physical spaces, emotional purposes | 3, 4 |
-| [mass-budget.md](future/mass-budget.md) | Finite resources, meaningful choices | 1, 4 |
+| [bubble-constraint.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/reference/future/bubble-constraint.md) | What crosses the boundary | 4, 5 |
+| [bubble-ship-layout.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/reference/future/bubble-ship-layout.md) | Physical spaces, emotional purposes | 3, 4 |
+| [mass-budget.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/reference/future/mass-budget.md) | Finite resources, meaningful choices | 1, 4 |
 
 **Key Decisions:**
 - Only information crosses (proto-tech via blueprints)
@@ -56,8 +56,8 @@ This sprint plan organizes design documents derived from vision interviews into 
 
 | Doc | Purpose | Pillars |
 |-----|---------|---------|
-| [bubble-society.md](future/bubble-society.md) | Living sim with generations, factions | 4, 6 |
-| [archive-crew-trust.md](future/archive-crew-trust.md) | AI as NPC in social web | 4, 6 |
+| [bubble-society.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/reference/future/bubble-society.md) | Living sim with generations, factions | 4, 6 |
+| [archive-crew-trust.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/reference/future/archive-crew-trust.md) | AI as NPC in social web | 4, 6 |
 
 **Key Decisions:**
 - Society is autonomous, player influences not controls
@@ -72,9 +72,9 @@ This sprint plan organizes design documents derived from vision interviews into 
 
 | Doc | Purpose | Pillars |
 |-----|---------|---------|
-| [archive-system.md](future/archive-system.md) | Personality, memory, repair mechanics | 4, 6 |
-| [narrative-orchestrator.md](future/narrative-orchestrator.md) | Behind-the-scenes DM, arc types | 2, 3 |
-| [spire-mystery.md](future/spire-mystery.md) | Tech tree reveals recursion clues | 5, 6 |
+| [archive-system.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/reference/future/archive-system.md) | Personality, memory, repair mechanics | 4, 6 |
+| [narrative-orchestrator.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/reference/future/narrative-orchestrator.md) | Behind-the-scenes DM, arc types | 2, 3 |
+| [spire-mystery.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/reference/future/spire-mystery.md) | Tech tree reveals recursion clues | 5, 6 |
 
 **Key Decisions:**
 - Archive uses OCEAN, drifts with memory degradation
@@ -98,14 +98,14 @@ Sprints can overlap but each builds on previous foundations.
 
 ## Cross-References
 
-- **Core Pillars:** [docs/vision/core-pillars.md](../../docs/vision/core-pillars.md)
-- **Design Decisions:** [docs/vision/design-decisions.md](../../docs/vision/design-decisions.md)
-- **Open Questions:** [docs/vision/open-questions.md](../../docs/vision/open-questions.md)
-- **Interview Log:** [docs/vision/interview-log.md](../../docs/vision/interview-log.md)
+- **Core Pillars:** [docs/vision/core-pillars.md](../../vision/core-pillars.md)
+- **Design Decisions:** [docs/vision/design-decisions.md](../../vision/design-decisions.md)
+- **Open Questions:** [docs/vision/open-questions.md](../../vision/open-questions.md)
+- **Interview Log:** [docs/vision/interview-log.md](../../vision/interview-log.md)
 
 ## Input Documents
 
 These design docs synthesize and formalize:
-- [input/game_loop_origin.md](input/game_loop_origin.md)
-- [input/bubble-ship-design.md](input/bubble-ship-design.md)
-- [input/ai-the-archive.md](input/ai-the-archive.md)
+- [input/game_loop_origin.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/reference/input/game_loop_origin.md)
+- [input/bubble-ship-design.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/reference/input/bubble-ship-design.md)
+- [input/ai-the-archive.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/reference/input/ai-the-archive.md)

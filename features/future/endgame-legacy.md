@@ -9,10 +9,10 @@
 
 ## Related Documents
 
-- [UI Modes Architecture](../v0_5_0/ui-modes.md) - Mode framework
-- [Galaxy Map](../v0_5_2/galaxy-map.md) - Network visualization
-- [Journey System](../v0_6_0/journey-system.md) - Time tracking
-- [Game Vision](../../../docs/game-vision.md) - Legacy as climax
+- [UI Modes Architecture](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/v0_5_0/ui-modes.md) - Mode framework
+- [Galaxy Map](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/v0_5_2/galaxy-map.md) - Network visualization
+- [Journey System](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/v0_6_0/journey-system.md) - Time tracking
+- [Game Vision](../../vision/game-vision.md) - Legacy as climax
 
 ## Problem Statement
 

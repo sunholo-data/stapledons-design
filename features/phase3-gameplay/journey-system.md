@@ -9,9 +9,9 @@
 
 ## Related Documents
 
-- [UI Modes Architecture](../v0_5_0/ui-modes.md) - Mode framework
-- [Galaxy Map](../v0_5_2/galaxy-map.md) - Journey origin
-- [Game Vision](../../../docs/game-vision.md) - Time dilation core mechanic
+- [UI Modes Architecture](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/v0_5_0/ui-modes.md) - Mode framework
+- [Galaxy Map](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/v0_5_2/galaxy-map.md) - Journey origin
+- [Game Vision](../../vision/game-vision.md) - Time dilation core mechanic
 
 ## Problem Statement
 

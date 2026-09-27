@@ -313,9 +313,9 @@ for _, assert := range output.Debug.Assertions {
 
 ## References
 
-- [consumer-contract-v0.5.md](../../ailang_resources/consumer-contract-v0.5.md) - AILANG contract
-- [CLAUDE.md](../../CLAUDE.md) - Build commands and architecture
-- [DEVELOPMENT.md](../../DEVELOPMENT.md) - Data flow documentation
+- [consumer-contract-v0.5.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/ailang_resources/consumer-contract-v0.5.md) - AILANG contract
+- [CLAUDE.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/CLAUDE.md) - Build commands and architecture
+- [DEVELOPMENT.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/DEVELOPMENT.md) - Data flow documentation
 
 ## Future Work
 

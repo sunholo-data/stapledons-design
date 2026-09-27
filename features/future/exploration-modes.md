@@ -9,10 +9,10 @@
 
 ## Related Documents
 
-- [UI Modes Architecture](../v0_5_0/ui-modes.md) - Mode framework
-- [Ship Exploration](../v0_5_1/ship-exploration.md) - Similar movement system
-- [Civilization Detail](../v0_6_1/civilization-detail.md) - Planet context
-- [Game Vision](../../../docs/game-vision.md) - Environmental storytelling
+- [UI Modes Architecture](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/v0_5_0/ui-modes.md) - Mode framework
+- [Ship Exploration](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/v0_5_1/ship-exploration.md) - Similar movement system
+- [Civilization Detail](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/v0_6_1/civilization-detail.md) - Planet context
+- [Game Vision](../../vision/game-vision.md) - Environmental storytelling
 
 ## Problem Statement
 

@@ -25,7 +25,7 @@
 
 **Rationale:** The observation dome is described as the "crown jewel" for SR/GR visuals in the bubble ship design. Being able to embed a space view (with relativistic effects) inside an isometric interior is essential for the bridge experience. This supports "Ship is Home" by making the connection between interior life and the cosmic journey visible.
 
-**Reference:** See [bubble-ship-design.md](../../input/bubble-ship-design.md) - "TOP LEVEL — Bridge: Strongest aberration, Starfield compressed into forward cone"
+**Reference:** See [bubble-ship-design.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/input/bubble-ship-design.md) - "TOP LEVEL — Bridge: Strongest aberration, Starfield compressed into forward cone"
 
 ## Problem Statement
 
@@ -576,10 +576,10 @@ pure func renderBridgeFull(state: BridgeState) -> [DrawCmd] {
 
 ## References
 
-- [isometric-depth-parallax.md](./isometric-depth-parallax.md) - Depth layer system (prerequisite)
-- [bubble-ship-design.md](../../input/bubble-ship-design.md) - Dome visual requirements
+- [isometric-depth-parallax.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/phase1-data-models/isometric-depth-parallax.md) - Depth layer system (prerequisite)
+- [bubble-ship-design.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/input/bubble-ship-design.md) - Dome visual requirements
 - [02-bridge-interior.md](../phase2-core-views/02-bridge-interior.md) - Bridge design using viewports
-- [engine-capabilities.md](../../reference/engine-capabilities.md) - SR warp shader details
+- [engine-capabilities.md](../../legacy/go-engine-reference/engine-capabilities.md) - SR warp shader details
 
 ## Future Work
 

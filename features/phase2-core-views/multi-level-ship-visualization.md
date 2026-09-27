@@ -25,7 +25,7 @@
 
 **Rationale:** The bubble ship is described as having nested layers (Core → Engineering → Habitat → Agri → Outer Shell) with the Higgs Spire running through all levels. For the ship to feel like a real 3D home, players need visual cues showing levels above and below, the spire as a constant anchor, and transparency effects that reinforce they're in a transparent bubble.
 
-**Reference:** See [bubble-ship-design.md](../../input/bubble-ship-design.md) - "Multiple layers, recognizable silhouettes, rich parallax backgrounds"
+**Reference:** See [bubble-ship-design.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/input/bubble-ship-design.md) - "Multiple layers, recognizable silhouettes, rich parallax backgrounds"
 
 ## Problem Statement
 
@@ -91,7 +91,7 @@ Introduce a **Multi-Level Visualization System** that:
 
 ### Ship Vertical Structure
 
-Based on [bubble-ship-design.md](../../input/bubble-ship-design.md):
+Based on [bubble-ship-design.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/input/bubble-ship-design.md):
 
 ```
                     OBSERVATION DECK (Top)
@@ -684,10 +684,10 @@ pure func spireAppearance(mysteryLevel: int) -> SpireVisual {
 
 ## References
 
-- [isometric-depth-parallax.md](../phase1-data-models/isometric-depth-parallax.md) - Depth layer system (prerequisite)
+- [isometric-depth-parallax.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/phase1-data-models/isometric-depth-parallax.md) - Depth layer system (prerequisite)
 - [viewport-compositing.md](../phase1-data-models/viewport-compositing.md) - Dome/window viewports
-- [bubble-ship-design.md](../../input/bubble-ship-design.md) - Ship structure and spire
-- [bubble-ship-layout.md](../../planned/future/bubble-ship-layout.md) - Deck purposes
+- [bubble-ship-design.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/input/bubble-ship-design.md) - Ship structure and spire
+- [bubble-ship-layout.md](../future/bubble-ship-layout.md) - Deck purposes
 - [ship-exploration.md](./ship-exploration.md) - Player movement and deck interaction
 - [02-bridge-interior.md](./02-bridge-interior.md) - Bridge deck design
 

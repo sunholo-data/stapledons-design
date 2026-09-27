@@ -4,7 +4,7 @@
 - **Status:** Planned
 - **Sprint:** Vision Integration - Sprint 2
 - **Priority:** P1 (Defines core game physics)
-- **Source:** [Interview: Game Loop Origin](../../../docs/vision/interview-log.md#2025-12-06-session-game-loop-origin--bubble-constraint)
+- **Source:** [Interview: Game Loop Origin](../../vision/interview-log.md#2025-12-06-session-game-loop-origin--bubble-constraint)
 
 ## Game Vision Alignment
 
@@ -91,7 +91,7 @@ The bubble can absorb extremely small mass from:
 
 ## Design Decisions
 
-From [design-decisions.md](../../../docs/vision/design-decisions.md):
+From [design-decisions.md](../../vision/design-decisions.md):
 
 | Decision | Summary |
 |----------|---------|

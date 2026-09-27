@@ -392,9 +392,9 @@ Earth will be myth by the time anyone arrives."
 
 ## References
 
-- [startmaps.md](startmaps.md) - Navigation and time dilation design
+- [startmaps.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/future/startmaps.md) - Navigation and time dilation design
 - [planet-state-transitions.md](planet-state-transitions.md) - Prediction system
-- [design-decisions.md](../../docs/vision/design-decisions.md) - Choices Are Final pillar
+- [design-decisions.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/docs/vision/design-decisions.md) - Choices Are Final pillar
 
 ## Future Work
 

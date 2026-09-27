@@ -9,10 +9,10 @@
 
 ## Related Documents
 
-- [UI Modes Architecture](../v0_5_0/ui-modes.md) - Mode framework
-- [Ship Exploration](../v0_5_1/ship-exploration.md) - Triggers crew dialogue
-- [Civilization Detail](../v0_6_1/civilization-detail.md) - First contact dialogues
-- [Game Vision](../../../docs/game-vision.md) - Character interaction design
+- [UI Modes Architecture](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/v0_5_0/ui-modes.md) - Mode framework
+- [Ship Exploration](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/v0_5_1/ship-exploration.md) - Triggers crew dialogue
+- [Civilization Detail](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/v0_6_1/civilization-detail.md) - First contact dialogues
+- [Game Vision](../../vision/game-vision.md) - Character interaction design
 
 ## Problem Statement
 
