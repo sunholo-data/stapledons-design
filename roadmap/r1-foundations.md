@@ -5,6 +5,9 @@
 **Priority:** P0
 **Dependencies:** [ADR 0001](../decisions/0001-engine-and-architecture.md), [relativity spec](../physics/relativity-spec.md)
 **Repos:** design (this repo), `sunholo-data/stapledons-godot` (game)
+**Implementation:** milestone design docs, sprints and the mission charter
+draft live in `stapledons-godot/design_docs/`. The first is
+[M1 relativistic sky](https://github.com/sunholo-data/stapledons-godot/blob/main/design_docs/planned/r1/m1-relativistic-sky.md).
 
 ## Game vision alignment
 
