@@ -180,6 +180,17 @@ Sent 2026-09-27 from `stapledons_godot`:
   the same concept.
 - **Feature:** hyperbolic functions and `expm1`/`log1p` in `std/math`.
 
+Also sent 2026-09-27:
+- **Bug:** whole-number float literals (`4.0`) evaluate as Int inside `test`
+  blocks.
+- **Verifier:** `exp`/`log`/`sqrt` calls leak into SMT as undeclared
+  constants, giving ERROR instead of SKIPPED.
+- **Feature:** a `--bytecode-report` listing calls bridged to the interpreter
+  (a coverage map for Phase 2E).
+
+Published: `sunholo/relativity@0.1.0`, the pure physics core used by the
+simulation (PR sunholo-data/ailang-packages#80).
+
 Likely future asks, once they block: automatic JSON codecs for records and
 ADTs; splittable random numbers in the stdlib; non-blocking AI calls; host
 effects (v1.1).

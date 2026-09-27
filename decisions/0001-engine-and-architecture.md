@@ -10,6 +10,18 @@
 - **The game simulation is written in AILANG.** It runs as a long-lived child
   process started by Godot:
   `ailang run --quiet --bytecode --package-dir sim --caps IO sim/<entry>.ail`
+- **The runtime is hybrid.** Pure code runs on the bytecode VM. Effectful
+  built-ins (`readLine`, `println`, `flush` today) aren't compiled for the VM
+  yet (Phase 2E), so `--bytecode` bridges each of those calls to the
+  interpreter, one call at a time.
+  - The pure simulation core (`sim/core.ail`) is checked to run entirely on the
+    VM with `--strict-bytecode` (`make strict`).
+  - The I/O shell (`sim/ship.ail`) relies on the bridge until Phase 2E lands.
+  - **Rule: hot simulation code stays pure.** An effect inside the tick loop
+    would push that loop through the interpreter.
+- **Physics comes from the published package `sunholo/relativity`**, which is
+  shared with other AILANG users. The game's simulation depends on a pinned
+  registry version.
 - **The two talk newline-delimited JSON over stdin/stdout.** Each tick Godot
   sends one line (the input) and AILANG replies with one line (state or
   changes). The world state lives inside AILANG.
@@ -76,8 +88,10 @@ Evaluated against AILANG v0.45.0 on 2026-09-27:
 
 Measured in the spike (M4 Max):
 
-- **Bytecode VM vs interpreter:** about 50× faster. 10k-record update: about
-  5 ms per tick on the VM, about 250 ms on the interpreter.
+- **Bytecode VM vs interpreter:** about 50× faster for the pure hot path.
+  10k-record update: about 5 ms per tick with `--bytecode` (the pure map on the
+  VM, I/O bridged), about 250 ms on the interpreter. The per-tick I/O costs
+  about 30 µs whichever runtime handles it.
 - **Round trip:** Godot → AILANG → Godot takes **about 50 µs per tick**.
 - **Accuracy:** the ship kinematics match closed-form constant-acceleration
   results to 1e-12.
@@ -94,7 +108,11 @@ which lets the game move to native effects later without a rewrite.
 
 - **VM correctness.** There are open bugs where the VM silently gives wrong
   results (`m-bytecode-vm-parity-bugs.md`). Mitigation: CI runs the simulation
-  on both the VM and the interpreter and compares the results.
+  on both the VM and the interpreter and compares the results (`make parity`),
+  and runs the pure core under `--strict-bytecode` (`make strict`). The game is
+  meant to be a **stress test for the VM**: parity differences and bridged calls
+  get reported upstream with minimal repros. When Phase 2E wires the I/O
+  built-ins, the whole sidecar switches to `--strict-bytecode`.
 - **Performance ceiling.** The interpreter and VM suit logic ticks, not inner
   loops per frame. Anything per-pixel or per-star-per-frame stays in Godot
   shaders. The 1M-year history is batched, not run inside the tick loop.
