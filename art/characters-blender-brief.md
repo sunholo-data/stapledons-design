@@ -174,6 +174,24 @@ exports/stapledon/characters/crowd/    # static avatar images + era manifest
 Hand-off is the same as the art README: zips on stapledons-godot issue #1, with
 GitHub links for review.
 
-## 6. Mark decides
+## 6. At runtime: voice, emotion markers and a growing library (D-7)
+
+Ledger D-7 (Mark, 2026-09-28) adds the runtime layer this art feeds. Full
+design: `features/ai-showcase.md`.
+- **Generated dialogue carries emotion markers** (the 8 above). Each marker
+  **selects the matching portrait image** as the line streams: selection, not
+  animation, as in §1.
+- **Every line is spoken** with generated audio in the character's own voice.
+  The same markers drive delivery. Pick one voice per featured identity (a TTS
+  voice plus a style prompt) and record it in `manifest.json`.
+- **The library grows during play.** New identities (births, successors),
+  later life stages and aliens are generated when the story needs them, from
+  the recorded references and prompts. So **keep `generation_notes.md`
+  complete**: the reference image, prompt, model and settings for every file
+  are what let the game regenerate consistently.
+- **The AI is in the ship.** The Archive's core is fused into the spire's base,
+  and its terminal presence (§2.3) is how that AI appears.
+
+## 7. Mark decides
 Every character's look, name and gender; the Archive's presence design; the
 captain's silhouette; the clothing eras.

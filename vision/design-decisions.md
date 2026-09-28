@@ -755,3 +755,31 @@ spherical ship and contain its inhabited forest visibly within that volume.
 **Accepted direction:** Retain the illustrated character style. The founding community includes young adults, existing families and a smaller group of older specialists who train successors. Some existing older portraits can represent later life, with younger departure versions retaining identity. People age and roles pass to new individuals across generations.
 
 **Scope:** Exact ages, household links and supporting children in [the generation cast plan](../art/generation-cast-plan.md) are proposals, not newly approved canon. Descendants have distinct identities; they are not age variants of their parents. No fixed death dates, reproductive requirements or altered captain lifespan are established here.
+
+
+## [2026-09-28] Runtime AI: Voices, Emotion Markers and a Growing Asset Library (ledger D-7)
+
+**Decision (Mark, attended):**
+- **Emotion markers select images.** The accepted illustrated characters
+  (static portraits and static mini avatars, from the entry above) are driven
+  at runtime by **generated dialogue with emotion markers**. The markers
+  **select** the matching portrait image; there's no animation.
+- **Every line is spoken** with generated audio in per-character voices. The
+  same markers drive delivery.
+- **Generate on first need, then cache.** The accepted founding cast is
+  generated ahead of time. New identities (births, successors), later life
+  stages, aliens and places are generated during play from recorded references.
+  **The game builds its own asset library as it is played**, an AI harness in
+  itself.
+- **The AI is in the ship.** The **Archive's core is fused into the spire's
+  base**. The spire's own mystery stays *beyond* the Archive, and its confusing
+  readings remain the clue mechanism (canon from 2025-12-06 to 12-08).
+- **The game showcases AILANG's AI stack:** semantic memory, generated dialogue,
+  voice and imagery, and an Archive whose memory degrades literally
+  (`features/ai-showcase.md`).
+
+**Constraints:**
+- Every AI output is **recorded as a simulation input**, so replays stay
+  byte-identical.
+- AI runs in its own process, never inside the simulation tick (ADR 0001).
+

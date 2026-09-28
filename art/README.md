@@ -10,6 +10,7 @@ where each brief lives. **Read this first, then the brief for your task.**
 | [ship-interior-blender-brief.md](ship-interior-blender-brief.md) | Isometric play areas, interior panoramas, foreground plates | R1 M4 | **Approved.** Start with the bridge style frame |
 | [characters-blender-brief.md](characters-blender-brief.md) | Crew, captain, Archive robots, background people: illustrated portraits and matching static mini avatars | R1 M4 | Illustrated direction accepted. [Generation cast plan](generation-cast-plan.md) in development |
 | [ship-exterior-blender-brief.md](ship-exterior-blender-brief.md) | Exterior bubble ship, departure/arrival camera moves, galaxy-map marker | R1 M2 (marker), M4 (views) | Revised spherical silhouette and boundary review pending |
+| [../features/ai-showcase.md](../features/ai-showcase.md) | **Runtime AI** (D-7): emotion markers selecting portraits, generated voices, the growing asset library, recorded outputs for replay | R1 M4 | Planned. Voice and marker style frame on the accepted Medic |
 | [worlds-civilizations-blender-brief.md](worlds-civilizations-blender-brief.md) | Alien species, civilization and ruin kits, artifacts, alien ships | R2 (later) | Scoping. Don't start before R1 ships |
 
 **Order:**
