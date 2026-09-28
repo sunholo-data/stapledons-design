@@ -4,6 +4,8 @@
 (§7 step 1) still needs Mark's sign-off before build-out.
 **For:** an agent in the Blender workspace (`~/dev/blender`), working under its
 `AGENTS.md` and `skills/blender-studio-workflow`.
+**Read first:** [art/README.md](README.md), the art bible: shared style,
+conventions, review process and the other briefs.
 **Game repo (consumer):** `sunholo-data/stapledons-godot` (Godot 4 renderer plus
 an AILANG simulation). Its mission loop imports your deliveries; you never edit
 that repo.
