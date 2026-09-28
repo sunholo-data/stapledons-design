@@ -1,6 +1,8 @@
 # Brief: the ship from outside, and journey views
 
-**Status:** approved scope (2026-09-28).
+**Status:** approved scope; revised style frame pending approval (2026-09-28).
+Mark requested a perfect spherical bubble, a readable boundary, and a forest
+level inside the ship after reviewing the elongated first-pass exterior.
 **Read first:** [art/README.md](README.md), then `vision/design-decisions.md`
 (the ship canon, 2025-12-06 to 12-08), `features/phase4-polish/arrival-sequence.md`,
 `features/future/opening-sequence.md` and `features/phase2-core-views/galaxy-map.md`.
@@ -33,13 +35,17 @@ effects themselves.**
 
 ## 2. The exterior model (`ext_ship.glb`)
 
-- **Canon:** a **transparent Higgs bubble, ~100 m radius**, containing the whole
+- **Canon:** a **transparent, perfectly spherical Higgs bubble, ~100 m radius**, containing the whole
   inhabited ship.
   - **Spire:** runs along the vertical thrust axis. **Up is forward**; the
     engines are at the bottom (aft).
   - **Levels:** 10–20+ open levels radiate from the spire.
   - **Bridge:** a disc at the top of the spire, under the bubble's forward pole.
-  - **Garden cathedral:** in the outer shell.
+  - **Garden cathedral / forest level:** inside the spherical boundary. Keep
+    trunks, branches, canopy and their supporting deck within the bubble; no
+    detached tree or outboard garden annex.
+  - **Silhouette:** equal bubble radii on all three axes. The inhabited levels
+    should fill the sphere readably, rather than forming a long egg-shaped stack.
   - **Scale cues:** lifts, ramps, lights, tiny figures.
 - **Seen from outside,** the inhabited interior shows through the transparent
   bubble: warm lights on the levels and the pale luminous spire. It should read
@@ -47,7 +53,11 @@ effects themselves.**
 - **The bubble surface:** deliver it as a **separate mesh** (`bubble`) with a
   simple transparent glTF material. The engine replaces it with the physical
   boundary glow, which is strongest forward and scales with speed and
-  interstellar density.
+  interstellar density. Show a **readable boundary representation** in review
+  captures, including at rest, so the containing sphere can be judged. A
+  transparent rim or Fresnel treatment may serve as an engine preview; label
+  it as a visual aid, not a validated physical glow. Never bake it into the
+  ship model or paint it into a starfield.
 - **LODs:**
   - `LOD0` for close departure and arrival shots (≤50k tris; reuse the interior
     kit at low detail);
@@ -94,7 +104,8 @@ exact.
 1. **Exterior style frame:** a `LOD0` lantern-city shot composited on a
    placeholder starfield in the spike (`spike/interior3.gd` can host an
    exterior camera, or a simple scene), at rest and at 0.99c. **Stop for
-   Mark's approval.**
+   Mark's approval.** Include a clear spherical boundary and show the forest
+   contained inside it. The revised style frame is not yet approved.
 2. **The galaxy-map marker** (GLB and icon). It's needed for M2 and is small,
    so it can go first after the style frame.
 3. **The exterior model with its LODs.**
@@ -112,7 +123,11 @@ exports/stapledon/exterior/
 ```
 
 **Checks:**
-- The bubble mesh is separate.
+- The bubble mesh is separate, centred at the ship origin, with equal radii
+  on X, Y and Z (about 100 m).
+- All authored ship geometry, including forest canopy, fits inside the sphere.
+- Exterior review captures make the spherical boundary readable. Clearly label
+  any preview-only boundary shader; production glow remains engine physics.
 - There's no emissive exhaust.
 - Camera paths replay in the engine without clipping through the bubble
   (except the approach hand-off).

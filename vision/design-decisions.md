@@ -713,3 +713,45 @@ because the sky is rendered through the panorama's own camera.
 - The 2025-12-08 ship canon (bubble, spire, open levels, vertical thrust axis)
   stands.
 
+
+## [2026-09-28] Character and Exterior Review: Static Portraits and a Spherical Ship
+
+**Context:** Mark reviewed the first Blender Medic character study and the
+first exterior style frame after accepting the bridge as a good first pass.
+
+**Mark's ruling (verbatim):**
+> the character study is aweful. I think we will instead generate images that are much richer and expressive, and not use animation, just change expression as we go. so no blender for that or no? we can use mini avatars for them. the exterir looks more like a long egg rather than a perfect sphere the story prefers, and what is that tree that is outside the rest of the sphere? we can havea . forest level, makes sense. we also need some represtntaion of the bubble itself.
+
+**Decision:**
+- Replace the rejected Blender character-study direction with richer,
+  expressive generated portrait images. Change expressions by selecting images;
+  character animation is not required. Use matching small static avatars.
+- Character portraits no longer depend on one shared Blender model, a rig,
+  shape keys or animation clips. Keep identity, age, clothing and palette
+  consistent between the illustrated portraits and mini avatars.
+- The ship's containing bubble is a **perfect sphere**, not an elongated egg.
+- Integrate the forest as a level **inside** the sphere. Remove the outboard
+  tree/annex treatment from the exterior direction.
+- Show a readable representation of the bubble boundary in exterior reviews.
+  The existing rule that the engine renders physical boundary glow still applies.
+
+**Rationale:** The first character study did not deliver the emotional richness
+Mark wants from conversations. The exterior must communicate the established
+spherical ship and contain its inhabited forest visibly within that volume.
+
+**Implications:**
+- Update `art/README.md`, `art/characters-blender-brief.md` (retaining its link),
+  and `art/ship-exterior-blender-brief.md`.
+- This supersedes the art brief's shared Blender character-model and animation
+  requirements. Environment modeling and the isometric interior remain in place.
+- Names, genders and individual appearances remain Mark's decisions.
+- **Revised character and exterior style frames still need Mark's approval.**
+  This ruling approves the change in direction, not any subsequent v2 artwork.
+
+## [2026-09-28] Generation-ship casting direction
+
+**Mark's feedback:** “yeah they look cool. i guess story wise its a generation ship so people would be selected on that basis - I guess either bringing a family and/or being young ?” He then said “good - yes continue” to developing departure ages and family connections before further portraits.
+
+**Accepted direction:** Retain the illustrated character style. The founding community includes young adults, existing families and a smaller group of older specialists who train successors. Some existing older portraits can represent later life, with younger departure versions retaining identity. People age and roles pass to new individuals across generations.
+
+**Scope:** Exact ages, household links and supporting children in [the generation cast plan](../art/generation-cast-plan.md) are proposals, not newly approved canon. Descendants have distinct identities; they are not age variants of their parents. No fixed death dates, reproductive requirements or altered captain lifespan are established here.
