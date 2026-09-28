@@ -747,3 +747,11 @@ spherical ship and contain its inhabited forest visibly within that volume.
 - Names, genders and individual appearances remain Mark's decisions.
 - **Revised character and exterior style frames still need Mark's approval.**
   This ruling approves the change in direction, not any subsequent v2 artwork.
+
+## [2026-09-28] Generation-ship casting direction
+
+**Mark's feedback:** “yeah they look cool. i guess story wise its a generation ship so people would be selected on that basis - I guess either bringing a family and/or being young ?” He then said “good - yes continue” to developing departure ages and family connections before further portraits.
+
+**Accepted direction:** Retain the illustrated character style. The founding community includes young adults, existing families and a smaller group of older specialists who train successors. Some existing older portraits can represent later life, with younger departure versions retaining identity. People age and roles pass to new individuals across generations.
+
+**Scope:** Exact ages, household links and supporting children in [the generation cast plan](../art/generation-cast-plan.md) are proposals, not newly approved canon. Descendants have distinct identities; they are not age variants of their parents. No fixed death dates, reproductive requirements or altered captain lifespan are established here.

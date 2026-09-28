@@ -2,7 +2,9 @@
 
 **Status:** revised direction (2026-09-28). Mark rejected the Blender character
 study and requested richer, expressive generated images with expression swaps
-and mini avatars. The revised character style frame still needs approval.
+and mini avatars. The illustrated Medic direction and subsequent cast studies were accepted.
+Departure ages and family connections are being revised for a generation ship;
+see [generation-cast-plan.md](generation-cast-plan.md) for the proposed roster.
 The filename is retained so existing brief links remain valid.
 **Read first:** [art/README.md](README.md) (style, conventions, review), then
 `features/future/crew-psychology.md`, `features/future/dialogue-system.md`,
@@ -124,13 +126,14 @@ This change concerns character assets; the environment remains Blender-built.
   Banded Blender shading and Grease Pencil Line Art are not portrait requirements.
 
 ### 3.3 Age progression
-- **4 age stages per named character**, spanning the voyage (e.g. +0, +25, +50
+- **Up to 4 relevant age stages per named character**, spanning their life (e.g. +0, +25, +50
   and +75 years from each character's starting age). Supply separate images:
   grey hair, skin, posture and clothing wear should carry time honestly while
   retaining identity. Emotions must work at every delivered age. Named crew
   who die before the end need the stages they reach.
-- Children are born aboard, so give 2 of the named crew a **child** variant
-  (for generational stories).
+- Children and descendants have **separate identities**. Begin with two recurring
+  children from the generation cast plan, then age those same people into later
+  portraits. Do not represent a descendant by de-ageing their parent.
 - Match avatar age variants to the portrait reference set.
 
 ## 4. First deliverables, in order

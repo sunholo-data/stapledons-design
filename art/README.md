@@ -8,7 +8,7 @@ where each brief lives. **Read this first, then the brief for your task.**
 | Brief | What | Needed by | Status |
 |---|---|---|---|
 | [ship-interior-blender-brief.md](ship-interior-blender-brief.md) | Isometric play areas, interior panoramas, foreground plates | R1 M4 | **Approved.** Start with the bridge style frame |
-| [characters-blender-brief.md](characters-blender-brief.md) | Crew, captain, Archive robots, background people: illustrated portraits and matching static mini avatars | R1 M4 | Revised direction. Character style approval pending |
+| [characters-blender-brief.md](characters-blender-brief.md) | Crew, captain, Archive robots, background people: illustrated portraits and matching static mini avatars | R1 M4 | Illustrated direction accepted. [Generation cast plan](generation-cast-plan.md) in development |
 | [ship-exterior-blender-brief.md](ship-exterior-blender-brief.md) | Exterior bubble ship, departure/arrival camera moves, galaxy-map marker | R1 M2 (marker), M4 (views) | Revised spherical silhouette and boundary review pending |
 | [worlds-civilizations-blender-brief.md](worlds-civilizations-blender-brief.md) | Alien species, civilization and ruin kits, artifacts, alien ships | R2 (later) | Scoping. Don't start before R1 ships |
 
@@ -97,7 +97,9 @@ not "clean functional sci-fi".
 4. **Current review state:** Mark accepted the bridge as a good first pass,
    rejected the Blender character study, and requested richer static character
    images plus a spherical ship with its forest inside and a visible boundary.
-   The revised character and exterior style frames still need approval. See
+   The revised character and spherical exterior direction were accepted, followed by
+   the illustrated cast studies. Exact departure ages and family links are proposed
+   in [generation-cast-plan.md](generation-cast-plan.md). See
    `vision/design-decisions.md` (2026-09-28, character and exterior review).
 5. **Decisions are Mark's:** style frames, any change to ship canon, character
    designs, and anything that would paint over the sky. If Mark rules in your
