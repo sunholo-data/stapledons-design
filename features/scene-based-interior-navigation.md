@@ -1,5 +1,13 @@
 # Scene-Based Interior Navigation System
 
+> **SUPERSEDED IN PART (2026-09-28, ledger D-6):** interiors are **isometric
+> play areas built as Blender 3D models**, which the player walks, set in front
+> of interior panoramas and the live relativistic sky. They are not fixed
+> AI-painted scenes without an avatar. These parts still stand: the
+> window/sky-compositing idea, crew placement logic and emotion portraits (now
+> large portraits), and the deck list. See
+> `vision/design-decisions.md` 2026-09-28 and `art/ship-interior-blender-brief.md`.
+
 **Status**: Planned
 **Target**: v0.6.0
 **Priority**: P0 - Critical (core gameplay experience)

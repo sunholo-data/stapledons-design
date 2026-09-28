@@ -643,7 +643,73 @@ Emotionally: "sad but happy" - bittersweet remembrance.
 
 ## [2025-12-18] Pivot from Isometric to First-Person 3D
 
+> **SUPERSEDED 2026-09-28** by "Interior: Isometric Three-Layer View From Inside
+> the Bubble" (below).
+
 **Decision:** Abandon isometric tile-based rendering in favor of full first-person 3D using Tetra engine. Player navigates ship interior with WASD/mouselook. All isometric work (iso_tiles, iso_demo, bridge tiles) deprecated.
 
 **Rationale:** Isometric asset generation produced poor quality results. Tetra engine already renders beautiful space visuals. First-person is more immersive and better serves Pillar 4 (Ship Is Home - you ARE there) and Pillar 6 (We Are Not Built For This - disorientation). Simpler architecture: Tetra scene graph replaces DrawCmd tile rendering.
+
+
+## [2025-12-20] Interior Ship Experience: Scene-Based Navigation (recorded retroactively)
+
+**Decision (as made then):** fixed-camera scenes per deck, built from
+AI-generated 2D/2.5D images with parallax, reached through a deck-selection UI,
+with crew as sprites plus emotion portraits and no walking avatar. Isometric
+tiles and first-person 3D were both rejected, because AI generation couldn't
+produce consistent assets and walking pulled focus from conversations. See
+`features/scene-based-interior-navigation.md`.
+
+> This entry was missing from the log. It is recorded here for completeness,
+> and it is **superseded in part (2026-09-28)** by the next entry.
+
+
+## [2026-09-28] Interior: Isometric Three-Layer View From Inside the Bubble
+
+**Context:** the log contradicted itself: isometric tiles (the original bridge
+design), first-person 3D (2025-12-18), and fixed AI-painted scenes (2025-12-20).
+The fixed-scene pivot happened only because AI images couldn't give consistent
+assets. **Blender removes that constraint.** Three feasibility spikes
+(stapledons-godot branch `spike/iso-bridge`, v1–v3) tested the options visually
+with the live physics.
+
+**Decision (Mark, attended; ledger D-6):**
+- **The player is inside the bubble.** Up = forward = the direction of travel.
+- **Isometric play areas** are built as **Blender 3D models**, rendered in Godot
+  through an orthographic camera **tilted back** (about −14°) at **room scale**
+  (about 16 m in view). The player walks around. Shading is toon plus ink.
+- **Behind the play area:** Blender **interior panoramas** of the ship's own
+  structure (spire, levels, far decks), rendered from inside with space left
+  transparent. Each panorama camera is exported.
+- **Behind those:** the **live relativistic sky** (catalogue stars and a full-sky
+  galaxy), rendered through *exactly* that exported camera.
+- **Parallax on every layer:** the sky and galaxy stay **fixed** (at infinity),
+  the panorama moves slowly, the play area moves 1:1, and the foreground
+  silhouettes move fast.
+- **The bridge sits at the top of the spire, and its dome is the bubble's forward
+  pole.** The starbow gathers overhead there. Lower decks see the sky past the
+  level rims, and it goes **dark sideways at speed**. That's physics, and it's
+  what makes the bridge the place to watch from.
+- **Conversations use large portraits.**
+- **Art direction** is unchanged: French 70s comics, Moebius / Métal Hurlant
+  (2025-12-08).
+
+**Rationale:** Pillar 3 (Time Has Emotional Weight): the cosmos going dark around
+the lower decks at speed and blazing at the bow makes the journey visceral from
+inside daily life. Pillar 4 (The Ship Is Home): the player walks the ship among
+the crew. Pillar 5 (Grounded Strangeness): every star is where physics puts it,
+because the sky is rendered through the panorama's own camera.
+
+**Alternatives rejected:**
+- Fixed scenes with no avatar: less sense of home.
+- First-person 3D: largest asset scope, and it pulls focus from conversations.
+- Pre-rendered isometric tiles: rigid, and the assets were inconsistent.
+
+**Implications:**
+- The Blender brief is rewritten (`art/ship-interior-blender-brief.md`).
+- M4 is designed on this model.
+- M1.4's per-pixel sky can start from the spike's galaxy shader.
+- `features/scene-based-interior-navigation.md` is superseded in part.
+- The 2025-12-08 ship canon (bubble, spire, open levels, vertical thrust axis)
+  stands.
 
