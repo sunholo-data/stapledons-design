@@ -8,22 +8,22 @@ where each brief lives. **Read this first, then the brief for your task.**
 | Brief | What | Needed by | Status |
 |---|---|---|---|
 | [ship-interior-blender-brief.md](ship-interior-blender-brief.md) | Isometric play areas, interior panoramas, foreground plates | R1 M4 | **Approved.** Start with the bridge style frame |
-| [characters-blender-brief.md](characters-blender-brief.md) | Crew, captain, Archive robots, background people: walking figures and large portraits from one model | R1 M4 | Approved scope. Waits on the interior style frame |
-| [ship-exterior-blender-brief.md](ship-exterior-blender-brief.md) | Exterior bubble ship, departure/arrival camera moves, galaxy-map marker | R1 M2 (marker), M4 (views) | Approved scope |
+| [characters-blender-brief.md](characters-blender-brief.md) | Crew, captain, Archive robots, background people: illustrated portraits and matching static mini avatars | R1 M4 | Revised direction. Character style approval pending |
+| [ship-exterior-blender-brief.md](ship-exterior-blender-brief.md) | Exterior bubble ship, departure/arrival camera moves, galaxy-map marker | R1 M2 (marker), M4 (views) | Revised spherical silhouette and boundary review pending |
 | [worlds-civilizations-blender-brief.md](worlds-civilizations-blender-brief.md) | Alien species, civilization and ruin kits, artifacts, alien ships | R2 (later) | Scoping. Don't start before R1 ships |
 
 **Order:**
 1. the interior style frame (it sets the look for everything);
 2. then characters (one character style frame) and the exterior marker, in parallel;
-3. then the full interior and character builds;
+3. then the full interior and character builds, after their style approvals;
 4. worlds and civilizations after R1.
 
 ## Who renders what
 
-| The engine (Godot) renders, live and physically exact: | You author, in Blender: |
+| The engine (Godot) renders, live and physically exact: | You author: |
 |---|---|
 | the relativistic sky: catalogue stars and the full-sky galaxy, with aberration, Doppler colour and brightness | ship interiors: isometric play areas, panoramas, foreground plates |
-| black holes: shadow, lensing, Einstein rings (M3) | characters: figures and portraits |
+| black holes: shadow, lensing, Einstein rings (M3) | characters: generated illustrated portraits and matching static mini avatars |
 | planets (NASA textures, procedural), rings and moons | ship exterior model and camera moves |
 | the bubble boundary's speed-dependent glow | alien species, civilization and ruin kits (R2) |
 | toon shading and ink outlines on play-area GLBs | |
@@ -47,11 +47,15 @@ Tone: vast, beautiful, lonely, bittersweet. Not photorealistic, not grimdark,
 not "clean functional sci-fi".
 
 **Techniques:**
-- **Rendered plates** (panoramas, foregrounds, portraits): banded toon shading
+- **Blender environment plates** (panoramas, foregrounds): banded toon shading
   (Shader-to-RGB with constant colour ramps) and ink lines through **Grease
   Pencil Line Art**. Blender 5.2 has **no Freestyle**; probe the Line Art API
   before relying on it.
-- **Real-time GLBs** (play areas, figures, exterior): clean geometry and flat
+- **Character images:** rich, expressive generated illustrations, with discrete
+  images for emotion and age changes. Keep facial identity, clothing and palette
+  consistent across a character's portraits and small static avatar. Character
+  portraits do not require Blender models, rigs or animation.
+- **Real-time GLBs** (play areas, exterior): clean geometry and flat
   Principled base colours. The engine applies toon shading and the ink outline.
   Bake nothing.
 
@@ -62,10 +66,13 @@ not "clean functional sci-fi".
   - **Blender +Z = the thrust axis = up = the direction of travel**;
   - the origin is the bubble's centre.
 
-  The bubble is about 100 m in radius and transparent, with the spire on the axis.
+  The bubble is a **perfect sphere**, about 100 m in radius and transparent,
+  with the spire on the axis. The forest level and all trees stay inside it.
+  Exterior reviews must show a readable representation of the boundary; the
+  engine supplies its appearance and speed-dependent glow.
 - **Workspace:** `~/dev/blender` under its `AGENTS.md` and
   `skills/blender-studio-workflow`:
-  - generator scripts go in `scripts/`, and scenes use distinct names in `scenes/`;
+  - Blender generator scripts go in `scripts/`, and scenes use distinct names in `scenes/`;
   - always prefer a reproducible generator script over hand edits;
   - `exports/` and `renders/` are gitignored, so hand deliveries over as zips.
 - **Cameras:** every rendered plate whose sky the engine fills gets a
@@ -87,7 +94,12 @@ not "clean functional sci-fi".
 3. **Never edit `main` of stapledons-godot.** The Stapledon mission loop owns
    it. Deliver bundles as zips on stapledons-godot issue #1; the loop imports
    them.
-4. **Decisions are Mark's:** style frames, any change to ship canon, character
+4. **Current review state:** Mark accepted the bridge as a good first pass,
+   rejected the Blender character study, and requested richer static character
+   images plus a spherical ship with its forest inside and a visible boundary.
+   The revised character and exterior style frames still need approval. See
+   `vision/design-decisions.md` (2026-09-28, character and exterior review).
+5. **Decisions are Mark's:** style frames, any change to ship canon, character
    designs, and anything that would paint over the sky. If Mark rules in your
    session, record it (see stapledons-godot `CLAUDE.md`, "Recording Mark's
    decisions").
