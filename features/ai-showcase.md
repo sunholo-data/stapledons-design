@@ -39,7 +39,7 @@ The game is its own AI harness.
 | **The Archive's degrading memory** | Implemented *literally*: the Archive's retrieval index loses and blurs entries as its hidden Memory Health falls, so it genuinely misremembers | `std/sharedindex` with a controlled decay | R2 |
 | **News from home** | After a long journey, the Earth-side simulation's events are narrated as **generated news**, letters and archive fragments | `std/ai` over the simulation's state | R1 M4 |
 | **First contact** | Alien speech with a real **communication-quality** channel: low quality garbles, loses or mistranslates meaning | `std/ai` with degradation tools | R2 |
-| **Talk to your ship** | Optional **live voice** with the Archive, where the player speaks and it answers | `sunholo/gemini_live` | R2 stretch |
+| ~~Talk to your ship~~ | *Deferred (D-8):* no live, real-time voice for now | (`sunholo/gemini_live` later) | deferred |
 | **Narrative orchestrator** | A hidden agent reads the simulation and shapes pacing and arcs through tool calls, without railroading | `std/ai.runTools` | R2 |
 | **Epilogue** | The Year-1,000,000 legacy is written from the full history | `std/ai` | R3 |
 
@@ -104,9 +104,9 @@ AILANG sim (pure, deterministic)  AILANG AI service (separate process: std/ai, s
     the current one plays.
   - Cached portraits appear instantly. A new generation shows the nearest
     cached face until it's ready.
-- **Offline and failure:** the pre-generated core plus the cache keeps the game
-  playable without a network. If the AI is unavailable, fall back to templated
-  lines, flagged in the log.
+- **Offline, no key, or failure:** the pre-generated core plus the cache keeps
+  the game fully playable without a network or a key (D-8). If the AI is
+  unavailable, fall back to templated lines, flagged in the log.
 
 ## 6. Guardrails
 
@@ -119,14 +119,27 @@ AILANG sim (pure, deterministic)  AILANG AI service (separate process: std/ai, s
   in §3.
 - **Cost:** a budget per session, with reuse through the semantic cache.
 
-## 7. Open questions (for Mark)
+## 7. Operating model (decided: Mark, 2026-09-28, ledger D-8)
 
-1. **Keys and cost for the shipped game:** the developer's key through a proxy,
-   the player's own key, or a hybrid (pre-generated core plus opt-in live
-   generation)?
-2. **Providers:** Gemini for text, image and TTS, as the reference doc assumes?
-   Or mix per capability, routed through AILANG's provider support?
-3. **Live voice** (talking to the Archive): R2 stretch, or earlier?
+1. **Keys and cost: the player's own key.** The game ships **pre-generated core
+   content**:
+   - the accepted founding cast: portraits, mini avatars and voices;
+   - the Archive's presence states;
+   - templated fallback lines.
+
+   **Live generation is opt-in** with the player's key. Without a key, the game
+   is fully playable on the core (text, cached voices, the existing portraits).
+   The growing asset library only grows when the player opts in.
+2. **Providers: model-neutral.** Everything goes through AILANG's provider
+   routing, so models can be swapped as they improve. **Gemini is the default**
+   for text, images and TTS. Prompts and the marker grammar must not depend on
+   one provider's quirks.
+3. **Voice: no live real-time voice for now.** There's no streaming spoken
+   conversation; `gemini_live` is deferred. Speech is **pre-recorded (the core
+   set) or generated per line and cached**, and a **text-only mode** is always
+   available.
+   - The "talk to your ship" row in §2 is **deferred**.
+   - With voice off, emotion markers still drive the portraits.
 
 ## 8. First implementation steps (the loop's design doc should cover)
 

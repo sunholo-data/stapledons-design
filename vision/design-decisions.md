@@ -783,3 +783,15 @@ spherical ship and contain its inhabited forest visibly within that volume.
   byte-identical.
 - AI runs in its own process, never inside the simulation tick (ADR 0001).
 
+
+## [2026-09-28] Runtime AI Operating Model (ledger D-8)
+
+**Decision (Mark, attended):**
+- **Keys and cost:** the **player's own key**. The game ships **pre-generated
+  core content**, and live generation is **opt-in**. It is fully playable
+  without a key.
+- **Providers:** **model-neutral**, with models swappable through AILANG's
+  provider routing. **Gemini is the default.**
+- **Voice:** **no live real-time voice** for now. Speech is **pre-recorded or
+  generated per line and cached**, and a **text-only mode** is always available.
+
