@@ -35,7 +35,7 @@ From [design-decisions.md](../../vision/design-decisions.md):
 | Decision | Summary |
 |----------|---------|
 | Finite Mass Budget | Proto-tech and population compete |
-| Slow Mass Absorption | Trickle from ISM, not a solution |
+| ~~Slow Mass Absorption~~ | Superseded 2026-10-01 (D-11): no mass crosses the wall; the budget is closed |
 | Proto-Tech via Information | Tech costs mass to fabricate |
 
 ## Mass Categories

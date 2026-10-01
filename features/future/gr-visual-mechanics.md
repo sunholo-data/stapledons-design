@@ -170,6 +170,7 @@ pure func compute_gr_context(ship_pos: Vec3, obj: MassiveObject) -> GRContext {
     let redshift_factor = 1.0 / time_dilation
 
     -- Tidal severity heuristic (higher for smaller r and smaller mass)
+    -- Superseded: use the exact a = 2GM L/r^3 across the bubble (physics/higgs-bubble.md §9)
     let tidal_severity = clamp(r_s / (r * r) * 1e6, 0.0, 1.0)
 
     let danger = classify_gr(phi)

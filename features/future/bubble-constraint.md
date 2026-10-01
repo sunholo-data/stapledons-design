@@ -5,6 +5,7 @@
 - **Sprint:** Vision Integration - Sprint 2
 - **Priority:** P1 (Defines core game physics)
 - **Source:** [Interview: Game Loop Origin](../../vision/interview-log.md#2025-12-06-session-game-loop-origin--bubble-constraint)
+- **Physics:** [physics/higgs-bubble.md](../../physics/higgs-bubble.md) (normative; ledger D-11, 2026-10-01)
 
 ## Game Vision Alignment
 
@@ -23,6 +24,12 @@ The Higgs-bubble creates an **absolute boundary** between the ship and the unive
 
 > **Only information crosses the boundary. Mass cannot.**
 
+The wall is the game's one admitted hand-wave (D-11). It blocks every massive
+particle in both directions and is transparent to light and neutrinos. **No
+massive particle crosses at all**, so the mass budget is closed. Everything that
+follows from this is exact physics, in
+[physics/higgs-bubble.md](../../physics/higgs-bubble.md).
+
 This single constraint shapes the entire game:
 - You are "memetic travelers" - carrying ideas, not cargo
 - Alien tech is absorbed as blueprints, fabricated internally
@@ -38,7 +45,7 @@ This single constraint shapes the entire game:
 | **Light/EM** | Transparent to visible spectrum | See the universe |
 | **Radio signals** | Low-energy EM passes | Communication with civs |
 | **Data/blueprints** | Encoded in light | Proto-tech acquisition |
-| **Trace hydrogen** | Sub-femtogram particles | Very slow mass gain |
+| **Neutrinos** | Pass by rule (they barely interact with anything) | None; they pass through the ship anyway |
 | **Philosophical frameworks** | Ideas, not matter | Unlock new interpretations |
 
 ### ❌ CANNOT Cross (Inward)
@@ -49,6 +56,7 @@ This single constraint shapes the entire game:
 | **People** | Mass cannot enter | Starting crew is all you have |
 | **Alien artifacts** | Physical tech cannot enter | Must reverse-engineer from specs |
 | **Resources** | No material resupply | Finite mass budget |
+| **ISM gas, stellar wind, cosmic rays** | Massive particles; the wall is an elastic mirror | Drag and a faint glow, never mass gain (see below) |
 
 ### ⬆️ CAN Cross (Outward)
 
@@ -56,6 +64,7 @@ This single constraint shapes the entire game:
 |------|-----------|-----------------|
 | **Light/signals** | Transparent both ways | Broadcast to civs |
 | **Data transmission** | EM radiation | Share your archives |
+| **Drive light** | The photon drive (the only thing that pushes) | Boost, brake and drag cost energy |
 
 ### ❌ CANNOT Leave
 
@@ -78,16 +87,25 @@ Alien Civ → Data Transmission → Archive Analysis → Internal Fabrication �
            (crosses boundary)                      (uses internal mass)
 ```
 
-## Trace Hydrogen Absorption
+## The Interstellar Medium: an Elastic Mirror
 
-The bubble can absorb extremely small mass from:
-- Interstellar medium (ISM) - ~1 atom per cm³
-- Stellar wind (near stars) - Higher density
-- Nebulae - Dense regions
+There is no trace-hydrogen absorption (removed 2026-10-01, D-11). At γ 707 the
+ISM's hydrogen arrives in the ship frame as a 663.5 GeV proton beam (HB-59), so
+a wall that let it through would be lethal.
 
-**Rate:** Roughly 1kg per year at typical ISM density (gameplay number, not hard physics)
+Instead, the wall is an **elastic mirror** for massive particles. A particle
+meeting a barrier it cannot climb reflects elastically, so the wall feels drag
+and is not heated:
+- **Drag:** F = n γ²β² m_p c² A on the sphere. Holding cruise speed costs drive
+  energy n γβ m_p c² A d per trip, which grows as about γ·d. Sol → α Cen at
+  0.99c costs 1.37 × 10¹⁷ J, about 1.5 kg of mass-energy (HB-49, HB-53, HB-54).
+- **Plume:** the reflected protons stream ahead as an ultra-relativistic
+  forward plume.
+- **Glow:** a small inelastic fraction ε of impacts becomes faint light at the
+  wall. This is the boundary glow, brightest at the bow.
 
-**Impact:** Provides slight flexibility over long journeys but won't rescue poor planning.
+In R1 the simulation reports drag energy and glow as readouts, from a constant
+Local Bubble density (0.1 cm⁻³).
 
 ## Design Decisions
 
@@ -97,31 +115,34 @@ From [design-decisions.md](../../vision/design-decisions.md):
 |----------|---------|
 | Proto-Tech via Information | Alien tech absorbed as blueprints, built internally |
 | Finite Mass Budget | Competition between population and upgrades |
-| Slow Mass Absorption | Trickle from ISM, not a solution |
-| Radiation Shielding Automatic | Energy-dependent filtering, not player-managed |
+| ~~Slow Mass Absorption~~ | Superseded 2026-10-01: no mass crosses |
+| Radiation Shielding Automatic | In tension with D-11 (the wall passes all light); open |
+| Higgs Bubble Model (D-11, 2026-10-01) | One hand-wave, three properties; everything else exact |
 
 ## Boundary Physics
 
-### Energy-Dependent Transparency
+### Light of Every Energy Passes
 
-| Energy Level | Passes? | Examples |
-|--------------|---------|----------|
-| Visible light | ✅ Yes | Stars, planets visible |
-| Infrared | ✅ Yes | Heat signatures detectable |
-| Radio | ✅ Yes | Communication possible |
-| UV | ✅ Mostly | Some filtering |
-| X-ray | ❌ Filtered | Radiation protection |
-| Gamma | ❌ Blocked | Cosmic ray shielding |
+> The earlier energy-dependent table (X-rays filtered, gamma blocked) conflicts
+> with D-11, which makes the wall transparent to light of every energy.
+> Resolved by D-15 (2026-10-01): the crew is protected by real glazing and hull
+> inside the bubble, which absorb UV and X-rays; the wall filters nothing.
 
-This explains why the ship is habitable - dangerous radiation is filtered automatically.
+- **Massive radiation is blocked:** cosmic rays, stellar-wind protons and ISM
+  gas.
+- **Photons all pass**, which is why the crew sees exactly the relativistic sky
+  (relativity spec §2). At very high γ the forward sky is blueshifted into soft
+  X-rays: about 16 W/m² from starlight at γ 707, an approximate figure. Any
+  glazing absorbs these within micrometres, so the ship's own structure is the
+  shield (`higgs-bubble.md` §7).
 
 ### Mass Threshold
 
 The boundary has an effective "particle size" filter:
 - **Photons:** Always pass (massless)
-- **Neutrinos:** Pass (nearly massless, non-interacting)
+- **Neutrinos:** Pass. They have tiny masses, so letting them through is part of the rule, not a consequence
 - **Electrons:** Blocked (massive particles)
-- **Atoms:** Blocked (except trace infiltration)
+- **Atoms:** Blocked, always (no trace infiltration)
 - **Molecules:** Blocked
 - **Macroscopic objects:** Absolutely blocked
 
@@ -164,7 +185,7 @@ The spire predates the bubble and may not obey the same rules. This is part of t
 
 ### Q: Can crew members leave and return?
 
-No. The bubble is one-way for mass. Once inside, you stay inside.
+No. No mass crosses in either direction. Once inside, you stay inside.
 
 ### Q: What about births?
 
@@ -180,10 +201,9 @@ Bodies are recycled. Mass is conserved. This is both practical and thematically 
 type BoundaryTransfer =
     | LightSignal(string)           -- EM data
     | DataPacket(bytes)             -- Encoded information
-    | TraceMass(float)              -- Femtogram-scale absorption
     | BlockedMass(string)           -- Rejected with reason
 
-type AbsorptionSource =
+type ImpactSource =                -- reflected, never absorbed (D-11)
     | InterstellarMedium
     | StellarWind(star_id: int)
     | Nebula(density: float)
@@ -206,25 +226,25 @@ type TransferResult = {
 ### Audio
 - Muffled external sounds (everything is mediated)
 - Signal reception sounds
-- Absorption hum (when near dense regions)
+- Glow hum (when near dense regions)
 
 ### UI
 - Mass budget display (see mass-budget.md)
-- Absorption rate indicator
+- Drag energy and glow readout (R1: readout only)
 - Signal log for received data
 
 ## Testing Scenarios
 
 1. **Signal Reception:** Receive alien transmission, verify data crosses
 2. **Mass Rejection:** Attempt to "receive" physical gift, verify blocked
-3. **Trace Absorption:** Long journey in ISM, verify slow mass gain
+3. **No Absorption:** Long journey in ISM, verify internal mass is unchanged and the drag energy matches HB-51 to HB-56
 4. **Proto-Tech Build:** Receive blueprints, fabricate tech, verify mass cost
 
 ## Success Criteria
 
 - [ ] Boundary constraint is clear and consistent
 - [ ] Proto-tech acquisition feels meaningful
-- [ ] Mass absorption is slow but noticeable over decades
-- [ ] Radiation filtering is automatic and reliable
+- [ ] Internal mass never changes from outside; ISM drag energy is reported
+- [ ] Massive radiation is always blocked; photons are absorbed by the ship's glazing and hull (D-15)
 - [ ] Player understands they are "memetic travelers"
 - [ ] Isolation creates appropriate emotional weight

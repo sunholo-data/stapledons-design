@@ -79,7 +79,7 @@ At various distances from a Schwarzschild black hole:
 |---------------|------------|---------------|
 | 10 rs | 1.05x | 1.05 years external |
 | 3 rs | 1.22x | 1.22 years external |
-| 1.5 rs | 2x | 2 years external |
+| 1.5 rs | √3 ≈ 1.73x | 1.73 years external |
 | 1.1 rs | ~3x | 3 years external |
 | 1.01 rs | ~10x | 10 years external |
 
@@ -191,7 +191,7 @@ pure func apply_time_skip(world: World, ship_years: float, external_years: float
 
 ## Testing Scenarios
 
-1. **Safe Approach:** Orbit at 10rs, observe minor dilation, retreat safely
+1. **Safe Approach:** Orbit at 10rs of a supermassive hole, observe minor dilation, retreat safely (at a stellar-mass hole 10 rs means 10⁶ g of tide, HB-72)
 2. **Deep Dive:** Approach 1.5rs, skip centuries, crew stress but no mutiny
 3. **Mutiny Trigger:** Push to 1.1rs against crew wishes, trigger mutiny
 4. **Entry Sequence:** Complete BH entry, verify New Game+ trigger

@@ -7,7 +7,7 @@ where each brief lives. **Read this first, then the brief for your task.**
 
 | Brief | What | Needed by | Status |
 |---|---|---|---|
-| [ship-interior-blender-brief.md](ship-interior-blender-brief.md) | Isometric play areas, interior panoramas, foreground plates | R1 M4 | **Approved.** Start with the bridge style frame |
+| [ship-interior-blender-brief.md](ship-interior-blender-brief.md) | Isometric play areas, interior panoramas, foreground plates | R1 M4 | **Approved; bridge v1 approved for build-out (D-16).** Start §7 step 2 |
 | [characters-blender-brief.md](characters-blender-brief.md) | Crew, captain, Archive robots, background people: illustrated portraits and matching static mini avatars | R1 M4 | Illustrated direction accepted. [Generation cast plan](generation-cast-plan.md) in development |
 | [ship-exterior-blender-brief.md](ship-exterior-blender-brief.md) | Exterior bubble ship, departure/arrival camera moves, galaxy-map marker | R1 M2 (marker), M4 (views) | Revised spherical silhouette and boundary review pending |
 | [../features/ai-showcase.md](../features/ai-showcase.md) | **Runtime AI** (D-7): emotion markers selecting portraits, generated voices, the growing asset library, recorded outputs for replay | R1 M4 | Planned. Voice and marker style frame on the accepted Medic |
@@ -95,13 +95,13 @@ not "clean functional sci-fi".
 3. **Never edit `main` of stapledons-godot.** The Stapledon mission loop owns
    it. Deliver bundles as zips on stapledons-godot issue #1; the loop imports
    them.
-4. **Current review state:** Mark accepted the bridge as a good first pass,
-   rejected the Blender character study, and requested richer static character
-   images plus a spherical ship with its forest inside and a visible boundary.
-   The revised character and spherical exterior direction were accepted, followed by
-   the illustrated cast studies. Exact departure ages and family links are proposed
-   in [generation-cast-plan.md](generation-cast-plan.md). See
-   `vision/design-decisions.md` (2026-09-28, character and exterior review).
+4. **Current review state (2026-10-01, ledger D-16):** bridge style frame v1
+   is approved for build-out; interior build-out proceeds (interior brief §7
+   step 2). The illustrated cast (`cast_marker_v1`) is accepted and supersedes
+   the Medic v2 images (`style_revision_v2`). The exterior style frames are
+   still to be reviewed. Art is iterated as data: the game swaps in each
+   delivered bundle without code changes, and Mark tweaks as it goes. See
+   `vision/design-decisions.md` (2026-09-28 reviews; 2026-10-01 D-16).
 5. **Decisions are Mark's:** style frames, any change to ship canon, character
    designs, and anything that would paint over the sky. If Mark rules in your
    session, record it (see stapledons-godot `CLAUDE.md`, "Recording Mark's

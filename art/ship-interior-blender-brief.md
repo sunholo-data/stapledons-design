@@ -1,7 +1,9 @@
 # Brief: Blender assets for Stapledon's Voyage, starting with the ship interior
 
-**Status:** APPROVED direction (Mark, 2026-09-28, ledger D-6). The style frame
-(§7 step 1) still needs Mark's sign-off before build-out.
+**Status:** APPROVED direction (Mark, 2026-09-28, ledger D-6). Bridge style
+frame v1 (§7 step 1) is APPROVED for build-out (ledger D-16, 2026-10-01):
+start §7 step 2. Deliver early and often: the game runs on whatever bundle is
+current, and Mark reviews and tweaks each delivery.
 **For:** an agent in the Blender workspace (`~/dev/blender`), working under its
 `AGENTS.md` and `skills/blender-studio-workflow`.
 **Read first:** [art/README.md](README.md), the art bible: shared style,

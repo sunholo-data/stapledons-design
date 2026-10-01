@@ -72,11 +72,19 @@ Black holes are special navigation destinations with three distinct functions:
 
 #### 1. Black Hole Types
 
-| Type | Mass | Tidal Forces | Gameplay Role |
-|------|------|--------------|---------------|
-| **Stellar-mass** | 5-30 M☉ | Extreme | High-risk time skip; can kill careless ships |
-| **Intermediate** | ~1000 M☉ | Moderate | Safe deliberate deep-future skips; civ megastructures |
-| **Supermassive** | 10⁶-10⁹ M☉ | Negligible | Endgame hubs; pilgrimage destinations; safe horizon approach |
+The bubble wall does not shield tides (D-11). The tidal acceleration across the
+100 m bubble radius is a = 2GM L/r³, which at a fixed multiple of r_s falls as
+1/M². Values from [physics/higgs-bubble.md §9](../../physics/higgs-bubble.md):
+
+| Type | Mass | Tide at 10 / 5 / 3 r_s | Gameplay Role |
+|------|------|------------------------|---------------|
+| **Stellar-mass** | 5-30 M☉ | Lethal: Gaia BH1 (9.62 M☉) 1.14 × 10⁶ g / 9.08 × 10⁶ g / 4.21 × 10⁷ g (HB-72 to HB-74). Below 0.1 g only beyond 2,248 r_s (HB-75) | Seen from afar; lensing at a distance; can kill careless ships |
+| **Intermediate** | ~1000 M☉ | **Lethal near the horizon:** 105 g / 841 g / 3,890 g (HB-78 to HB-80). Below 0.1 g only beyond 102 r_s (HB-81) | Distant lensing and time-dilation views; civ megastructures. **Not** safe for near-horizon skips |
+| **Supermassive** | 10⁶-10⁹ M☉ | Negligible: Sgr A* (4.297 × 10⁶ M☉) 5.69 × 10⁻⁶ g / 4.55 × 10⁻⁵ g / 2.11 × 10⁻⁴ g (HB-84 to HB-86) | Deliberate deep-future skips; endgame hubs; pilgrimage destinations; safe horizon approach |
+
+A tide below 0.1 g at 3 r_s needs M ≥ 1.97 × 10⁵ M☉ (HB-87). Hovering costs
+photon-drive power, P = m_eff a c, and is not felt inside. Circular orbits
+(r ≥ 3 r_s) are free fall.
 
 #### 2. Time Dilation Formula
 
@@ -244,20 +252,20 @@ Every playthrough begins with emergence from a BH/mysterious structure:
 
 ### Example 1: Time Skip Decision
 
-**Player arrives at intermediate-mass BH**
+**Player arrives at a supermassive BH** (an intermediate hole would be lethal this close; see the tidal table)
 
 UI shows:
 ```
 ═══════════════════════════════════════════
-  SAGITTARIUS MINOR  (1,200 M☉)
+  SAGITTARIUS A*  (4.297 million M☉)
 ═══════════════════════════════════════════
 
-  Select orbital radius:
+  Select hover radius:
 
   [████████░░] 5.0 r_s  →  1 hour = 1.1 hours
   [██████░░░░] 2.0 r_s  →  1 hour = 1.4 hours
   [████░░░░░░] 1.5 r_s  →  1 hour = 1.7 hours
-  [██░░░░░░░░] 1.1 r_s  →  1 hour = 3.2 hours
+  [██░░░░░░░░] 1.1 r_s  →  1 hour = 3.3 hours
   [█░░░░░░░░░] 1.01 r_s →  1 hour = 10 hours
 
   PLANNED ORBIT: 12 ship hours at 1.01 r_s
