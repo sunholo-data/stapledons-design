@@ -95,13 +95,13 @@ not "clean functional sci-fi".
 3. **Never edit `main` of stapledons-godot.** The Stapledon mission loop owns
    it. Deliver bundles as zips on stapledons-godot issue #1; the loop imports
    them.
-4. **Current review state:** Mark accepted the bridge as a good first pass,
-   rejected the Blender character study, and requested richer static character
-   images plus a spherical ship with its forest inside and a visible boundary.
-   The revised character and spherical exterior direction were accepted, followed by
-   the illustrated cast studies. Exact departure ages and family links are proposed
-   in [generation-cast-plan.md](generation-cast-plan.md). See
-   `vision/design-decisions.md` (2026-09-28, character and exterior review).
+4. **Current review state (2026-10-01, ledger D-16):** bridge style frame v1
+   is approved for build-out; interior build-out proceeds (interior brief §7
+   step 2). The illustrated cast (`cast_marker_v1`) is accepted and supersedes
+   the Medic v2 images (`style_revision_v2`). The exterior style frames are
+   still to be reviewed. Art is iterated as data: the game swaps in each
+   delivered bundle without code changes, and Mark tweaks as it goes. See
+   `vision/design-decisions.md` (2026-09-28 reviews; 2026-10-01 D-16).
 5. **Decisions are Mark's:** style frames, any change to ship canon, character
    designs, and anything that would paint over the sky. If Mark rules in your
    session, record it (see stapledons-godot `CLAUDE.md`, "Recording Mark's

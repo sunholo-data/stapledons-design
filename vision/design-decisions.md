@@ -970,3 +970,17 @@ all scenario parameters.
 **Rationale:** Keeps the bubble the single hand-wave (D-11). With m_eff 1 kg the
 player sees both costs: boost and brake dominate at 0.99c, ISM drag at the top
 speed (`physics/higgs-bubble.md` §4–§5).
+
+
+## [2026-10-01] Art Status: Bridge v1 Approved; Iterate as Data (ledger D-16)
+
+**Mark (verbatim):** "I thought we did do art direction"; "looking to get
+something up so I can review it, and then we can tweak as we go? so we will have
+it modular enough to work with it?"
+
+**Decision:** Bridge style frame v1 (2026-09-28, "ok its a good first pass") is
+approved for build-out. The Medic v2 images are superseded by the accepted
+illustrated cast. The exterior style frames remain to be reviewed. Art is
+modular data: the game runs on the current bundle (blockout, then bridge v1,
+then revisions), each delivery gets a review build, and tweaks arrive as data
+wherever possible.
