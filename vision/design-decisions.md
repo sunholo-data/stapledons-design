@@ -182,6 +182,10 @@ Each archetype has baseline OCEAN values that inform dialogue tone, event reacti
 
 ## [2025-12-02] Gamma Cap: 10-20 Default
 
+> **SUPERSEDED by ledger D-15 (2026-10-01):** the cruise slider reaches
+> 0.999999c (γ ≈ 707); the ISM drag energy (∝ γ·d) is the natural brake. A cap
+> remains a scenario parameter, with no 10–20 default.
+
 **Decision:** Player ship γ (Lorentz factor) capped around 10-20. At γ=20: 300 ly = 15 years subjective / 300 years external. This allows 4-6 major legs in 100 years, with 2-3 revisits to nearby civs. Sweet spot for meaningful sacrifice without making civs unreachable.
 
 **Rationale:** Pillar 3 (Time Weight): Each journey costs centuries external. Not so high that everything is one-way, not so low that time feels cheap.
@@ -472,11 +476,11 @@ Tech tree progression may reveal more about the spire. It's the source of subtle
 
 ## [2025-12-06] Radiation Shielding Automatic
 
-> **IN TENSION with ledger D-11 (2026-10-01), open.** D-11 makes the wall
-> transparent to light of every energy, so photons are not filtered by energy.
-> Massive radiation (cosmic rays, stellar wind) is still blocked by the wall.
-> The hard blueshifted forward sky would be absorbed by the ship's own glazing
-> and hull (`physics/higgs-bubble.md` §7). This needs Mark's ruling.
+> **SUPERSEDED IN PART by ledger D-15 (2026-10-01).** The wall is transparent
+> to light of every energy and blocks all massive radiation (D-11). Photon
+> shielding is physical: the ship's glazing and hull absorb the blueshifted
+> UV/X-rays (`physics/higgs-bubble.md` §7). "Automatic" now means engineered
+> into the ship, not a property of the wall.
 
 **Decision:** Radiation shielding is automatic and part of game lore. The bubble has energy-dependent transparency (visible light passes, high-energy filtered). Player doesn't manage this directly.
 
@@ -949,3 +953,20 @@ real binary as the sky would show it.
 **Note:** the 2026-10-01 brief gave the ISM readout as about 3 kg. That figure
 assumed a flat face-on mirror. The canon sphere has half the drag, which gives
 1.52 kg (`physics/higgs-bubble.md` §5).
+
+
+## [2026-10-01] Shielding, γ Range, Boundary Optics and Bubble Defaults (ledger D-15)
+
+**Decision:** (1) The wall passes light of every energy; the crew is protected by
+real glazing and hull inside the bubble, which absorb the blueshifted UV and soft
+X-rays. No extra hand-wave. (2) The cruise slider reaches 0.999999c (γ ≈ 707);
+the ISM drag energy, which grows as γ·d, is the reason not to max it. The 10–20
+default γ cap is retired; a cap remains a scenario parameter. (3) The boundary
+does not refract: light crosses undeviated, so the crew sees exactly the
+relativistic sky. (4) Bubble defaults: m_eff = 1 kg, boost proper acceleration
+7.5×10⁵ g (about 5 ship-minutes to 0.999999c), inelastic glow fraction ε = 10⁻⁹;
+all scenario parameters.
+
+**Rationale:** Keeps the bubble the single hand-wave (D-11). With m_eff 1 kg the
+player sees both costs: boost and brake dominate at 0.99c, ISM drag at the top
+speed (`physics/higgs-bubble.md` §4–§5).

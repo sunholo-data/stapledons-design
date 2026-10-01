@@ -221,8 +221,10 @@ Recorded in `vision/design-decisions.md` and the game repo's charter ledger:
 - **D-14:** M4. No flip; 0.99c default; a 1,000 AU stand-off; news at the
   Archive terminal; art waits for style-frame approval; a scripted proxy in
   R1, with the human playtest in R2.
-- **Open from D-11:** "Radiation Shielding Automatic" (2025-12-06) conflicts
-  with a wall that passes light of every energy (`higgs-bubble.md` §7).
+- **D-15:** shielding is real glazing inside (the wall passes light of every
+  energy; dome and hull absorb UV/X-rays); the slider reaches 0.999999c with the
+  ISM cost as the brake (the 10–20 default γ cap is retired); the boundary does
+  not refract; bubble defaults m_eff 1 kg, boost 7.5×10⁵ g, ε 10⁻⁹.
 
 ## AILANG upstream asks (tracked via `ailang messages`)
 

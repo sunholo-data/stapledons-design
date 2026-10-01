@@ -70,7 +70,7 @@ Add a **Bubble Ship HUD** - a small 3D viewport in the corner of the screen show
 ### Bubble Appearance (from design-decisions.md)
 
 Per existing decisions:
-- Bubble boundary is **optically permeable but refractive** - light passes through with slight distortion
+- Bubble boundary is **optically permeable and non-refracting** (D-15): light crosses undeviated, so the crew sees exactly the relativistic sky; only the faint ISM glow marks the boundary
 - **Boundary glow** when ISM particles impact: the wall reflects them elastically, and a small inelastic fraction ε becomes faint light ([higgs-bubble.md §6](../../physics/higgs-bubble.md), D-11)
 - From outside: appears as a "shimmering gravitational lens effect" - not fully transparent
 

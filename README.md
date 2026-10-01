@@ -44,6 +44,5 @@ Each doc is revised for Godot + AILANG when its roadmap milestone starts.
 
 - **Ship interior presentation.** *Resolved 2026-09-28 (D-6):* an isometric
   three-layer view from inside the bubble (`vision/design-decisions.md`).
-- **Radiation shielding.** "Radiation Shielding Automatic" (2025-12-06)
-  filters photons by energy, but the D-11 wall passes light of every energy
-  (`physics/higgs-bubble.md` §7). This needs Mark's ruling.
+- **Radiation shielding** (resolved, D-15): the wall passes light of every
+  energy; the ship's glazing and hull absorb UV/X-rays (`physics/higgs-bubble.md` §7).

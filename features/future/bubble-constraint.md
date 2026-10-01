@@ -124,8 +124,9 @@ From [design-decisions.md](../../vision/design-decisions.md):
 ### Light of Every Energy Passes
 
 > The earlier energy-dependent table (X-rays filtered, gamma blocked) conflicts
-> with D-11, which makes the wall transparent to light of every energy. The
-> conflict with "Radiation Shielding Automatic" needs Mark's ruling.
+> with D-11, which makes the wall transparent to light of every energy.
+> Resolved by D-15 (2026-10-01): the crew is protected by real glazing and hull
+> inside the bubble, which absorb UV and X-rays; the wall filters nothing.
 
 - **Massive radiation is blocked:** cosmic rays, stellar-wind protons and ISM
   gas.
@@ -244,6 +245,6 @@ type TransferResult = {
 - [ ] Boundary constraint is clear and consistent
 - [ ] Proto-tech acquisition feels meaningful
 - [ ] Internal mass never changes from outside; ISM drag energy is reported
-- [ ] Massive radiation is always blocked (the photon side is pending Mark's ruling)
+- [ ] Massive radiation is always blocked; photons are absorbed by the ship's glazing and hull (D-15)
 - [ ] Player understands they are "memetic travelers"
 - [ ] Isolation creates appropriate emotional weight

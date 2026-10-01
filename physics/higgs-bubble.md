@@ -96,7 +96,7 @@ derived from them with ordinary physics.
 **Boost → cruise → brake.**
 - **Boost:** minutes of ship time up to the cruise speed the player chose.
 - **Cruise:** coast at that speed, anywhere from 0.9c to 0.999999c, bounded by
-  the scenario's γ cap (design-decisions 2025-12-02).
+  an optional scenario γ cap (no default since D-15; the ISM cost is the brake).
 - **Brake:** minutes of ship time down to rest at the target.
 
 There is no midpoint flip, and coasting is not weightless (property 3). This is
@@ -273,9 +273,9 @@ this is (16/3) γ² σ T_CMB⁴. The starlight background (u ≈ 0.5 eV/cm³, an
 approximate value, so it has no check value) gives roughly 16 W/m² at γ 707,
 blueshifted into soft X-rays of about 1 keV. Soft X-rays are absorbed within
 micrometres of glass, so the dome glazing and hull stop them. The wall does
-not, because property 1 lets light of every energy through. This conflicts
-with the 2025-12-06 decision "Radiation Shielding Automatic" (energy-dependent
-transparency) and **needs Mark's ruling**. Massive radiation (cosmic rays,
+not, because property 1 lets light of every energy through. Ruled by D-15
+(2026-10-01): photon shielding is this physical glazing and hull, and the
+2025-12-06 "Radiation Shielding Automatic" entry is superseded in part. Massive radiation (cosmic rays,
 stellar wind) is blocked by the wall, as before.
 
 | ID | Quantity | Value | Unit |
