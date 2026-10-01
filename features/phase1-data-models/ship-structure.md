@@ -15,7 +15,7 @@
 | Philosophical Depth | + | +1 | Cathedral spaces, Archive shrine create contemplative spaces |
 | Ship & Crew Life | +++ | +3 | THE core implementation of Pillar 4 - this IS the ship as home |
 | Legacy Impact | + | +1 | The bubble civilization's fate shown in end-screen |
-| Hard Sci-Fi Authenticity | ++ | +2 | 1g thrust gravity, Higgs bubble physics, realistic volume |
+| Hard Sci-Fi Authenticity | ++ | +2 | 1 g held by the bubble generator (not thrust), exact bubble-derived physics ([higgs-bubble.md](../../physics/higgs-bubble.md)), realistic volume |
 | **Net Score** | | **+8** | **Decision: Move forward - critical foundation** |
 
 **Feature type:** Infrastructure + Gameplay (enables all ship-based features)
@@ -24,7 +24,8 @@
 - [2025-12-08] Higgs Bubble Ship: 10-20+ Levels Around Spire
 - [2025-12-08] Visual Aesthetic: French 70s Comic (Moebius/Métal Hurlant)
 - [2025-12-08] Spire: Monolithic Superstructure with Archive Interface
-- [2025-12-08] Ship Orientation: Vertical Thrust Axis with 1g Gravity
+- [2025-12-08] Ship Orientation: Vertical Thrust Axis with 1g Gravity (superseded in part: the 1 g is the generator's)
+- [2026-10-01] The Higgs Bubble Model and the Journey Profile (ledger D-11)
 - [2025-12-08] Archive: Distributed Terminals Plus Robots
 - [2025-12-08] Open Levels: Views Outward Through Bubble
 - [2025-12-06] Bubble Society as Living Sim
@@ -63,7 +64,8 @@ The game needs a fully realized ship interior that serves as the player's home f
 
 ### Overview
 
-The ship is a vertical structure oriented along the thrust axis:
+The ship is a vertical structure oriented along the axis of travel. The
+generator holds 1 g toward aft, so "down" is aft and "up" is forward (D-11):
 
 ```
                     ▲ Direction of travel (0.9c+)
@@ -89,7 +91,7 @@ The ship is a vertical structure oriented along the thrust axis:
            ╲     SPIRE       ╱      Central column through all levels
             ╰───────┬───────╯
                     │
-                    ▼ Thrust (provides 1g gravity)
+                    ▼ Down (1 g held by the generator)
 
     ←─── BUBBLE BOUNDARY ───→   (100m radius, transparent)
 ```
@@ -103,7 +105,7 @@ The ship is a vertical structure oriented along the thrust axis:
 | **Levels** | 15-20 | Each ~5-8m vertical spacing |
 | **Level diameter** | 30-80m | Varies by height (wider at equator) |
 | **Spire diameter** | ~10m | Central column, inaccessible interior |
-| **Gravity** | 1g | From constant thrust |
+| **Gravity** | 1g | Held by the bubble generator toward aft, at every speed and while coasting; a comfort choice, not thrust (D-11) |
 
 ### Level Zones
 
@@ -229,7 +231,7 @@ From any open level, looking sideways (perpendicular to spire):
 
 **Layered rendering:**
 1. **Interior:** Isometric level geometry, crew, objects
-2. **Bubble edge:** Faint glow from ISM impacts (brighter forward)
+2. **Bubble edge:** Faint glow from the small inelastic fraction of ISM impacts (brighter forward; [higgs-bubble.md §6](../../physics/higgs-bubble.md))
 3. **Space:** Stars/planets with SR effects based on velocity
 
 ### Visual Aesthetic: French 70s Comic

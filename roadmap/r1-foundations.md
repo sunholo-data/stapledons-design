@@ -3,7 +3,7 @@
 **Status:** Proposed
 **Target:** r1 (four milestones after the spike)
 **Priority:** P0
-**Dependencies:** [ADR 0001](../decisions/0001-engine-and-architecture.md), [relativity spec](../physics/relativity-spec.md)
+**Dependencies:** [ADR 0001](../decisions/0001-engine-and-architecture.md), [relativity spec](../physics/relativity-spec.md), [Higgs bubble physics](../physics/higgs-bubble.md)
 **Repos:** design (this repo), `sunholo-data/stapledons-godot` (game)
 **Implementation:** milestone design docs, sprints and the mission charter
 draft live in `stapledons-godot/design_docs/`. The first is
@@ -64,12 +64,21 @@ any speed and orientation.
    luminance, with auto-exposure that can be clamped by the player.
    Readability options from `open-questions.md` are *explicit settings*, never
    silent fudges.
+6. **Forward CMB glow** (added 2026-10-01; a renderer gap found by D-11). The
+   CMB ahead is a blackbody at T_CMB·γ(1+β), with its temperature halving 1/γ
+   rad from the forward pole. It is faintly visible from γ ≈ 146 and plainly
+   from γ ≈ 275, and it reaches 3,853.7 K at γ 707
+   ([higgs-bubble.md §7](../physics/higgs-bubble.md), HB-62 to HB-70; game
+   charter row 6a). It needs a CPU check of HB-62, HB-63 and HB-68, and a
+   golden case.
 
 **Acceptance**
 - All relativity-spec §2 check values pass on the CPU. GPU golden tests pass
   with free orientation, including off-axis velocity.
 - Reference renders at 0, 0.5, 0.9, 0.99 and 0.999c are committed and diffed
   in CI.
+- The forward CMB glow matches HB-63 and HB-68, with a reference render at
+  γ 707.
 - 60 fps at 1440p with the 330k catalogue and the background on M4 Max.
 
 ### M2: Simulation protocol and the journey core (gameplay foundation)
@@ -81,14 +90,21 @@ galaxy's, runs in AILANG and can be tested with no Godot at all.
    journey). Hand-written AILANG codecs with round-trip tests. Message shapes
    follow AILANG's planned `Render`/`Input`/`Clock` host effects
    (`m-game-engine-effects.md`) so native effects can replace the pipe later.
-2. **World clock and ship.** Galaxy time and ship proper time, a mass budget
-   stub, and burn/coast/flip/decelerate phases. Exact rapidity integration,
-   already proven in the spike.
-3. **Journey planner.** Given a target star and a peak speed or acceleration
-   profile, compute ship-years, Earth-years, arrival date and crew age. Pure
-   AILANG, with closed-form tests. Example: Sol → α Cen (4.37 ly), accelerating
-   at 1 g to the midpoint and then decelerating at 1 g, takes 3.582 ship-yr and
-   6.003 Earth-yr, with a peak speed of 0.9517c.
+2. **World clock and ship.** Galaxy time and ship proper time, and the
+   journey phases **boost → cruise → brake** (D-11). Boost and brake take
+   minutes of ship time; cruise is at the chosen speed. There's no flip and no
+   zero-g coast: the generator holds 1 g. Exact rapidity integration, already
+   proven in the spike. The mass-budget stub becomes an **m_eff plus
+   energy-ledger readout**: boost and brake energy m_eff c² φ (HB-35, HB-36), and ISM
+   drag energy n γβ m_p c² A d at a constant Local Bubble density (HB-51 to HB-56). It's
+   a readout only; an enforced budget comes later.
+3. **Journey planner.** Given a target star and a cruise speed (0.9c to
+   0.999999c, within the γ cap), compute ship-years, Earth-years, arrival date,
+   crew age and the energy ledger. Pure AILANG, with closed-form tests.
+   Example: Sol → α Cen (4.37 ly) at 0.99c takes 4.414 Earth-yr and
+   0.6227 ship-yr, or 227.4 ship-days (HB-20 to HB-22). The 1 g flip-and-burn (3.582
+   ship-yr, 6.003 Earth-yr, peak 0.9517c; HB-27 to HB-29) is no longer the gameplay
+   profile. It stays a `sunholo/relativity` journey check value.
 4. **Commit.** A committed journey can't be cancelled (Pillar 1). The
    simulation owns this rule, not the UI.
 5. **Determinism.** A pure PCG/SplitMix generator in AILANG with named
@@ -103,7 +119,9 @@ galaxy's, runs in AILANG and can be tested with no Godot at all.
   `ailang test` plus golden state logs.
 - The VM and interpreter give identical state for a 10k-tick session with
   journeys.
-- The planner matches the closed-form relativistic rocket equations to 1e-9.
+- The planner matches the closed-form relativistic equations to 1e-9,
+  including HB-20 to HB-22 and HB-27 to HB-29.
+- The energy-ledger readout matches HB-35, HB-36 and HB-51 to HB-56.
 
 ### M3: Black holes (GR foundation)
 **Goal:** the black hole looks exactly right, because it's where New Game+
@@ -116,52 +134,68 @@ begins and where the hard-SF promise is most visible.
 3. Composed with SR: the observer's orbit or hover velocity is applied as
    aberration and Doppler in the local static frame. The observer's
    gravitational blueshift is applied to incoming light.
-4. A black-hole demo scene in the simulation: approach, hover, and the
-   gravitational time dilation shown on the HUD (the AILANG simulation computes
-   √(1 − r_s/r)).
+4. A black-hole demo scene in the simulation at **Sgr A*** (4.297 × 10⁶ M☉,
+   about 27,000 ly; D-13). Sgr A* replaced Gaia BH1 because the wall doesn't
+   shield tides (HB-72 to HB-86). The ship is placed there without a journey,
+   and the lensed sky is the real sky in that direction. The scene covers
+   approach and hover over r ∈ [2, 10⁶] r_s. The HUD shows the gravitational
+   time dilation (the AILANG simulation computes √(1 − r_s/r)) and the tidal
+   acceleration across the bubble. Near-horizon dives belong to the time-skip /
+   New Game+ milestone.
+5. For an observer at r, a 2D δ(ψ, r) table, from the integrator or the exact
+   elliptic form, each cross-checking the other (spec §3).
 
 **Acceptance**
 - Shadow angular radius matches sin α = (b_c/r)√(1 − r_s/r) to 0.5 px at
   10, 5 and 3 r_s.
-- The weak-field limit matches 2r_s/b to 1% at b = 100 r_s.
+- Weak field (D-13): within 1% of 2r_s/b at b = 1000 r_s, and within 3e-4 of
+  2r_s/b + (15π/16)(r_s/b)² at b = 100 r_s (RS-14, RS-15). The golden tests at
+  10, 5 and 3 r_s are mass-independent.
+- The HUD's tidal readout at Sgr A* matches HB-84 to HB-86.
 - An Einstein ring appears for a star placed behind the hole, at the predicted
   angle.
 
 ### M4: First journey, a vertical slice
 **Goal:** a first playable loop. Plan → commit → transit → arrive → consequence.
 
-1. **Galaxy map:** pick α Centauri, see the plan, commit.
-2. **Transit:** a placeholder deck scene (one painted image with a masked
-   window) with the live relativistic sky composited into the window through a
-   SubViewport (`viewport-compositing.md`). Time warp; the HUD shows both
-   clocks.
-3. **Arrival:** decelerate, and the sky relaxes to normal.
+1. **Galaxy map:** pick α Centauri, see the plan, commit. The default cruise
+   speed is **0.99c** (γ 7.0888: about 227 ship-days and 4.414 Earth-years each
+   way; ISM readout 1.37 × 10¹⁷ J, or 1.52 kg; HB-20 to HB-22, HB-53, HB-54). The player can
+   change it. Commit is one dialog showing both clocks (D-12).
+2. **Transit:** the **D-6 interior**, an isometric three-layer view from inside
+   the bubble (Blender play area, interior panorama, then the live relativistic
+   sky through the panorama's exported camera). "Up" is the direction of
+   travel throughout; there's no flip (D-14). Time warp; the HUD shows both
+   clocks. Interior art waits for Mark's approval of the bridge style frame.
+3. **Arrival:** brake to a **1,000 AU stand-off** from the target star, where
+   α Cen A is about magnitude −12.2, with A and B about 1.3° apart (HB-91 to HB-94). The
+   starbow relaxes to the normal sky.
 4. **Consequence stub:** the Earth-side simulation advances by the elapsed
-   Earth-years. One scripted "news from home" beat, text only, driven by the
-   size of the time gap.
+   Earth-years. One scripted "news from home" beat, as a text panel at the
+   Archive terminal only, driven by the size of the time gap.
 5. **Return trip:** home is now years older, and the legacy log records it.
+6. **Archive physics lore:** the entries in
+   [`lore/archive/`](../lore/archive/) are readable at the Archive terminal as
+   they unlock. Their numbers are checked against HB/RS check values by test.
 
 **Acceptance**
-- A new player finishes the loop in under 10 minutes.
+- The scripted, deterministic minimum-path proxy completes the loop in
+  ≤ 360 s, with transit legs of 45–120 s at the default warp. The
+  three-new-player human playtest moves to R2 (D-14).
 - Every number shown matches the simulation.
 - A replay of the session is byte-identical.
+- Every lore entry's numbers match its cited check values (test).
 
 ## Out of scope for R1
 
 Civilization simulation, the crew psychology model, dialogue with Gemini, the
-Archive, trade, the 1M-year endgame, TTS and music. They come in R2 and later,
+Archive (except its physics lore entries and the news panel, M4), trade, the 1M-year endgame, TTS and music. They come in R2 and later,
 on top of the M2 protocol.
 
 ## Decisions needed before or during R1
 
-1. **Ship interior presentation.** The docs contradict each other:
-   - isometric tiles;
-   - first-person 3D (design-decisions, 2025-12-18);
-   - painted 2D/2.5D scenes with parallax and a deck selector
-     (`scene-based-interior-navigation.md`, 2025-12-20; the newest).
-
-   R1 assumes the newest (painted scenes) for the M4 placeholder. Please
-   confirm, and add the entry to `vision/design-decisions.md`.
+1. **Ship interior presentation.** *Resolved 2026-09-28 (D-6):* an isometric
+   three-layer view from inside the bubble. See `vision/design-decisions.md`.
 2. **Readability vs accuracy** (`open-questions.md`). Proposal: accuracy is the
    default and cannot be changed silently. Accessibility and readability aids
    (exposure clamps, "navigation view" overlays) are explicit, labelled
@@ -171,6 +205,24 @@ on top of the M2 protocol.
 4. **Target platforms.** None are specified in the docs. Proposal: macOS first
    (the dev machine), then Windows/Linux, with web as a stretch goal (the
    sidecar would then need AILANG WASM that runs outside the browser).
+
+## Decisions (attended rulings, 2026-10-01)
+
+Recorded in `vision/design-decisions.md` and the game repo's charter ledger:
+- **D-11:** the Higgs bubble model. One admitted hand-wave with three
+  properties; exact physics for the rest
+  ([physics/higgs-bubble.md](../physics/higgs-bubble.md)). The journey is
+  boost → cruise → brake; the ISM elastic mirror; physics as Archive lore.
+- **D-12:** M2's remaining questions. A relative calendar ("Earth +6.003 yr")
+  with start_age 30; manual thrust only in diagnostic sessions, no pause; a
+  commit dialog showing both clocks, with a 1.5 s hold.
+- **D-13:** M3. The weak-field check pair; the δ(ψ, r) table allowance; the
+  hover range [2, 10⁶] r_s; the demo hole Sgr A*.
+- **D-14:** M4. No flip; 0.99c default; a 1,000 AU stand-off; news at the
+  Archive terminal; art waits for style-frame approval; a scripted proxy in
+  R1, with the human playtest in R2.
+- **Open from D-11:** "Radiation Shielding Automatic" (2025-12-06) conflicts
+  with a wall that passes light of every energy (`higgs-bubble.md` §7).
 
 ## AILANG upstream asks (tracked via `ailang messages`)
 

@@ -450,12 +450,18 @@ Tech tree progression may reveal more about the spire. It's the source of subtle
 
 ## [2025-12-06] Slow Mass Absorption
 
+> **SUPERSEDED 2026-10-01** by ledger D-11 (below). No massive particle crosses
+> the wall, so no mass is absorbed. The mass budget is closed.
+
 **Decision:** The bubble can absorb very small mass (ISM, stellar wind, trace hydrogen) through the boundary, but at a very slow rate. This is a trickle, not a solution - it won't rescue poor planning.
 
 **Rationale:** Provides slight flexibility over long journeys. Maintains mass scarcity as a meaningful constraint. Hardish-sci plausible.
 
 
 ## [2025-12-06] Proto-Tech via Information Only
+
+> **SUPERSEDED IN PART 2026-10-01** by ledger D-11 (below). Information still
+> crosses as light, but femtogram seeds do not: no massive particle crosses.
 
 **Decision:** Alien technology modules are built by absorbing intelligence (blueprints, equations, knowledge) and fabricating internally using existing mass. No physical objects cross the bubble boundary except:
 - Light / EM signals
@@ -465,6 +471,12 @@ Tech tree progression may reveal more about the spire. It's the source of subtle
 
 
 ## [2025-12-06] Radiation Shielding Automatic
+
+> **IN TENSION with ledger D-11 (2026-10-01), open.** D-11 makes the wall
+> transparent to light of every energy, so photons are not filtered by energy.
+> Massive radiation (cosmic rays, stellar wind) is still blocked by the wall.
+> The hard blueshifted forward sky would be absorbed by the ship's own glazing
+> and hull (`physics/higgs-bubble.md` §7). This needs Mark's ruling.
 
 **Decision:** Radiation shielding is automatic and part of game lore. The bubble has energy-dependent transparency (visible light passes, high-energy filtered). Player doesn't manage this directly.
 
@@ -587,6 +599,11 @@ Emotionally: "sad but happy" - bittersweet remembrance.
 
 ## [2025-12-08] Boundary Glow as Motion Cue
 
+> **SUPERSEDED IN PART 2026-10-01** by ledger D-11 (below). The wall is an
+> elastic mirror: ISM impacts cause drag, not heating. The glow survives as a
+> faint motion cue from a small inelastic fraction ε of the impacts
+> (`physics/higgs-bubble.md` §6).
+
 **Decision:** The Higgs bubble boundary glows when particles from the ISM impact it at speed. Since mass cannot pass through (per bubble-constraint), kinetic energy converts to visible light at the boundary. Effect scales with both velocity and local ISM density: faint in deep space, bright near stars (stellar wind), intense in nebulae. Forward-facing glow is strongest, providing heading feedback. This replaces 'fake space dust' with a physically-justified motion cue.
 
 **Rationale:** Serves Pillar 5 (Grounded Strangeness): Effect emerges directly from the Higgs bubble physics - mass rejection creates visible phenomenon. Serves Pillar 4 (Ship Is Home): Creates narrative opportunities (crew traditions around 'The Watch', monitoring the glow). Serves Pillar 3 (Time Has Emotional Weight): The constant glow is a reminder you're hurtling through space at relativistic speeds, disconnected from the universe.
@@ -621,6 +638,11 @@ Emotionally: "sad but happy" - bittersweet remembrance.
 
 
 ## [2025-12-08] Ship Orientation: Vertical Thrust Axis with 1g Gravity
+
+> **SUPERSEDED IN PART 2026-10-01** by "The Higgs Bubble Model and the Journey
+> Profile (ledger D-11)" (below). The 1 g is held by the bubble's generator, not
+> by continuous thrust, and there is no flip. The vertical axis, aft-is-down and
+> up-is-forward orientation stand.
 
 **Decision:** The ship is oriented vertically along the thrust axis. The spire runs from engines (bottom/aft) to observation deck (top/forward). Continuous 1g thrust provides artificial gravity - 'down' is toward the engines, 'up' is toward the direction of travel. Levels are stacked along this axis, with open sides facing outward toward the bubble boundary. This means when standing on any level, you look UP toward the bridge and DOWN toward engineering.
 
@@ -795,3 +817,135 @@ spherical ship and contain its inhabited forest visibly within that volume.
 - **Voice:** **no live real-time voice** for now. Speech is **pre-recorded or
   generated per line and cached**, and a **text-only mode** is always available.
 
+
+## [2026-10-01] The Higgs Bubble Model and the Journey Profile (ledger D-11)
+
+**Context:** M2's open questions 1 and 2 (what the bubble does, and how a
+journey flies) had no physical model. Older canon mixed thrust gravity, trace
+hydrogen leaking in, and a heated boundary.
+
+**Mark's principle (verbatim):** "the higgs bubble is the one hand wavy non
+physics bit which we admit but then be as hard core physics for the rest as
+possible" and "trying to make it interesting but also physics education - all
+of what you just said should be recorded and available in-game lore".
+
+**Decision (Mark, attended):**
+- **The bubble is the one admitted hand-wave**, defined by three properties:
+  1. its wall blocks every massive particle both ways and is transparent to
+     light and neutrinos; the mass budget is closed;
+  2. the pocket has a tunable effective inertia m_eff, tiny but never zero;
+  3. the interior is its own frame: the pocket's acceleration isn't felt, and
+     the generator holds 1 g toward aft as a comfort choice.
+- **The journey is boost → cruise → brake.** Boost and brake take minutes of
+  ship time. Cruise is at the player's chosen speed, 0.9c to 0.999999c within
+  the γ cap. There is no flip and no zero-g coast.
+- **Everything else is exact physics**, written down in
+  [`physics/higgs-bubble.md`](../physics/higgs-bubble.md) with check values
+  HB-1 to HB-94:
+  - the drive is a photon drive, radiating m_eff c² φ per boost;
+  - the wall is an elastic mirror for the ISM: drag, no heating, a forward
+    proton plume, and a faint glow from an inelastic fraction ε;
+  - the forward CMB is blueshifted by γ(1+β);
+  - tides are not shielded;
+  - hovering costs photon-drive power, and orbits are free.
+- **Physics becomes lore.** The Archive explains all of it to the player
+  ([`lore/archive/`](../lore/archive/)). Lore numbers come from check values
+  and are checked by a test in the game repo.
+- **Honesty note, canon:** the Higgs gives about 1% of a proton's mass, and
+  zeroing it inside would dissolve atoms. "Higgs" names the hand-wave; inside,
+  physics is normal.
+
+**Rationale:** Pillar 5 (Grounded Strangeness): one stated invention and
+nothing else invented makes the strangeness trustworthy and teachable. Pillar 3
+(Time Has Emotional Weight): cruise speed becomes a direct choice between your
+years and home's. Pillar 4 (The Ship Is Home): ordinary weight and a calm
+interior, at any speed.
+
+**Alternatives rejected:**
+- 1 g flip-and-burn as gameplay: reaching 0.999999c at a felt 1 g takes 7.03
+  ship-years (HB-24), and coasting would be weightless. The 1 g α Cen numbers
+  stay as a package check value (HB-27 to HB-29).
+- Low m_eff alone hiding acceleration: felt acceleration doesn't depend on
+  mass.
+- Trace hydrogen crossing: at γ 707 it would be a 660 GeV proton beam (HB-59).
+- A thermalising wall whose glow comes inward: lethal on every fast trip
+  (HB-45).
+
+**Implications:**
+- Supersedes the 2025-12-08 thrust-gravity line in part, "Slow Mass
+  Absorption", the femtogram seeds of "Proto-Tech via Information Only", and
+  part of "Boundary Glow as Motion Cue" (notes added above). "Radiation
+  Shielding Automatic" is in tension and needs a ruling.
+- M2's mass-budget stub becomes an m_eff plus energy-ledger readout (boost,
+  brake and ISM drag energy at a constant Local Bubble density). An enforced
+  budget comes later.
+- The renderer lacks the forward CMB glow (visible from γ ≈ 146 to 275,
+  HB-65 and HB-67). This is a new R1 item.
+- Fixed canon: `ship-structure.md`, `bubble-constraint.md`, `mass-budget.md`,
+  `bubble-ship-hud-view.md` and the exterior Blender brief.
+- The upper end of the cruise range (γ 707) is above the 2025-12-02 default γ
+  cap of 10–20. The cap remains a scenario parameter.
+
+
+## [2026-10-01] Demo Black Hole: Sgr A*, Because of Tides (ledger D-13)
+
+**Context:** M3 needed a demo hole. The draft used Gaia BH1. D-11 established
+that the wall does not shield tides.
+
+**Decision (Mark, attended):**
+- **The demo hole is Sgr A*** (4.297 × 10⁶ M☉, about 27,000 ly; GRAVITY 2022). The ship is
+  placed there without a journey, and the lensed sky is the real sky in that
+  direction. The golden tests at 10, 5 and 3 r_s are mass-independent. The
+  simulation reports the tidal acceleration on the HUD.
+- **Tides across the bubble are lethal near small holes.** Gaia BH1 gives
+  4.21 × 10⁷ g at 3 r_s, and a 1,000 M☉ hole gives 3,890 g. Sgr A* gives
+  2.11 × 10⁻⁴ g (HB-74, HB-80, HB-86). A tide below 0.1 g at 3 r_s needs at least
+  1.97 × 10⁵ M☉ (HB-87).
+- **The M3 hover range is r ∈ [2, 10⁶] r_s.** Near-horizon dives go to the
+  time-skip / New Game+ milestone.
+- **The weak-field check is a pair:** within 1% of 2r_s/b at b = 1000 r_s, and
+  within 3e-4 of the second-order form at b = 100 r_s (relativity spec §3,
+  RS-14 and RS-15).
+- **Observers at finite r use a 2D δ(ψ, r) table.** The integrator and the
+  exact elliptic form cross-check each other (spec §3).
+
+**Rationale:** Pillar 5: the safe hole is the physically safe one, and the
+player learns why. Pillar 3: Sgr A* is the natural future time-skip site.
+
+**Implications:** the `black-holes.md` table is corrected: intermediate holes
+are not safe near the horizon, and supermassive holes are. The
+`black-hole-mechanics.md` time ratio at 1.5 r_s is √3 ≈ 1.73.
+
+
+## [2026-10-01] Vertical Slice: 0.99c Default and a 1,000 AU Stand-off (ledger D-14)
+
+**Context:** M4's open questions: orientation, cruise speed, arrival point,
+playtest.
+
+**Decision (Mark, attended):**
+- **No flip exists** (D-11). "Up" is the direction of travel throughout. The
+  starbow stays overhead and relaxes on arrival.
+- **The slice's default cruise speed** from Sol to α Centauri is **0.99c**
+  (γ 7.0888). That gives about 227 ship-days and 4.414 Earth-years each way
+  (HB-20 to HB-22). The player can change it. The ISM readout for the trip is
+  1.37 × 10¹⁷ J, about 1.5 kg of mass-energy (HB-53, HB-54).
+- **The arrival stand-off is 1,000 AU** from the target star. From there α Cen
+  A is about magnitude −12.2, and A and B are about 1.3° apart (0.64°–2.04°
+  over their orbit; HB-91 to HB-94).
+- **The calendar is relative** (D-12). The news beat is a text panel at the
+  Archive terminal only.
+- **Art:** wait for Mark's approval of the Blender bridge style frame. Interior
+  work doesn't ship on the spike blockout.
+- **Playtest:** R1 uses only the scripted, deterministic minimum-path proxy
+  (≤ 360 s, transit legs of 45–120 s at the default warp). The three-new-player
+  human playtest moves to R2.
+- Time while docked: superseded by D-12. There is no pause, and the clock runs
+  at rest.
+
+**Rationale:** Pillar 3: 0.99c makes the clocks diverge visibly (days aboard
+against years at home) without being extreme. Pillar 5: the stand-off shows a
+real binary as the sky would show it.
+
+**Note:** the 2026-10-01 brief gave the ISM readout as about 3 kg. That figure
+assumed a flat face-on mirror. The canon sphere has half the drag, which gives
+1.52 kg (`physics/higgs-bubble.md` §5).

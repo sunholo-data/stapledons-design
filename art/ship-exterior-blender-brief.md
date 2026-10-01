@@ -64,7 +64,8 @@ effects themselves.**
   - `LOD1` for mid shots (≤10k);
   - `LOD2` as a marker-scale silhouette (≤1k).
 - **Engines (aft):** the Higgs drive isn't a rocket and has **no exhaust
-  plume**; 1 g thrust comes from the bubble physics. Give the aft pole a
+  plume**; the drive is a photon drive, and the crew's 1 g is held by the
+  generator, not by thrust ([higgs-bubble.md](../physics/higgs-bubble.md)). Give the aft pole a
   distinct, quiet form (the spire's root), and nothing that looks like fire.
 
 ## 3. Camera choreography (`cam_path_<shot>.json`)

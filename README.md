@@ -14,7 +14,9 @@ See [ADR 0001](decisions/0001-engine-and-architecture.md) for the reasons.
 |---|---|
 | [vision/](vision/) | Game vision, core pillars, the design-decision log, interview log, open questions |
 | [features/](features/) | Feature designs by phase (data models, core views, gameplay, polish, future backlog) |
-| [physics/relativity-spec.md](physics/relativity-spec.md) | **Normative** accuracy spec for the SR/GR visuals, with check values and the audit of the old implementation |
+| [physics/relativity-spec.md](physics/relativity-spec.md) | **Normative** accuracy spec for the SR/GR visuals, with check values (RS-n) and the audit of the old implementation |
+| [physics/higgs-bubble.md](physics/higgs-bubble.md) | **Normative**: the Higgs bubble as the one admitted hand-wave, and every consequence derived exactly, with check values (HB-n) |
+| [lore/archive/](lore/archive/) | Player-facing physics entries for the in-game Archive; their numbers are checked against HB/RS check values |
 | [decisions/](decisions/) | Architecture decision records |
 | [roadmap/r1-foundations.md](roadmap/r1-foundations.md) | Current roadmap: spike → relativistic sky → journey core → black holes → first playable journey |
 | [reference/](reference/) | Cross-cutting references: AI capabilities, RNG and determinism, eval system, performance |
@@ -40,8 +42,8 @@ Each doc is revised for Godot + AILANG when its roadmap milestone starts.
 
 ## Known contradictions to resolve
 
-- **Ship interior presentation.** Three versions exist: isometric; first-person
-  3D (`vision/design-decisions.md`, 2025-12-18); and painted 2D/2.5D scenes
-  with a deck selector (`features/scene-based-interior-navigation.md`,
-  2025-12-20, the newest). The decision log has no entry for the newest one.
-  See the R1 roadmap, "Decisions needed".
+- **Ship interior presentation.** *Resolved 2026-09-28 (D-6):* an isometric
+  three-layer view from inside the bubble (`vision/design-decisions.md`).
+- **Radiation shielding.** "Radiation Shielding Automatic" (2025-12-06)
+  filters photons by energy, but the D-11 wall passes light of every energy
+  (`physics/higgs-bubble.md` §7). This needs Mark's ruling.
