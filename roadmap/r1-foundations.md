@@ -82,6 +82,18 @@ any speed and orientation.
 - 60 fps at 1440p with the 330k catalogue and the background on M4 Max.
 
 ### M2: Simulation protocol and the journey core (gameplay foundation)
+**Status:** Landed 2026-10-02. Sprint `R1-M2-JOURNEY` in the game repo: 10
+milestones, PRs #22–#35 (plus the catalogue fix #37), independent evaluations
+89–96/100. `sunholo/relativity` 0.4.0 published; protocol v2; planner equal
+to the closed form to 1e-9; the commit rule enforced in the simulation;
+SplitMix64 named streams; a 10k-tick replay byte-identical on the VM and the
+interpreter (goldens per architecture until ailang#1465); galaxy map with the
+commit dialog. R1 charter bar clause 2 met. Report:
+[m2-report.md](https://github.com/sunholo-data/stapledons-godot/blob/main/design_docs/implemented/r1/m2-report.md);
+design:
+[m2-journey-core.md](https://github.com/sunholo-data/stapledons-godot/blob/main/design_docs/implemented/r1/m2-journey-core.md).
+Item 5 shipped SplitMix64 (`splitmix64-1`), not PCG.
+
 **Goal:** the game's central mechanic, trading your years against the
 galaxy's, runs in AILANG and can be tested with no Godot at all.
 

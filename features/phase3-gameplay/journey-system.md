@@ -7,6 +7,14 @@
 **AILANG Workarounds:** Float precision (use years not seconds), deep recursion (chunk processing)
 **Depends On:** v0.5.2 Galaxy Map, v0.5.3 Dialogue System
 
+> **Maths superseded (2026-10-02, R1 M2).** `calculateJourneyTimes` below is
+> the instant-acceleration idealisation. The game uses the boost → cruise →
+> brake profile from [Higgs bubble physics](../../physics/higgs-bubble.md)
+> §3, implemented in `sunholo/relativity` 0.4.0 (`planBurnCoastBurn`,
+> `phaseAt`, `motionAt`). Parts 1–2 (planning, commit) still hold as design
+> intent. See the game repo's
+> [M2 report](https://github.com/sunholo-data/stapledons-godot/blob/main/design_docs/implemented/r1/m2-report.md).
+
 ## Related Documents
 
 - [UI Modes Architecture](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/v0_5_0/ui-modes.md) - Mode framework
