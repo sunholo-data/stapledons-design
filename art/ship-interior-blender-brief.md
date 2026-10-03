@@ -1,5 +1,12 @@
 # Brief: Blender assets for Stapledon's Voyage, starting with the ship interior
 
+> **Current task (2026-10-03):** [handoff-m4-2-blender.md](handoff-m4-2-blender.md)
+> (finish bridge v1 for M4.2; bridge only in R1), with the contract in
+> [m4-2-requirements.md](m4-2-requirements.md). Where they differ from this
+> brief, they win. That includes the starting scripts (`stapledon_kit.py` and
+> `stapledon_bridge_buildout_v1.py`, not `stapledon_interior_spike.py`) and
+> delivery (a PR, not a zip on issue #1).
+
 **Status:** APPROVED direction (Mark, 2026-09-28, ledger D-6). Bridge style
 frame v1 (§7 step 1) is APPROVED for build-out (ledger D-16, 2026-10-01):
 start §7 step 2. Deliver early and often: the game runs on whatever bundle is
