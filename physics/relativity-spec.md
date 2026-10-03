@@ -43,6 +43,23 @@ must be accurate in all directions".
   range the Doppler factor can reach. In the spike, a float32 underflow at
   300 K produced NaN, which rendered as an infinitely bright blob.
 
+**Frames**
+
+- **Directions are galactic Cartesian (IAU):** x toward the galactic centre
+  (l 0°, b 0°), y toward l 90°, z toward the north galactic pole (NGP). Galactic
+  longitude increases to the *left* for an observer facing the centre with the
+  NGP up.
+- **Any map into an engine frame must be a proper rotation (det +1), defined in
+  one place.** A reflection keeps every angle, so aberration, Doppler and
+  brightness checks still pass, and a GPU-vs-CPU golden that shares the map
+  cannot catch it. The Godot build fell into exactly this: its first map,
+  (x, y, z) → (y, z, −x), has det −1 and rendered the whole sky as a mirror
+  image (stapledons-godot D-28, 2026-10-03). The fix was (x, y, z) → (−y, z, −x).
+- **Check (must pass, map-independent):** face the galactic centre with the NGP
+  up. Antares (l 352°) and α Cen (l 316°) appear to the right of the centre, and
+  Vega (l 67°) and the Scutum star cloud (l 27°) to the left. A ship's starboard
+  side then faces l 270°, and its port side l 90°.
+
 ## 3. General relativity (Schwarzschild; the black-hole feature)
 
 The design docs (`gr-visual-mechanics.md`) list full ray tracing as a
