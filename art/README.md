@@ -7,8 +7,11 @@ where each brief lives. **Read this first, then the brief for your task.**
 
 | Brief | What | Needed by | Status |
 |---|---|---|---|
-| [ship-interior-blender-brief.md](ship-interior-blender-brief.md) | Isometric play areas, interior panoramas, foreground plates | R1 M4 | **Approved; bridge v1 approved for build-out (D-16).** Start §7 step 2 |
-| [characters-blender-brief.md](characters-blender-brief.md) | Crew, captain, Archive robots, background people: illustrated portraits and matching static mini avatars | R1 M4 | Illustrated direction accepted. [Generation cast plan](generation-cast-plan.md) in development |
+| [handoff-m4-2-blender.md](handoff-m4-2-blender.md) | **Current Blender task:** finish bridge v1 for M4.2 (overscan, iso camera, `WALK_` rules), delivered as a PR to the game repo | R1 M4 | **Ready (Mark, 2026-10-03).** Bridge only in R1 |
+| [handoff-codex-art.md](handoff-codex-art.md) | **Current 2D art task (Codex agents, self-contained):** (a) the captain sprite at 4 life stages, then (b) the cast's emotion-portrait sets | R1 M4 | **Ready (Mark, 2026-10-03)** |
+| [m4-2-requirements.md](m4-2-requirements.md) | One-page area-bundle contract for M4.2 (files, manifest, cameras, `WALK_`, checks) | R1 M4 | Reference for both handoffs |
+| [ship-interior-blender-brief.md](ship-interior-blender-brief.md) | Isometric play areas, interior panoramas, foreground plates | R1 M4 | **Approved; bridge v1 approved for build-out (D-16).** For R1, work from the Blender handoff |
+| [characters-blender-brief.md](characters-blender-brief.md) | Crew, captain, Archive robots, background people: illustrated portraits and matching static mini avatars | R1 M4 | Illustrated direction accepted. [Generation cast plan](generation-cast-plan.md) in development. Specs for the current work are in the Codex handoff |
 | [ship-exterior-blender-brief.md](ship-exterior-blender-brief.md) | Exterior bubble ship, departure/arrival camera moves, galaxy-map marker | R1 M2 (marker), M4 (views) | Revised spherical silhouette and boundary review pending |
 | [../features/ai-showcase.md](../features/ai-showcase.md) | **Runtime AI** (D-7): emotion markers selecting portraits, generated voices, the growing asset library, recorded outputs for replay | R1 M4 | Planned. Voice and marker style frame on the accepted Medic |
 | [worlds-civilizations-blender-brief.md](worlds-civilizations-blender-brief.md) | Alien species, civilization and ruin kits, artifacts, alien ships | R2 (later) | Scoping. Don't start before R1 ships |
@@ -92,16 +95,29 @@ not "clean functional sci-fi".
    previews as images and send **GitHub links**. For in-engine previews, use a
    worktree of the game repo's `spike/iso-bridge` branch, and commit captures
    there only.
-3. **Never edit `main` of stapledons-godot.** The Stapledon mission loop owns
-   it. Deliver bundles as zips on stapledons-godot issue #1; the loop imports
-   them.
+3. **Deliver by pull request to stapledons-godot** (Mark, 2026-10-03):
+   - Bundles go into `assets/areas/<area>/`, and characters into
+     `assets/characters/<entity_id>/`.
+   - Large binaries go to `gs://stapledons-voyage-assets/` by sha256, pinned
+     in the PR. Agents without gcloud include the files in the PR branch.
+   - Review happens on the PR, with renders attached. Post the PR link on
+     issue #1.
+   - Never commit to `main` directly or work in its main checkout; the
+     Stapledon mission loop works there.
+
+   This replaces the earlier "zips on issue #1".
 4. **Current review state (2026-10-01, ledger D-16):** bridge style frame v1
    is approved for build-out; interior build-out proceeds (interior brief §7
-   step 2). The illustrated cast (`cast_marker_v1`) is accepted and supersedes
-   the Medic v2 images (`style_revision_v2`). The exterior style frames are
+   step 2). The illustrated cast (`cast_marker_v1`) is accepted. Under the
+   2026-10-03 rulings the Medic v2 set stays the Medic's identity and the
+   format reference for every portrait set (see
+   [handoff-codex-art.md](handoff-codex-art.md) §10). The exterior style frames are
    still to be reviewed. Art is iterated as data: the game swaps in each
    delivered bundle without code changes, and Mark tweaks as it goes. See
-   `vision/design-decisions.md` (2026-09-28 reviews; 2026-10-01 D-16).
+   `vision/design-decisions.md` (2026-09-28 reviews; 2026-10-01 D-16;
+   2026-10-03 art handoffs).
+   **2026-10-03:** bridge only in R1; portraits at native resolution, never
+   upscaled; project art is owned by Sunholo and ships under Apache-2.0.
 5. **Decisions are Mark's:** style frames, any change to ship canon, character
    designs, and anything that would paint over the sky. If Mark rules in your
    session, record it (see stapledons-godot `CLAUDE.md`, "Recording Mark's

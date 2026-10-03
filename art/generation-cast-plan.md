@@ -47,12 +47,12 @@ A job, a psychological archetype and a person are separate concepts. A new Engin
 4. Generate expression sets and static mini avatars from the reviewed departure identities. Use actual biological age plus years since departure in manifests; filenames alone must not imply age.
 5. Choose later-life stages per person and story need. The former example grid of +0/+25/+50/+75 is not a requirement to depict every founder alive at extreme ages. Reachable stages and successor portraits take priority.
 
-The current 1254 px portraits remain native review studies; final delivery still targets 2048 px with consistent framing and transparency. This plan does not declare the earlier image files production-ready.
+The current 1254 px portraits are native-resolution images. *Superseded 2026-10-03 (Mark): portraits ship at the generator's native resolution, never upscaled; there is no 2048 px target. See [handoff-codex-art.md](handoff-codex-art.md).* Framing and transparency must stay consistent. This plan does not declare the earlier image files production-ready.
 
 ## Sources and approvals
 
 - [Art bible](README.md), [character brief](characters-blender-brief.md)
 - [Bubble society](../features/future/bubble-society.md), [game vision](../vision/game-vision.md)
-- [Accepted illustrated cast](https://github.com/sunholo-data/blender/tree/art/cast-marker-v1/docs/stapledon/cast_marker_v1)
+- [Accepted illustrated cast](https://github.com/sunholo-data/blender/tree/main/docs/stapledon/cast_marker_v1) (private Blender repo, `main`)
 
 User feedback: “yeah they look cool. i guess story wise its a generation ship so people would be selected on that basis - I guess either bringing a family and/or being young ?” followed by “good - yes continue”. The general direction is accepted; the concrete household links and exact ages on this page are proposals.

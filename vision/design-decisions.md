@@ -984,3 +984,75 @@ illustrated cast. The exterior style frames remain to be reviewed. Art is
 modular data: the game runs on the current bundle (blockout, then bridge v1,
 then revisions), each delivery gets a review build, and tweaks arrive as data
 wherever possible.
+
+## [2026-10-03] Art Handoffs for M4.2: Finish Bridge v1; Captain Sprite and Cast Portraits
+
+**Context:** Two new art threads start: a Blender thread (a Claude Opus agent)
+and a 2D art thread (Codex "Sol 6.1" agents, which have no Claude tooling).
+A read-only audit found bridge build-out v1 unmerged in the Blender repo, and
+conflicting character specs (2048 vs 1254 px, the age grid, filename patterns,
+Medic v2 vs cast_marker_v1).
+
+**Decision (Mark, attended 2026-10-03):**
+1. **Blender: finish bridge v1 for M4.2. Bridge only in R1.**
+   - Merge `art/bridge-buildout-v1` to the Blender repo's main, as a PR.
+   - Add parallax overscan to the panorama and foreground plates.
+   - Export the iso play camera: orthographic, pitch −14°, yaw 45°, iso size
+     16 m, as in M4.2's manifest.
+   - Define `WALK_` navmesh rules: flat, a maximum slope, rim gaps and an
+     obstacle convention.
+   - Add a 1.75 m scale figure and a 2 m grid to the area template, for review
+     only.
+   - Pass the Blender-side validator now, and M4.0's Godot
+     `make validate-areas BUNDLE=...` once M4.0 lands.
+2. **Art (Sol), both, in order:**
+   - (a) the captain avatar: the walking captain sprite for the iso bridge at
+     4 life stages, with the foot anchor matched to the iso camera and the
+     canvas spec defined;
+   - (b) then full-cast emotion-portrait sets like the Medic's, for later AI
+     dialogue.
+3. **Delivery for both threads:**
+   - A PR to the game repo `sunholo-data/stapledons-godot`: into
+     `assets/areas/<area>/` for bundles, and the agreed character asset path
+     for characters.
+   - Large binaries go to the public bucket `gs://stapledons-voyage-assets/`
+     (content-addressed `<sha256>.<ext>`), referenced by pins.
+   - A Codex agent can't run gcloud, so it includes the files in its PR
+     branch; the Claude side moves large files to the bucket.
+   - Review happens on the PR, with renders attached.
+4. **Portraits:**
+   - The generator's native resolution (about 1254 px), never upscaled.
+   - Each set gets a `generation_notes.md` recording the generator, model, full
+     prompt, date and seed (if any).
+   - Project art is owned by Sunholo and shipped with the Apache-2.0 codebase.
+   - Third-party references must not be traced or copied.
+
+**Applied in:** [art/handoff-m4-2-blender.md](../art/handoff-m4-2-blender.md),
+[art/handoff-codex-art.md](../art/handoff-codex-art.md) and
+[art/m4-2-requirements.md](../art/m4-2-requirements.md).
+
+**Details filled in by the handoffs** (proposals, within the rulings; Mark can
+change any of them on the PRs):
+- the character asset path `assets/characters/<entity_id>/`;
+- the bucket prefix `areas/` for bundles (characters use the existing `ai/`);
+- the iso camera file `isocam_<area>.json`;
+- the overscan formula and the proposed pan range;
+- the `WALK_` rule values (±0.03 m, 10°, 0.5 m rim inset, agent radius 0.35 m);
+- the sprite canvas: 1024 × 1536, anchor (512, 1440), 720 px/m;
+- the captain's stages 0/20/40/60 years since departure;
+- the filename pattern `_y<age_stage>_`.
+
+**Implications:**
+- **Supersedes:**
+  - the 2048 px portrait target in the character brief and the cast plan;
+  - the fixed +0/+25/+50/+75 age grid;
+  - delivery as zips on issue #1 (now a PR; issue #1 is for questions and
+    links);
+  - the interior brief's §7 steps 2 and 4–6 for R1.
+- **The Medic v2 set remains the Medic's identity and the format reference**,
+  alongside cast_marker_v1's ten identities. The game repo already pins it as
+  its core set. The handoffs read D-16's "superseded" as closing the
+  Medic-only review stage, not as retiring the Medic; Mark to confirm.
+- **Game side:** the game repo needs a fetch target for `areas/` blobs, and an
+  importer for `assets/characters/` into `data/ai/core`. Each art PR names
+  this.

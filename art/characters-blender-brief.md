@@ -1,5 +1,10 @@
 # Brief: illustrated characters and mini avatars
 
+> **Current task (2026-10-03):** [handoff-codex-art.md](handoff-codex-art.md)
+> (the captain sprite, then the cast's portrait sets). Its specs supersede
+> this brief where they differ: native resolution instead of 2048 px, ages as
+> years since departure, filenames and delivery. Its §10 lists each change.
+
 **Status:** revised direction (2026-09-28). Mark rejected the Blender character
 study and requested richer, expressive generated images with expression swaps
 and mini avatars. The illustrated Medic direction and subsequent cast studies were accepted.
