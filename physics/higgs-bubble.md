@@ -51,7 +51,7 @@ Inputs (scenario and canon values that the numbers below are computed from):
 | HB-13 | Example intermediate-mass hole | 1,000 | M☉ |
 | HB-14 | Tidal comfort threshold | 0.1 | g |
 | HB-15 | Arrival stand-off from the target star (D-14) | 1,000 | AU |
-| HB-111 | Wall conversion efficiency ε, the inelastic fraction that becomes glow (D-29; 10⁻⁹ under D-15) | 1 × 10⁻¹¹ | — |
+| HB-111 | Wall conversion efficiency ε, the inelastic fraction that becomes glow (D-29 and its follow-up, 2026-10-03; 10⁻⁹ under D-15) | 1 × 10⁻¹⁰ | — |
 
 Speeds use β, γ = 1/√(1−β²) and rapidity φ = atanh β, as in the relativity
 spec. Near c, never form 1−β by subtraction. Use the rapidity forms
@@ -228,8 +228,9 @@ constant density n, as a *readout*. An enforced energy budget comes later.
 
 **The glow.** The canon boundary glow (design-decisions 2025-12-08) survives,
 but it is faint. A small inelastic fraction ε of the incident kinetic-energy
-flux becomes light at the wall. ε is a design parameter, canon **10⁻¹¹**
-(HB-111, ledger D-29; it was 10⁻⁹ under D-15). Glow power, ship frame:
+flux becomes light at the wall. ε is a design parameter, canon **10⁻¹⁰**
+(HB-111: ledger D-29 and Mark's follow-up of 2026-10-03; it was 10⁻⁹ under
+D-15). Glow power, ship frame:
 
   P_glow = ε K A (W)
 
@@ -264,13 +265,20 @@ The temperature climbs with speed:
   0.023 lm/W;
 - at the top of the slider it is a blue-white 14,114 K at 44 lm/W.
 
-**Faint by design, with numbers.** At ε = 10⁻¹¹ the 0.99c pole is 1.65 × 10⁻⁴
-of the 23.5 mag/arcsec² dark sky. That is invisible, so the starbow at the
-default cruise speed is untouched. The pole reaches the dark sky at γ ≈ 24.7
-(β ≈ 0.9992, HB-108). At the cap it is a pale blue-white wash of 0.156 cd/m²,
-3.6 × 10³ times the dark sky, comparable to a twilight sky. So the glow
-is a cue the player meets only when pushing deep into the expensive end of
-the slider, and it fades out as the ship brakes.
+**Faint at cruise, a cue at the top, with numbers.** At ε = 10⁻¹⁰ the 0.99c
+pole is 1.65 × 10⁻³ of the 23.5 mag/arcsec² dark sky. That is invisible, so
+the starbow at the default cruise speed is untouched. The glow rises about
+2 × 10⁷-fold from 0.99c to the cap, so ε mainly sets where it appears:
+- it reaches 0.3 of the dark sky at γ ≈ 13.5 (β ≈ 0.9972, HB-112) and the
+  dark sky itself at γ ≈ 16.2 (β ≈ 0.9981, HB-108);
+- at 0.999c it is a dim orange-red veil, about 6 dark skies;
+- at 0.9999c it is a warm-white wash, about 560 dark skies;
+- at the cap it is a blue-white sky of 1.56 cd/m² (3.6 × 10⁴ dark skies),
+  about the luminance of a sky in civil twilight.
+
+It fades out as the ship brakes. Even at the cap the forward CMB disc
+(2 × 10⁸ cd/m², HB-63) is 10⁸ times brighter than the glow. At that speed it
+is the CMB disc, not the glow, that sets the eye's adaptation.
 
 *Game approximation, on top of the bubble's own hand-wave:*
 - Real GeV impacts on matter make hadronic cascades, pion-decay gamma rays
@@ -283,20 +291,47 @@ The alternative, a temperature from the per-particle energy
 (kT ~ (γ−1) m_p c², about 7 × 10¹³ K at 0.99c), is rejected: GeV protons do not
 make a thermal gas, and the visible tail of such a body is a fixed
 Rayleigh–Jeans blue at every speed. The other alternative, a black wall
-(emissivity 1) radiating only the glow flux, T = (E/σ)^¼, gives 2 K at 0.99c
-and 21 K at the cap. That glow would be invisible at every speed, and it
+(emissivity 1) radiating only the glow flux, T = (E/σ)^¼, gives 3.6 K at 0.99c
+and 37 K at the cap. That glow would be invisible at every speed, and it
 would contradict the transparent wall.
 
-*Why ε = 10⁻¹¹.* Mark ruled "about 10⁻¹¹" (D-29) after the M4.2 evaluation
-found the 0.99c pole 130× the dark sky. That evaluation used the placeholder
-equal-energy white (183 lm/W). Most of that excess came from the placeholder,
-not from ε: with the D-30 spectrum, ε = 10⁻⁹ alone would already put the 0.99c
-pole at 0.016× the dark sky. But it would make the cap a 15.6 cd/m² wash, 3.6 ×
-10⁵ times the dark sky, which would swamp the high-γ starbow. With ε =
-10⁻¹¹, the glow becomes visible only from γ ≈ 25, and at the cap it is twilight
-bright, not daylight bright. The value is round, and it is Mark's own number.
+*Why ε = 10⁻¹⁰.*
+- **The history.** Mark first ruled "about 10⁻¹¹" (D-29) after the M4.2
+  evaluation found the 0.99c pole 130× the dark sky. That evaluation used the
+  placeholder equal-energy white (183 lm/W), and most of the excess came from
+  the placeholder, not from ε: with the D-30 spectrum, even ε = 10⁻⁹ puts the
+  0.99c pole at 0.016× the dark sky.
+- **The follow-up (attended 2026-10-03).** Mark: "the glow can be any value
+  right? but I want our star effects to be seen, so just pick a value where
+  we get both."
+- **The comparison.** Four candidates, 10⁻¹¹, 3 × 10⁻¹¹, 10⁻¹⁰ and
+  3 × 10⁻¹⁰, were rendered through the game's own exposure (the dark-adapted
+  eye, whose meter sees the glow). Each candidate was shown at 0.99c, 0.995c,
+  0.999c, 0.9999c and the cap, and compared with the glow switched off. The
+  sheet is `stapledons-godot make glow-eps-sheet`, published at
+  `gs://stapledons-voyage-assets/refs/glow/eps_compare.jpg`.
+
+Results at 10⁻¹⁰, counting catalogue stars in the 60° forward view above both
+the Crumey threshold against the local background and the display threshold
+at the eye's EV:
+- **0.99c and 0.995c:** unchanged, with every star kept.
+- **0.999c:** 84 % of the stars stay visible. The eye does not move (+0.04 EV)
+  and the starbow keeps its blue-shifted colours.
+- **0.9999c:** 28 % of the stars stay visible (3 × 10⁻¹¹ gives 31 %, and 10⁻¹¹
+  gives 39 %). At this speed every candidate's veil limits the stars, but the
+  starbow cluster stays plainly readable. The eye light-adapts
+  by +2.2 EV.
+- **The cap:** the CMB disc dominates (the eye sits at EV +12.5 with or without
+  the glow). The disc stays 1.3 × 10⁸ times brighter than the glow.
+
+3 × 10⁻¹⁰ crosses the line. At 0.9999c it keeps 16 % of the stars and moves the
+eye +3.7 EV, and at 0.999c it keeps 68 %. So 10⁻¹⁰ is the brightest candidate
+that keeps the starbow, the Doppler colours and the CMB disc readable at every
+speed, while the glow is visible as a cue over the widest range, from about
+0.997c up.
+
 HB-45, HB-46 and HB-61 do not depend on ε and are unchanged. The canon ε is
-360× below HB-61's bound.
+36× below HB-61's bound.
 
 **The plume.** The reflected protons form a forward plume of
 ultra-relativistic particles. In the ship frame each proton arrives with
@@ -309,7 +344,7 @@ energy γ m_p c². In the galaxy frame a head-on reflection leaves it with
 | HB-60 | Head-on reflected proton energy, galaxy frame, at 0.999999c | 9.38 × 10⁵ | GeV |
 | HB-61 | Design guide: largest ε for a mean inward glow ≤ 1 W/m² at 0.999999c with f_in = ½ | 3.6 × 10⁻⁹ | — |
 
-Glow spectrum and brightness (D-29, D-30). n = 0.1 cm⁻³, f_in = ½, ε = 10⁻¹¹
+Glow spectrum and brightness (D-29 and its follow-up, D-30). n = 0.1 cm⁻³, f_in = ½, ε = 10⁻¹⁰
 (HB-111), forward pole unless stated. The dark sky is 23.5 mag/arcsec² =
 4.33 × 10⁻⁵ cd/m². Oracle: `sunholo/relativity` `tools/glow_spectrum_ref.py`.
 
@@ -322,15 +357,16 @@ Glow spectrum and brightness (D-29, D-30). n = 0.1 cm⁻³, f_in = ½, ε = 10�
 | HB-99 | γ at which the glow pole reaches the Draper point (798 K) | 2.89 | — |
 | HB-100 | Luminous efficacy of the glow at the pole at 0.99c | 0.0233 | lm/W |
 | HB-101 | Luminous efficacy of the glow at the pole at 0.999999c | 43.7 | lm/W |
-| HB-102 | Inward glow emittance at the pole at 0.99c | 9.63 × 10⁻⁷ | W/m² |
-| HB-103 | Inward glow emittance at the pole at 0.999999c | 0.01125 | W/m² |
-| HB-104 | Glow luminance at the pole at 0.99c | 7.14 × 10⁻⁹ | cd/m² |
-| HB-105 | The same, as a fraction of the dark sky | 1.65 × 10⁻⁴ | — |
-| HB-106 | Glow luminance at the pole at 0.999999c | 0.156 | cd/m² |
-| HB-107 | The same, in dark skies | 3.61 × 10³ | — |
-| HB-108 | γ at which the glow pole equals the dark sky | 24.7 | — |
-| HB-109 | Mean inward glow at 0.99c (the sim's glow_w_m2) | 2.41 × 10⁻⁷ | W/m² |
-| HB-110 | Mean inward glow at 0.999999c | 2.81 × 10⁻³ | W/m² |
+| HB-102 | Inward glow emittance at the pole at 0.99c | 9.63 × 10⁻⁶ | W/m² |
+| HB-103 | Inward glow emittance at the pole at 0.999999c | 0.1125 | W/m² |
+| HB-104 | Glow luminance at the pole at 0.99c | 7.14 × 10⁻⁸ | cd/m² |
+| HB-105 | The same, as a fraction of the dark sky | 1.65 × 10⁻³ | — |
+| HB-106 | Glow luminance at the pole at 0.999999c | 1.56 | cd/m² |
+| HB-107 | The same, in dark skies | 3.61 × 10⁴ | — |
+| HB-108 | γ at which the glow pole equals the dark sky | 16.2 | — |
+| HB-109 | Mean inward glow at 0.99c (the sim's glow_w_m2) | 2.41 × 10⁻⁶ | W/m² |
+| HB-110 | Mean inward glow at 0.999999c | 2.81 × 10⁻² | W/m² |
+| HB-112 | γ at which the glow pole reaches 0.3 of the dark sky (the visibility threshold of the ε comparison) | 13.5 | — |
 
 HB-59 is also why no proton may cross: at γ 707 the ISM would arrive inside as
 a 660 GeV proton beam. The old "trace hydrogen crosses" canon is removed.
@@ -485,7 +521,7 @@ it.
 | `medium.glowTemperatureAt(n, phi, cosθ)` (0.8.0) | (K max(0, cos θ)/σ)^¼ | HB-95 … HB-99 |
 | `medium.glowRadianceAt(n, phi, eps, fIn, cosθ)` (0.8.0) | E/π | HB-104, HB-106 |
 | `medium.glowEfficacyAt(n, phi, cosθ)` (0.8.0), `blackbody.luminousEfficacy(T)` | π K_m ∫B_λ ȳ dλ / σT⁴ | HB-100, HB-101 |
-| `medium.glowLuminanceAt(n, phi, eps, fIn, cosθ)` (0.8.0) | (E/π) η(T) | HB-104 … HB-108 |
+| `medium.glowLuminanceAt(n, phi, eps, fIn, cosθ)` (0.8.0) | (E/π) η(T) | HB-104 … HB-108, HB-112 |
 | `tidal_accel(m, r, lever)` | 2GmL/r³ | HB-72 … HB-74, HB-78 … HB-80, HB-84 … HB-86 |
 | `tidal_safe_radius(m, lever, a_max)` | (2GmL/a_max)^(1/3) | HB-75, HB-76, HB-81 |
 | `tidal_min_mass(lever, k, a_max)` | √(L c⁶/(4G²k³a_max)) | HB-87 |
