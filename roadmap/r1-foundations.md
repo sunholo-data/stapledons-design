@@ -236,7 +236,10 @@ Recorded in `vision/design-decisions.md` and the game repo's charter ledger:
 - **D-15:** shielding is real glazing inside (the wall passes light of every
   energy; dome and hull absorb UV/X-rays); the slider reaches 0.999999c with the
   ISM cost as the brake (the 10–20 default γ cap is retired); the boundary does
-  not refract; bubble defaults m_eff 1 kg, boost 7.5×10⁵ g, ε 10⁻⁹.
+  not refract; bubble defaults m_eff 1 kg, boost 7.5×10⁵ g, ε 10⁻⁹ (lowered to 10⁻¹¹ by D-29).
+- **D-29 / D-30:** the forward glow is faint (ε 10⁻¹¹), and its spectrum is a
+  blackbody at the impact temperature (K cos θ/σ)^¼, computed in
+  `sunholo/relativity` 0.8.0 (higgs-bubble.md §6).
 
 ## AILANG upstream asks (tracked via `ailang messages`)
 

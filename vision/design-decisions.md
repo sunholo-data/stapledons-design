@@ -957,6 +957,10 @@ assumed a flat face-on mirror. The canon sphere has half the drag, which gives
 
 ## [2026-10-01] Shielding, γ Range, Boundary Optics and Bubble Defaults (ledger D-15)
 
+> **SUPERSEDED IN PART by ledger D-29 (2026-10-03):** the glow fraction ε is
+> now 10⁻¹¹, not 10⁻⁹ (see "Forward Glow: Faint, With a Blackbody Spectrum"
+> below).
+
 **Decision:** (1) The wall passes light of every energy; the crew is protected by
 real glazing and hull inside the bubble, which absorb the blueshifted UV and soft
 X-rays. No extra hand-wave. (2) The cruise slider reaches 0.999999c (γ ≈ 707);
@@ -1181,4 +1185,68 @@ showing the lower levels (ruling 4 above). That framing hid the starbow at
 - **Open question for those areas:** enclosed levels see the sky only past
   their rim (between floor and ceiling, and at the gap to the bubble). Their
   sky visibility and starbow framing differ from the open-topped bridge.
+
+## [2026-10-03] Forward Glow: Faint, With a Blackbody Spectrum (ledger D-29, D-30)
+
+**Context:** The M4.2 evaluation found the bubble-wall glow pole at 0.99c
+130× brighter than the 23.5 mag/arcsec² dark sky, using the canon ε = 10⁻⁹
+and a placeholder equal-energy white spectrum (182.6 lm/W). At that level it
+drowns the starfield, which contradicts "faint by design".
+`physics/higgs-bubble.md` gave no spectrum.
+
+**Decision (Mark, attended 2026-10-03):**
+1. **D-29:** lower the wall conversion efficiency ε to about 10⁻¹¹, so the
+   forward glow is faint and the starbow stays visible. Canon ε = **10⁻¹¹**
+   (HB-111).
+2. **D-30:** the glow is a **hot-plasma blackbody whose temperature comes
+   from the impact energy**. It is computed in `sunholo/relativity` (0.8.0)
+   first and replaces the equal-energy white.
+
+**Physics, as canonised (`physics/higgs-bubble.md` §6):**
+- The wall is a greybody of emissivity ε. By Kirchhoff's law, a transparent
+  wall emits as weakly as it absorbs.
+- Its energy balance gives T = (K max(0, cos θ)/σ)^¼, independent of ε. ε
+  sets only the brightness.
+- Pole temperatures:
+  - 1,358 K (orange-red) at 0.99c;
+  - 14,114 K (blue-white) at 0.999999c;
+  - infrared below about 0.94c.
+- At ε = 10⁻¹¹, the 0.99c pole is 1.65 × 10⁻⁴ of the dark sky.
+- The pole reaches the dark sky at γ ≈ 24.7.
+- At the cap the pole is 0.156 cd/m² (3.6 × 10³ dark skies), about as bright
+  as a twilight sky.
+- The blackbody is marked as a game approximation: real GeV impacts are not
+  thermal.
+
+**Rationale:**
+- Pillar 5 (Grounded Strangeness): the colour now follows the physics of the
+  impacts, red at the default cruise and blue-white at the top. Only one
+  admitted hand-wave remains, the bubble.
+- Pillar 3 (Time Has Emotional Weight): the starbow, the signature view of
+  relativistic travel, stays clear at the slice's 0.99c.
+- The glow remains a motion cue where it matters: it appears only when the
+  player pushes into the costly end of the slider, and fades as the ship
+  brakes.
+
+**Alternatives rejected:**
+- Keeping ε = 10⁻⁹ and fixing the text. With the blackbody spectrum, 10⁻⁹
+  would be faint at 0.99c (0.016× the dark sky). At the cap, though, it would
+  be 15.6 cd/m², which swamps the high-γ starbow.
+- A temperature from the per-particle energy (about 7 × 10¹³ K, a fixed
+  Rayleigh–Jeans blue at every speed).
+- A black wall radiating only the glow flux (2 K at 0.99c, invisible at every
+  speed, and in conflict with the transparent wall).
+- Neutral white, or hydrogen recombination lines (there is no ionised gas
+  at the wall; the impacts reflect).
+
+**Implications:**
+- `sunholo/relativity` 0.8.0 adds:
+  - `medium.glowTemperatureAt`, `glowRadianceAt`, `glowEfficacyAt` and
+    `glowLuminanceAt`;
+  - `blackbody.luminousEfficacy` and `blackbody.stefanBoltzmannSI`.
+- The game's simulation default ε becomes 10⁻¹¹ (`glow_w_m2` and
+  `glow_pole_w_m2` drop by 100×), and `interior/forward_glow.gd` mirrors the
+  new functions in place of the 182.6 lm/W white.
+- The M4 design's glow check values (G-M4-4) are recomputed from HB-102 to
+  HB-110.
 

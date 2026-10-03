@@ -51,6 +51,7 @@ Inputs (scenario and canon values that the numbers below are computed from):
 | HB-13 | Example intermediate-mass hole | 1,000 | M☉ |
 | HB-14 | Tidal comfort threshold | 0.1 | g |
 | HB-15 | Arrival stand-off from the target star (D-14) | 1,000 | AU |
+| HB-111 | Wall conversion efficiency ε, the inelastic fraction that becomes glow (D-29; 10⁻⁹ under D-15) | 1 × 10⁻¹¹ | — |
 
 Speeds use β, γ = 1/√(1−β²) and rapidity φ = atanh β, as in the relativity
 spec. Near c, never form 1−β by subtraction. Use the rapidity forms
@@ -227,15 +228,75 @@ constant density n, as a *readout*. An enforced energy budget comes later.
 
 **The glow.** The canon boundary glow (design-decisions 2025-12-08) survives,
 but it is faint. A small inelastic fraction ε of the incident kinetic-energy
-flux becomes light at the wall. ε is a design parameter. Glow power, ship
-frame:
+flux becomes light at the wall. ε is a design parameter, canon **10⁻¹¹**
+(HB-111, ledger D-29; it was 10⁻⁹ under D-15). Glow power, ship frame:
 
   P_glow = ε K A (W)
 
 A fraction f_in of it shines inward through the transparent wall. Spread over
-the inner surface 4πR², the mean inward flux is ε f_in K / 4 (W/m²). The glow
-is brightest at the forward pole and scales with speed and local density, so
-it still works as the motion cue.
+the inner surface 4πR², the mean inward flux is ε f_in K / 4 (W/m²). A wall
+element whose outward normal is at angle θ from the travel direction
+intercepts K max(0, cos θ), so its inward emittance is
+E(θ) = ε f_in K max(0, cos θ): the glow peaks at the forward pole (4× the
+mean) and is zero on the aft hemisphere. It scales with speed and local
+density, so it still works as the motion cue.
+
+**The spectrum: a greybody at the impact temperature** (ledger D-30). The
+glow is thermal light from the impacts. By Kirchhoff's law a body emits light
+exactly as well as it absorbs it, and the wall absorbs almost none (it is
+transparent, property 1). So the wall element is a greybody of emissivity ε:
+it thermalises ε K cos θ and radiates it as ε σ T⁴, and ε cancels:
+
+  **T(θ) = (K max(0, cos θ) / σ)^¼** (K)
+
+This is the temperature a black surface would reach if it thermalised the
+whole forward beam. It sets the colour; ε and f_in set only the brightness.
+The inner face emits ε f_in σ T⁴ = E(θ), a Planck spectrum at T dimmed by
+the emissivity. The wall is Lambertian, so the radiance is E/π, and the
+luminance is (E/π) × η(T). Here η(T) is the luminous efficacy of blackbody
+light, π K_m ∫B_λ(T) ȳ dλ / σT⁴ with K_m = 683 lm/W. Off the pole T falls as
+cos^¼ θ, so the rim of the glow is redder than its centre.
+
+The temperature climbs with speed:
+- below about 0.94c (γ ≈ 2.9, HB-99) it is under the 798 K Draper point,
+  so the glow is effectively infrared;
+- at 0.99c it is a deep orange-red 1,358 K, with an efficacy of only
+  0.023 lm/W;
+- at the top of the slider it is a blue-white 14,114 K at 44 lm/W.
+
+**Faint by design, with numbers.** At ε = 10⁻¹¹ the 0.99c pole is 1.65 × 10⁻⁴
+of the 23.5 mag/arcsec² dark sky. That is invisible, so the starbow at the
+default cruise speed is untouched. The pole reaches the dark sky at γ ≈ 24.7
+(β ≈ 0.9992, HB-108). At the cap it is a pale blue-white wash of 0.156 cd/m²,
+3.6 × 10³ times the dark sky, comparable to a twilight sky. So the glow
+is a cue the player meets only when pushing deep into the expensive end of
+the slider, and it fades out as the ship brakes.
+
+*Game approximation, on top of the bubble's own hand-wave:*
+- Real GeV impacts on matter make hadronic cascades, pion-decay gamma rays
+  and bremsstrahlung, not a Planck spectrum. The blackbody is a stand-in.
+- The emissivity is set equal to the thermalised fraction ε.
+- Each wall element is in local radiative equilibrium: no lateral
+  conduction and no thermal lag. The glow follows the speed instantly.
+
+The alternative, a temperature from the per-particle energy
+(kT ~ (γ−1) m_p c², about 7 × 10¹³ K at 0.99c), is rejected: GeV protons do not
+make a thermal gas, and the visible tail of such a body is a fixed
+Rayleigh–Jeans blue at every speed. The other alternative, a black wall
+(emissivity 1) radiating only the glow flux, T = (E/σ)^¼, gives 2 K at 0.99c
+and 21 K at the cap. That glow would be invisible at every speed, and it
+would contradict the transparent wall.
+
+*Why ε = 10⁻¹¹.* Mark ruled "about 10⁻¹¹" (D-29) after the M4.2 evaluation
+found the 0.99c pole 130× the dark sky. That evaluation used the placeholder
+equal-energy white (183 lm/W). Most of that excess came from the placeholder,
+not from ε: with the D-30 spectrum, ε = 10⁻⁹ alone would already put the 0.99c
+pole at 0.016× the dark sky. But it would make the cap a 15.6 cd/m² wash, 3.6 ×
+10⁵ times the dark sky, which would swamp the high-γ starbow. With ε =
+10⁻¹¹, the glow becomes visible only from γ ≈ 25, and at the cap it is twilight
+bright, not daylight bright. The value is round, and it is Mark's own number.
+HB-45, HB-46 and HB-61 do not depend on ε and are unchanged. The canon ε is
+360× below HB-61's bound.
 
 **The plume.** The reflected protons form a forward plume of
 ultra-relativistic particles. In the ship frame each proton arrives with
@@ -247,6 +308,29 @@ energy γ m_p c². In the galaxy frame a head-on reflection leaves it with
 | HB-59 | ISM proton energy in the ship frame at 0.999999c | 663.5 | GeV |
 | HB-60 | Head-on reflected proton energy, galaxy frame, at 0.999999c | 9.38 × 10⁵ | GeV |
 | HB-61 | Design guide: largest ε for a mean inward glow ≤ 1 W/m² at 0.999999c with f_in = ½ | 3.6 × 10⁻⁹ | — |
+
+Glow spectrum and brightness (D-29, D-30). n = 0.1 cm⁻³, f_in = ½, ε = 10⁻¹¹
+(HB-111), forward pole unless stated. The dark sky is 23.5 mag/arcsec² =
+4.33 × 10⁻⁵ cd/m². Oracle: `sunholo/relativity` `tools/glow_spectrum_ref.py`.
+
+| ID | Quantity | Value | Unit |
+|---|---|---|---|
+| HB-95 | Glow temperature at the pole at 0.5c (infrared) | 290 | K |
+| HB-96 | Glow temperature at the pole at 0.99c | 1,358 | K |
+| HB-97 | Glow temperature at the pole at 0.999c | 2,482 | K |
+| HB-98 | Glow temperature at the pole at 0.999999c | 14,114 | K |
+| HB-99 | γ at which the glow pole reaches the Draper point (798 K) | 2.89 | — |
+| HB-100 | Luminous efficacy of the glow at the pole at 0.99c | 0.0233 | lm/W |
+| HB-101 | Luminous efficacy of the glow at the pole at 0.999999c | 43.7 | lm/W |
+| HB-102 | Inward glow emittance at the pole at 0.99c | 9.63 × 10⁻⁷ | W/m² |
+| HB-103 | Inward glow emittance at the pole at 0.999999c | 0.01125 | W/m² |
+| HB-104 | Glow luminance at the pole at 0.99c | 7.14 × 10⁻⁹ | cd/m² |
+| HB-105 | The same, as a fraction of the dark sky | 1.65 × 10⁻⁴ | — |
+| HB-106 | Glow luminance at the pole at 0.999999c | 0.156 | cd/m² |
+| HB-107 | The same, in dark skies | 3.61 × 10³ | — |
+| HB-108 | γ at which the glow pole equals the dark sky | 24.7 | — |
+| HB-109 | Mean inward glow at 0.99c (the sim's glow_w_m2) | 2.41 × 10⁻⁷ | W/m² |
+| HB-110 | Mean inward glow at 0.999999c | 2.81 × 10⁻³ | W/m² |
 
 HB-59 is also why no proton may cross: at γ 707 the ISM would arrive inside as
 a 660 GeV proton beam. The old "trace hydrogen crosses" canon is removed.
@@ -397,6 +481,11 @@ it.
 | `ism_plume_energy_galaxy(n, phi, radius, d)` | n sinh²φ m_p c² πR² d | HB-57, HB-58 |
 | `reflected_gamma(phi)` | cosh 2φ | HB-60 |
 | `cmb_forward_temperature(phi)` | T_CMB e^φ | HB-62 … HB-67 |
+| `medium.glowEmittanceAt(n, phi, eps, fIn, cosθ)` (0.6.0) | ε f_in K max(0, cos θ) | HB-102, HB-103, HB-109, HB-110 |
+| `medium.glowTemperatureAt(n, phi, cosθ)` (0.8.0) | (K max(0, cos θ)/σ)^¼ | HB-95 … HB-99 |
+| `medium.glowRadianceAt(n, phi, eps, fIn, cosθ)` (0.8.0) | E/π | HB-104, HB-106 |
+| `medium.glowEfficacyAt(n, phi, cosθ)` (0.8.0), `blackbody.luminousEfficacy(T)` | π K_m ∫B_λ ȳ dλ / σT⁴ | HB-100, HB-101 |
+| `medium.glowLuminanceAt(n, phi, eps, fIn, cosθ)` (0.8.0) | (E/π) η(T) | HB-104 … HB-108 |
 | `tidal_accel(m, r, lever)` | 2GmL/r³ | HB-72 … HB-74, HB-78 … HB-80, HB-84 … HB-86 |
 | `tidal_safe_radius(m, lever, a_max)` | (2GmL/a_max)^(1/3) | HB-75, HB-76, HB-81 |
 | `tidal_min_mass(lever, k, a_max)` | √(L c⁶/(4G²k³a_max)) | HB-87 |
