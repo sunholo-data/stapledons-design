@@ -291,28 +291,19 @@ white. The values live in the Blender layout (`bridge_layout_v2.json`).
 - **Still never authored:** everything in §7's list, figures, and any light from
   outside the ship. Space stays alpha 0.
 
-### 9.4 The panorama: the top of the sphere's interior
+### 9.4 The panorama: the forward sky first
 
-- **Content** (ruling 4): the spire running down and the larger levels below
-  the bridge, with space mostly visible.
-  - The bridge's own pieces, the needle included, are left out: the play layer
-    draws them, so nothing shows twice.
-  - The spire body below the deck is in, registered behind the play layer's
-    spire at pan 0.
-  - The round-trip anchor is declared in `validation.needle_tip_ship_m`. Any
-    point that is the topmost solid pixel of its column will do; for the
-    bridge it is the far top rim of the spire body.
-- **Ship scale:** the bridge is the **topmost and smallest** level. Below it,
-  levels follow the sphere: radius ∝ the bubble's cross-section,
-  0.55 · R · sin θ (the spike's 55% of R ≈ 100 m), so they **widen down to the
-  equator and shrink again past it**. Only levels naturally in view are drawn.
-- **The camera is free** (any real perspective camera, vertical sensor fit,
-  no shift). The "centre view region unchanged from v1" rule (§4) no longer
-  applies to the panorama. `cam_<area>.json` and the round trip still apply.
-- **Trade-off, for the record:** in the iso composition the lower levels lie
-  beneath the bridge deck, so only their outer rims rise above the far rail.
-  A backdrop that looks down into the ship cannot also show the forward pole,
-  so at speed the starbow is out of the panorama's frame.
+- **The bridge panorama prioritises the forward sky** (Mark, 2026-10-03):
+  - It keeps v1's **up-looking** camera, so the forward sky and the starbow stay
+    in view at speed.
+  - The spire's needle reads in it and stays the round-trip anchor.
+  - Painted with the v2 look: spire-lit, paint pass, headroom.
+- **The bridge does not depict the lower levels.** The bridge is the open top of
+  the ship. Its perspective can't show the levels below it, which the v2 study
+  confirmed: they lie beneath the deck.
+- The round-trip anchor can be declared in `validation.needle_tip_ship_m`. Any
+  point that is the topmost solid pixel of its column will do; the default is
+  the needle tip.
 
 ### 9.5 Budget
 
@@ -332,8 +323,8 @@ white. The values live in the Blender layout (`bridge_layout_v2.json`).
   so instancing stays.
 - Binaries stay out of git: content-addressed in `gs://stapledons-voyage-assets/areas/`
   and pinned in `SHA256SUMS` (§8).
-- **Bigger levels:** future levels are much larger than the bridge (up to
-  2.5× its radius at the equator). The kit and textures are built for that:
+- **Future areas (guidance):** lower levels are much larger than the bridge (up
+  to 2.5× its radius at the equator), so the kit and textures are built for that:
   modular pieces on the 2 m grid, the gouache albedo procedural or
   texel-density based (not per-object atlases), and plates **tiled per area**
   when one 8K-density plate would exceed the budget or GPU texture limits
@@ -360,3 +351,19 @@ captain's `generation_notes.md` format.
   2 px of the silhouette;
 - every GLB pixel visible within `covers_pan_range_m` has plate coverage.
 
+### 9.8 Guidance for future level areas (not the bridge)
+
+Later generations move down the bubble ship, so later areas are lower levels.
+The canon (ship-interior brief §3) is guidance for designing those areas:
+- **Each lower level is wider**, down to the equator (radius ∝ 0.55 · R · sin θ),
+  and they **narrow again past it**.
+- **Each lower level has a roof:** the underside of the level above is its
+  ceiling. Only the bridge is open-topped.
+- **Open design question** (for when those areas are designed): an enclosed
+  level sees the sky only past its rim, between its floor and the ceiling
+  above, and at the gap to the bubble. Its sky visibility and the
+  forward-sky/starbow framing therefore differ from the bridge's. How the
+  live-sky layers and panorama apply there is undecided.
+- The Blender backdrop script (`stapledon_ship_backdrop.py`, branch
+  `art/bridge-v2`) and its look-down camera (`backdrop_view` in
+  `bridge_layout_v2.json`) are parked for that work, or for a rim or lift view.

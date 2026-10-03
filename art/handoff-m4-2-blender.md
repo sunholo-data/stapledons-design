@@ -238,9 +238,11 @@ contract is [m4-2-requirements.md §9](m4-2-requirements.md#9-bridge-v2-amendmen
    Characters are never baked; space stays alpha 0.
 3. 8K plate density (270 px/m), a 64 MB per-area bucket budget, and the
    palette pulled toward the captain sheet.
-4. More ship structure in the panorama: the spire running down and the
-   lower levels below the bridge (larger toward the equator, smaller past it),
-   with space still mostly visible.
+4. Panorama (revised by Mark the same day, see m4-2-requirements §9.4): the
+   bridge panorama prioritises the forward sky. It keeps v1's up-looking
+   camera, so the starbow stays in view, painted with the v2 look. The
+   bridge doesn't depict the lower levels. The sphere-scaled levels are
+   guidance for future areas (§9.8): each is roofed by the level above.
 5. Claude-side game work: the `layers.play.plate` key, the projection shader in
    the M4.2 composite, a linear or compensated tonemap on the iso layer, the
    live glow term, and plate checks in `validate-areas`.

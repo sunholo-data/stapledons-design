@@ -1154,3 +1154,31 @@ live.
   - A panorama that looks down into the ship cannot show the forward pole, so
     the 0.99c starbow leaves the panorama's frame. Mark to confirm.
 
+## [2026-10-03] Bridge v2 Follow-up: Forward Sky First; Levels Are Future-Area Guidance
+
+**Context:** The Blender thread built bridge v2 with a look-down panorama
+showing the lower levels (ruling 4 above). That framing hid the starbow at
+0.99c, and only a rim of the level below showed above the bridge's far rail.
+
+**Decision (Mark, attended 2026-10-03):**
+1. **Keep the starbow.** The bridge panorama prioritises the forward sky: it
+   keeps v1's up-looking camera, painted with the v2 look. This supersedes
+   ruling 4 of the bridge v2 entry above.
+2. **The bridge was never meant to show the lower levels**, and its
+   perspective can't. The sphere-scaled levels (ruling 6 above) are guidance
+   for **future areas**, as later generations move down the ship:
+   - each lower level is wider down to the equator, then narrower again;
+   - each lower level is **roofed** by the underside of the level above.
+3. Keep the moody spire-only lighting as built.
+4. Ship both facing hints.
+5. The palette shift is accepted.
+
+**Implications:**
+- Applied in m4-2-requirements §9.4 and §9.8, the Blender handoff §10 and
+  the ship-interior brief §3.
+- The backdrop script is parked for future level areas, a rim view or a
+  lift view.
+- **Open question for those areas:** enclosed levels see the sky only past
+  their rim (between floor and ceiling, and at the gap to the bubble). Their
+  sky visibility and starbow framing differ from the open-topped bridge.
+
