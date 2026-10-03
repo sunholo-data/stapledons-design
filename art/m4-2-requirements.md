@@ -98,15 +98,17 @@ captures (the "reads at 70 px" check in the character brief).
 A plate slides `parallax × pan_m × px_per_m` pixels when the camera pans, so
 each plate needs that much margin on each side:
 `overscan_px = ceil(parallax × pan_range_m × plate_height_px / iso_size_m)`,
-rounded up to a multiple of 16. With the proposed bridge `pan_range_m = [6, 3]`
-(the spike's ±6 m review pans; confirm the vertical value with the M4.2
-executor) and 2160-line plates:
+rounded up to a multiple of 16. With the bridge's `pan_range_m = [6, 3]`
+(Mark, 2026-10-03) and 2160-line plates:
 
 | Plate | `overscan_px` [x, y] | Full plate size |
 |---|---|---|
 | panorama | [128, 64] | 4096 × 2288 |
 | foreground | [1296, 656] | 6432 × 3472 |
 
+- **Beyond `pan_range_m` the engine clamps each plate's parallax offset**
+  (Mark, 2026-10-03), so a plate edge never shows even when the camera
+  follows the captain to the 22 m rim.
 - The **centre 3840 × 2160** of each plate is the pan-0 view, unchanged from
   build-out v1.
 - **Panorama:** render the whole plate from the same camera position and
@@ -200,4 +202,7 @@ Wherever space shows, alpha is exactly 0.
 public bucket as `gs://stapledons-voyage-assets/areas/<sha256>.<ext>` (the
 same content-addressed scheme as `sky/` and `ai/`, ledger D-18), pinned in
 `assets/areas/<area>/SHA256SUMS`, one line per file: `<sha256>  <file>`.
-Review happens on the PR. Questions go in a comment on game-repo issue #1.
+PRs are based on `main`. Review happens on the PR. Questions go in a comment
+on the art issue, game-repo [#93](https://github.com/sunholo-data/stapledons-godot/issues/93). The prefix `areas/`, the name
+`isocam_<area>.json` and the path `assets/characters/<entity_id>/` are
+confirmed (Mark, 2026-10-03).

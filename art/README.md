@@ -100,8 +100,9 @@ not "clean functional sci-fi".
      `assets/characters/<entity_id>/`.
    - Large binaries go to `gs://stapledons-voyage-assets/` by sha256, pinned
      in the PR. Agents without gcloud include the files in the PR branch.
-   - Review happens on the PR, with renders attached. Post the PR link on
-     issue #1.
+   - Review happens on the PR, with renders attached. Post the PR link, and
+     ask art questions, on the art issue
+     [stapledons-godot #93](https://github.com/sunholo-data/stapledons-godot/issues/93), which replaces issue #1 for art.
    - Never commit to `main` directly or work in its main checkout; the
      Stapledon mission loop works there.
 

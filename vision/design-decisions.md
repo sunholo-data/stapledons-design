@@ -1056,3 +1056,35 @@ change any of them on the PRs):
 - **Game side:** the game repo needs a fetch target for `areas/` blobs, and an
   importer for `assets/characters/` into `data/ai/core`. Each art PR names
   this.
+
+## [2026-10-03] Art Handoff Follow-ups: Medic v2 Stays; Captain Stages; Art Channel
+
+**Context:** Mark answered the open questions on the 2026-10-03 art handoffs
+(design-repo PR #4).
+
+**Decision (Mark, attended 2026-10-03):**
+1. **Medic v2 stays** the Medic's identity and the format reference for every
+   portrait set (pinned in the game repo's `data/ai/core`). This clarifies
+   D-16: "superseded" closed the Medic-only review stage; it did not retire
+   the Medic.
+2. **The captain sprite, as proposed:** stages 0/20/40/60 years since
+   departure (ages 30/50/70/90 at the default start age), front and back
+   three-quarter facings, a static sprite with no walk cycle.
+3. **Codex access:** the reference images are public at
+   `https://storage.googleapis.com/stapledons-voyage-assets/refs/characters_v1/`,
+   with a `SHA256SUMS`. The set is the ten cast_marker_v1 portraits and the
+   Medic v2 set.
+4. **Art channel:** game-repo issue
+   [#93](https://github.com/sunholo-data/stapledons-godot/issues/93) replaces
+   issue #1 for art questions and PR links.
+5. **Confirmed:**
+   - the bucket prefix `areas/`;
+   - `isocam_<area>.json`;
+   - the character path `assets/characters/<entity_id>/`;
+   - bridge bundle PRs based on `main`.
+6. **Pan range:** overscan is sized for `[6, 3]` m, and parallax is clamped
+   beyond it.
+7. **Game-side work is Claude-side:**
+   - the `areas/` blob fetch target;
+   - clamped parallax;
+   - the importer from `assets/characters/` into `data/ai/core`.

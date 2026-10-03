@@ -40,6 +40,15 @@ Recorded in `vision/design-decisions.md` (2026-10-03).
 
 (Decision 2 concerns the Codex art thread; decision 4 concerns portraits.)
 
+**Follow-up rulings (Mark, attended 2026-10-03):**
+- Confirmed: the bucket prefix `areas/`, `isocam_<area>.json`, and bridge
+  bundle PRs based on `main`.
+- Overscan is sized for `pan_range_m [6, 3]`; beyond that range parallax is
+  clamped.
+- Art questions and PR links go to game-repo issue
+  [#93](https://github.com/sunholo-data/stapledons-godot/issues/93), which
+  replaces issue #1.
+
 ## 3. Starting state (verified 2026-10-03)
 
 | What | Where |
@@ -92,15 +101,15 @@ Recorded in `vision/design-decisions.md` (2026-10-03).
    back to Blender Z-up), so the preview and the game agree.
 5. **Parallax overscan.** Render both plates with margins sized by the
    [§4 formula](m4-2-requirements.md#4-parallax-and-overscan-ruling-1):
-   proposed `pan_range_m [6, 3]` gives a panorama of 4096 × 2288 (overscan
+   `pan_range_m [6, 3]` (Mark, 2026-10-03) gives a panorama of 4096 × 2288 (overscan
    `[128, 64]`) and a foreground of 6432 × 3472 (`[1296, 656]`). Keep the
    centre 3840 × 2160 identical to v1. For the panorama, widen the sensor
    from the same eye (`fov_vertical_deg` ≈ 81.2°) and write the full
    resolution and FOV into `cam_bridge.json`, so the round trip stays under
    1 px. Record `overscan_px` per layer and `pan_range_m` in the manifest.
-   Before the final export, ask on issue #1 whether the M4.2 executor
-   wants a different pan range. The formula is the contract; the numbers
-   follow from it.
+   Beyond that range the engine **clamps** plate parallax (Mark,
+   2026-10-03), so no larger overscan is needed even when the captain walks
+   to the 22 m rim.
 6. **Validate and review.** Re-run the generator, the validator and the
    in-engine review (§5), and open the captures and look at them: at rest, at
    0.99c, and the parallax sheet at the pan extremes, confirming no plate edge
@@ -158,13 +167,13 @@ make validate-areas BUNDLE=tests/fixtures/areas/bridge_blockout   # the fixture 
    `gcloud storage cp --no-clobber <file> gs://stapledons-voyage-assets/areas/<sha256>.<ext>`.
    That needs gcloud auth on the `stapledons-voyage` project. Without it, say
    so in the PR and the game side uploads them.
-4. Until the game repo has a fetch target for `areas/` (open question 1),
+4. Until the game repo has a fetch target for `areas/` (a Claude-side task, §9),
    also commit the binaries on the PR branch, so reviewers and `validate-areas`
    can see them. Squash-merge so they don't enter `main`'s history if the fetch
    target lands first.
-5. Open the PR into `main`, unless the M4.2 executor asks on issue #1 for the
-   integration branch `m4-track-b`. Put the captures in the body. Post a
-   one-line comment on game-repo issue #1 linking the PR.
+5. Open the PR into **`main`** (Mark, 2026-10-03). Put the captures in the
+   body. Post a one-line comment on the art issue, game-repo
+   [#93](https://github.com/sunholo-data/stapledons-godot/issues/93), linking the PR.
 6. In the Blender repo, commit the scripts, the layout and the README update
    on `art/bridge-v1-m4-2` and open a PR there too.
 
@@ -174,7 +183,7 @@ make validate-areas BUNDLE=tests/fixtures/areas/bridge_blockout   # the fixture 
   room, exterior): **deferred past R1.** Bridge only (decision 1).
 - Brief §10 and art README "Review and hand-off" item 3 (zips on issue #1;
   the mission loop imports them): **replaced by a PR to the game repo**
-  (decision 3). Issue #1 is now only for questions and the PR link.
+  (decision 3). The art issue #93 is for questions and the PR link.
 - Brief §9 bundle list: adds `isocam_<area>.json`, `SHA256SUMS`, overscan
   sizes and keys (see [m4-2-requirements.md](m4-2-requirements.md)).
 - Bridge v1 README "Plates: they still have no parallax overscan": now
@@ -196,17 +205,19 @@ make validate-areas BUNDLE=tests/fixtures/areas/bridge_blockout   # the fixture 
 
 ## 9. Questions
 
-Ask in a comment on **game-repo issue #1**
-(<https://github.com/sunholo-data/stapledons-godot/issues/1>). It is closed
-as a weekly bookkeeping thread, but comments still reach Mark and the loop. If
+Ask in a comment on the **art issue, game-repo #93**
+(<https://github.com/sunholo-data/stapledons-godot/issues/93>). It replaces issue #1 for art. If
 Mark rules in your session, record it per the game repo's `CLAUDE.md`
 ("Recording Mark's decisions").
 
-**Open questions already known:**
-1. Fetching `areas/` binaries from the bucket: the game repo needs a
-   `make area-assets`-style target (like `make sky-assets`). Who adds it, the
-   M4.0 executor or this thread's PR?
-2. The pan range: is `[6, 3]` m right for the M4.2 camera follow? The deck
-   radius is 22 m, so a camera that follows the captain to the rim would need
-   either a much larger foreground overscan or clamped foreground parallax.
-3. PR base: `main` or `m4-track-b`?
+**Settled by Mark (2026-10-03):** bucket prefix `areas/`; file name
+`isocam_<area>.json`; bridge bundle PRs based on `main`; overscan for
+`pan_range_m [6, 3]` with clamped parallax beyond it.
+
+**Claude-side tasks in the game repo** (yours if nobody else has picked them
+up; say so on #93 before starting):
+- a `make area-assets` target that fetches `areas/<sha256>.<ext>` by the pins in
+  `assets/areas/<area>/SHA256SUMS` (like `make sky-assets`);
+- clamped plate parallax beyond `pan_range_m` in the M4.2 composite;
+- an importer from `assets/characters/<entity_id>/` (the Codex deliveries)
+  into `data/ai/core`, and the bucket upload of approved character PNGs.

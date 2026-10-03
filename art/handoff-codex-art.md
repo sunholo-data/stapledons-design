@@ -69,6 +69,15 @@ repo.
   - Project art is owned by Sunholo and shipped with the Apache-2.0 codebase.
   - Third-party references must not be traced or copied.
 
+**Follow-up rulings (Mark, attended 2026-10-03):**
+- The Medic v2 set stays the Medic's identity and the format reference. This
+  clarifies D-16.
+- The captain: stages 0/20/40/60, front and back facings, a static sprite.
+- The character path is `assets/characters/<entity_id>/`.
+- The reference images are public in the bucket (§5).
+- The art channel is game-repo issue
+  [#93](https://github.com/sunholo-data/stapledons-godot/issues/93).
+
 ## 4. Deliverable specs
 
 ### 4.1 Captain avatar sprite
@@ -110,7 +119,7 @@ To meet the anchor and scale, you may **translate, pad, crop the empty margin,
 and downscale** with a high-quality filter. **Never upscale.** If a generated
 figure is too small to reach 720 px/m without upscaling, regenerate it.
 
-**The set: 4 life stages × 2 facings = 8 sprites.**
+**The set: 4 life stages × 2 facings = 8 sprites** (confirmed by Mark, 2026-10-03; static, no walk cycle).
 
 | `age_stage` (years since departure) | Biological age at the default start age 30 | Height |
 |---|---|---|
@@ -144,8 +153,8 @@ adult, mid-life, older, old" rather than as exact ages.
 **Steps for (a):**
 1. **Silhouette proposals:** 3 different captain designs, stage 0, facing
    `front` only, each to the full canvas spec. Open a **draft PR** (§8) and
-   post on issue #1. **Stop until Mark picks one** (he replies on the PR or
-   on issue #1).
+   post on the art issue (#93). **Stop until Mark picks one** (he replies on
+   the PR or on #93).
 2. **The full set:** the chosen design at all 4 stages × 2 facings, generated
    from the chosen stage-0 image as the identity reference. Mark the PR ready
    for review.
@@ -200,7 +209,7 @@ ten identity descriptions are in §11.
 Later life stages beyond those listed come only when Mark asks for them.
 
 **Out of scope here:** the Archive's terminal presence, children and
-descendants, the crowd kit, and the captain's UI silhouette. Ask on issue #1
+descendants, the crowd kit, and the captain's UI silhouette. Ask on issue #93
 before starting any of them.
 
 ### 4.3 Filenames
@@ -313,11 +322,11 @@ The mock-up is a review aid. The Claude side makes the in-engine capture.
 
 ## 5. References
 
-The design repo and the game repo are public. The Blender repo is
-**private**: if a `sunholo-data/blender` link returns 404 for you, ask on
-issue #1 and the Claude side will publish those files to the public bucket.
-The ten identity descriptions are copied in §11, so you can start without the
-images.
+Everything here is public. The reference images (the ten cast_marker_v1
+identity portraits and the Medic v2 set) are in the public bucket at
+`https://storage.googleapis.com/stapledons-voyage-assets/refs/characters_v1/<file>`, with a
+[`SHA256SUMS`](https://storage.googleapis.com/stapledons-voyage-assets/refs/characters_v1/SHA256SUMS) alongside: verify each download against it.
+The written identity descriptions are also in §11.
 
 | What | URL |
 |---|---|
@@ -327,9 +336,20 @@ images.
 | Medic grieving, stage 0 | <https://storage.googleapis.com/stapledons-voyage-assets/ai/2a68ffbec262bae0e48607ab097a9f7747a1e2ae085bf91274d4fce15eebb0ca.png> |
 | Medic neutral, stage 50 | <https://storage.googleapis.com/stapledons-voyage-assets/ai/bde097f5e6ca7165cd2b46dfc54ee0fd7aee8d919f5b3396c7a5f463674ce1a4.png> |
 | Medic static avatar (1024×1536) | <https://storage.googleapis.com/stapledons-voyage-assets/ai/581719375bd36532ad1ce92d34224eecaa5c1a41efd99ba19613980865e4ff2e.png> |
+| The same Medic files under their original names | `https://storage.googleapis.com/stapledons-voyage-assets/refs/characters_v1/portrait_medic_age0_{neutral,loving,grieving}_v2.png`, `portrait_medic_age50_neutral_v2.png`, `avatar_medic_static_v2.png` |
 | Medic avatar on the bridge (1120×630) | <https://github.com/sunholo-data/stapledons-godot/blob/spike/iso-bridge/spike/out/medic_image_v2/preview_medic.png> |
-| Medic sources and prompts (private) | <https://github.com/sunholo-data/blender/tree/main/assets/stapledon/characters/medic_v2> |
-| cast_marker_v1: ten identity portraits (private) | <https://github.com/sunholo-data/blender/tree/main/docs/stapledon/cast_marker_v1>, images in <https://github.com/sunholo-data/blender/tree/main/assets/stapledon/characters/cast_proposals_v1> |
+| Medic prompts | pasted in §11 (neutral description and the emotion-edit pattern) |
+| Reference pins (sha256 of every file below and the Medic set) | <https://storage.googleapis.com/stapledons-voyage-assets/refs/characters_v1/SHA256SUMS> |
+| cast_marker_v1: engineer (identity reference) | <https://storage.googleapis.com/stapledons-voyage-assets/refs/characters_v1/portrait_engineer_age0_neutral_v1.png> |
+| cast_marker_v1: scientist (identity reference) | <https://storage.googleapis.com/stapledons-voyage-assets/refs/characters_v1/portrait_scientist_age0_neutral_v1.png> |
+| cast_marker_v1: diplomat (identity reference) | <https://storage.googleapis.com/stapledons-voyage-assets/refs/characters_v1/portrait_diplomat_age0_neutral_v1.png> |
+| cast_marker_v1: pilot (identity reference) | <https://storage.googleapis.com/stapledons-voyage-assets/refs/characters_v1/portrait_pilot_age0_neutral_v1.png> |
+| cast_marker_v1: quartermaster (identity reference) | <https://storage.googleapis.com/stapledons-voyage-assets/refs/characters_v1/portrait_quartermaster_age0_neutral_v1.png> |
+| cast_marker_v1: zealot (identity reference) | <https://storage.googleapis.com/stapledons-voyage-assets/refs/characters_v1/portrait_zealot_age0_neutral_v1.png> |
+| cast_marker_v1: dreamer (identity reference) | <https://storage.googleapis.com/stapledons-voyage-assets/refs/characters_v1/portrait_dreamer_age0_neutral_v1.png> |
+| cast_marker_v1: skeptic (identity reference) | <https://storage.googleapis.com/stapledons-voyage-assets/refs/characters_v1/portrait_skeptic_age0_neutral_v1.png> |
+| cast_marker_v1: fantasist (identity reference) | <https://storage.googleapis.com/stapledons-voyage-assets/refs/characters_v1/portrait_fantasist_age0_neutral_v1.png> |
+| cast_marker_v1: analyst (identity reference) | <https://storage.googleapis.com/stapledons-voyage-assets/refs/characters_v1/portrait_analyst_age0_neutral_v1.png> |
 | Bridge build-out v1, at rest (1600×900) | <https://github.com/sunholo-data/stapledons-godot/blob/spike/iso-bridge/spike/out/bridge_buildout_v1/preview_rest.png> |
 | Bridge build-out v1, at 0.99c | <https://github.com/sunholo-data/stapledons-godot/blob/spike/iso-bridge/spike/out/bridge_buildout_v1/preview_099c.png> |
 | Bridge parallax sheet | <https://github.com/sunholo-data/stapledons-godot/blob/spike/iso-bridge/spike/out/bridge_buildout_v1/bridge_parallax_sheet.png> |
@@ -436,20 +456,25 @@ clothing, accents and light.
    - the self-check output;
    - a line: "Art owned by Sunholo, contributed under Apache-2.0;
      generation_notes.md complete."
-4. Post a comment on **game-repo issue #1**
-   (<https://github.com/sunholo-data/stapledons-godot/issues/1>): one line with
-   the PR link and the decision you need ("pick a captain silhouette: A, B or
-   C"). The issue is closed (it's a weekly bookkeeping thread), but comments
-   still reach Mark.
+4. Post a comment on the **art issue, game-repo issue #93**
+   (<https://github.com/sunholo-data/stapledons-godot/issues/93>): one line with the PR link and the decision you need ("pick a
+   captain silhouette: A, B or C").
 5. Mark approves or asks for changes on the PR. **Don't merge your own PR.**
    After approval, the Claude side:
    - uploads the PNGs to `gs://stapledons-voyage-assets/ai/<sha256>.png`;
-   - adds them to the game's asset index;
+   - imports them into the game's asset index (`data/ai/core`), a Claude-side task (§8a);
    - replaces the binaries in the branch with pins;
    - squash-merges.
 
-Questions also go to issue #1 as comments. Mark decides every character's
+Questions also go to issue #93 as comments. Mark decides every character's
 look, name and gender; propose, don't decide.
+
+### 8a. Claude-side tasks (not yours; listed so you know what happens next)
+
+- An importer from `assets/characters/<entity_id>/` into `data/ai/core`
+  (the game's `ai/tools/core_import.ail` reads only the Blender repo today).
+- Uploading approved PNGs to `gs://stapledons-voyage-assets/ai/`, pinning them,
+  and the in-engine captures.
 
 ## 9. Acceptance checks (per PR)
 
@@ -468,10 +493,10 @@ look, name and gender; propose, don't decide.
 | Conflict | Resolution (from Mark's 2026-10-03 rulings) | Superseded text |
 |---|---|---|
 | **Portrait size: 2048 vs 1254** | Native generator resolution (about 1254), never upscaled (decision 4) | `art/characters-blender-brief.md` §3.2 "2048×2048 RGBA" and its "remaining gap to the final delivery target"; §5's `# 2048x2048 RGBA`; `art/generation-cast-plan.md` "final delivery still targets 2048 px"; "request 2048x2048 if available" in the cast_marker_v1 prompts |
-| **The age grid** | `age_stage` = whole years since departure, the game's key. The captain has exactly 4 stages, 0/20/40/60 (decision 2a's "4 life stages", spaced across a reachable life from the default start age 30). Crew: stage 0 in full, plus the stages their existing images show; no fixed grid | the brief's §2.2 "4 age stages", §3.3 "+0, +25, +50 and +75", §4 item 2 "8 emotions × 4 ages", and §5's `age<0\|25\|50\|75>`. Agrees with the cast plan's step 5 |
+| **The age grid** | `age_stage` = whole years since departure, the game's key. The captain has exactly 4 stages, 0/20/40/60 (ages 30/50/70/90), front and back facings, a static sprite with no walk cycle (confirmed by Mark, 2026-10-03). Crew: stage 0 in full, plus the stages their existing images show; no fixed grid | the brief's §2.2 "4 age stages", §3.3 "+0, +25, +50 and +75", §4 item 2 "8 emotions × 4 ages", and §5's `age<0\|25\|50\|75>`. Agrees with the cast plan's step 5 |
 | **Filename patterns** | `portrait_<entity_id>_y<age_stage>_<emotion>.png` and `avatar_<entity_id>_y<age_stage>_<facing>.png`, `_v<n>` only on replacement; the manifest maps every file to its key | the brief's §5 `avatar_<id>_age<…>.png` and `portrait_<id>_age<…>_<emotion>.png`; the Medic's `…_age0_…_v2.png` and cast_marker_v1's `…_age0_neutral_v1.png`, where "age0" meant departure even when the face was 41 or 57 |
-| **Medic v2 vs cast_marker_v1** | The Medic v2 images are the Medic's identity and the format reference for every set (decision 2b, "like the Medic's"); the game repo pins them as its accepted core set. cast_marker_v1 supplies the other ten identities. Read D-16's "Medic v2 images are superseded by the accepted illustrated cast" as closing the Medic-only review stage, not as retiring the Medic | `art/README.md` "Review and hand-off" item 4, "supersedes the Medic v2 images"; the generation-cast plan's link to a nonexistent Blender branch `art/cast-marker-v1` (the files are on Blender `main`) |
-| **Delivery** | A PR to the game repo, `assets/characters/<entity_id>/` (decision 3) | the brief's §5 `exports/stapledon/characters/<id>/` and "zips on stapledons-godot issue #1"; `art/README.md` "Review and hand-off" items 2–3 |
+| **Medic v2 vs cast_marker_v1** | **Ruling (Mark, 2026-10-03, clarifying D-16):** Medic v2 stays the Medic's identity and the format reference for every set (`data/ai/core` pins it). cast_marker_v1 supplies the other ten identities. D-16's "superseded" closed only the Medic-only review stage | `art/README.md` "Review and hand-off" item 4, "supersedes the Medic v2 images"; the generation-cast plan's link to a nonexistent Blender branch `art/cast-marker-v1` (the files are on Blender `main`) |
+| **Delivery** | A PR to the game repo, `assets/characters/<entity_id>/` (decision 3; path confirmed by Mark 2026-10-03); questions on issue #93 | the brief's §5 `exports/stapledon/characters/<id>/` and "zips on stapledons-godot issue #1"; `art/README.md` "Review and hand-off" items 2–3 |
 | **In-engine previews** | You supply mock-ups (§4.5); the Claude side captures in the engine | the brief's §4 item 1 and §5 `preview_<id>.png` ("in-engine capture on the spike bridge") |
 | **Avatar scale "60–80 px, validate at 70 px"** | Kept, as the 1120×630 review size; the canvas contract is 720 px/m with the anchor at (512, 1440) | the brief's §3.1 "consistent foot anchor" without a number |
 
