@@ -221,3 +221,41 @@ up; say so on #93 before starting):
 - clamped plate parallax beyond `pan_range_m` in the M4.2 composite;
 - an importer from `assets/characters/<entity_id>/` (the Codex deliveries)
   into `data/ai/core`, and the bucket upload of approved character PNGs.
+
+## 10. Bridge v2: final art (Mark, attended 2026-10-03)
+
+Bridge v1 stays the playable demo's bridge (game PR #97). For the final art,
+Mark picked approach c of the quality study (game issue
+[#93](https://github.com/sunholo-data/stapledons-godot/issues/93)). The
+contract is [m4-2-requirements.md §9](m4-2-requirements.md#9-bridge-v2-amendments-2026-10-03).
+
+**Rulings:**
+1. Approach c, the illustrated plate, plus a Codex image-model refine pass
+   toward the captain sprites' hand-illustrated finish.
+2. Baked static light and shadow of ship geometry are allowed in the plate.
+   The light is the **spire's** (the ship-fixed key light). Nothing from outside
+   the ship is baked: the forward glow and the sky are a live layer (§9.3).
+   Characters are never baked; space stays alpha 0.
+3. 8K plate density (270 px/m), a 64 MB per-area bucket budget, and the
+   palette pulled toward the captain sheet.
+4. More ship structure in the panorama: the spire running down and the
+   lower levels below the bridge (larger toward the equator, smaller past it),
+   with space still mostly visible.
+5. Claude-side game work: the `layers.play.plate` key, the projection shader in
+   the M4.2 composite, a linear or compensated tonemap on the iso layer, the
+   live glow term, and plate checks in `validate-areas`.
+
+**Pipeline** (Blender repo, branch `art/bridge-v2`):
+1. The build-out generator with `bridge_layout_v2.json` writes the walk, spawns,
+   interactables, isocam and the reframed `cam_bridge.json` into
+   `exports/stapledon/areas_v2/bridge/`. The walk geometry is v1's, unchanged.
+2. `scripts/stapledon_bridge_v2.py` adds the study's richer kit (bevels baked
+   into the shared kit meshes), exports the GLB, and renders spire-lit colour,
+   Line Art and facing passes for the 8K plate and the panorama.
+3. `scripts/stapledon_bridge_v2_paint.py` runs the deterministic paint pass
+   under the alpha lock, with headroom (white point 0.88).
+4. The Codex refine pass (brief and inputs in the public bucket under
+   `refs/bridge_v2/`). Its result is re-locked and verified on the Claude side.
+5. The in-engine integration PR to the game repo, with the ruling-5 work.
+   It isn't opened until the refine is back.
+

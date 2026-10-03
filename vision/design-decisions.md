@@ -1088,3 +1088,69 @@ change any of them on the PRs):
    - the `areas/` blob fetch target;
    - clamped parallax;
    - the importer from `assets/characters/` into `data/ai/core`.
+
+## [2026-10-03] Bridge v2: Illustrated Plate, Spire Light, 8K, and Levels That Follow the Sphere
+
+**Context:** Mark approved bridge v1 (game PR #97) for the playable demo, and
+asked for a final bridge as good as the captain avatar sprites (game PR #98).
+The Blender thread's quality study (game issue #93) compared:
+- (a) a textured toon GLB;
+- (b) (a) plus a richer kit;
+- (c) an illustrated plate projected through the fixed iso camera onto the
+  play GLB, with a Godot capture of (c).
+
+**Decision (Mark, attended 2026-10-03):**
+1. **Approach c, plus a Codex image-model refine pass** to reach the captain
+   sprites' hand-illustrated finish.
+2. **Baked static light and shadow of ship geometry are allowed in the plate.**
+   - The **spire is the dominant, ship-fixed light source**, so it is baked as the key
+     light with its shadows; that is what makes baking valid.
+   - **Nothing from outside the ship is baked.** The forward bubble-wall glow
+     (relativity 0.6.0 `glowEmittanceAt`, `ship.ism.glow_pole_w_m2`) and the
+     relativistic sky vary with speed and direction, so they become a thin live
+     layer: a directional tint and rim term on the iso layer, driven by the
+     sim's glow value and the forward sky brightness (emittance → radiance /π for
+     a Lambertian wall, M4.6a eval N3).
+   - Plates keep headroom in the highlights and ship a forward-facing hint.
+   - Characters are never baked, and space stays alpha 0.
+3. **8K plate density** (270 px/m), a **64 MB per-area bucket budget**, and the
+   **palette pulled toward the captain sheet's** cream, ochre and violet.
+4. **More ship structure in the panorama:**
+   - It should read as the top of the sphere's interior: the spire running down, and the
+     lower, larger levels below the bridge rim.
+   - Space stays mostly visible.
+5. **Game-side work (Claude):**
+   - the `layers.play.plate` manifest key;
+   - the projection shader in the M4.2 composite;
+   - a linear or compensated tonemap on the iso layer;
+   - the live glow term;
+   - plate checks in `validate-areas`.
+6. **Ship scale (canon):** the bridge is the topmost and smallest level.
+   - Levels follow the sphere: they widen down to the equator and shrink again
+     past it (radius ∝ R · sin θ; the spike's 55% of the bubble's cross-section).
+   - Lower levels (future areas) are much larger, so the kit and textures are
+     built to scale up: modular pieces, texel-density-based textures, and plates
+     tiled per area when needed.
+
+**Rationale:** Pillar 4 (The Ship Is Home): the bridge has to look as
+hand-made as its people. Pillar 5 (Grounded Strangeness): only the spire's
+fixed light is baked, so everything that depends on speed stays physically
+live.
+
+**Alternatives rejected:**
+- (a) and (b): a real-time toon finish reads as 3D next to the painted sprites.
+- Baking the forward glow or the sky: wrong the moment the speed changes.
+
+**Implications:**
+- Applied in:
+  - [art/m4-2-requirements.md §9](../art/m4-2-requirements.md#9-bridge-v2-amendments-2026-10-03);
+  - [art/handoff-m4-2-blender.md §10](../art/handoff-m4-2-blender.md#10-bridge-v2-final-art-mark-attended-2026-10-03);
+  - the ship-interior brief §3 (level sizes).
+- The camera is locked for the bridge (orthographic, yaw 45°, pitch −14°), and
+  layout changes mean a re-render and a re-paint.
+- **Trade-off flagged by the Blender thread:**
+  - In the iso composition the lower levels lie beneath the bridge deck, so
+    only their rims rise above the far rail.
+  - A panorama that looks down into the ship cannot show the forward pole, so
+    the 0.99c starbow leaves the panorama's frame. Mark to confirm.
+

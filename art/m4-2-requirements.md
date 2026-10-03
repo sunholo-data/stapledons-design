@@ -13,6 +13,12 @@ interior (R1 M4.2), on one page. Both handoffs link here:
 [sprint plan](https://github.com/sunholo-data/stapledons-godot/blob/main/design_docs/planned/r1/m4-first-journey-sprint.md);
 the rulings in `vision/design-decisions.md`, 2026-10-03.
 
+**Bridge v2 (Mark, attended 2026-10-03):** the final bridge adds an
+illustrated, camera-projected **play plate**, baked **spire light**, an 8K
+density and a reframed panorama. Those amendments are collected in
+[§9](#9-bridge-v2-amendments-2026-10-03). Where §1–§8 and §9 differ, §9 wins
+for a bundle that declares `layers.play.plate`.
+
 ## 1. The bundle: one folder per area
 
 The game loads `assets/areas/<area>/` in `sunholo-data/stapledons-godot`.
@@ -26,6 +32,8 @@ R1 has one area, the bridge (ruling 1: bridge only in R1).
 | `play_<area>.glb` | yes | the walkable iso play area, §5 |
 | `fg_<area>.png` | yes | foreground silhouettes, RGBA, edges and bottom only |
 | `isocam_<area>.json` | yes, from 2026-10-03 | the **orthographic** iso play camera, §3 (ruling 1) |
+| `plate_<area>.png` | yes, when `layers.play.plate` is declared (v2) | the illustrated play plate, projected through the isocam onto the GLB, §9 |
+| `plate_<area>_facing.png`, `pano_<area>_facing.png` | v2, recommended | live-glow hints: forward-facing mask, §9.3 |
 | `SHA256SUMS` | yes, when binaries live in the bucket | pins for the PNGs and GLB, §8 |
 | `validation.json` | recommended | the Blender-side validator's output |
 | `preview_rest.png`, `preview_099c.png` | review only | in-engine captures; the loader ignores them |
@@ -110,7 +118,8 @@ rounded up to a multiple of 16. With the bridge's `pan_range_m = [6, 3]`
   (Mark, 2026-10-03), so a plate edge never shows even when the camera
   follows the captain to the 22 m rim.
 - The **centre 3840 × 2160** of each plate is the pan-0 view, unchanged from
-  build-out v1.
+  build-out v1. (v2: the panorama is reframed, §9.4; the rule still holds for
+  the foreground.)
 - **Panorama:** render the whole plate from the same camera position and
   orientation, widening the sensor: `fov_vertical_deg` becomes
   `2·atan(tan(39°) · H_full / 2160)` (81.2° for 2288). `cam_<area>.json` records
@@ -125,6 +134,9 @@ rounded up to a multiple of 16. With the bridge's `pan_range_m = [6, 3]`
 - **Clean geometry, flat Principled base colours, nothing baked.** The engine
   applies toon shading and an ink outline (width 0.03) to every mesh. Under
   5 MB; reuse kit pieces as linked duplicates (v1: 1.34 MB, 62k triangles).
+  (v2: the GLB still bakes nothing; with a declared plate the engine projects
+  the plate onto it instead of toon-shading it, and the area's binaries share
+  one 64 MB budget, §9.5.)
 - **Collections:** `WALK_<area>`, `INTERACT_<area>` (one object each, named by
   function), and empties `SPAWN_<role>_<n>`. The game spawns its own figures
   at the `SPAWN_` empties, so no crew are in the GLB.
@@ -186,6 +198,10 @@ any painted version is wrong the moment the speed changes:
 
 Wherever space shows, alpha is exactly 0.
 
+(v2, §9.3: the play plate and the panorama **may** carry baked static light
+and shadow of ship geometry from the spire, and nothing else. Every item in
+the list above stays forbidden, and characters are never baked.)
+
 ## 8. Checks, and delivery
 
 | Check | Blender side (now) | Game side (once M4.0 lands) |
@@ -206,3 +222,141 @@ PRs are based on `main`. Review happens on the PR. Questions go in a comment
 on the art issue, game-repo [#93](https://github.com/sunholo-data/stapledons-godot/issues/93). The prefix `areas/`, the name
 `isocam_<area>.json` and the path `assets/characters/<entity_id>/` are
 confirmed (Mark, 2026-10-03).
+
+## 9. Bridge v2 amendments (2026-10-03)
+
+Mark (attended, 2026-10-03) picked **approach c** of the bridge v2 quality
+study (game issue [#93](https://github.com/sunholo-data/stapledons-godot/issues/93)):
+an illustrated plate, a Codex image-model refine pass, 8K, a palette toward
+the captain sheet and a reframed panorama. Recorded in
+`vision/design-decisions.md` (2026-10-03, "Bridge v2").
+
+### 9.1 The play plate
+
+- **What:** `plate_<area>.png`, RGBA. The play layer as an illustration,
+  rendered in Blender through the **isocam** (same pitch, yaw, focus and
+  `v_offset_m`, orthographic, no shift) and **projected by the engine onto the
+  play GLB**. The camera is orthographic and only pans, so the projection is
+  exact on every visible surface at every pan. The GLB keeps supplying
+  coverage (alpha), walk, interactables and depth (sprite occlusion).
+- **Manifest:** `layers.play.plate`:
+
+  ```json
+  "plate": {"file": "plate_bridge.png", "projection": "isocam",
+            "resolution": [10920, 5940], "size_m": 22.0, "size_axis": "vertical",
+            "px_per_m": 270, "covers_pan_range_m": [6, 3], "baked_light": true}
+  ```
+
+  `size_m` is the plate's vertical extent in metres; it is centred on the
+  isocam's pan-0 view centre (`focus_m` + `v_offset_m` along the camera's up).
+- **Density: 8K** (ruling 3): 270 px/m, twice the 4K play density. The plate
+  covers the whole pan range, so for the bridge it is
+  2 × (3840 + 2·6·135) × 2 × (2160 + 2·3·135) = **10920 × 5940**.
+- **Alpha lock:** the plate's alpha is the render's own coverage (plus the
+  solid ink lines). No paint pass, by hand, by script or by an image model, may
+  change it. The Blender pass enforces it; the Codex refine is re-locked and
+  verified on the Claude side (§9.6).
+- **Colour bleed:** RGB may extend a few pixels past the silhouette under
+  alpha 0 (the projection samples there at edges). Those RGB values are never
+  shown as space, because the GLB, not the plate's alpha, decides coverage.
+
+### 9.2 Palette
+
+Pulled toward the captain sheet (ruling 3): cream #F2E3C7, ochre #D9A340,
+violet #3B2959 and ink #423555 as on the sheet. Teal, coral, mint and leaf are
+desaturated and warmed as gouache pigments, and the spire is a warm pale
+white. The values live in the Blender layout (`bridge_layout_v2.json`).
+
+### 9.3 Light: the spire is baked, everything from outside the ship is live
+
+- **The spire is the dominant, ship-fixed light source**, so it is baked as the
+  key light, with its shadows, into the plate and the panorama. That is what
+  makes baking valid: it never changes with speed or heading. A low violet
+  bounce fills the shadow sides. **No other light is baked**, and nothing from
+  outside the ship.
+- **Live, in the engine:** the forward bubble-wall glow (relativity 0.6.0
+  `glowEmittanceAt`, sim `ship.ism.glow_pole_w_m2`) and the relativistic sky
+  vary with speed and direction. They become a thin **live layer** on the iso
+  layer: a directional tint plus a rim term, driven by the sim's glow value and
+  the forward sky brightness. Emittance → radiance is **/π** for a Lambertian
+  wall (M4.6a eval N3).
+- **Headroom:** plates are painted with a soft shoulder to a white point of
+  **0.88**, so the live term can brighten forward-facing edges without clipping.
+- **Facing hints:** `plate_<area>_facing.png` and `pano_<area>_facing.png`,
+  linear 8-bit grey at half resolution: `max(n · ship +Z, 0)`, the
+  forward-facing mask. Ship +Z is the direction of travel, toward the glowing
+  forward wall. On the play layer the engine may use the GLB's own normals
+  instead (the plate is projected onto real geometry). The panorama has no
+  geometry, so its mask is how the live term reaches it.
+- **Still never authored:** everything in §7's list, figures, and any light from
+  outside the ship. Space stays alpha 0.
+
+### 9.4 The panorama: the top of the sphere's interior
+
+- **Content** (ruling 4): the spire running down and the larger levels below
+  the bridge, with space mostly visible.
+  - The bridge's own pieces, the needle included, are left out: the play layer
+    draws them, so nothing shows twice.
+  - The spire body below the deck is in, registered behind the play layer's
+    spire at pan 0.
+  - The round-trip anchor is declared in `validation.needle_tip_ship_m`. Any
+    point that is the topmost solid pixel of its column will do; for the
+    bridge it is the far top rim of the spire body.
+- **Ship scale:** the bridge is the **topmost and smallest** level. Below it,
+  levels follow the sphere: radius ∝ the bubble's cross-section,
+  0.55 · R · sin θ (the spike's 55% of R ≈ 100 m), so they **widen down to the
+  equator and shrink again past it**. Only levels naturally in view are drawn.
+- **The camera is free** (any real perspective camera, vertical sensor fit,
+  no shift). The "centre view region unchanged from v1" rule (§4) no longer
+  applies to the panorama. `cam_<area>.json` and the round trip still apply.
+- **Trade-off, for the record:** in the iso composition the lower levels lie
+  beneath the bridge deck, so only their outer rims rise above the far rail.
+  A backdrop that looks down into the ship cannot also show the forward pole,
+  so at speed the starbow is out of the panorama's frame.
+
+### 9.5 Budget
+
+- **64 MB per area** (ruling 3), for all of the area's binaries in the bucket:
+  plate, panorama, foreground, GLB and facing hints. The bridge v2 build
+  (Blender paint pass) measures **44 MB**:
+
+  | File | Size |
+  |---|---|
+  | plate, 10920 × 5940 | 27.5 MB |
+  | facing hints | 6.2 MB |
+  | foreground | 6.3 MB |
+  | panorama | 3.3 MB |
+  | GLB, 199k triangles | 2.9 MB |
+
+  The GLB stays small because its bevels are baked into the shared kit meshes,
+  so instancing stays.
+- Binaries stay out of git: content-addressed in `gs://stapledons-voyage-assets/areas/`
+  and pinned in `SHA256SUMS` (§8).
+- **Bigger levels:** future levels are much larger than the bridge (up to
+  2.5× its radius at the equator). The kit and textures are built for that:
+  modular pieces on the 2 m grid, the gouache albedo procedural or
+  texel-density based (not per-object atlases), and plates **tiled per area**
+  when one 8K-density plate would exceed the budget or GPU texture limits
+  (16384 px).
+
+### 9.6 The Codex refine pass
+
+After the Blender paint pass, a Codex image-model pass repaints the plate
+toward the captain sheet's finish (ruling 1). It may change surface
+rendering, ink quality and painterly finish. It **may not** change
+silhouettes, geometry outlines, alpha, or add any sky, star, glow or membrane
+content. The result is re-locked to the render's alpha and verified on the
+Claude side (silhouette, edge alignment, region colour, tile seams, then
+`validate-areas`) before it enters a bundle. Provenance notes follow the
+captain's `generation_notes.md` format.
+
+### 9.7 Checks added (game side, ruling 5)
+
+`make validate-areas` gains plate checks for a bundle that declares
+`layers.play.plate`:
+- the resolution equals the declared one;
+- the §8 alpha rules (no specks, no haze, exactly 0 where space shows);
+- the plate's coverage matches the GLB rendered through the isocam, to within
+  2 px of the silhouette;
+- every GLB pixel visible within `covers_pan_range_m` has plate coverage.
+
