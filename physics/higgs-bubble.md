@@ -276,9 +276,10 @@ the starbow at the default cruise speed is untouched. The glow rises about
 - at the cap it is a blue-white sky of 1.56 cd/m² (3.6 × 10⁴ dark skies),
   about the luminance of a sky in civil twilight.
 
-It fades out as the ship brakes. Even at the cap the forward CMB disc
-(2 × 10⁸ cd/m²: the photopic radiance of a blackbody at HB-63's 3,853.7 K) is 10⁸ times brighter than the glow. At that speed it
-is the CMB disc, not the glow, that sets the eye's adaptation.
+It fades out as the ship brakes. Even at the cap the forward CMB disc is
+10⁸ times brighter than the glow: its luminance, 2 × 10⁸ cd/m², is the
+photopic radiance of a blackbody at HB-63's 3,853.7 K. At that speed it is
+the CMB disc, not the glow, that sets the eye's adaptation.
 
 *Game approximation, on top of the bubble's own hand-wave:*
 - Real GeV impacts on matter make hadronic cascades, pion-decay gamma rays
