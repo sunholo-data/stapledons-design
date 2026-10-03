@@ -72,9 +72,12 @@ From `vision/design-decisions.md`, 2025-12-06 to 2025-12-08 and 2026-09-28:
 - **The levels:** **10–20+ open levels radiating from the spire**, open at the
   sides with **wide gaps to the bubble**. The spike used 55% of the bubble's
   cross-section. They're linked by **irregular lifts and ramps**. **Level sizes
-  follow the sphere** (Mark, 2026-10-03): the bridge, at the top, is the
-  smallest platform. Levels widen down to the equator (radius ∝ the bubble's
-  cross-section, 0.55 · R · sin θ) and shrink again past it. Level types:
+  follow the sphere** (Mark, 2026-10-03; guidance for future areas, as later
+  generations move down the ship): the bridge, at the top, is the smallest
+  platform and the only open-topped one. Each lower level is wider down to the
+  equator (radius ∝ the bubble's cross-section, 0.55 · R · sin θ) and **roofed
+  by the underside of the level above**; past the equator they narrow again.
+  The bridge's views don't depict them. Level types:
   - **residential:** small dwellings;
   - **garden cathedral:** in the outer shell, "sad but happy";
   - **commons:** markets and gathering spaces;
