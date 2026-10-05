@@ -79,7 +79,7 @@ Per existing decisions:
 | Effect | Physics Basis | Implementation |
 |--------|---------------|----------------|
 | Transparency | Light passes through Higgs boundary | `TransparencyModeTransparent`, alpha 0.3 |
-| Boundary glow | Inelastic fraction ε of the ISM kinetic-energy flux → light (faint) | Emissive shader on sphere edges, scaled by velocity |
+| Boundary glow | Inelastic fraction ε (10⁻¹⁰, D-29 follow-up) of the ISM kinetic-energy flux → light (faint); blackbody at (K cos θ/σ)^¼ (D-30) | Emissive shader on sphere edges, scaled by velocity |
 | Fresnel effect | Grazing angles show more refraction | Shader: edge alpha higher than center |
 | Interior visibility | Light passes both ways | Ship silhouette rendered inside bubble |
 
