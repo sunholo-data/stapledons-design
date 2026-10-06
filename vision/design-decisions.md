@@ -1274,3 +1274,39 @@ drowns the starfield, which contradicts "faint by design".
     in place of the 182.6 lm/W white;
   - G-M4-4 is recomputed from HB-102 to HB-110, and a GPU-vs-CPU colour-ramp
     golden (G-M4-5) is added.
+
+
+## [2026-10-06] The Premise and Loop Are Canon (consolidated)
+
+**Context:** The premise lived in the retired repo's `game_loop_origin.md` and in scattered 2025 decisions. Mark restated it in an attended session.
+
+**Decision:** [premise-and-loop.md](premise-and-loop.md) is the canonical statement:
+- You are the pilot of Earth's only bubble ship, and you come back: the ship emerges near the same rogue black hole that threatens Earth.
+- Memories are erased.
+- 100 ship years, an Earth clock of ~10,000–24,000 years (tunable, possibly a difficulty setting), and an epilogue to Year 1,000,000.
+
+**Rationale:** Nothing is lost between repos, and one document decides.
+
+**Implications:** `game_loop_origin.md` is preserved in `legacy/input/`. Feature docs link here.
+
+
+## [2026-10-06] The AI Is an Unreliable Narrator That Works It Out Each Iteration
+
+**Decision:** The ship's AI starts each run confused and gradually works out the loop again, from spire readings, archive errors and patterns in the sky. It may be wrong or withhold.
+
+**Rationale:** Mystery that is rediscovered every run supports replayability. It resolves "Can the Archive ever know its origin?" (open-questions.md): yes, each time, never certainly.
+
+
+## [2026-10-06] Anthropic Selection Is Shown, and the Neighbourhood Breaks the Cosmological Principle
+
+**Decision:** Runs are variations selected for winnability. Realistic values predict ~0.05 civilisations within reach before impact, so a neighbourhood full of minds is evidence the universe was chosen. Selection comes from the AI steering each reset towards winnable variations, and from the player's previous choices shifting the odds. The luck number is hidden at world generation, revealed by the AI, and visible on New Game+.
+
+**Rationale:** Pillar 5 (Grounded Strangeness): the game illustrates the anthropic principle honestly instead of hiding a fudge factor.
+
+
+## [2026-10-06] Saving Earth Is Very Hard; Generated Content Carries Over
+
+**Decision:** Saving Earth is the rare, hard ending that many runs build towards. Content generated on the fly in one universe (civilisation designs, portraits, voices, art, lore) is available to the next as variations ("déjà vu"). Memories never carry over.
+
+**Rationale:** Replayability and a clue channel for the recursion. It amends the 2025 constraint "no information survives the BH crossing" to "no memory survives; the universe's furniture can".
+
