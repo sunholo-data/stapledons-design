@@ -39,6 +39,9 @@ Unresolved design questions that need exploration.
 
 ## Should the black hole origin be explicit or implicit?
 
+> **Partly resolved 2026-10-06** ([premise-and-loop.md](premise-and-loop.md) §4): every run opens at emergence near the black hole; the AI is an unreliable narrator that works the loop out again each iteration. Opening specifics remain open.
+
+
 **Why it matters:** The game starts with the player emerging from a BH/mysterious structure. The question is whether players KNOW this from the start or discover it through play. This affects the entire narrative framing and sense of mystery.
 
 **Current thinking:** Leaning toward mystery — the structure is ambiguous at first, players piece together the truth through gameplay. Discovery that shifts your worldview is valuable. But some clarity needed so players understand the New Game+ mechanic after first completion.
@@ -76,6 +79,9 @@ Unresolved design questions that need exploration.
 ---
 
 ## How much does prior-universe play influence the next universe?
+
+> **Partly resolved 2026-10-06** ([premise-and-loop.md](premise-and-loop.md) §5–6): both the AI's steering and the player's previous choices weight the next variation; generated content carries over as déjà vu. Strength is tunable.
+
 
 **Why it matters:** BH entry seeds a new universe with weighted parameters. The degree of influence affects whether this feels like earned progression or mostly random.
 
@@ -195,6 +201,9 @@ Unresolved design questions that need exploration.
 ---
 
 ## How is recursion revelation handled?
+
+> **Partly resolved 2026-10-06** ([premise-and-loop.md](premise-and-loop.md) §4, §6): mechanically discoverable through the AI, which works it out each run; no memory crosses, but generated content (the universe's furniture) does.
+
 
 **Why it matters:** The "you are not the first" truth is thematically powerful but mechanically tricky - BH resets everything.
 

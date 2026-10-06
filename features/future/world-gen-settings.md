@@ -1,5 +1,8 @@
 # World Generation Settings (Drake Parameters UI)
 
+> **2026-10-06:** see [vision/premise-and-loop.md](../../vision/premise-and-loop.md) and [life-and-intelligence-parameters.md](../next/life-and-intelligence-parameters.md). The Earth clock (~10,000–24,000 yr) may become a difficulty setting. The anthropic-luck number is hidden at world generation and revealed by the AI. `gamma_max` is superseded by D-15 (0.999999c).
+
+
 **Status**: Planned
 **Target**: v0.3.0
 **Priority**: P1 - High
