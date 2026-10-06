@@ -62,6 +62,21 @@ Three conclusions:
 2. **"8–15 civs alive within 1,000 ly" needs a boost of about 10⁴** over the world-gen defaults. That's what `anthropic_luck` is silently doing.
 3. **Time dilation is a better lever than luck.** The player's galactic-time window runs from 10³ years on a short voyage to 10⁶ (the Year 1,000,000 fast-forward). Over 10⁶ years and 10,000 ly, the *unboosted* defaults already give ~33 civilisations that exist at some point. Range and time make rarity playable, and that *is* the game's premise.
 
+### Inside the doom window
+
+The mission bounds both range and time. The useful volume is about 500–3,000 ly, and the window about 10⁴ Earth years (galaxy doc, problem 4). Within it, the **unboosted defaults** give:
+
+| Within | Biospheres | Civilisations existing at some point in a 10,000 / 24,000-year window |
+|---|---|---|
+| 500 ly | 2.4 × 10⁴ | 0.0005 / 0.0008 |
+| 1,000 ly | 1.6 × 10⁵ | 0.003 / 0.005 |
+| 3,000 ly | 2.5 × 10⁶ | 0.05 / 0.09 |
+| 5,000 ly | 7.8 × 10⁶ | 0.16 / 0.27 |
+
+So the time-dilation lever only works for players who leave Earth behind. For the mission itself, **a few civilisations within reach before impact need about 10²–10³ over the world-gen defaults**, and far more over the realistic median.
+
+**The fiction already explains the dial** (Mark, 2026-10-06; retired `game_loop_origin.md`: each failed voyager seeds a variation with "slightly different anthropic luck"). The runs are a selection across multiverse variations, weighted towards universes where the mission is possible. That's an observer-selection effect with a story: this universe is unusually rich in life and minds near Earth *because* it's one the loop chose. The ship's AI knows this is a re-run. So the luck number becomes a **diegetic reveal** rather than a settings-screen fact.
+
 ---
 
 ## Design
@@ -125,7 +140,7 @@ In play, the Archive can explain the factors as lore with real citations.
 
 ## Open questions for Mark
 
-1. **Encounter targets** for the default preset, per typical 100-year voyage. A starting proposal: 20–50 biospheres detected, 3–8 visited, 2–5 remnants, 1–3 signals, **0–2 living contacts**, with contact more likely the further and longer you go.
-2. **Show the luck number to the player?** Default: yes, in world-gen and the Archive ("The Game Doesn't Judge"; no hidden thumb on the scale).
+1. **Encounter targets** for the default preset, per typical 100-year voyage, **counted inside the doom window and range**, since those are the encounters that can help Earth. A starting proposal: 20–50 biospheres detected, 3–8 visited, 2–5 remnants, 1–3 signals, **0–2 living contacts**, with contact more likely the further and longer you go.
+2. **Show the luck number to the player, and when?** It's a spoiler for the multiverse loop. Proposed default: hidden at world generation (presets are named only); the ship's AI reveals the number as part of its secret ("this universe is 10^3 kinder to minds than chance would give; that is not an accident"); fully visible on New Game+.
 3. **M-dwarf habitability:** count M-dwarf habitable-zone planets (about 75 % of stars, so up to 4× more biospheres) or flag them as debated and off by default? Default: on, with the planet labelled "habitability debated".
 4. **Reconcile the four existing civilisation counts** to whatever targets are chosen in question 1, and retire `gamma_max` (superseded by D-15).

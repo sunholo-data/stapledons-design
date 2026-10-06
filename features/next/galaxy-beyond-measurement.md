@@ -49,6 +49,20 @@ The real catalogue is **complete only to about 326 ly**. Beyond that, the bright
 
 **3. "Fill the rest" needs care.** The cosmological principle (homogeneity) holds for the universe on scales above ~100 Mpc, but not inside a galaxy. Star density falls by about e per ~1,000 ly above the disc plane and per ~8,000 ly in radius. It rises steeply into the bulge, and there are arms, clusters and dust. Resampling the local stars uniformly would give a Milky Way with no disc and no bulge, and the Sgr A* pilgrimage would cross a featureless fog.
 
+**4. The mission bounds the useful galaxy.** (Mark, 2026-10-06, restating `game_loop_origin` from the retired repo.) Each playthrough opens with the ship emerging near the rogue black hole that is heading for the Solar System. Impact is in about 10,000 Earth years: the retired doc says 10,000–100,000, tunable, with 24,000 in its opening scene. The player has 100 ship years; the hook is about 10,000 Earth years; the epilogue runs to Year 1,000,000.
+
+At cruise, Earth time is at least the distance travelled (β → 1), so **every light-year of path costs at least one year of Earth's remaining time.** The doom clock is a light-year budget:
+
+| Budget at ~10,000 yr | Meaning |
+|---|---|
+| total path ≤ ~10,000 ly | everything you do for Earth fits in this |
+| e.g. 5 round trips to 1,000 ly | or 1 to 5,000 ly |
+| Sgr A* (27,000 ly) | a 54,000-year round trip: going there means choosing the galaxy over Earth |
+
+So the galaxy is open, but the **mission-relevant play area is about a 500–3,000 ly sphere around Sol**. That falls almost entirely inside the measured core (≤ 326 ly) and the measured sample plus completion (to ~6,500 ly). The model galaxy matters only for players who abandon Earth, for Sgr A*, and for the Year 1,000,000 epilogue. Implementation priority follows: **completing the 326 ly → ~2 kpc band** (the Gaia selection function) comes well before whole-galaxy synthesis.
+
+**5. Multiverse variation is the frame for synthesis.** Each run is a variation of the same universe, so measured stars are the fixed canon across runs. Synthetic stars (the seed) and the life parameters (companion doc) are what varies between variations.
+
 ---
 
 ## Design
