@@ -1310,3 +1310,15 @@ drowns the starfield, which contradicts "faint by design".
 
 **Rationale:** Replayability and a clue channel for the recursion. It amends the 2025 constraint "no information survives the BH crossing" to "no memory survives; the universe's furniture can".
 
+
+## [2026-10-06] The Player Brings the News; the Spire Resets When Earth's Fate Is Sealed
+
+**Decision:**
+- Every run starts at emergence from the rogue black hole, a few light-years out, followed by a throw towards Earth.
+- Earth doesn't know of the doom; the player brings both the news and the only salvation (the bubble ship).
+- When Earth's fate is sealed, the spire resets the bubble and pulls it back to the next variation's start. That's the in-fiction end of a run.
+
+**Rationale:** It makes the opening a short real journey (a dark rogue black hole at 45–300 km/s is 1.5–24 ly away for a 10,000–24,000-year clock). It explains why Earth is unaware, and turns the run boundary into a spire mystery instead of a game-over screen.
+
+**Implications:** The black hole is an invented scenario object, labelled with provenance "scenario". What counts as "sealed", and how it combines with the captain's death, is open (premise-and-loop.md §9).
+

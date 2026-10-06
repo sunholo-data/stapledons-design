@@ -1,5 +1,8 @@
 # Spire Mystery & Tech Tree
 
+> **2026-10-06 (canon, [vision/premise-and-loop.md](../../vision/premise-and-loop.md) §4):** when Earth's fate is sealed, the spire resets the bubble and pulls it back to the start of a new variation: emergence at the rogue black hole, thrown towards Earth.
+
+
 ## Status
 - **Status:** Planned
 - **Sprint:** Vision Integration - Sprint 4

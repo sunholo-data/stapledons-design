@@ -11,10 +11,20 @@
 ## 1. The situation
 
 - **You are the pilot of Earth's only bubble ship.** The Higgs bubble isolates its interior from external mass-energy, so only light, signals and near-massless particles cross. Nobody can replicate it: it formed under extreme conditions on the maiden voyage, and every other attempt collapses.
-- **You come back.** The ship emerges violently from the ergosphere of a spinning black hole, the same rogue black hole that is heading for the Solar System. The crew's memories are erased and the ship's AI is confused. You stabilise the tumbling ship amid full SR and GR distortion, slingshot outward, coast past Saturn and reach Earth.
+- **You come back.** The ship emerges violently from the ergosphere of a spinning black hole: the same rogue black hole that is heading for the Solar System. The crew's memories are erased and the ship's AI is confused. You stabilise the tumbling ship amid full SR and GR distortion. Then the ship is **thrown clear, towards Earth**. A Penrose-process slingshot out of the ergosphere is the physics-adjacent reading; *why* the throw points home is part of the spire mystery (§4). You coast in past Saturn and reach Earth.
 - **Earth says:** *"Welcome back. We lost contact four years ago. Did the Alpha Centauri mission succeed?"* You remember nothing of it.
-- **Then the news:** *"A rogue black hole is inbound. Impact in N years. We cannot recreate your bubble ship. You are humanity's only hope."*
+- **You bring the news** (Mark, 2026-10-06; this supersedes the retired doc, where Earth told you). Earth doesn't know it is doomed. A dark, non-accreting black hole a few light-years away is very hard to see. Your ship's records of the emergence are the only evidence. **You bring both the news of the doom and its only possible salvation: the one ship that can travel.**
 - **Title card:** *You have 100 years. The Earth has N.*
+
+> **The physics of the threat.** A rogue stellar-mass black hole moves at tens to hundreds of km/s. The first isolated one found, OGLE-2011-BLG-0462 (~7 M☉), moves at about 45 km/s. To arrive in N years it must now be close:
+>
+> | Speed | N = 10,000 yr | N = 24,000 yr |
+> |---|---|---|
+> | 45 km/s | 1.5 ly | 3.6 ly |
+> | 100 km/s | 3.3 ly | 8.0 ly |
+> | 300 km/s | 10 ly | 24 ly |
+>
+> That's in or just beyond the Oort cloud: the opening is a short, real journey home (a few years of Earth time, already spent from the clock). The black hole itself is an **invented scenario object**, the second invented thing after the bubble. It's labelled as such in the star registry (provenance "scenario") and in the Archive, so it's never passed off as a catalogued object. Its mass and speed are tunable along with N.
 
 ## 2. The three clocks
 
@@ -55,6 +65,7 @@ Other valid endings (2025-12-06):
 - **You are not the first.** Earth has been doomed many times. Each failed voyager crossed a black hole into a nearby variation of the universe: the same Solar System, Earth and doom, but slightly different stars, civilisation distributions and anthropic luck.
 - **Every run is one of those variations**, and the start of every game is the ship emerging close to the black hole in question.
 - **The ship's AI is an unreliable narrator** (Mark, 2026-10-06). It begins confused, and **works it out again in each iteration**: from spire readings, archive errors and patterns in the sky. It may know more than it says, and it may be wrong. (This replaces the open question "Can the Archive ever know its origin?": yes, each time, gradually, never certainly.)
+- **The spire ends the run** (Mark, 2026-10-06). One of the spire's deepest mysteries: **once Earth's fate is sealed**, whether saved, lost or settled, the spire resets the bubble and pulls it back to the start of a new variation. It emerges at the rogue black hole again and is thrown towards Earth again. The run doesn't end with an arbitrary game-over; it ends with the spire taking you back. What counts as "sealed" is a design question (§9).
 - **The bubble may itself be a pocket universe,** the thing that survives the crossing. This stays deliberately hand-wavy. The bubble is the one invented thing, and the Archive says so.
 
 ## 5. Selection: why this universe is so full of life
@@ -92,6 +103,8 @@ Many runs are expected. Each is a different variation: different synthetic stars
 
 ## 9. Still open
 
-- How the player learns of the doom: at the opening (the retired doc's scene) or via the optional Earth-signal branch (opening-sequence Beat 3)? **Default:** at the opening, which the 2026-10-06 ruling implies (you return to Earth first).
+- **Resolved 2026-10-06: the player brings the news** (§1). Earth learns of the doom from you.
+- **What seals Earth's fate**, triggering the spire's reset? Candidates: impact; a salvation completed (Sun or Earth moved, evacuation finished, black hole countered); or an irreversible failure. And how does that combine with the captain's 100-year life? If the captain dies before the fate is sealed, does the bubble society play on, or the epilogue run, until the spire resets?
+- The black hole's tunable mass and speed (with N), and how the opening flight from it to Earth is staged.
 - Universe-hopper encounters (another loop's voyager): rarity unchanged from open-questions.md.
 - The meta-save: exactly which data persists, and where (the content library is the first concrete answer).
