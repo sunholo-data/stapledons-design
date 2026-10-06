@@ -24,6 +24,20 @@
 > | 100 km/s | 3.3 ly | 8.0 ly |
 > | 300 km/s | 10 ly | 24 ly |
 >
+> **What "impact" means: no collision is needed.** The danger is the tidal kick: the black hole pulls the Sun and Earth by different amounts. Change in Earth's orbital speed (29.8 km/s) from one pass of a 10 M☉ hole (impulse approximation):
+>
+> | Closest approach to the Sun | at 45 km/s | at 100 km/s | at 300 km/s |
+> |---|---|---|---|
+> | 5 AU | 53 % | 24 % | 8 % |
+> | 10 AU (inside Saturn) | 13 % | 6 % | 2 % |
+> | 20 AU | 3.3 % | 1.5 % | 0.5 % |
+> | 30 AU (Neptune) | 1.5 % | 0.7 % | 0.2 % |
+> | 100 AU | 0.13 % | 0.06 % | 0.02 % |
+>
+> A few per cent makes Earth's orbit eccentric enough for climate catastrophe; ~10 % or more ends habitability. Within a few AU it's chaotic: Earth is ejected into interstellar space or **captured into orbit around the black hole** (which gives the "Sargasso ending" its meaning: keep a dark, captured Earth alive). Tearing the Sun apart needs a pass within 0.01 AU, so the Sun survives and Earth is the casualty. A pass through the Oort cloud also sends comet showers inward for a long time afterwards, a slow second threat that suits the Year 1,000,000 epilogue.
+>
+> **Why saving Earth is very hard:** pushing a 10 AU pass out to 100 AU while the hole is still 3 ly away means changing its velocity by 21 m/s. On 10 M☉ that's 4 × 10³² N·s. Moving the Sun and Earth together instead needs ~50 m/s over 10,000 years; known stellar-engine concepts are orders of magnitude too slow.
+>
 > That's in or just beyond the Oort cloud: the opening is a short, real journey home (a few years of Earth time, already spent from the clock). The black hole itself is an **invented scenario object**, the second invented thing after the bubble. It's labelled as such in the star registry (provenance "scenario") and in the Archive, so it's never passed off as a catalogued object. Its mass and speed are tunable along with N.
 
 ## 2. The three clocks
@@ -65,7 +79,7 @@ Other valid endings (2025-12-06):
 - **You are not the first.** Earth has been doomed many times. Each failed voyager crossed a black hole into a nearby variation of the universe: the same Solar System, Earth and doom, but slightly different stars, civilisation distributions and anthropic luck.
 - **Every run is one of those variations**, and the start of every game is the ship emerging close to the black hole in question.
 - **The ship's AI is an unreliable narrator** (Mark, 2026-10-06). It begins confused, and **works it out again in each iteration**: from spire readings, archive errors and patterns in the sky. It may know more than it says, and it may be wrong. (This replaces the open question "Can the Archive ever know its origin?": yes, each time, gradually, never certainly.)
-- **The spire ends the run** (Mark, 2026-10-06). One of the spire's deepest mysteries: **once Earth's fate is sealed**, whether saved, lost or settled, the spire resets the bubble and pulls it back to the start of a new variation. It emerges at the rogue black hole again and is thrown towards Earth again. The run doesn't end with an arbitrary game-over; it ends with the spire taking you back. What counts as "sealed" is a design question (§9).
+- **The spire ends the run** (Mark, 2026-10-06). One of the spire's deepest mysteries: **once Earth's fate is sealed**, whether saved, lost or settled, the spire resets the bubble and pulls it back to the start of a new variation. It emerges at the rogue black hole again and is thrown towards Earth again. The run doesn't end with an arbitrary game-over; it ends with the spire taking you back. What counts as "sealed" is a design question (§9). **The captain's death also ends the run with a reset** (Mark, 2026-10-06). So does mutiny, which ends the captain's story (2025-12 interview).
 - **The bubble may itself be a pocket universe,** the thing that survives the crossing. This stays deliberately hand-wavy. The bubble is the one invented thing, and the Archive says so.
 
 ## 5. Selection: why this universe is so full of life
@@ -104,7 +118,7 @@ Many runs are expected. Each is a different variation: different synthetic stars
 ## 9. Still open
 
 - **Resolved 2026-10-06: the player brings the news** (§1). Earth learns of the doom from you.
-- **What seals Earth's fate**, triggering the spire's reset? Candidates: impact; a salvation completed (Sun or Earth moved, evacuation finished, black hole countered); or an irreversible failure. And how does that combine with the captain's 100-year life? If the captain dies before the fate is sealed, does the bubble society play on, or the epilogue run, until the spire resets?
+- **What seals Earth's fate**, triggering the spire's reset? Candidates: impact; a salvation completed (Sun or Earth moved, evacuation finished, black hole countered); or an irreversible failure. **Resolved:** the captain's death (or a mutiny) is also a reset; the epilogue still shows what followed.
 - The black hole's tunable mass and speed (with N), and how the opening flight from it to Earth is staged.
 - Universe-hopper encounters (another loop's voyager): rarity unchanged from open-questions.md.
 - The meta-save: exactly which data persists, and where (the content library is the first concrete answer).
