@@ -136,6 +136,14 @@ galaxy's, runs in AILANG and can be tested with no Godot at all.
 - The energy-ledger readout matches HB-35, HB-36 and HB-51 to HB-56.
 
 ### M3: Black holes (GR foundation)
+**Status:** Landed 2026-10-08. Sprint `R1-M3-BLACK-HOLES` in the game repo
+(approved D-53, executed attended), shipped in `v0.4.0-dev.23-black-hole`. Bar clause 3
+**MET**: shadow vs Synge 0.001 / 0.010 / 0.006 px at 10 / 5 / 3 r_s; weak field 0.148 %
+at b = 1000 and 2.68e-4 at b = 100; Einstein ring within 0.032 px; the geodesic
+integrator ships in `sunholo/relativity` 0.10.0. Evidence: the game repo's
+`design_docs/implemented/r1/m3-report.md`. Sgr A* is non-spinning with mass a scenario
+parameter (D-53), so the canon's rogue hole can reuse it; spin (Kerr) and the true
+Galactic-Centre sky are follow-ups.
 **Goal:** the black hole looks exactly right, because it's where New Game+
 begins and where the hard-SF promise is most visible.
 
