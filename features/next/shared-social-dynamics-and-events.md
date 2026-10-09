@@ -305,12 +305,25 @@ The completed design, companion sprint and independent evidence were archived in
 
 After playing that version Mark judged the numbered, scrolling presentation still
 unclear. Its passing controls establish host behavior, not newcomer comprehension
-or compelling stories. The next interface is a composed, paged **pure AILANG**
+or compelling stories. The replacement interface is a composed, paged **pure AILANG**
 terminal UI, with crew conversation/current decisions in focus and Crew, Work,
-Log and Guide views for inspection. A reusable `sunholo/terminal_ui` package is
-being developed in an isolated packages checkout; it is not yet installed or
-published. Raw keys/resize have been requested upstream (canonical message
+Log and Guide views for inspection. Reusable `sunholo/terminal_ui` and the new
+`crew-journey` / `crew-journey-offline` entries are merged to packages main and
+installed from a durable isolated checkout. Registry publication remains separate.
+Raw keys/resize have been requested upstream (canonical message
 `inbox_1791568104057_d08245d1`); current input is a short key followed by Enter.
+
+[PR114](https://github.com/sunholo-data/ailang-packages/pull/114) and its
+[archive PR115](https://github.com/sunholo-data/ailang-packages/pull/115) are merged.
+Final [CI37973618460](https://github.com/sunholo-data/ailang-packages/actions/runs/37973618460)
+and independent98/100 acceptance pass. Both engines pass125crew/14library/12terminal
+native controls; seven installed view-navigation flows preserve exact journal
+payloads and replay; eight mutants and the existing social regression pass.
+Actual 80x28/60x24 screens, cached long replies and safe widths were reviewed.
+Installed science with the existing AI cache completes at turn4 with observations25,
+fatigue70 and materials2 available/0 reserved/4 consumed, with zero fresh calls.
+Raw proof limitations remain explicit: crew17/83 verified,64skipped,2encoder errors;
+terminal2/9 verified,7skipped. No new social effects or provider/model change.
 
 Mark selected a strained crew preparing for first contact as the first story
 example. The interface's first chapter uses current work/rest/authority rules;

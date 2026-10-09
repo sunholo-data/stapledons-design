@@ -188,8 +188,9 @@ to develop this update.
 Mark tried that presentation and judged it still unclear: the terminal needs
 serious UI work and enough context for a newcomer. Passing host controls and
 the earlier independent implementation review did not establish that the lab
-was an understandable game. The current installed player remains a scrolling
-numbered prototype while the replacement is developed.
+was an understandable game. The replacement is now merged and installed as
+`crew-journey` / `crew-journey-offline`; the scrolling player remains available
+for comparison.
 
 Mark selected **a strained crew preparing for first contact** as the first
 journey example and explicitly prefers **pure AILANG for the terminal UI**.
@@ -199,6 +200,14 @@ must preserve the pending decision, time, random seed and AI allowance. Crew
 conversation and consequences lead; debug evidence and detailed meters are
 inspectable. Current runtime input remains keys followed by Enter; native keys
 and terminal-size events have been requested from AILANG core.
+
+Implementation [PR114](https://github.com/sunholo-data/ailang-packages/pull/114)
+and archive [PR115](https://github.com/sunholo-data/ailang-packages/pull/115) are
+merged to packages main. Exact-source [CI37973618460](https://github.com/sunholo-data/ailang-packages/actions/runs/37973618460)
+passed; independent review98/100 inspected actual screens, pending decisions and
+terminal cell widths. The installed command from an unrelated cwd reused the
+existing AI cache, completed science in four turns and made zero provider calls.
+This records implementation acceptance, not a new player usability verdict.
 
 The first interface slice supplies a preparation chapter using existing rules.
 It does not yet simulate alien negotiations or whole multi-leg journeys. The

@@ -308,6 +308,10 @@ Later attended correction: Mark judged the installed scrolling UI still unclear
 and requested serious terminal interface work for a journey/story workshop. He
 prefers pure AILANG and selected a strained crew preparing for first contact.
 A reusable terminal renderer and composed Bridge/Crew/Work/Log/Guide interface
-are in progress in an isolated packages checkout. The initial preparation chapter
+are merged and installed from an isolated packages checkout: [PR114](https://github.com/sunholo-data/ailang-packages/pull/114),
+[archive PR115](https://github.com/sunholo-data/ailang-packages/pull/115).
+Exact-source CI37973618460 and independent98/100 acceptance pass; actual screens
+were reviewed and installed cached science completes with zero new AI calls.
+Launch `~/.ailang/bin/crew-journey` (or `crew-journey-offline`). The initial preparation chapter
 uses existing rules; full journeys and alien negotiation are subsequent reviewed
 mechanics, not completed features. This work leaves active R1 game checkouts alone.
