@@ -182,3 +182,27 @@ merged to packages main. Final CI37958354490 and independent review100/100 pass;
 command was verified with the existing library and zero fresh AI calls. The design
 and evidence are archived with the package sprint. No provider calls were needed
 to develop this update.
+
+## Journey workshop UI correction, attended 2026-10-09
+
+Mark tried that presentation and judged it still unclear: the terminal needs
+serious UI work and enough context for a newcomer. Passing host controls and
+the earlier independent implementation review did not establish that the lab
+was an understandable game. The current installed player remains a scrolling
+numbered prototype while the replacement is developed.
+
+Mark selected **a strained crew preparing for first contact** as the first
+journey example and explicitly prefers **pure AILANG for the terminal UI**.
+The implementation direction is a reusable terminal UI package and a composed
+captain screen with Bridge, Crew, Work, Log and Guide views. Reading details
+must preserve the pending decision, time, random seed and AI allowance. Crew
+conversation and consequences lead; debug evidence and detailed meters are
+inspectable. Current runtime input remains keys followed by Enter; native keys
+and terminal-size events have been requested from AILANG core.
+
+The first interface slice supplies a preparation chapter using existing rules.
+It does not yet simulate alien negotiations or whole multi-leg journeys. The
+workshop continuation is scenario authoring, condition-driven crew incidents,
+peer evidence/disagreement, promises, contact/revisits and a causal journey
+chronology. Those additions need concrete mechanics and acceptance tests,
+without assigning a single correct way to play or changing Commons geometry.

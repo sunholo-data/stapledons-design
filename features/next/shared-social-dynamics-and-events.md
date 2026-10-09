@@ -279,8 +279,8 @@ standalone CLI feature; Godot bridge/Commons integration remains separate.
 ### New-player presentation and recovery
 
 The approved CLI slice in [packages PR112](https://github.com/sunholo-data/ailang-packages/pull/112)
-makes this foundation understandable as a standalone
-captain game. Introduce the role and situation before showing commands; explain
+introduces a standalone captain-game briefing over this foundation. Introduce
+the role and situation before showing commands; explain
 offer/agreement/start/time as separate steps. Display directed personal trust,
 actual project progress and reserve-versus-consume accounting in terminal panels.
 Help and navigation carry no social effects or random draws. A recorded rejection
@@ -300,3 +300,23 @@ PR112 is merged to packages main; final CI37958354490 and independent review100/
 pass. The installed CLI reuses the existing dialogue library with no fresh AI call.
 The completed design, companion sprint and independent evidence were archived in
 [PR113](https://github.com/sunholo-data/ailang-packages/pull/113).
+
+### Attended usability correction: a journey workshop
+
+After playing that version Mark judged the numbered, scrolling presentation still
+unclear. Its passing controls establish host behavior, not newcomer comprehension
+or compelling stories. The next interface is a composed, paged **pure AILANG**
+terminal UI, with crew conversation/current decisions in focus and Crew, Work,
+Log and Guide views for inspection. A reusable `sunholo/terminal_ui` package is
+being developed in an isolated packages checkout; it is not yet installed or
+published. Raw keys/resize have been requested upstream (canonical message
+`inbox_1791568104057_d08245d1`); current input is a short key followed by Enter.
+
+Mark selected a strained crew preparing for first contact as the first story
+example. The interface's first chapter uses current work/rest/authority rules;
+it does not claim alien negotiations or multi-leg journey simulation already
+exists. The intended workshop supports authored scenarios, condition-triggered
+incidents, peer evidence/reactions, promises and later contact/revisits, with a
+causal chronology for comparing runs. Keep AI expression cached and sampled,
+while trusted rules own effects. New scenario costs, KPI meanings and recorded
+schemas require their own reviewed design.

@@ -303,3 +303,11 @@ with local 109 app controls, 14 library controls, installed recovery/replay fixt
 and eight killed mutants. Final CI37958354490 and independent review100/100 pass;
 PR112 and its documentation archive PR113 are merged to packages main. Installed
 commands now use this version. Source skips/SMT limitations remain separately recorded.
+
+Later attended correction: Mark judged the installed scrolling UI still unclear
+and requested serious terminal interface work for a journey/story workshop. He
+prefers pure AILANG and selected a strained crew preparing for first contact.
+A reusable terminal renderer and composed Bridge/Crew/Work/Log/Guide interface
+are in progress in an isolated packages checkout. The initial preparation chapter
+uses existing rules; full journeys and alien negotiation are subsequent reviewed
+mechanics, not completed features. This work leaves active R1 game checkouts alone.
