@@ -145,3 +145,18 @@ These are proposals for review, not newly ratified canon.
 - The implementation design names command-checkable acceptance criteria and preserves
   deterministic replay, closed mass, signal causality and generator/judge independence.
 - No active renderer, navigation, UI, assets, mission schedule or package is changed.
+
+## Implementation/interview update, 2026-10-09
+
+The captain-and-crew CLI lab now provides readable state for rapid interior-policy
+iteration without building the game; see the [shared dynamics update](shared-social-dynamics-and-events.md#captain-and-crew-cli-iteration-attended-2026-10-09).
+Bridge and first-level layout references above remain the background for eventual
+presentation. Mark selected crew reacting to each other and spreading disagreements
+as the next experiment. This does not mark the bridge/Commons interactions as
+integrated into the playable dev app.
+
+Mark approved a growing AI-authored local response library and OCEAN-sensitive
+automatic crew reactions. The next CLI slice presents numbered captain choices,
+then crew dialogue and consequences; it precedes peer disagreement spreading.
+See the [response-library direction](shared-social-dynamics-and-events.md#growing-response-library-and-personality-attended-2026-10-09). Bridge and Commons
+remain the first game presentation scope; no new room geometry is decided here.

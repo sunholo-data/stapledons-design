@@ -3,7 +3,7 @@
 **Status:** Design draft and interview, 2026-10-09. Mark's direction is recorded
 below; indicator choices, numerical rules and event contracts remain proposals.
 **Implementation direction (Mark, attended):** reusable AILANG package support,
-with standalone experiments that need no game build. Proposed package
+with standalone experiments that need no game build. Experimental package
 `sunholo/social_dynamics` and [implementation design](/Users/voightkampff/dev/sunholo-data/stapledons-godot/.ailang/cache/reviews/social-dynamics-20261009/packages/design_docs/implemented/0.1.0/social-dynamics-0.1.0.md);
 [sprint](/Users/voightkampff/dev/sunholo-data/stapledons-godot/.ailang/cache/reviews/social-dynamics-20261009/packages/design_docs/implemented/0.1.0/social-dynamics-0.1.0-sprint.md) implements Mark’s approved sprint; native, replay and strict-VM checks pass. Independent final evaluation is recorded with the package.
 
@@ -206,3 +206,65 @@ reputation delta. An unvisited society continues its own history.
 Mark approved the reusable kernel sprint (“yep approved”). Experimental `sunholo/social_dynamics@0.1.0` now implements bounded indicators, directed evidence-gated reactions, explicit task assignment/consent, conserved project materials, hysteresis conditions, one-clock scheduling and atomic generated proposals. Three ship paths and two community paths run standalone without a game build or live AI. Local publication remains unauthorised.
 
 [Runner guide](/Users/voightkampff/dev/sunholo-data/stapledons-godot/.ailang/cache/reviews/social-dynamics-20261009/packages/examples/social-dynamics/README.md) and [validation](/Users/voightkampff/dev/sunholo-data/stapledons-godot/.ailang/cache/reviews/social-dynamics-20261009/packages/design_docs/implemented/0.1.0/social-dynamics-validation.md). Numerical example choices remain tuning fixtures rather than game canon. Bridge/Commons presentation, captain KPI visibility, final refusal/authority rules, live generated proposal adapter and alien life/civilisation models remain open. Actual task/condition outcomes become immutable evidence; crew/counterparts react only after host-received delivery.
+
+## Captain-and-crew CLI iteration, attended 2026-10-09
+
+A second standalone `sunholo/crew_lab@0.1.0` experiment combines the social kernel
+with `sunholo/decisions@0.4.0` saved synthetic choices. It binds each request to
+received actor context, its exact project/agreement, ship tick and revision; banks
+alternatives and explicit sampling rolls; and compares experimental orders/consent
+policies, relief, fatigue, work, materials and directed trust. `crew-lab` keeps the
+full causal JSON; `crew-view` presents readable state after each captain step.
+A complete six-command run measured about1.4s locally, without a Godot build.
+
+[CLI guide](https://github.com/sunholo-data/ailang-packages/tree/main/examples/crew-lab)
+and [reviewed implementation](https://github.com/sunholo-data/ailang-packages/pull/108).
+Independent evaluation100/100:56 native controls on both interpreter and strictVM,
+five complete replay/parity paths and eight compiling mutants killed. This is an
+offline tuning fixture: traits enter context, fixed trust deltas illustrate received
+reactions, and synthetic choices do not prove a model used OCEAN. Live provider
+calls, bridge/Commons UI and trait-weighted reactions remain future work.
+
+**Mark's selected next CLI experiment:** “Crew reacting to each other and spreading
+disagreements.” Explore disagreements received through conversation and shared
+projects, diverging worker responses and captain mediation; preserve explicit
+knowledge and causal receipts. Selection sets the next design direction, not final
+numeric tuning or universal gossip/authority rules.
+
+## Growing response library and personality, attended 2026-10-09
+
+Mark approved automatic crew replies with a numbered captain interface: captain
+chooses assignments, priorities and responses to concerns; crew choose personal
+reactions. AI creates dialogue for a missing situation, and validated responses
+accumulate in a local library across playthroughs. Reusing a library does not mean
+reusing the last selected decision: response probabilities and text variants can
+be sampled afresh. A recorded run retains its exact choices for replay.
+
+OCEAN is the human personality scaffold, alongside values, fatigue, directed
+relationships and known events. Profiles influence probabilities and dialogue
+tone, rather than assigning an archetype one inevitable action. Existing lab
+profiles already enter perception; the first fixtures did not demonstrate
+automatic trait-dependent reactions. A new experimental policy will make each
+trait's influence testable. Its coefficients are tuning choices, not scientific
+calibration or a moral score. Personality drift remains future work.
+
+The reusable library persists suitable content, while promises, grievances,
+discoveries and relationships stay in the current universe. Cache suitability
+must include personality and relevant received context; characters cannot learn
+from unseen events. Initial matching is deliberately exact and conservative;
+situation bands and broader retrieval need separate behavioural evidence.
+Generation supplies text variants; host-validated actions determine consequences.
+Narrative structural checks cannot establish that every generated sentence is true.
+
+Mark chose the existing laptop AILANG AI setup and the newest Gemini text Lite
+model. The planned adapter pins gemini-3.5-flash-lite, verified against Google's
+current model list; successful live availability still needs measurement. New
+content is generated on cache misses, with a bounded attempt budget; cache hits
+make no new provider call. A labelled authored offline path remains available.
+
+The next implementation slice is the captain menu, trait-sensitive response
+policy, generated/cache dialogue and a complete run journal. The selected
+crew-to-crew disagreement-spreading experiment follows this playable foundation.
+Implementation plan: ailang-packages design_docs/planned/crew-lab/crew-content-library.md
+on sprint/crew-response-library. This is authorised work in progress, not shipped
+Godot behaviour or a claim that the live content cache already works.
