@@ -162,3 +162,23 @@ seeds and replay journals. Installed offline flows and live miss/cache repeat pa
 PR110 CI green, final independent evaluation100/100; merged to packages main. It precedes peer disagreement spreading.
 See the [response-library direction](shared-social-dynamics-and-events.md#growing-response-library-and-personality-attended-2026-10-09). Bridge and Commons
 remain the first game presentation scope; no new room geometry is decided here.
+
+## Standalone captain game presentation, attended 2026-10-09
+
+Mark clarified that the CLI should be a small game in its own right: assume a new
+player does not know the simulation or its commands. The follow-up now adds
+a bridge briefing, readable crew/supply/project panels, contextual help, explanations
+of consequences and a factual session recap. Ordinary resource or consent rejection
+must keep the captain playing. Existing bridge and Commons references remain the
+setting; no room geometry, social rules or resource costs change in this slice.
+
+Each launch starts a fresh crew session; the local response library carries over.
+There is no victory grade or single correct route. The player learns by comparing
+how assignments, rest, authority and limited supplies change the ship's people.
+This usability slice precedes crew-to-crew disagreement spreading. Implementation
+is in [packages PR112](https://github.com/sunholo-data/ailang-packages/pull/112):
+merged to packages main. Final CI37958354490 and independent review100/100 pass;
+109 named app controls and 14 library controls pass on each engine. The installed
+command was verified with the existing library and zero fresh AI calls. The design
+and evidence are archived with the package sprint. No provider calls were needed
+to develop this update.

@@ -291,3 +291,15 @@ zero calls. Native94app+14library controls pass on both engines, plus installed
 science/rest/relief/material flows and complete replay. Independent final review100/100,
 packages PR110 CI green and merged to main. Game integration remains separate. Peer disagreement
 spreading remains the following interior experiment.
+
+Mark's usability request makes the CLI a standalone captain game for a player
+with no prior knowledge: bridge briefing, clearer terminal panels, contextual help,
+consequence explanations and a run recap. Resource/consent rejection should return
+to play with prior successful boundaries preserved. This is a presentation/recovery
+slice over the existing rules; it precedes peer disagreement spreading and does
+not require a Godot build or change the approved bridge/Commons geometry.
+Implementation is in [packages PR112](https://github.com/sunholo-data/ailang-packages/pull/112),
+with local 109 app controls, 14 library controls, installed recovery/replay fixtures
+and eight killed mutants. Final CI37958354490 and independent review100/100 pass;
+PR112 and its documentation archive PR113 are merged to packages main. Installed
+commands now use this version. Source skips/SMT limitations remain separately recorded.

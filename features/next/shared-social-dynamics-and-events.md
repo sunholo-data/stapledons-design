@@ -275,3 +275,28 @@ crew-to-crew disagreement-spreading experiment follows this playable foundation.
 Implementation: [packages PR110](https://github.com/sunholo-data/ailang-packages/pull/110),
 with sunholo/content_library@0.1.0 and crew-play/crew-play-offline. This is a
 standalone CLI feature; Godot bridge/Commons integration remains separate.
+
+### New-player presentation and recovery
+
+The approved CLI slice in [packages PR112](https://github.com/sunholo-data/ailang-packages/pull/112)
+makes this foundation understandable as a standalone
+captain game. Introduce the role and situation before showing commands; explain
+offer/agreement/start/time as separate steps. Display directed personal trust,
+actual project progress and reserve-versus-consume accounting in terminal panels.
+Help and navigation carry no social effects or random draws. A recorded rejection
+explains its cause and returns to play; a journal publication failure still stops
+before exposing unrecorded state or dialogue.
+
+The existing fixture starts with six materials. Science reserves and consumes four;
+maintenance needs three reserved and consumes two. Science completion therefore
+does not replenish enough materials for maintenance. Explain this tradeoff honestly
+without creating new resources or calling one play style correct. A run recap is
+descriptive, and journals are records rather than a resumable save implementation.
+Reviewing an existing offer is navigation, so it does not request another crew
+answer or consume dialogue allowance. Saved stock narration is distinguished from
+saved/new AI quotations, with the complete original selection and provenance kept
+in the journal. Help and the latest crew response stay beside the next choice.
+PR112 is merged to packages main; final CI37958354490 and independent review100/100
+pass. The installed CLI reuses the existing dialogue library with no fresh AI call.
+The completed design, companion sprint and independent evidence were archived in
+[PR113](https://github.com/sunholo-data/ailang-packages/pull/113).
