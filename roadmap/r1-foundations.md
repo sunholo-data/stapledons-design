@@ -249,6 +249,14 @@ Recorded in `vision/design-decisions.md` and the game repo's charter ledger:
   0.997c (ε 10⁻¹⁰, chosen from a rendered comparison), and its spectrum is a
   blackbody at the impact temperature (K cos θ/σ)^¼, computed in
   `sunholo/relativity` 0.8.0 (higgs-bubble.md §6).
+- **D-60 / D-61:** the medium is the real one (status 2026-10-09: PR A in
+  review). New games fly `lism-1` ([ism-structure.md](../physics/ism-structure.md)):
+  the Local Interstellar Cloud, 14 Redfield & Linsky clouds and the Local
+  Bubble's hot gas, driving the glow, drag and ledger; a route above the
+  drive-hold limit is refused with the limit shown; dust grains flash on the
+  wall (the labelled afterglow G-AG). `sunholo/celestial` 0.4.0 and
+  `sunholo/relativity` 0.12.0 published. Next: the HUD rows (after the ship UI)
+  and PR B, the Edenhofer 2024 dense clouds and the Local Leo Cold Cloud.
 
 ## AILANG upstream asks (tracked via `ailang messages`)
 
