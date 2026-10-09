@@ -156,7 +156,9 @@ as the next experiment. This does not mark the bridge/Commons interactions as
 integrated into the playable dev app.
 
 Mark approved a growing AI-authored local response library and OCEAN-sensitive
-automatic crew reactions. The next CLI slice presents numbered captain choices,
-then crew dialogue and consequences; it precedes peer disagreement spreading.
+automatic crew reactions. The standalone CLI now presents numbered captain choices,
+automatic crew dialogue and exact gauges, with banked GLM5.3Flash content, explicit
+seeds and replay journals. Installed offline flows and live miss/cache repeat pass;
+PR110 CI green, final independent evaluation100/100; merged to packages main. It precedes peer disagreement spreading.
 See the [response-library direction](shared-social-dynamics-and-events.md#growing-response-library-and-personality-attended-2026-10-09). Bridge and Commons
 remain the first game presentation scope; no new room geometry is decided here.

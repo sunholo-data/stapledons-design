@@ -222,8 +222,9 @@ and [reviewed implementation](https://github.com/sunholo-data/ailang-packages/pu
 Independent evaluation100/100:56 native controls on both interpreter and strictVM,
 five complete replay/parity paths and eight compiling mutants killed. This is an
 offline tuning fixture: traits enter context, fixed trust deltas illustrate received
-reactions, and synthetic choices do not prove a model used OCEAN. Live provider
-calls, bridge/Commons UI and trait-weighted reactions remain future work.
+reactions, and synthetic choices do not prove a model used OCEAN. The later guided
+CLI slice below adds trait-weighted reactions and live/cached dialogue; bridge/Commons
+UI integration remains future work.
 
 **Mark's selected next CLI experiment:** “Crew reacting to each other and spreading
 disagreements.” Explore disagreements received through conversation and shared
@@ -244,7 +245,7 @@ OCEAN is the human personality scaffold, alongside values, fatigue, directed
 relationships and known events. Profiles influence probabilities and dialogue
 tone, rather than assigning an archetype one inevitable action. Existing lab
 profiles already enter perception; the first fixtures did not demonstrate
-automatic trait-dependent reactions. A new experimental policy will make each
+automatic trait-dependent reactions. The new experimental policy makes each
 trait's influence testable. Its coefficients are tuning choices, not scientific
 calibration or a moral score. Personality drift remains future work.
 
@@ -256,15 +257,21 @@ situation bands and broader retrieval need separate behavioural evidence.
 Generation supplies text variants; host-validated actions determine consequences.
 Narrative structural checks cannot establish that every generated sentence is true.
 
-Mark chose the existing laptop AILANG AI setup and the newest Gemini text Lite
-model. The planned adapter pins gemini-3.5-flash-lite, verified against Google's
-current model list; successful live availability still needs measurement. New
-content is generated on cache misses, with a bounded attempt budget; cache hits
-make no new provider call. A labelled authored offline path remains available.
+Mark initially chose Gemini Lite; Google rejected the existing laptop key as
+API_KEY_INVALID. He then selected the existing OpenRouter key with GLM5.3Flash
+(z-ai/glm-5.3-flash). An attended real CLI encounter generated a valid bundle in one
+call (1058input/2692output tokens); an identical encounter reused the same selection
+and seed progression from cache with zero calls/current tokens. New content is
+generated on exact-context misses, with a bounded attempt budget; cache hits make
+no new provider call. A labelled authored offline path remains available.
 
-The next implementation slice is the captain menu, trait-sensitive response
-policy, generated/cache dialogue and a complete run journal. The selected
+The implemented CLI slice provides numbered captain menus, portable exact gauges,
+trait-sensitive response policy, generated/cache dialogue and a complete run
+journal. Local checks pass:94app+14library native controls on each engine, four
+installed offline flows with complete host replay, cache/error/journal failure
+controls and eight behavioural mutants. Independent final review100/100 and PR110 CI green; merged to packages main.
+The selected
 crew-to-crew disagreement-spreading experiment follows this playable foundation.
-Implementation plan: ailang-packages design_docs/planned/crew-lab/crew-content-library.md
-on sprint/crew-response-library. This is authorised work in progress, not shipped
-Godot behaviour or a claim that the live content cache already works.
+Implementation: [packages PR110](https://github.com/sunholo-data/ailang-packages/pull/110),
+with sunholo/content_library@0.1.0 and crew-play/crew-play-offline. This is a
+standalone CLI feature; Godot bridge/Commons integration remains separate.

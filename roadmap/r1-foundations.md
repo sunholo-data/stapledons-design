@@ -279,12 +279,15 @@ effects (v1.1).
 
 ## Human life / social experiments — 2026-10-09
 
-The [shared social dynamics design](../features/next/shared-social-dynamics-and-events.md) now has a standalone experimental AILANG kernel and bridge/Commons-oriented scenarios. Package-local native tests, replay and strict-VM parity pass. This does not mark game UI integration or macro civilisation/life generation complete; active navigation/physics work is untouched. The saved-choice captain-and-crew CLI adapter and readable crew-view now support fast policy iteration (packages PR108/109; independent evaluations100/100, CI green). Mark selected crew reacting to each other and spreading disagreements next. Bridge/Commons presentation and live generated content remain future integration work.
+The [shared social dynamics design](../features/next/shared-social-dynamics-and-events.md) now has a standalone experimental AILANG kernel and bridge/Commons-oriented scenarios. Package-local native tests, replay and strict-VM parity pass. This does not mark game UI integration or macro civilisation/life generation complete; active navigation/physics work is untouched. The saved-choice captain-and-crew CLI adapter and readable crew-view now support fast policy iteration (packages PR108/109; independent evaluations100/100, CI green). Mark selected crew reacting to each other and spreading disagreements next. Bridge/Commons presentation remains future game integration work; live generated
+content is now tested in the standalone guided CLI described below.
 
 Attended follow-up2026-10-09: Mark approved numbered captain menus, automatic
 OCEAN-sensitive crew reactions and a growing local AI dialogue library. The
 first implementation reuses exact received context, samples responses with an
-explicit seed and records actions for replay. Gemini3.5Flash-Lite is the selected
-text generator. This slice is in progress in an isolated packages branch; live
-cache availability and game integration are not yet completion claims. Peer
-disagreement spreading remains the following interior experiment.
+explicit seed and records actions for replay. The user-selected GLM5.3Flash through
+OpenRouter generated a valid real bundle; identical-context repeat used cache with
+zero calls. Native94app+14library controls pass on both engines, plus installed
+science/rest/relief/material flows and complete replay. Independent final review100/100,
+packages PR110 CI green and merged to main. Game integration remains separate. Peer disagreement
+spreading remains the following interior experiment.
