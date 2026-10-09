@@ -276,3 +276,7 @@ effects (v1.1).
 | The per-tick protocol grows into draw calls, as the old `DrawCmd` did | Protocol carries game state only; all presentation decisions stay in Godot |
 | The design docs assume the Go engine | Go-specific docs moved to `legacy/`; each feature doc is revised when its milestone starts |
 | Performance of large catalogues or histories in AILANG | Arrays and maps, not lists; heavy history runs offline in batches; spatial queries are precomputed or passed in from Godot |
+
+## Human life / social experiments — 2026-10-09
+
+The [shared social dynamics design](../features/next/shared-social-dynamics-and-events.md) now has a standalone experimental AILANG kernel and bridge/Commons-oriented scenarios. Package-local native tests, replay and strict-VM parity pass. This does not mark game UI integration or macro civilisation/life generation complete; active navigation/physics work is untouched. Next iteration is game-domain policy tuning and a bounded generated-proposal adapter before integration.

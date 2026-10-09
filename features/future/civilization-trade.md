@@ -1,5 +1,7 @@
 # Civilization Detail & Trade System
 
+> **Reconciliation — 2026-10-09:** Historical proposal; old engine/version dependencies and example species are not current implementation contracts or approved biology. [Bubble canon](bubble-constraint.md) permits information exchange only, not cargo or visitors. Mark now prioritises lasting relationships through negotiation, promises and repeated visits; see [current design scope](../next/human-life-bridge-commons.md). Exact outcome previews must become uncertain forecasts consistent with [the pillars](../../vision/core-pillars.md), not access to hidden future outcomes. Telepathy and energy-being placeholders establish no exception to grounded biology or signal propagation.
+
 **Version:** 0.6.1
 **Status:** Planned
 **Priority:** P1 (Core Interaction)

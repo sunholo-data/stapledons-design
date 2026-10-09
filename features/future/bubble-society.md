@@ -1,5 +1,7 @@
 # Bubble Society Simulation
 
+> **Reconciliation — 2026-10-09:** Society direction remains relevant; the old sprint label, growth/tension values and UI metrics below are unapproved examples. First human-gameplay scope is [bridge and Commons](../next/human-life-bridge-commons.md), with assignments, projects and resource decisions. The larger society remains autonomous; this scope does not approve all-level construction or a complete generational simulation. Distinguish reused matter from consumed energy and unavailable material; births do not create or import mass.
+
 ## Status
 - **Status:** Planned
 - **Sprint:** Vision Integration - Sprint 3

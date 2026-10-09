@@ -1,5 +1,7 @@
 # Life and intelligence parameters: a realistic baseline, an honest tuning dial
 
+> **Precedence clarification — 2026-10-09:** [Premise and loop](../../vision/premise-and-loop.md) governs disclosure: anthropic luck is hidden at initial world generation, revealed diegetically by the Archive, and visible on New Game+. The settings-screen disclosure proposal in sections 1/4 and AC5 below is superseded to that extent. Encounter counts and the remaining calibration choices are still proposals.
+
 ## Status
 
 - **Status:** Proposed 2026-10-06 (Mark, attended: "we are going to weight anthropic values such as density of life and intelligence etc. so will need to see how much we need to vary those from expected 'normal' Drake values to have an interesting game experience"). Not approved.

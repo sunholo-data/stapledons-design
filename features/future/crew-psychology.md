@@ -1,5 +1,7 @@
 # Crew Psychology System
 
+> **Reconciliation — 2026-10-09:** Future design, not a claim of shipped Godot behaviour. OCEAN is a fictional modelling scaffold; the chemistry formulas and example numbers are not scientifically validated predictions of individual people. Relationships should be experienced through behaviour and remembered decisions. Use the [generation cast plan](../../art/generation-cast-plan.md): a person, a job and an archetype are separate. First playable scope: [bridge and Commons](../next/human-life-bridge-commons.md).
+
 **Status:** Planned
 **Pillars served:** The Ship Is Home, The Game Doesn't Judge, Time Has Emotional Weight, Grounded Strangeness
 **Dependencies:** AI dialogue system, end-screen UI

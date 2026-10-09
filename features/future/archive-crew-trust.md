@@ -1,5 +1,7 @@
 # Archive-Crew Trust Dynamics
 
+> **Direction update — 2026-10-09:** Captain trust/authority and crew-to-crew reactions are part of the [shared social dynamics design](../next/shared-social-dynamics-and-events.md). Directed relationships remain central; example deltas, automatic captain/Archive coupling and permanent numerical trust are proposals, not universal rules. Actual experience, interpretation and recovery must be modelled; no event gives every actor omniscient knowledge.
+
 ## Status
 - **Status:** Planned
 - **Sprint:** Vision Integration - Sprint 3

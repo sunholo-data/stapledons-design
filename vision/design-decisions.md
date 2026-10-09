@@ -1322,3 +1322,39 @@ drowns the starfield, which contradicts "faint by design".
 
 **Implications:** The black hole is an invented scenario object, labelled with provenance "scenario". What counts as "sealed", and how it combines with the captain's death, is open (premise-and-loop.md §9).
 
+
+
+## [2026-10-09] Human gameplay begins on the bridge and Level 1 Commons
+
+**Context:** Mark requested a separate human-scale design effort while agents continue macro-scale stars, black holes, navigation and ship UI work.
+
+**Decision (attended):** Limit the first human-gameplay design to the bridge and first level. Use the already approved Commons architecture and zoning; do not restart that design. During quiet transit the captain shapes ship life through assignments, projects and resource decisions. Alien contact prioritises lasting relationships through negotiation, promises and repeated visits.
+
+**Evidence:** Mark's session instructions and interview answers, recorded in [human-life-bridge-commons.md](../features/next/human-life-bridge-commons.md).
+
+**Implications:** Develop the ship project/assignment loop first and connect it to contact commitments later. Other levels remain future scope. No project costs, authority/refusal mechanics, encounter targets or implementation sprint are approved by this decision. Current R1 UI and asset work remain separate.
+
+
+## [2026-10-09] Shared micro/macro social sandbox with dynamic AI events
+
+**Direction (Mark, attended):** The captain maintains enough trust and authority to pursue the mission. Crew react to the captain and each other. Tasks influence underlying conditions, possibly KPIs, and high/low conditions produce consequences and personality-dependent reactions. Similar mechanics apply to player-mediated external interactions at macro and micro scales. Dynamic AI-created content and events react to the internal environment, which shapes how the bubble influences external civilisations.
+
+**Implications:** Develop a shared causal framework and first bridge/Commons slice. [Shared social dynamics and generated events](../features/next/shared-social-dynamics-and-events.md) distinguishes this direction from proposed indicators, thresholds, generation contracts and examples. Indicator visibility, authority/refusal rules, balance and implementation remain open.
+
+
+## [2026-10-09] Social indicators support different ways to play
+
+**Decision (Mark, attended):** There is no "right" way to play, but different ways. This reinforces The Game Doesn't Judge.
+
+**Implications:** Shared social indicators describe conditions and causal consequences, not a universal ideal to optimise. No combined moral score or preferred balanced KPI vector. Characters can disagree about the same outcome; different priorities create different trajectories. Material limits, refusal and loss of authority remain possible without moral grading. See [shared social dynamics](../features/next/shared-social-dynamics-and-events.md).
+
+
+## [2026-10-09] Reusable AILANG social package and standalone experimentation
+
+**Direction (Mark, attended):** Build the social/event foundation as AILANG package support because it generalises to other situations. It should run independently of the game for rapid iteration without large game builds.
+
+**Implications:** Proposed `sunholo/social_dynamics` has pure domain logic and host configuration; a separate runner provides ship and non-space examples. Neither game dependencies nor live-provider requirements belong in the kernel. Implementation plan approval, package publication and later game integration are separate gates.
+
+### 2026-10-09 — Approved reusable social experiment sprint
+
+Mark: “yep approved.” Authorises implementing the experimental pure AILANG social package and standalone ship/community experiments, with independent evaluation. No game source, active agent branches, live provider spend or package publication in this scope. Source and decision history are recorded in the shared social dynamics feature and package sprint.

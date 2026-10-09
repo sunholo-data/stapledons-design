@@ -1,5 +1,7 @@
 # AI showcase: a game that talks, remembers and grows its own assets
 
+> **Delivery reconciliation — 2026-10-09:** This document records AI direction, not completion or approval of every R1-labelled feature below. The R1 roadmap defers full crew psychology, civilisation simulation and trade to R2; service/portrait/marker infrastructure alone does not complete that gameplay. [Current human scope](next/human-life-bridge-commons.md) develops the bridge and Commons without expanding the active UI sprint. Generated expression must stay within simulation-owned facts; replay uses recorded outputs. Cached cross-run content is not surviving crew memory ([canon](../vision/premise-and-loop.md)).
+
 **Status:** Planned (direction ratified: ledger D-7, 2026-09-28)
 **Priority:** P0: the conversations in R1 M4 depend on it, and it is a
 flagship for AILANG's AI stack.

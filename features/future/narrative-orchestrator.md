@@ -1,5 +1,7 @@
 # Narrative Orchestrator
 
+> **Direction update — 2026-10-09:** Mark wants sandbox emergence through dynamic AI-created content and events reacting to internal conditions, with consequences extending to external civilisations. The event-pool selector below is historical scaffolding, not a fixed-content limit. The [shared dynamics draft](../next/shared-social-dynamics-and-events.md) proposes validated generated events, causal eligibility and recorded effects. Drama pacing must not rewrite state or force outcomes.
+
 ## Status
 - **Status:** Planned
 - **Sprint:** Vision Integration - Sprint 4

@@ -1,5 +1,7 @@
 # Crew Assignment System
 
+> **Reconciliation — 2026-10-09:** Mark prioritises shaping ship life through assignments, projects and resource decisions in the [bridge-and-Commons scope](human-life-bridge-commons.md). The old version, effort estimate, code sketches and numerical bonuses below are historical proposals, not an approved Godot sprint. Assignments must respect autonomous people and their limits; personality archetypes are not jobs. No role bonus changes physical rocket equations, creates mass, or introduces reflex/decision-speed gameplay. Reassignment costs and refusal rules remain interview questions.
+
 ## Status
 - **Status:** Planned
 - **Priority:** P1 (Core to Ship-as-Home pillar)

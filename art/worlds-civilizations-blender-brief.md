@@ -1,5 +1,7 @@
 # Brief: worlds and civilizations (R2 — scoping, do not start before R1 ships)
 
+> **Reconciliation — 2026-10-09:** R2 scoping only, not permission to start assets. [Bubble canon](../features/future/bubble-constraint.md) forbids away missions, visitors, physical artifact collection and launching probes. Surface kits must depict remote observations or received representations, with provenance; alien contact stays across the boundary. The inherited interior plate pipeline is historical, not the current unified 3D ship contract. Character imagery follows the [illustrated cast direction](generation-cast-plan.md), not mandatory Blender character models. The generation and contact contract still needs design.
+
 **Status:** **scoping.** It records the direction so R1 work stays compatible.
 Mark schedules it after R1.
 **Read first:** [art/README.md](README.md), then:

@@ -1,5 +1,7 @@
 # Exploration Modes: Planet Surface & Ruins
 
+> **Reconciliation — 2026-10-09:** Historical exploration proposal, not an executable current design. The [sealed-bubble canon](bubble-constraint.md) forbids landing, EVA, away missions, physical artifact collection and deploying probes from the ship. Surface and ruin imagery may support remote observation or received records; that replacement interaction design is still open. Do not implement the landing/inventory mechanics below. Current human-gameplay scope: [bridge and Commons](../next/human-life-bridge-commons.md).
+
 **Version:** 0.7.0
 **Status:** Planned
 **Priority:** P1 (Environmental Storytelling)

@@ -1,5 +1,7 @@
 # Art bible and brief index
 
+> **Current human-gameplay scope — 2026-10-09:** bridge and the approved Level 1 Commons only; [reference and decision index](../features/next/human-life-bridge-commons.md). The 2026-10-03 handoff rows below are historical delivery records, not current work orders. Current ship presentation is unified painted 3D (D-52), with a shared geometry/sky observer and seven major tiers (D-34).
+
 This is how every authored visual asset for Stapledon's Voyage is made, and
 where each brief lives. **Read this first, then the brief for your task.**
 

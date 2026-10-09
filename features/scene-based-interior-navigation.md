@@ -1,5 +1,7 @@
 # Scene-Based Interior Navigation System
 
+> **Current presentation — 2026-10-09:** The unified painted 3D ship is the playable scene (game ledger D-52=A); the old fixed-scene and later independent panorama/parallax designs below are historical references. Geometry and relativistic sky share one observer, with physical occlusion. Crew placement and large emotion portraits remain useful. First human-gameplay locations are the existing bridge and Level 1 Commons; see [current scope](next/human-life-bridge-commons.md).
+
 > **SUPERSEDED IN PART (2026-09-28, ledger D-6):** interiors are **isometric
 > play areas built as Blender 3D models**, which the player walks, set in front
 > of interior panoramas and the live relativistic sky. They are not fixed

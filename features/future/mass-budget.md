@@ -1,5 +1,7 @@
 # Mass Budget System
 
+> **Reconciliation — 2026-10-09:** The absorption sources and UI below are stale: no ISM, stellar-wind or nebular mass enters the bubble (D-11). Only internal reuse/reallocation can replenish available material; energy expenditure has its own ledger. Example budgets and birth/fabrication costs are unapproved and cannot validate habitability. Resource effects in [the shared dynamics draft](../next/shared-social-dynamics-and-events.md) must preserve this distinction.
+
 ## Status
 - **Status:** Planned
 - **Sprint:** Vision Integration - Sprint 2
@@ -68,10 +70,8 @@ From [design-decisions.md](../../vision/design-decisions.md):
 
 | Source | Rate | Notes |
 |--------|------|-------|
-| **ISM Absorption** | ~1 kg/year | Typical interstellar medium |
-| **Stellar Wind** | ~5 kg/year | Near active stars |
-| **Nebula Transit** | ~20 kg/year | Dense regions, rare |
-| **Recycling** | N/A | Deaths return mass to pool |
+| **ISM / stellar wind / nebulae** | 0 inward mass | Reflected by the sealed wall; drag/glow only |
+| **Recycling** | Unspecified | Internal reuse; recovery process and losses require design |
 
 ## Visibility to Player
 
@@ -90,7 +90,7 @@ From [open-questions.md](../../vision/open-questions.md#how-does-the-mass-budget
 │ ████████████░░░░ Comfortable    │
 │                                 │
 │ Available: ~2,300 kg            │
-│ Absorption: +1.2 kg/year        │
+│ External resupply: none        │
 │                                 │
 │ [Details]                       │
 └─────────────────────────────────┘

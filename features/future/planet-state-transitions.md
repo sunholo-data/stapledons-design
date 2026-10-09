@@ -1,5 +1,7 @@
 # Planet State Transitions
 
+> **Reconciliation — 2026-10-09:** Historical proposal for future civilisation gameplay, not a shipped Godot system. The example rates and rapid microbial-to-technological transition are illustrative, not validated scientific calibration. Evolution must use external world time, while crew age on ship time. Keep actual history distinct from old-light observations and forecasts; arriving must reveal an existing history rather than reroll a world to fit the story. See [life calibration](../next/life-and-intelligence-parameters.md) and [current design scope](../next/human-life-bridge-commons.md).
+
 **Status**: Planned
 **Target**: v0.4.0
 **Priority**: P1 - High

@@ -1,5 +1,7 @@
 # Brief: Blender assets for Stapledon's Voyage, starting with the ship interior
 
+> **Current scope and presentation — 2026-10-09:** Historical M4.2 handoff and five-layer presentation below are superseded for current playable work by the unified painted 3D ship (D-52=A), approved seven major tiers (D-34), lower architecture envelope R=95 m inside the R=100 m bubble (D-35), and shared geometry/sky observer. Existing bridge remains unchanged. Mark limits the first human-gameplay design to bridge and Level 1 Commons. Commons architecture and zoning are already approved; use the references in [human-life-bridge-commons.md](../features/next/human-life-bridge-commons.md), not the rejected barrel pavilion. Do not restart asset work from this old handoff.
+
 > **Current task (2026-10-03):** [handoff-m4-2-blender.md](handoff-m4-2-blender.md)
 > (finish bridge v1 for M4.2; bridge only in R1), with the contract in
 > [m4-2-requirements.md](m4-2-requirements.md). Where they differ from this

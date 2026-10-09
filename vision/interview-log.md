@@ -322,3 +322,55 @@ Reviewed design_docs/input/ai-the-archive.md which describes:
 - [x] Draft Narrative Orchestrator Design Document → [narrative-orchestrator.md](../features/future/narrative-orchestrator.md)
 - [ ] Define event taxonomy priorities for MVP (deferred - arc types TBC per interview)
 - [x] Design Archive-crew trust dynamics → [archive-crew-trust.md](../features/future/archive-crew-trust.md)
+
+
+## 2026-10-09: Human life aboard, projects and lasting contact (in progress)
+
+**Scope:** Bridge and first level only; existing Commons references govern the environment.
+
+### Q: What should the first level feel like?
+
+**A (Mark):** "we have this already designed find the refernces"
+
+**Follow-up:** Located approved Level 1 Commons concept, 2026-10-04 architecture correction, measured zoning and approved open-arcade continuation in the game repo. The rejected barrel pavilion is not the target. References are indexed in [the current scope](../features/next/human-life-bridge-commons.md).
+
+### Q: During quiet transit, what should the captain do?
+
+**A (Mark):** "Shape ship life through assignments, projects and resource decisions"
+
+### Q: How should first contact create influence?
+
+**A (Mark):** "Build a lasting relationship through negotiation, promises and repeated visits"
+
+### Pending follow-up
+
+- Crew authority: orders, negotiated commitments, or task/person-dependent?
+- First project conflict: maintenance/community life, Earth research/crew care, or contact preparation/an existing crew promise?
+- First alien promise: knowledge exchange, a shared project, or a return/message others plan around?
+
+No suggested answer is recorded as a ruling until Mark answers. No implementation begins from this interview alone.
+
+
+### Follow-up: trust, authority, indicators and sandbox emergence
+
+**Mark:** "part of the game is the captain keeping enough trust and authority to have the mission be a success. the crew react to them and each other." Tasks contribute to possible KPIs; excessive/inadequate conditions produce consequences and events, with OCEAN-based reactions. A similar framework applies to player-mediated universal interactions, macro and micro.
+
+**Clarification (Mark):** "looking to encourage sandbox emergent ameplay by having dynamic ai content and events created in reaction to the environment conditions we set up internally - which influence how the bubble ship influences externally the global xivs"
+
+**Action:** Drafted [shared social dynamics and generated events](../features/next/shared-social-dynamics-and-events.md), preserving directed relationships, distinct clocks, actor knowledge and validated/recorded generated effects. Candidate mechanics remain proposals. Pending questions now prioritise indicator visibility and what falling authority makes possible; earlier assignment/project/alien-promise questions remain unanswered.
+
+
+### Follow-up: different ways to play
+
+**Mark:** "and there is no "right" way to play but different"
+
+**Recorded:** Indicators must support different trajectories without a universal ideal, combined moral score or generated events steering players towards a preferred balance. This reinforces the existing The Game Doesn't Judge pillar; consequences and physical/social limits still apply.
+
+
+### Follow-up: reusable package and fast experiments
+
+**Mark:** "yeah lets do this in ailang paclage support as this is genralisable to other siutations im sure"
+
+**Mark:** "this looks like a fun package to experiment with, and one we can run without the game? so we can relally iterate quickly with it without needing huge game builds."
+
+**Action:** Prepared an isolated package design and sprint for a pure reusable kernel, with standalone recorded experiments. No source implementation or publication yet. Independent review identified clock-order and transaction-contract gaps, addressed in a normative revision.

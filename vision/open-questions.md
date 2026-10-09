@@ -248,13 +248,13 @@ Unresolved design questions that need exploration.
 
 **Why it matters:** Finite mass creates meaningful choices between population growth and tech upgrades. Need to define the mechanics.
 
-**Current thinking:** Internal mass is fixed at game start. Proto-tech fabrication and population growth compete. Slow trickle from ISM absorption provides slight flexibility.
+**Current thinking:** Internal mass is fixed at game start. Proto-tech fabrication and population growth compete. No mass crosses the boundary; ISM reflects, producing drag and glow without resupply (D-11). Closed-loop recycling, fabrication and energy expenditure need separate budgets.
 
 **Sub-questions:**
 - How is mass budget displayed to player (if at all)?
 - What are the major mass sinks (tech categories, population, repairs)?
 - Can mass be reclaimed by dismantling previous upgrades?
-- How does slow absorption rate compare to consumption rate?
+- How much material is reusable, committed to a project, recoverable, or converted to energy?
 
 **Needs:**
 - Quantification of mass budget (abstract units or realistic kg?)
