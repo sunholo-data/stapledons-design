@@ -464,12 +464,12 @@ Grains (LIC unless stated; R = 100 m; ε = 10⁻¹⁰; f_in = ½; r_s = 0.5 m;
 | HB-117 | Tail slope q | 3.1 | — |
 | HB-118 | Share of the dust mass in the tail | 0.940 | — |
 | HB-119 | Wall afterglow spot radius r_s (default; G-AG) | 0.5 | m |
-| HB-120 | Flux of ≥ 10⁻¹³ kg grains at 26 km/s in the LIC | 5.52 × 10⁻⁸ | m⁻² s⁻¹ |
+| HB-120 | Flux of ≥ 10⁻¹³ kg grains at 26 km/s in the LIC (fitted: q maximises it; not an independent check) | 5.52 × 10⁻⁸ | m⁻² s⁻¹ |
 | HB-121 | Grains of ≥ 1 µm swept per light year of LIC | 2.60 × 10⁹ | — |
 | HB-122 | Grains of ≥ 0.1 µm swept per light year of LIC | 4.09 × 10¹¹ | — |
 | HB-123 | Grains of ≥ 3 µm swept per light year of LIC | 2.35 × 10⁸ | — |
-| HB-124 | Kinetic energy of a 1 µm grain (2,500 kg m⁻³, the package check) at 0.999c | 2.011 × 10⁴ | J |
-| HB-125 | The same at 0.999999c | 6.646 × 10⁵ | J |
+| HB-124 | Kinetic energy of a 1 µm grain at 0.999c (a function check at 2,500 kg m⁻³; the population uses HB-113's 3,300) | 2.011 × 10⁴ | J |
+| HB-125 | The same (2,500 kg m⁻³) at 0.999999c | 6.646 × 10⁵ | J |
 | HB-126 | Impacts of ≥ 1 µm grains per ship second, LIC, 0.999c | 1,842 | s⁻¹ |
 | HB-127 | The same, hot gas, 0.999c | 29.0 | s⁻¹ |
 | HB-128 | The same, LIC, 0.999999c | 5.83 × 10⁴ | s⁻¹ |
