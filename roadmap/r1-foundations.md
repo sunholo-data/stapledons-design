@@ -32,7 +32,7 @@ This table records progress; the acceptance criteria below still define completi
 | Ship and bridge | Walkable bridge/Commons, lifts, contextual HUD and Navigation/Voyage/Archive consoles landed. Lighting and art acceptance continue. |
 | M4, first journey | Transit, arrival, home news, legacy and Archive exist. The console-based complete-journey audit and remaining visual gates are next. |
 | M5, planets | Ephemerides, body navigation, physical planet rendering and guided stops are built; full system-map/flyby controls and remaining ring/lighting gates remain open. |
-| ISM and dust | [Game PR #199](https://github.com/sunholo-data/stapledons-godot/pull/199) integrates local-cloud routes, dust and the ship HUD. Published outlines recover 56/59 sight lines. Boost/brake CPU budget, final local/CI evaluation and attended P2 review remain blocking. Dense-cloud/LLCC work is deferred with scientific mismatches. |
+| ISM and dust | [Game PR #199](https://github.com/sunholo-data/stapledons-godot/pull/199) integrates local-cloud routes, dust and the ship HUD. Published outlines recover 56/59 sight lines. Mark accepted P2's afterglow/defaults/Archive review on 10 October (game ledger D-62). Boost/brake CPU budget and final local/CI evaluation still block landing. Dense-cloud/LLCC work is deferred with scientific mismatches. |
 | Optional crew AI | Offline foundation/Medic stub built. First attended live run and voice review remain pending. |
 
 The scheduled mission loop is armed but its latest attempt is parked because
@@ -277,8 +277,8 @@ Recorded in `vision/design-decisions.md` and the game repo's charter ledger:
   drive-hold limit is refused with the limit shown; dust grains flash on the
   wall (the labelled afterglow G-AG). `sunholo/celestial` 0.4.0 and
   `sunholo/relativity` 0.12.0 published. The HUD rows and published cloud
-  outlines are integrated in PR A; remaining performance/evaluation and P2
-  review gates block landing. PR B, the Edenhofer 2024 dense clouds and the
+  outlines are integrated in PR A; Mark accepted P2's current choices (D-62),
+  while remaining performance/evaluation gates block landing. PR B, the Edenhofer 2024 dense clouds and the
   Local Leo Cold Cloud, is deferred while independent scientific comparisons fail.
 
 ## AILANG upstream asks (tracked via `ailang messages`)
