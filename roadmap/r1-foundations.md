@@ -1,6 +1,6 @@
 # R1: Foundations, from spike to first playable journey
 
-**Status:** In progress (snapshot: 2026-10-10)
+**Status:** In progress (snapshot: 2026-10-11)
 **Target:** r1 (four milestones after the spike)
 **Priority:** P0
 **Dependencies:** [ADR 0001](../decisions/0001-engine-and-architecture.md), [relativity spec](../physics/relativity-spec.md), [Higgs bubble physics](../physics/higgs-bubble.md)
@@ -20,7 +20,7 @@ live in `stapledons-godot/design_docs/`. The first is
 | Grounded Strangeness | ++ | +2 | The universe looks exactly as it would at 0.99c or near a black hole (M1, M3) |
 | **Net** | | **+6** | **Go** |
 
-## Implementation status (2026-10-10)
+## Implementation status (2026-10-11)
 
 This table records progress; the acceptance criteria below still define completion.
 
@@ -32,13 +32,15 @@ This table records progress; the acceptance criteria below still define completi
 | Ship and bridge | Walkable bridge/Commons, lifts, contextual HUD and Navigation/Voyage/Archive consoles landed. Lighting and art acceptance continue. |
 | M4, first journey | Transit, arrival, home news, legacy and Archive exist. The console-based complete-journey audit and remaining visual gates are next. |
 | M5, planets | Ephemerides, body navigation, physical planet rendering and guided stops are built; full system-map/flyby controls and remaining ring/lighting gates remain open. |
-| ISM and dust | [Game PR #199](https://github.com/sunholo-data/stapledons-godot/pull/199) integrates local-cloud routes, dust and the ship HUD. Published outlines recover 56/59 sight lines. Mark accepted P2's afterglow/defaults/Archive review on 10 October (game ledger D-62). All representative CPU/GPU median budgets now pass after the exact adopted-LUT inverse optimization; final local/CI evaluation still precedes landing. Dense-cloud/LLCC work is deferred with scientific mismatches. |
+| ISM and dust | PR A landed in [game #199](https://github.com/sunholo-data/stapledons-godot/pull/199): local-cloud routes, ordered media, drag/hold limits, wall glow, grain impacts, HUD and Archive. Published outlines recover 56/59 sight lines; shell depths are labelled approximate. D-62 accepts P2. Complete local/matching CI, GPU references and independent review pass. Representative median CPU/GPU budgets pass on M4 Max; no universal latency guarantee. [Completion report](https://github.com/sunholo-data/stapledons-godot/blob/main/design_docs/implemented/r1/ism-local-clouds-report.md). Dense-cloud/LLCC PR B is [deferred](https://github.com/sunholo-data/stapledons-godot/blob/main/design_docs/planned/r1/ism-dense-clouds.md) with failed scientific comparisons. |
+| Free-navigation recovery | D-63 landed in game #199: rest start near Earth, stable body hierarchy, actionable refusals, real-time idle, visible Earth at arrival/+60s, default mouse look, panel pointer ownership, pause and default-visible local clouds. Stops are inertial standoffs. Native OS pointer capture remains unverified on the unattended desktop; the production focus guard is intact. |
 | Optional crew AI | Offline foundation/Medic stub built. First attended live run and voice review remain pending. |
 
 The scheduled mission loop is armed but its latest attempt is parked because
 controller lanes are unavailable or out of quota
 ([issue #119](https://github.com/sunholo-data/stapledons-godot/issues/119#issuecomment-6101684814)).
-Its next approved product work is the remaining M4 console-based journey audit.
+Its next product target is the remaining M4 console-based journey audit. The
+D-52/D-56 amended scene plan retains its existing approval checkpoint before execution.
 The attended ISM and presentation work proceeds separately.
 
 ## Problem
@@ -270,15 +272,14 @@ Recorded in `vision/design-decisions.md` and the game repo's charter ledger:
   0.997c (ε 10⁻¹⁰, chosen from a rendered comparison), and its spectrum is a
   blackbody at the impact temperature (K cos θ/σ)^¼, computed in
   `sunholo/relativity` 0.8.0 (higgs-bubble.md §6).
-- **D-60 / D-61:** the medium is the real one (status 2026-10-10: PR A in
-  review). New games fly `lism-1` ([ism-structure.md](../physics/ism-structure.md)):
+- **D-60 / D-61:** the medium is the real one (status 2026-10-11: PR A landed in game #199). New games fly `lism-1` ([ism-structure.md](../physics/ism-structure.md)):
   the Local Interstellar Cloud, 14 Redfield & Linsky clouds and the Local
   Bubble's hot gas, driving the glow, drag and ledger; a route above the
   drive-hold limit is refused with the limit shown; dust grains flash on the
   wall (the labelled afterglow G-AG). `sunholo/celestial` 0.4.0 and
   `sunholo/relativity` 0.12.0 published. The HUD rows and published cloud
   outlines are integrated in PR A; Mark accepted P2's current choices (D-62),
-  while the final local/CI evaluation gate precedes landing. Representative CPU overhead medians are plan 3.098 ms and coast/boost/brake 0.206/0.401/0.220 ms; the live 64-flash GPU median is 0.023 ms. These M4 Max medians are not worst-case or universal hardware guarantees. PR B, the Edenhofer 2024 dense clouds and the
+  and complete local/matching CI plus independent evaluation passed before landing. Representative CPU overhead medians are plan 3.098 ms and coast/boost/brake 0.206/0.401/0.220 ms; the live 64-flash GPU median is 0.023 ms. These M4 Max medians are not worst-case or universal hardware guarantees. PR B, the Edenhofer 2024 dense clouds and the
   Local Leo Cold Cloud, is deferred while independent scientific comparisons fail.
 
 ## AILANG upstream asks (tracked via `ailang messages`)
