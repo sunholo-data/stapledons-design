@@ -215,3 +215,42 @@ workshop continuation is scenario authoring, condition-driven crew incidents,
 peer evidence/disagreement, promises, contact/revisits and a causal journey
 chronology. Those additions need concrete mechanics and acceptance tests,
 without assigning a single correct way to play or changing Commons geometry.
+## Five specialists, named supplies and readable psychology, attended 2026-10-10
+
+Mark asked to expand the standalone watch from two workers to five crew members.
+The lab interpretation is five specialists alongside the player captain: scientist,
+engineer, medic, pilot and diplomat, from the existing crew-psychology archetypes.
+They each need distinct useful work and rest choices; roles do not determine one
+inevitable response or add canonical character names.
+
+Mark approved reusable **Archive compute slots** for analysing Spire readings,
+plus finite replacement parts and medical supplies. The experiment names these
+replacement modules and diagnostic cartridges. Compute capacity is held while
+work runs and released when it finishes; spent physical supplies remain spent.
+This follows spire-mystery.md's Archive processing-capacity cost without explaining
+away the Spire or claiming alien cargo can cross the bubble. Initial amounts,
+durations and coefficients are experimental tuning, not canonical ship economics.
+
+OCEAN remains the personality scaffold. Fatigue, stress and morale describe changing
+state alongside directed trust and task preparation. Mark wants normal play to
+communicate these through observations and AI dialogue, without numerical psychology
+scores, trait labels or explanations that variables are concealed. Development mode
+may show exact values. Generated expression receives bounded actor-local numeric
+context; trusted rules still own probabilities, permission and effects. A new prompt
+version and separate policy file preserve existing library entries and recordings.
+
+Mark also reported that the initial Consent/Orders menu was unclear even to him.
+The opening must explain the captain's role, current situation, first useful action
+and both command styles before accepting the choice. Help must work before starting.
+Asking for agreement prevents starting until the crew member agrees. Using captain's
+authority permits starting despite objection, subject to cooperation/capacity/resource
+checks, with possible trust consequences. These are different approaches, not grades.
+
+Implementation design: packages branch sprint/crew-watch-v2,
+design_docs/planned/crew-lab/crew-watch-v2.md. Two independent in-session reviewers
+rejected an initial boundary-handling omission: existing strict deltas can strand
+work at metric limits. The revised design explicitly adds opt-in bounded indicator
+effects while preserving strict legacy effects; both reviewers passed revision1.
+Implementation and gameplay acceptance remain pending. This updates the standalone
+lab direction only; bridge/Commons integration, peer disagreement spread, alien
+negotiation and full multi-leg journeys remain future work.

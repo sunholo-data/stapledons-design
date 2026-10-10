@@ -1358,3 +1358,22 @@ drowns the starfield, which contradicts "faint by design".
 ### 2026-10-09 — Approved reusable social experiment sprint
 
 Mark: “yep approved.” Authorises implementing the experimental pure AILANG social package and standalone ship/community experiments, with independent evaluation. No game source, active agent branches, live provider spend or package publication in this scope. Source and decision history are recorded in the shared social dynamics feature and package sprint.
+
+## [2026-10-10] Descriptive five-person CLI watch with specific ship resources
+
+**Decision (Mark, attended):** Expand the lab to five crew specialists; express
+psychological state in player-facing descriptions and AI speech rather than scores.
+Use OCEAN for personality, with exact values available during development. Replace
+vague materials with reusable Archive compute capacity and specific finite ship
+supplies. The attended resource answer approved compute plus replacement parts and
+medical supplies; the experiment labels them modules and diagnostic cartridges.
+
+**Usability correction:** Explain captain/context/actions and both command styles
+before the initial choice, with pre-start help. Existing passing implementation
+checks did not establish newcomer comprehension.
+
+**Implications:** Five specialists alongside the player captain, separate modern
+scenario identity/policy/prompt, preservation of old recordings/library, and actual
+work/rest options. Numerical tuning and opt-in bounded effects are experimental lab
+implementation choices. No new ship geometry, package publication or Godot interaction
+integration is implied. See [human life](../features/next/human-life-bridge-commons.md).
