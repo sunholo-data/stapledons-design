@@ -1,12 +1,12 @@
 # R1: Foundations, from spike to first playable journey
 
-**Status:** Proposed
+**Status:** In progress (snapshot: 2026-10-10)
 **Target:** r1 (four milestones after the spike)
 **Priority:** P0
 **Dependencies:** [ADR 0001](../decisions/0001-engine-and-architecture.md), [relativity spec](../physics/relativity-spec.md), [Higgs bubble physics](../physics/higgs-bubble.md)
 **Repos:** design (this repo), `sunholo-data/stapledons-godot` (game)
 **Implementation:** milestone design docs, sprints and the mission charter
-draft live in `stapledons-godot/design_docs/`. The first is
+live in `stapledons-godot/design_docs/`. The first is
 [M1 relativistic sky](https://github.com/sunholo-data/stapledons-godot/blob/main/design_docs/planned/r1/m1-relativistic-sky.md).
 
 ## Game vision alignment
@@ -19,6 +19,27 @@ draft live in `stapledons-godot/design_docs/`. The first is
 | The Ship Is Home | + | +1 | A placeholder deck scene arrives in M4 |
 | Grounded Strangeness | ++ | +2 | The universe looks exactly as it would at 0.99c or near a black hole (M1, M3) |
 | **Net** | | **+6** | **Go** |
+
+## Implementation status (2026-10-10)
+
+This table records progress; the acceptance criteria below still define completion.
+
+| Work | Current state and next gate |
+|---|---|
+| M1, relativistic sky | Rendering and catalogue work are built; final visual and performance acceptance remain open. |
+| M2, journey core | Landed: plan, commit, flight, clocks, energy and deterministic replays. |
+| M3, black holes | Nonrotating Sgr A* demo landed, including lensing, hover/orbit, clocks and tides. The labelled background is the Sol sky; true Galactic-Centre imagery and Kerr rotation remain future work. |
+| Ship and bridge | Walkable bridge/Commons, lifts, contextual HUD and Navigation/Voyage/Archive consoles landed. Lighting and art acceptance continue. |
+| M4, first journey | Transit, arrival, home news, legacy and Archive exist. The console-based complete-journey audit and remaining visual gates are next. |
+| M5, planets | Ephemerides, body navigation, physical planet rendering and guided stops are built; full system-map/flyby controls and remaining ring/lighting gates remain open. |
+| ISM and dust | [Game PR #199](https://github.com/sunholo-data/stapledons-godot/pull/199) integrates local-cloud routes, dust and the ship HUD. Published outlines recover 56/59 sight lines. Mark accepted P2's afterglow/defaults/Archive review on 10 October (game ledger D-62). Boost/brake CPU budget and final local/CI evaluation still block landing. Dense-cloud/LLCC work is deferred with scientific mismatches. |
+| Optional crew AI | Offline foundation/Medic stub built. First attended live run and voice review remain pending. |
+
+The scheduled mission loop is armed but its latest attempt is parked because
+controller lanes are unavailable or out of quota
+([issue #119](https://github.com/sunholo-data/stapledons-godot/issues/119#issuecomment-6098328215)).
+Its next approved product work is the remaining M4 console-based journey audit.
+The attended ISM and presentation work proceeds separately.
 
 ## Problem
 
@@ -249,6 +270,16 @@ Recorded in `vision/design-decisions.md` and the game repo's charter ledger:
   0.997c (ε 10⁻¹⁰, chosen from a rendered comparison), and its spectrum is a
   blackbody at the impact temperature (K cos θ/σ)^¼, computed in
   `sunholo/relativity` 0.8.0 (higgs-bubble.md §6).
+- **D-60 / D-61:** the medium is the real one (status 2026-10-10: PR A in
+  review). New games fly `lism-1` ([ism-structure.md](../physics/ism-structure.md)):
+  the Local Interstellar Cloud, 14 Redfield & Linsky clouds and the Local
+  Bubble's hot gas, driving the glow, drag and ledger; a route above the
+  drive-hold limit is refused with the limit shown; dust grains flash on the
+  wall (the labelled afterglow G-AG). `sunholo/celestial` 0.4.0 and
+  `sunholo/relativity` 0.12.0 published. The HUD rows and published cloud
+  outlines are integrated in PR A; Mark accepted P2's current choices (D-62),
+  while remaining performance/evaluation gates block landing. PR B, the Edenhofer 2024 dense clouds and the
+  Local Leo Cold Cloud, is deferred while independent scientific comparisons fail.
 
 ## AILANG upstream asks (tracked via `ailang messages`)
 
