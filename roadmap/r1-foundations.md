@@ -32,12 +32,12 @@ This table records progress; the acceptance criteria below still define completi
 | Ship and bridge | Walkable bridge/Commons, lifts, contextual HUD and Navigation/Voyage/Archive consoles landed. Lighting and art acceptance continue. |
 | M4, first journey | Transit, arrival, home news, legacy and Archive exist. The console-based complete-journey audit and remaining visual gates are next. |
 | M5, planets | Ephemerides, body navigation, physical planet rendering and guided stops are built; full system-map/flyby controls and remaining ring/lighting gates remain open. |
-| ISM and dust | [Game PR #199](https://github.com/sunholo-data/stapledons-godot/pull/199) integrates local-cloud routes, dust and the ship HUD. Published outlines recover 56/59 sight lines. Mark accepted P2's afterglow/defaults/Archive review on 10 October (game ledger D-62). Boost/brake CPU budget and final local/CI evaluation still block landing. Dense-cloud/LLCC work is deferred with scientific mismatches. |
+| ISM and dust | [Game PR #199](https://github.com/sunholo-data/stapledons-godot/pull/199) integrates local-cloud routes, dust and the ship HUD. Published outlines recover 56/59 sight lines. Mark accepted P2's afterglow/defaults/Archive review on 10 October (game ledger D-62). All representative CPU/GPU median budgets now pass after the exact adopted-LUT inverse optimization; final local/CI evaluation still precedes landing. Dense-cloud/LLCC work is deferred with scientific mismatches. |
 | Optional crew AI | Offline foundation/Medic stub built. First attended live run and voice review remain pending. |
 
 The scheduled mission loop is armed but its latest attempt is parked because
 controller lanes are unavailable or out of quota
-([issue #119](https://github.com/sunholo-data/stapledons-godot/issues/119#issuecomment-6098328215)).
+([issue #119](https://github.com/sunholo-data/stapledons-godot/issues/119#issuecomment-6101684814)).
 Its next approved product work is the remaining M4 console-based journey audit.
 The attended ISM and presentation work proceeds separately.
 
@@ -278,7 +278,7 @@ Recorded in `vision/design-decisions.md` and the game repo's charter ledger:
   wall (the labelled afterglow G-AG). `sunholo/celestial` 0.4.0 and
   `sunholo/relativity` 0.12.0 published. The HUD rows and published cloud
   outlines are integrated in PR A; Mark accepted P2's current choices (D-62),
-  while remaining performance/evaluation gates block landing. PR B, the Edenhofer 2024 dense clouds and the
+  while the final local/CI evaluation gate precedes landing. Representative CPU overhead medians are plan 3.098 ms and coast/boost/brake 0.206/0.401/0.220 ms; the live 64-flash GPU median is 0.023 ms. These M4 Max medians are not worst-case or universal hardware guarantees. PR B, the Edenhofer 2024 dense clouds and the
   Local Leo Cold Cloud, is deferred while independent scientific comparisons fail.
 
 ## AILANG upstream asks (tracked via `ailang messages`)
