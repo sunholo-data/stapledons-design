@@ -1316,8 +1316,8 @@ view and the clearance leg needed after the close Jupiter stop.
 **Implementation and validation:** The scoped seven-leg controller has
 134 passing checks, strict-VM/interpreter direct-chain parity, and native
 braking/arrival references. [Game PR #201](https://github.com/sunholo-data/stapledons-godot/pull/201)
-is in validation and is not yet merged. Full matching local/CI checks,
-independent evaluation and landing remain game-side gates. This ruling
+is merged on main after complete matching local/CI checks and a 98/100
+independent evaluation. Remaining R1 visual and console-journey gates stay open. This ruling
 introduces no new physics formula or lore check value. The normative current
 route and the optional-demo distinction are specified in
 [Guided voyage highlights](../features/guided-voyage-highlights.md).

@@ -1,6 +1,6 @@
 # Guided voyage highlights
 
-**Status:** Accepted attended design, D-65 (2026-10-11); implementation in validation in [game PR #201](https://github.com/sunholo-data/stapledons-godot/pull/201), not yet merged.
+**Status:** Landed on main in [game PR #201](https://github.com/sunholo-data/stapledons-godot/pull/201), 2026-10-11, after the accepted D-65 ruling and complete local/CI validation.
 **Scope:** The current Godot + AILANG guided voyage. This supersedes the older guided system-arrival/inward-hop itinerary and the route in the [Go-era cinematic arrival proposal](phase4-polish/cinematic-arrival-system.md).
 
 ## Game vision alignment
@@ -79,7 +79,10 @@ has the following local evidence:
   +0.889 years. These are simulation results, not a promised duration for
   other itineraries or a wall-time playback target.
 
-Matching full local/CI validation, independent evaluation and landing are
-tracked in the game PR. This design acceptance does not mark PR #201 merged
-or complete the remaining R1 visual and console-journey gates. No new physics
-formula, package pin or lore check value is introduced by this ruling.
+Complete local and exact-source CI validation pass, including 423 ordinary
+tests with zero failures or skips and the required strict/parity/replay gates.
+Independent evaluation passes at 98/100. The review build is published and
+the game change is merged on main. [Completion evidence](https://github.com/sunholo-data/stapledons-godot/blob/main/design_docs/implemented/r1/bubble-surface-and-moon-textures-report.md)
+records the checks and native references. The remaining R1 visual and
+console-journey gates stay open. No new physics formula, package pin or lore
+check value is introduced by this ruling.
