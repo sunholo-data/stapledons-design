@@ -1,7 +1,8 @@
 # Cinematic Arrival System
 
 ## Status
-- Status: Planned
+- Current guided route: superseded by [Guided voyage highlights](../guided-voyage-highlights.md), attended D-65 (2026-10-11). The seven-leg Godot tour ends at Aldebaran; the optional Sgr A* demo is a separate session. The Go-era route and implementation notes below remain historical proposals.
+- Status: Historical proposal; the current guided route is accepted under D-65.
 - Priority: P1 (blocks Phase 2 of arrival-sequence sprint)
 - Complexity: Medium-High
 - Estimated Effort: 2-3 weeks

@@ -955,6 +955,12 @@ assumed a flat face-on mirror. The canon sphere has half the drag, which gives
 1.52 kg (`physics/higgs-bubble.md` §5).
 
 
+The 1,000-AU arrival above records the original D-14 baseline. The current
+guided itinerary uses the existing D-54 finite-star stop under the attended
+[D-65 ruling](#2026-10-11-guided-voyage-seven-real-highlight-legs-ledger-d-65),
+without an outer-system stop followed by an inward journey. The cited
+historical physics check values are unchanged.
+
 ## [2026-10-01] Shielding, γ Range, Boundary Optics and Bubble Defaults (ledger D-15)
 
 > **SUPERSEDED IN PART by ledger D-29 (2026-10-03):** the glow fraction ε is
@@ -1274,3 +1280,44 @@ drowns the starfield, which contradicts "faint by design".
     in place of the 182.6 lm/W white;
   - G-M4-4 is recomputed from HB-102 to HB-110, and a GPU-vs-CPU colour-ramp
     golden (G-M4-5) is added.
+
+## [2026-10-11] Guided Voyage: Seven Real Highlight Legs (ledger D-65)
+
+**Context:** Mark found the guided outer-system arrivals and their subsequent
+inward body legs repetitive and asked for a shorter tour of interesting
+views. The position audit found real 1,000-AU inward journeys of about
+5.8 light-days, rather than a coordinate error. The existing D-54 finite-star
+planner can reach the close view in the interstellar leg itself.
+
+**Decision (Mark, attended 2026-10-11):**
+
+1. Start at Earth, then visit Sun → Jupiter → Callisto → Saturn → one close
+   Alpha Centauri A → one TRAPPIST-1 → Aldebaran: seven travel legs.
+2. Use the existing `stop_rule = 54` finite-star arrival for the three
+   interstellar destinations. Remove the duplicate 1,000-AU arrival and
+   inward hop from the current guided tour. Preserve the historical
+   `stop_rule = 0` ten-leg itinerary for legacy replays and tests.
+3. Keep the existing interstellar speeds, drive and hold/safety limits.
+   Every leg starts from the preceding actual endpoint; ship and Earth
+   clocks stay continuous. Shorter presentation does not authorize
+   position resets, teleports or invented distances.
+4. TRAPPIST-1 uses its existing D-54 finite-star stop, without the former
+   engineered habitable-zone placement beside planet e. Show and describe
+   the actual planet positions and apparent sizes at that stop.
+5. Offer Sgr A* after completion as an optional, clearly labelled separate
+   GR demonstration. It is not an eighth continuous leg from Aldebaran.
+
+**Rationale:** Grounded Strangeness keeps the views tied to real positions
+and the existing planner. Time Has Emotional Weight keeps the two clocks
+honest across the shorter itinerary. Choices Are Final keeps every travel
+leg a genuine checked commitment. Callisto remains both an interesting moon
+view and the clearance leg needed after the close Jupiter stop.
+
+**Implementation and validation:** The scoped seven-leg controller has
+134 passing checks, strict-VM/interpreter direct-chain parity, and native
+braking/arrival references. [Game PR #201](https://github.com/sunholo-data/stapledons-godot/pull/201)
+is in validation and is not yet merged. Full matching local/CI checks,
+independent evaluation and landing remain game-side gates. This ruling
+introduces no new physics formula or lore check value. The normative current
+route and the optional-demo distinction are specified in
+[Guided voyage highlights](../features/guided-voyage-highlights.md).

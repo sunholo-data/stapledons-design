@@ -32,16 +32,20 @@ This table records progress; the acceptance criteria below still define completi
 | Ship and bridge | Walkable bridge/Commons, lifts, contextual HUD and Navigation/Voyage/Archive consoles landed. Lighting and art acceptance continue. |
 | M4, first journey | Transit, arrival, home news, legacy and Archive exist. The console-based complete-journey audit and remaining visual gates are next. |
 | M5, planets | Ephemerides, body navigation, physical planet rendering and guided stops are built; full system-map/flyby controls and remaining ring/lighting gates remain open. |
+| Guided voyage highlights | D-65 accepted: Earth start, then Sun → Jupiter → Callisto → Saturn → one close Alpha Centauri A → one TRAPPIST-1 → Aldebaran. Existing D-54 finite-star stops replace duplicate outer/inward legs; clocks and checked endpoints remain continuous. Scoped local checks and native references pass; [game PR #201](https://github.com/sunholo-data/stapledons-godot/pull/201) remains in validation, not merged. Full matching local/CI, independent evaluation and landing are next. [Current feature design](../features/guided-voyage-highlights.md). |
 | ISM and dust | D-64 follow-up in validation: equal-area curved wall marks, source-based false-colour density surfaces and ten pinned moon mosaics including Callisto. Rates and emission remain unchanged; Titan radar/IR is excluded from visible imagery. PR A landed in [game #199](https://github.com/sunholo-data/stapledons-godot/pull/199): local-cloud routes, ordered media, drag/hold limits, wall glow, grain impacts, HUD and Archive. Published outlines recover 56/59 sight lines; shell depths are labelled approximate. D-62 accepts P2. Complete local/matching CI, GPU references and independent review pass. Representative median CPU/GPU budgets pass on M4 Max; no universal latency guarantee. [Completion report](https://github.com/sunholo-data/stapledons-godot/blob/main/design_docs/implemented/r1/ism-local-clouds-report.md). Dense-cloud/LLCC PR B is [deferred](https://github.com/sunholo-data/stapledons-godot/blob/main/design_docs/planned/r1/ism-dense-clouds.md) with failed scientific comparisons. |
 | Free-navigation recovery | D-63 landed in game #199: rest start near Earth, stable body hierarchy, actionable refusals, real-time idle, visible Earth at arrival/+60s, default mouse look, panel pointer ownership, pause and default-visible local clouds. Stops are inertial standoffs. Native OS pointer capture remains unverified on the unattended desktop; the production focus guard is intact. |
 | Optional crew AI | Offline foundation/Medic stub built. First attended live run and voice review remain pending. |
 
-The scheduled mission loop is armed but its latest attempt is parked because
-controller lanes are unavailable or out of quota
-([issue #119](https://github.com/sunholo-data/stapledons-godot/issues/119#issuecomment-6101684814)).
+The mission loop's latest published attempt, 2026-10-11 at 14:09:37 UTC,
+reports that every controller rung is unusable or its bucket is spent. The
+fleet is parked until quota is refilled or a controller lane is restored
+([issue #119](https://github.com/sunholo-data/stapledons-godot/issues/119#issuecomment-6109886921)).
+This is the controller's published status, not an independently observed
+running process.
 Its next product target is the remaining M4 console-based journey audit. The
 D-52/D-56 amended scene plan retains its existing approval checkpoint before execution.
-The attended ISM and presentation work proceeds separately.
+The attended ISM, presentation and guided-navigation work proceeds separately.
 
 ## Problem
 
@@ -210,9 +214,13 @@ begins and where the hard-SF promise is most visible.
    sky through the panorama's exported camera). "Up" is the direction of
    travel throughout; there's no flip (D-14). Time warp; the HUD shows both
    clocks. Interior art waits for Mark's approval of the bridge style frame.
-3. **Arrival:** brake to a **1,000 AU stand-off** from the target star, where
-   α Cen A is about magnitude −12.2, with A and B about 1.3° apart (HB-91 to HB-94). The
-   starbow relaxes to the normal sky.
+3. **Arrival:** the starbow relaxes to the normal sky as the ship brakes to
+   its checked endpoint. The original D-14 baseline used a **1,000 AU
+   stand-off**, where α Cen A is about magnitude −12.2, with A and B about
+   1.3° apart (HB-91 to HB-94). Those historical check values remain valid.
+   The current [D-65 guided voyage](../features/guided-voyage-highlights.md)
+   instead makes one close finite-star arrival using the existing D-54
+   rule; it does not add a second inward hop.
 4. **Consequence stub:** the Earth-side simulation advances by the elapsed
    Earth-years. One scripted "news from home" beat, as a text panel at the
    Archive terminal only, driven by the size of the time gap.
@@ -249,7 +257,7 @@ on top of the M2 protocol.
    (the dev machine), then Windows/Linux, with web as a stretch goal (the
    sidecar would then need AILANG WASM that runs outside the browser).
 
-## Decisions (attended rulings, 2026-10-01)
+## Decisions (attended rulings)
 
 Recorded in `vision/design-decisions.md` and the game repo's charter ledger:
 - **D-11:** the Higgs bubble model. One admitted hand-wave with three
@@ -272,6 +280,12 @@ Recorded in `vision/design-decisions.md` and the game repo's charter ledger:
   0.997c (ε 10⁻¹⁰, chosen from a rendered comparison), and its spectrum is a
   blackbody at the impact temperature (K cos θ/σ)^¼, computed in
   `sunholo/relativity` 0.8.0 (higgs-bubble.md §6).
+- **D-65:** the attended guided itinerary is Earth → Sun → Jupiter → Callisto
+  → Saturn → one close Alpha Centauri A → one TRAPPIST-1 → Aldebaran.
+  Existing D-54 stops and true three-dimensional distances determine the
+  seven successive legs. The historical rule-zero ten-leg tour is retained
+  for replay compatibility. TRAPPIST-1 is no longer an engineered beside-e/HZ
+  stop. Sgr A* is an optional, clearly labelled separate demo after completion.
 - **D-60 / D-61:** the medium is the real one (status 2026-10-11: PR A landed in game #199). New games fly `lism-1` ([ism-structure.md](../physics/ism-structure.md)):
   the Local Interstellar Cloud, 14 Redfield & Linsky clouds and the Local
   Bubble's hot gas, driving the glow, drag and ledger; a route above the
