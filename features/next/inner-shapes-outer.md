@@ -134,8 +134,11 @@ this.
 
 ## 5. One memory across scales
 
-Local embeddings (EmbeddingGemma 2 on Ollama, on the player's machine) give the
-game a shared memory space:
+The memory system is owned by [semantic-memory.md](semantic-memory.md)
+(stapledons-design #19): stages S0–S5, determinism and replay rules, and the
+cross-run library. This section covers only how that memory bridges the two
+scales. Local embeddings (EmbeddingGemma 2 on Ollama, on the player's machine)
+give the game a shared memory space:
 
 - **Crew memory:** "this is like the reclaimer failure at Tau Ceti." A crew
   member recalls an earlier moment of their own when something similar happens.
@@ -151,7 +154,7 @@ game a shared memory space:
   before." Recall finds the near-match from a previous universe and offers it
   as a variation.
 
-The crew-lab spike (2026-10-13) measured this on the 60 sampled crew moments:
+The crew-lab spike (2026-10-13, measured data for semantic-memory S2) ran on the 60 sampled crew moments:
 - Embeddings are fast and local: 300+ in 16 s.
 - They are good at **who is speaking**: a crew member's own lines sit together.
 - They are good at **near repeats**: a crew member asked the same thing twice.
