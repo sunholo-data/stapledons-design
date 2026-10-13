@@ -422,6 +422,9 @@ Mutiny is not a setback to recover from. It ends your story.
 
 **Context:** The bubble-ship-design document specifies ~100 people in a 100m radius bubble. But we want a multi-generational society.
 
+> **SUPERSEDED IN PART by ledger D-75 (2026-10-13):** the ship starts with
+> about 1,000 people and grows to about 1,500. The mechanisms below stand.
+
 **Decision:** Start with ~100 people. Population can grow or shrink based on circumstances:
 - Growth possible if resources and morale allow
 - Decline risk during crises, despair, or resource pressure
@@ -1365,7 +1368,7 @@ ship. Ship Is Home, because the household loop is real and fragile.
 
 **Decision (Mark, attended):**
 
-1. **The featured crew are a share of the ~100 aboard.** The practical split
+1. **The featured crew are a share of those aboard** (~1,000, growing to ~1,500, per D-75; originally written for ~100). The practical split
    follows the scale tiers: featured individuals, the rest as cohorts
    ([civ-mirror.md](../features/next/civ-mirror.md) §2; stapledons-godot
    crew-population.md).
@@ -1389,3 +1392,33 @@ ship. Ship Is Home, because the household loop is real and fragile.
 **Specified in:** [roadmap/r2-voyage-life.md](../roadmap/r2-voyage-life.md),
 [voyage-life-loop.md](../features/next/voyage-life-loop.md),
 [civ-mirror.md](../features/next/civ-mirror.md).
+
+
+## [2026-10-13] Population: About 1,000 Aboard, Growing to About 1,500 (ledger D-75)
+
+**Decision (Mark, attended):** the ship starts with about **1,000** people and
+grows to about **1,500** over the voyage. This replaces ~100 (2025-12-06). It
+is what a 100 m bubble's floor supports: about 370,000 m² over 15 levels, so
+370 m² each at 1,000 and 247 m² at 1,500.
+
+**Rescaled with it:**
+- **Mass budget, ×10:** equipment 50 t, people 70 t, stores 30 t, free mass
+  50 t, so about 200 t inside, structure excluded.
+- **Household power:** 8 MW at 1,000 and 12 MW at 1,500. That is 14% and 21%
+  of the wall's 300 K heat-shedding ceiling.
+- **Heavy water:** about 370 kg of D₂O per century.
+- **Gardens:** 40,000–60,000 m² of lit beds.
+
+**Consequences:**
+- **Mass no longer limits reach on its own:** 50 t of free mass gives about
+  7,800 ly at 0.1 cm⁻³. Growth now competes with speed: 500 more people take
+  about 35 t, leaving about 4,250 ly.
+- **Growth must be steered.** At bubble-society's 2–4% a year the ship would
+  pass 1,500 within 10–20 years. Reaching 1,500 in a century is about 0.4% net
+  a year, so the captain's birth policy (D-71) matters from the start.
+- **The featured crew** are about 1% of the people aboard. Everyone else lives
+  in cohorts (stapledons-godot crew-population.md; D-73).
+
+**Specified in:** [bubble-resources.md](../features/next/bubble-resources.md)
+(RES-9…11, 19, 20, 38…45), [mass-budget.md](../features/future/mass-budget.md),
+[ship-structure.md](../features/phase1-data-models/ship-structure.md).

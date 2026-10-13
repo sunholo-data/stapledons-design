@@ -139,7 +139,7 @@ that runs hot (fusion, fabrication) needs hot radiators.
 
 ### Household
 
-Assumptions: 100 people, as in `mass-budget.md`. Food energy is the NASA
+Assumptions: 1,000 people at departure, as in `mass-budget.md` (D-75; the ship grows to about 1,500). Food energy is the NASA
 Baseline Values and Assumptions Document (BVAD) nominal 11.82 MJ per person per
 day. Gardens are 40 m² per person at 600 µmol m⁻² s⁻¹ for 16 h a day, under LEDs
 at 3.0 µmol J⁻¹ (current horticultural LEDs). "Everything else" (recycling,
@@ -150,9 +150,9 @@ fabrication, Archive, lighting) is taken as half the gardens again.
 | RES-6 | Food energy per person | 137 | W |
 | RES-7 | Grow-light electric power per person | 5.33 | kW |
 | RES-8 | Electricity to food energy, overall (RES-6 / RES-7) | 2.6 | % |
-| RES-9 | Household power, 100 people | 0.80 | MW |
-| RES-10 | Household energy over 100 years | 2.53 × 10¹⁵ | J |
-| RES-11 | The same, as mass-energy | 0.028 | kg |
+| RES-9 | Household power, 1,000 people | 8.0 | MW |
+| RES-10 | Household energy over 100 years (1,000 people) | 2.53 × 10¹⁶ | J |
+| RES-11 | The same, as mass-energy | 0.28 | kg |
 
 RES-8 is the bubble's most important efficiency. Of every watt of electricity,
 97% becomes heat in the gardens at once (the rest becomes heat later, in the
@@ -172,13 +172,13 @@ What fraction of a fuel's mass a reaction releases as energy:
 | RES-16 | p–¹¹B fusion (8.68 MeV) | 7.8 × 10⁻⁴ | — |
 | RES-17 | Matter–antimatter annihilation | 1 | — |
 | RES-18 | Deuterium mass fraction of ordinary water (VSMOW) | 3.48 × 10⁻⁵ | — |
-| RES-19 | Deuterium burned for RES-10 (catalysed D–D) | 7.3 | kg |
-| RES-20 | Ordinary water holding that deuterium | 210 | t |
+| RES-19 | Deuterium burned for RES-10 (catalysed D–D) | 73 | kg |
+| RES-20 | Ordinary water holding that deuterium | 2,100 | t |
 
-A century of household power needs about 7 kg of deuterium, but extracting it
-from ordinary water would take 210 t, more than the ship holds. **The household
-fuel is therefore carried as concentrated deuterium (heavy water), about 37 kg
-of D₂O.** Fuel is not what limits the household: `power` and `heat`
+A century of household power for 1,000 people needs about 73 kg of deuterium
+(110 kg at 1,500), but extracting it from ordinary water would take 2,100 t, ten
+times the ship's interior mass. **The household fuel is therefore carried as
+concentrated deuterium (heavy water), about 370 kg of D₂O (550 kg at 1,500).** Fuel is not what limits the household: `power` and `heat`
 capacities are.
 
 The bubble adds two twists that a planet doesn't have:
@@ -244,7 +244,7 @@ fix. Options:
 | Option | Rule | Consequences |
 |---|---|---|
 | **A. Physics wins** | Real fusion, thermal drive | Cruise speed tops out near γβ ≈ 30–50 (0.9995c) at 0.1 cm⁻³, about 4.5 times higher in hot gas; 0.999999c and the Aldebaran leg go. Reverses D-15 "arbitrary γ" and the accepted itinerary |
-| **B. The generator is the drive** (recommended) | Extend property 2: the generator turns interior mass directly into drive light at the wall, at 100%, with no waste heat. It does nothing else | Mass becomes the price of speed: the Aldebaran leg costs about 2,800 kg, about forty people's worth of atoms. The household still runs on ordinary fusion and radiators, so `power`, `heat` and fuel stay real |
+| **B. The generator is the drive** (recommended) | Extend property 2: the generator turns interior mass directly into drive light at the wall, at 100%, with no waste heat. It does nothing else | Mass becomes the price of speed: the Aldebaran leg costs about 2,800 kg, about forty people's worth of atoms (4% of a crew of 1,000). The household still runs on ordinary fusion and radiators, so `power`, `heat` and fuel stay real |
 | **C. Total conversion for everything** | The generator also powers the household | Energy stops being scarce (a century costs 0.03 kg). Only heat and mass remain. This loses the household energy game |
 
 **Recommendation: B.** It keeps the canon's one bubble, adds one sentence to
@@ -279,21 +279,28 @@ distance D with mass M and ship time T needs D ≤ √(M T / 0.0497).
 | RES-35 | Reach constant n m_p πR² ly · yr, n = 0.1 cm⁻³ | 0.0497 | kg·yr/ly² |
 | RES-36 | Drag mass per ly at 0.99c | 0.349 | kg |
 | RES-37 | Drag mass per ly at 0.999999c | 35.2 | kg |
-| RES-38 | Reach with 5,000 kg and 60 ship-years, n = 0.1 cm⁻³ | 2,457 | ly |
-| RES-39 | The same, n = 0.3 cm⁻³ (warm cloud) | 1,418 | ly |
-| RES-40 | The same, n = 0.005 cm⁻³ (hot gas) | 10,986 | ly |
+| RES-38 | Reach with 50,000 kg (the free mass, D-75) and 60 ship-years, n = 0.1 cm⁻³ | 7,769 | ly |
+| RES-39 | The same, n = 0.3 cm⁻³ (warm cloud) | 4,486 | ly |
+| RES-40 | The same, n = 0.005 cm⁻³ (hot gas) | 34,745 | ly |
 | RES-41 | 1,000 ly in 60 ship-years with 20 stops, m_eff 1 kg | 969 | kg |
 | RES-42 | The same with m_eff 10 kg | 2,232 | kg |
+| RES-43 | Mass for 500 more people (1,000 to 1,500, D-75) | 35,000 | kg |
+| RES-44 | Reach left after that growth (15 t, 60 ship-years, 0.1 cm⁻³) | 4,250 | ly |
+| RES-45 | Floor per person, 15 levels in a 100 m bubble, at 1,000 / 1,500 | 370 / 247 | m² |
 
-The reach matches the canon play area (500–3,000 ly, premise-and-loop §2)
-without tuning. Mark's condition, "so long as we have enough to have a good
-game run", is met with margin. Long voyages are paid for in drag. Stops are
-paid for in m_eff.
+With ~1,000 aboard (D-75) the free mass is 50 t, so drag alone no longer
+limits reach inside the canon play area (500–3,000 ly, premise-and-loop §2):
+Earth's clock and the captain's lifespan bind first. **Mass binds through
+growth instead.** Taking the ship from 1,000 to 1,500 people uses about 35 t,
+and the reach left afterwards is about 4,250 ly at 0.1 cm⁻³. Every child, every
+machine and every fast leg draws on the same 50 t. Long voyages are paid for in
+drag. Stops are paid for in m_eff. (At ~100 aboard, the earlier canon, 5 t of
+free mass gave 2,457 ly.)
 
 ### What m_eff is, and lowering it
 
 m_eff is **not** the ship's weight. The bubble still holds its structure, its
-20 t of contents and its people. m_eff is the inertia the whole pocket shows
+~200 t of contents and its people. m_eff is the inertia the whole pocket shows
 to the outside (property 2), tunable but never zero. It sets three things:
 
 - **The cost of each stop** (boost plus brake, 2 m_eff c² φ). At m_eff 1 kg

@@ -6,7 +6,7 @@ Mark liked the illustrated cast and asked that selection reflect a generation sh
 
 ## Departure community
 
-The approximately 100 inhabitants include children, partners, carers, teachers, apprentices and experienced specialists. The eleven featured adults are a window into that community. Recruitment considers skills, the ability to teach, and existing household ties. Joining alone is also a normal route aboard; having children is a personal choice, not a condition of membership.
+The approximately 1,000 inhabitants (growing to about 1,500, D-75) include children, partners, carers, teachers, apprentices and experienced specialists. The eleven featured adults are a window into that community. Recruitment considers skills, the ability to teach, and existing household ties. Joining alone is also a normal route aboard; having children is a personal choice, not a condition of membership.
 
 Most working adults begin in their twenties and thirties. A smaller older cohort brings knowledge and continuity. Some people leave family on Earth, making delayed messages personal from the beginning. Children who embark remember Earth differently from adults; children born later know it through other people's accounts.
 
