@@ -113,6 +113,8 @@ this.
 
 ## 4. The civilisation model (outline)
 
+> Developed in [civ-mirror.md](civ-mirror.md): worlds run the same simulation one level up, with scale tiers (individuals, groups, populations) and deterministic statistics. The roadmap is [r2-voyage-life.md](../../roadmap/r2-voyage-life.md).
+
 - **Actors:** each civilisation is an actor with:
   - values and a philosophy (with strength);
   - stability, energy use, knowledge held and contact openness;

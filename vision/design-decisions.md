@@ -1359,3 +1359,33 @@ ship. Ship Is Home, because the household loop is real and fragile.
 **Specified in:** [bubble-resources.md](../features/next/bubble-resources.md)
 §1–§4b. The check values RES-n there stay proposed until they move into
 [higgs-bubble.md](../physics/higgs-bubble.md) §8 and `sunholo/relativity`.
+
+
+## [2026-10-13] The Social Strand: Population, Births, Mutiny, Lifespan, the Galaxy Clock (ledger D-71)
+
+**Decision (Mark, attended):**
+
+1. **The featured crew are a share of the ~100 aboard.** The practical split
+   follows the scale tiers: featured individuals, the rest as cohorts
+   ([civ-mirror.md](../features/next/civ-mirror.md) §2; stapledons-godot
+   crew-population.md).
+2. **Births are a captain's duty:** to control and encourage the
+   population. This supersedes bubble-society's "the captain cannot prevent
+   births".
+3. **Mutiny.** Losing the captaincy for good is game over. Before that there
+   may be an interregnum in which the captain has no power and the ship is
+   mob-ruled. A mutiny may end with the captain murdered, as an extreme
+   consequence of decisions. This reconciles black-holes ("the ship changes
+   course"), which belongs to the interregnum, with design-decisions and
+   premise-and-loop (game over and reset).
+4. **100 years is the captain's lifespan.**
+5. **Skips:** the player chooses how long, with a sensible default.
+6. **The galaxy clock always runs.** Worlds advance whether or not the ship is
+   near; this is a core concept.
+7. **The bubble ship is the first interstellar ship for all worlds.** Worlds
+   can talk to each other, but they discover each other, and the technology
+   to talk, through the ship.
+
+**Specified in:** [roadmap/r2-voyage-life.md](../roadmap/r2-voyage-life.md),
+[voyage-life-loop.md](../features/next/voyage-life-loop.md),
+[civ-mirror.md](../features/next/civ-mirror.md).
