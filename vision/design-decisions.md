@@ -1321,3 +1321,41 @@ independent evaluation. Remaining R1 visual and console-journey gates stay open.
 introduces no new physics formula or lore check value. The normative current
 route and the optional-demo distinction are specified in
 [Guided voyage highlights](../features/guided-voyage-highlights.md).
+
+
+## [2026-10-13] The Generator Is the Drive; One Closed Ledger of Resources (ledger D-69)
+
+**Decision (Mark, attended):**
+
+1. **Option B: the generator is the drive.** The generator converts the
+   bubble's interior mass directly into drive light, at 100% and with no
+   waste heat, and does nothing else. This makes explicit a hand-wave the
+   canon already assumed: no real fuel or radiator can supply the guided
+   tour's ~3,100 kg of mass-energy.
+2. **The household runs on ordinary physics.** That means fusion with a
+   carried deuterium stock, and radiators limited by the wall's area.
+3. **m_eff = 1 kg.** It is the inertia the pocket shows to the outside, not
+   the ship's weight. Lowering it (towards 0.1 kg) is a candidate spire
+   discovery.
+4. **Changing the wall's shape is a discovery,** not a starting ability.
+   A pointed bow cuts drag.
+5. **The energy options form the first basis of a discoverable tech tree:**
+   basking near stars, civilisation-beamed boosts, black-hole
+   superradiance, hot-gas maps and efficiency blueprints. The tree "will
+   evolve over time".
+6. **Atoms never grow; mass-energy can be topped up by incoming light.**
+   Every resource the crew use is one of eight: `mass`, `water`, `power`,
+   `heat`, `garden`, `fabrication`, `compute` and `signal`.
+
+**Constraint:** there must be enough mass for a good game run. It holds.
+Drag mass × ship-years is fixed per light-year², so 5 t of free mass and 60
+ship-years reach about 2,500 ly at 0.1 cm⁻³, which covers the canon play
+area.
+
+**Rationale:** Grounded Strangeness, because one named hand-wave replaces a
+silent one. Choices Are Final, because every departure burns part of the
+ship. Ship Is Home, because the household loop is real and fragile.
+
+**Specified in:** [bubble-resources.md](../features/next/bubble-resources.md)
+§1–§4b. The check values RES-n there stay proposed until they move into
+[higgs-bubble.md](../physics/higgs-bubble.md) §8 and `sunholo/relativity`.
