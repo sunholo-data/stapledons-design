@@ -45,12 +45,12 @@ From [design-decisions.md](../../vision/design-decisions.md):
 | Category | Mass | Notes |
 |----------|------|-------|
 | **Structure** | Fixed | Ship hull, spire, infrastructure |
-| **Equipment** | 5,000 kg | Fabricators, life support, systems |
-| **Crew** | 7,000 kg | ~100 people at ~70kg average |
-| **Stores** | 3,000 kg | Food, water, raw materials buffer |
-| **Available** | 5,000 kg | "Free" mass for player allocation |
+| **Equipment** | 50,000 kg | Fabricators, life support, systems |
+| **Crew** | 70,000 kg | ~1,000 people at ~70 kg average (D-75) |
+| **Stores** | 30,000 kg | Food, water, raw materials buffer |
+| **Available** | 50,000 kg | "Free" mass for player allocation |
 
-**Total internal mass:** ~20,000 kg (not including structure)
+**Total internal mass:** ~200,000 kg (not including structure). Rescaled ×10 for a population of ~1,000 (D-75, 2026-10-13). Growing to ~1,500 people takes about 35 t of the free mass, which is the same mass the drive burns (D-69).
 
 *Note: These are gameplay numbers, not hard physics.*
 
@@ -165,8 +165,8 @@ Mass pressure can trigger crises:
 
 | Condition | Crisis |
 |-----------|--------|
-| Available < 500 kg | "Low reserves" warning |
-| Available < 100 kg | Rationing required, morale impact |
+| Available < 5,000 kg | "Low reserves" warning |
+| Available < 1,000 kg | Rationing required, morale impact |
 | Available = 0 | Emergency: must dismantle something |
 | Population > sustainable | Food synthesis strain |
 
@@ -196,11 +196,11 @@ type MassBudget = {
 }
 
 type MassReserveLevel =
-    | Abundant      -- > 3000 kg
-    | Comfortable   -- 1500-3000 kg
-    | Tight         -- 500-1500 kg
-    | Critical      -- < 500 kg
-    | Emergency     -- < 100 kg
+    | Abundant      -- > 30000 kg
+    | Comfortable   -- 15000-30000 kg
+    | Tight         -- 5000-15000 kg
+    | Critical      -- < 5000 kg
+    | Emergency     -- < 1000 kg
 ```
 
 ## Integration with Other Systems

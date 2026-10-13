@@ -93,7 +93,7 @@ This change concerns character assets; the environment remains Blender-built.
 - Organic and mechanical: the Archive should feel grown and ancient, tied to
   the spire's mystery.
 
-### 2.4 Background population (~100 people, generations)
+### 2.4 Background population (~1,000 people, growing to ~1,500; generations)
 - A **static crowd avatar set**: 6 body silhouettes, with varied heads, hair,
   clothing layers and palettes. These dress the play areas without individual
   portrait sets or animation requirements.

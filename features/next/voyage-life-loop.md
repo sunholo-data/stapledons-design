@@ -116,7 +116,7 @@ work durations scaled.
 
 ## 3. Households and generations
 
-Canon (generation-cast-plan) has about 100 founders in households: partners,
+Canon (generation-cast-plan, D-75) has about 1,000 people in households at departure, growing to about 1,500: partners,
 children, carers. Eleven featured adults are the window onto them. A job, an
 archetype and a person are separate concepts. Descendants are new people,
 never age variants of a parent. Nothing about births or deaths is fixed.
@@ -177,8 +177,9 @@ never sees the director (DD 2025-12).
   back. A mutiny can end with the captain murdered: the run ends, and the
   spire resets it (premise-and-loop).
 - **The 100 years** is the captain's lifespan.
-- **Crew size:** the featured crew are a share of the ~100 aboard. The rest
-  are cohorts (crew-population.md).
+- **Crew size:** the featured crew are a share of the ~1,000 aboard (D-75:
+  about 1,000 growing to about 1,500). The rest are cohorts
+  (crew-population.md).
 
 **Still open:**
 1. **Interrupt default:** Some (recommended), or Most for a first playthrough?

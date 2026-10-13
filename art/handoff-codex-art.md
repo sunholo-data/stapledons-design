@@ -363,7 +363,7 @@ On GitHub `blob` pages, add `?raw=true` to download the image.
 
 **The game:** you captain a ship inside a bubble that can travel close to the
 speed of light, for about 100 years of your own life. Each journey costs the
-galaxy centuries. About 100 people live aboard, and they become their own small
+galaxy centuries. About a thousand people live aboard, and they become their own small
 civilisation, ageing and having children. The game is conversations and
 consequences. Tone: **vast, beautiful, lonely, bittersweet.**
 

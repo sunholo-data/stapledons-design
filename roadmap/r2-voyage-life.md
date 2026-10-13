@@ -31,7 +31,7 @@ voice of whoever aboard was willing to speak.
 | [bubble-resources.md](../features/next/bubble-resources.md) | The eight resources, D-69 |
 | [semantic-memory.md](../features/next/semantic-memory.md) | Crew recall, the Archive's misremembering, déjà vu across runs |
 | stapledons-godot `design_docs/planned/r2/crew-integration.md` | The crew host aboard: R2-CREW, D-70. Includes auto-run with standing orders, escalation rules and `crew_hold` (CI-5) |
-| stapledons-godot `design_docs/planned/r2/crew-population.md` | The ~100 founders as 8–12 cohort actors with mood buckets (R2-CREW-POP): the ship's group and population tiers |
+| stapledons-godot `design_docs/planned/r2/crew-population.md` | The ~1,000 aboard as 8–12 cohort actors with mood buckets (R2-CREW-POP): the ship's group and population tiers |
 
 ## Who does what
 
@@ -106,7 +106,7 @@ no game build.
 The canon conflicts found while drafting, as ruled:
 
 1. **Crew and population.** "Crew is a % of the population I guess? not sure
-   what is practical." The featured crew are a share of the ~100 aboard. The
+   what is practical." The featured crew are a share of those aboard: ~1,000 growing to ~1,500, per D-75. The
    practical split comes from the scale tiers: individuals for the featured
    crew, cohorts for the rest (crew-population.md, civ-mirror §2).
 2. **Births are a captain's duty:** "part of captain's duties to control and

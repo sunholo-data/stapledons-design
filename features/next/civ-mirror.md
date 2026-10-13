@@ -62,7 +62,7 @@ representation is statistical.
 |---|---|---|---|
 | **T1 Individuals** | featured crew; a civ's named figures (a speaker, a rival) | up to about 15 per host (about 30–50 with archiving and optimisation) | crew host actors: full OCEAN, indicators, relationships, words |
 | **T2 Groups** | households and factions aboard; a world's factions and institutions | about 5–40 | host actors whose traits are **group averages** and whose capacity scales with size |
-| **T3 Populations** | the ~100 founders as cohorts; a world's billions | any | **distributions**: counts per state per cohort (age, faction, belief), moved by rates |
+| **T3 Populations** | the ~1,000 aboard as cohorts (D-75); a world's billions | any | **distributions**: counts per state per cohort (age, faction, belief), moved by rates |
 
 ### Statistics without losing determinism
 
@@ -78,7 +78,7 @@ Both are pure functions of (seed, inputs). Neither ever simulates the
 billions one by one.
 
 **The same tiers aboard:** the game's crew-population.md (R2-CREW-POP) makes
-the ~100 founders 8–12 cohort actors with mood and trust buckets and seeded
+the ~1,000 aboard 8–12 cohort actors with mood and trust buckets and seeded
 transitions per bucket. That is T3 with T2 groupings, built as crew_core
 cohort actors (ailang-packages#137, CP-0/CP-1). Worlds should reuse the same
 cohort actor, at a different tempo.
@@ -139,7 +139,7 @@ Their answers come back the same way:
 
 | Step | What | Where |
 |---|---|---|
-| C1 | A T3 compartment model (pure, expected-value and seeded modes) with tests; also the ~100 founders by cohort | lab, a new package (proposed name `sunholo/society`) |
+| C1 | A T3 compartment model (pure, expected-value and seeded modes) with tests; also the ~1,000 aboard by cohort | lab, a new package (proposed name `sunholo/society`) |
 | C2 | T2 groups: factions as host actors with group traits and size-scaled capacity; the coupling between tiers | lab |
 | C3 | One world end to end: a scenario, light-lag news in, a reply out, claims over seeds | lab |
 | C4 | The contact scenario from inner-shapes-outer §6.3: the crew argue, the message goes out in a voice, and the world's answer returns 40 years later | lab |
