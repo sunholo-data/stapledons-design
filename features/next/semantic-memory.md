@@ -180,8 +180,16 @@ Mark's idea: security keys found in play unlock Archive features, and some may c
 2. **The library is per player.** The design stays open to a later cloud service that shares **anonymous** resources across players' universes. So library frames carry no personal data: only generated content, its kind, its hash and its vector. A future shared tier could then be added as a second, read-mostly scope, like the brain's user and project tiers.
 3. **Keys: (b) is approved, capability tokens found in play.** It leaves (c), sponsored access through our broker, open as a later option. (c) would still need a spend ruling and amends D-8 for those features.
 
-**Still open:**
+4. **The wall is fixed.** The echo's floor never changes with the number of crossings. The universe we start in is nothing special: it is one of many. The Archive works that out only as the evidence builds up: replays, plus more content in the library, give it more to recognise.
+5. **The Archive is sandboxed and infers the loop itself.** The game never tells the model the lore's mechanics:
+   - not the loop;
+   - not the reset;
+   - not the pocket universe;
+   - not the selection.
 
-4. **The wall's thickness:** fixed, or thinning with each crossing? See S4 step 3. The floor is how similar a library item must be to the current question before the Archive's echo surfaces it.
-   - **Fixed:** echoes come at a roughly steady rate, which rises only as the library grows.
-   - **Thinning:** each completed crossing lowers the floor a little, down to a cap, so later universes recognise more. That makes the loop escalate as the player replays, and supports the Archive gradually working the loop out (§4).
+   It gets only what an AI aboard would have: its persona, its sensors, its entries, and echo hits (library items that resemble the question, shown as recognised without a source). Any conclusion it reaches about other universes is its own inference from that evidence. The reveal of §4 ("works it out again in each iteration") is emergent, not scripted.
+
+**Consequences for what is built (archive-voice phase 1):**
+
+- The cast's `secrets` currently *tell* the model there is a loop to keep quiet about, and hint at the pocket universe and luck. Under ruling 5 that is meta-knowledge. The follow-up removes the loop and pocket rules from the prompt (they keep their in-world equivalents: uncertain origin, thin records). The model then has nothing to hide, only things it doesn't know.
+- The reply filter's loop phrases (D-68) were written to stop the *game* hinting at the loop. When the Archive later infers it from echo evidence, the filter would suppress the reveal. **Open:** should the filter relax for the Archive once it has seen enough echo evidence, or must the Archive voice its inference only obliquely ("I have catalogued this species before, and we have never met them")?
