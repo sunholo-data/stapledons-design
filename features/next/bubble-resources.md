@@ -1,7 +1,7 @@
 # Bubble Resources: one closed ledger
 
 ## Status
-- **Status:** Proposed (draft for Mark's review, 2026-10-13)
+- **Status:** Accepted in part: option B, m_eff = 1 kg, wall shape as a discovery (ledger D-69, Mark, attended 2026-10-13). The resource list and check values remain proposed.
 - **Priority:** P1 (defines what every crew scenario, crisis and upgrade spends)
 - **Supersedes in part:** [mass-budget.md](../future/mass-budget.md) (mass sinks and visibility stay; the resource list and the energy source are new)
 - **Physics:** [physics/higgs-bubble.md](../../physics/higgs-bubble.md) §4, §5 and §8 (the "later energy ledger" this document proposes)
@@ -261,7 +261,97 @@ Under B, m_eff matters a great deal: boost and brake scale with it, but drag
 does not. The canon value is 1 kg; the guided drive uses 10 kg. Choosing m_eff
 is choosing how much of the ship each departure burns.
 
-**Decision needed (proposed ledger row):** adopt B, A or C, and confirm m_eff.
+**Decided (D-69, 2026-10-13): option B, with m_eff = 1 kg.** The guided drive's 10 kg is revisited when the ledger is enforced.
+
+## 4a. Endurance: the reach law (under B)
+
+Drag burns mass in proportion to γβ, while ship time per light-year is
+1/γβ years. Their product doesn't depend on speed:
+
+  **mass burned × ship-years = n m_p πR² × (1 ly) × (1 yr) per ly²**
+
+At n = 0.1 cm⁻³ and R = 100 m, that is 0.0497 kg·yr per ly². The ship can
+spend mass to save time, or time to save mass, at a fixed rate. Covering a
+distance D with mass M and ship time T needs D ≤ √(M T / 0.0497).
+
+| ID | Quantity | Value | Unit |
+|---|---|---|---|
+| RES-35 | Reach constant n m_p πR² ly · yr, n = 0.1 cm⁻³ | 0.0497 | kg·yr/ly² |
+| RES-36 | Drag mass per ly at 0.99c | 0.349 | kg |
+| RES-37 | Drag mass per ly at 0.999999c | 35.2 | kg |
+| RES-38 | Reach with 5,000 kg and 60 ship-years, n = 0.1 cm⁻³ | 2,457 | ly |
+| RES-39 | The same, n = 0.3 cm⁻³ (warm cloud) | 1,418 | ly |
+| RES-40 | The same, n = 0.005 cm⁻³ (hot gas) | 10,986 | ly |
+| RES-41 | 1,000 ly in 60 ship-years with 20 stops, m_eff 1 kg | 969 | kg |
+| RES-42 | The same with m_eff 10 kg | 2,232 | kg |
+
+The reach matches the canon play area (500–3,000 ly, premise-and-loop §2)
+without tuning. Mark's condition, "so long as we have enough to have a good
+game run", is met with margin. Long voyages are paid for in drag. Stops are
+paid for in m_eff.
+
+### What m_eff is, and lowering it
+
+m_eff is **not** the ship's weight. The bubble still holds its structure, its
+20 t of contents and its people. m_eff is the inertia the whole pocket shows
+to the outside (property 2), tunable but never zero. It sets three things:
+
+- **The cost of each stop** (boost plus brake, 2 m_eff c² φ). At m_eff 1 kg
+  a stop costs 5–15 kg; at 0.1 kg, 0.5–1.5 kg.
+- **The drive's largest force,** m_eff × the boost acceleration, and so the
+  fastest cruise the drive can hold against drag (`driveHoldMaxPhi`). At the
+  default boost of 7.5 × 10⁵ g, m_eff 0.1 kg still holds γβ ≈ 1,250 at
+  0.1 cm⁻³ (above 0.999999c), but only γβ ≈ 720 in a 0.3 cm⁻³ cloud. At
+  0.01 kg it falls to γβ ≈ 400.
+- **Hover power near black holes** (HB-90, m_eff a c).
+
+Drag does not depend on m_eff, so lowering it barely changes the reach:
+
+| Voyage | m_eff 1 kg | m_eff 0.1 kg |
+|---|---|---|
+| 1,000 ly, 60 yr, 20 stops | 969 kg | 843 kg |
+| 1,000 ly, 60 yr, 100 stops | 1,530 kg | 899 kg |
+| 200 ly, 20 yr, 100 stops (a dense neighbourhood) | 699 kg | 159 kg |
+
+**Proposal:** start at 1 kg (D-69). Make "tuning the pocket lighter" a spire
+discovery that lowers m_eff towards 0.1 kg. It pays off for a player who
+makes many short hops, and costs some ability to hold top speed in dense gas.
+
+## 4b. Technology tree: first basis
+
+Mark (D-69): "these are all good candidates for a tech tree we discover. This
+will evolve over time." Rules:
+- Nothing in known physics adds atoms to the bubble.
+- Every discovery arrives as information (a blueprint, a map, a spire reading).
+- Building it costs `mass` and `fabrication`.
+- Each one has a catch.
+
+| Branch | Discovery | Physics | Effect | Catch |
+|---|---|---|---|---|
+| Drag | **Hot-gas maps** | ISM density varies ~60× | Route through 0.005 cm⁻³: travel ~20× cheaper, reach ×4.5 | Longer paths; maps come from civilisations |
+| Drag | **Shaping the wall** (spire) | Specular reflection at a glancing angle | A pointed bow: drag ÷16 at a 10° point, ÷65 at 5° | Spire knowledge; generator time to reshape |
+| Drive | **Lighter pocket** (spire) | Property 2 | m_eff 1 → 0.1 kg: stops 10× cheaper | Lower hold limit in dense gas |
+| Energy | **Basking** | Absorbed light adds mass-energy, never atoms | Near a star, refills the drive's energy: about 1.5 kg a year at 0.1 AU from a Sun-like star | Heat ceiling; storing energy densely needs antimatter-scale storage |
+| Energy | **Beamed boosts** | Light pressure from a civilisation's laser | They pay for your boost | Doppler: at 0.99c only 0.5% of the beam arrives; good for departures |
+| Energy | **Superradiance** | Light amplified by a spinning black hole's ergosphere, up to ~4% per pass | A black-hole civilisation's power plant | Needs a mirror cavity around a black hole |
+| Energy | **Antimatter storage** | Pair production from light | Dense storage for basked or beamed energy | Very low production efficiency |
+| Household | **Electro-food** | Microbes fed by electrolysis | Several times RES-8 | Fabrication and mass to build |
+| Household | **Brine membranes** | Better water recovery | Smaller sludge pool, less `power` | — |
+| Household | **Low-neutron fusion** | D–³He, p–¹¹B | Less activation of the ship | Fuel scarcity |
+| Household | **Hot radiators** | σT⁴ | More `heat` headroom | Materials |
+| Crew | **Torpor / longevity** | Metabolic suppression | More ship-years; reach grows with √T | Crew psychology |
+
+Not in the tree, with reasons the Archive can give:
+- **Zero-point energy:** the vacuum is already the lowest state.
+- **Matter from virtual particles:** the dynamical Casimir and Schwinger
+  effects need energy put in.
+- **Atoms from light:** baryon number is conserved, so light makes only
+  matter–antimatter pairs.
+- **Warp:** it needs negative energy, which would be a third invented thing.
+- **Unruh heating:** 5 × 10⁻¹⁵ K at boost acceleration.
+
+Combined, the drag and drive branches can make travel nearly free. Atoms
+never get cheaper: bodies, children and repairs stay scarce for the whole game.
 
 ## 5. How resources appear in play
 
@@ -307,8 +397,8 @@ and every claim verdict over 20 seeds was unchanged (33 of 36 hold).
 
 ## 7. Open questions for Mark
 
-1. Adopt option B (the generator is the drive), A or C? (§4)
-2. m_eff: canon 1 kg or the guided drive's 10 kg? It is the main dial on the drive's mass bill.
+1. ~~Option B, A or C?~~ B (D-69).
+2. ~~m_eff?~~ 1 kg (D-69); lowering it is a discovery (§4a).
 3. Show the drive's mass cost at plan time in kilograms, or as people-equivalents?
 4. Start the household on D–T (neutrons, simplest) or D–³He (cleaner, but where did the ³He come from)?
 5. Should the scrap, brine and ash pools be visible places in the ship, for example on the industrial level?
