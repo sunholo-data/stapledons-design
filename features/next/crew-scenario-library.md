@@ -131,13 +131,13 @@ re-vendored into the game:
 
 | # | Capability | Needed by |
 |---|---|---|
-| E1 | Archiving and run-time ship events and policy switch (R2-CREW CI-0, D-70) | everything long; the game |
+| E1 | crew_core 0.3.0 (ailang-packages#137): archiving, run-time ship events, policy switch, standing orders, escalation, `advance(n)` | everything long; the game |
 | E2 | Kinship relationship dimensions with stronger effects among kin | household scenarios |
 | E3 | Life cycle: join and leave mid-session (births, deaths, coming of age) | births, deaths, generations |
 | E4 | Age and a seeded death hazard | deep-time scenarios |
-| E5 | Standing orders as data, and a skip driver with interrupts and a report | voyage-life-loop |
+| E5 | The skip report built from the journal (standing orders and escalation come with E1) | voyage-life-loop |
 | E6 | Templates: slots bound to the current crew and ship | the orchestrator |
-| E7 | Society layer: households and factions as aggregate actors | factions, votes, mutiny warnings |
+| E7 | Cohort actors (#137 CP-0/CP-1; crew-population.md) and factions | population, votes, mutiny warnings |
 | E8 | Crew memory (semantic-memory S2) | callbacks, the Archive misremembering |
 
 ## 6. Tasks to start with

@@ -71,9 +71,11 @@ These are the lab's `crew-sim` captain strategies, generalised and made
 player-facing. The lab already measures what each one does to a crew over
 many runs.
 
-### Interrupts
+### Interrupts (escalation rules)
 
-A skip stops early at a moment that needs the captain. The player sets the
+The game side names these **escalation rules** (`crew_escalation/1`, R2-CREW
+CI-0 and CI-5). An escalation raises a `crew_hold` that the cruise interlude
+stops at. A skip stops early at a moment that needs the captain. The player sets the
 sensitivity (Few, Some or Most):
 - a major event (`loss`, `deep_time`, `first_contact`, `betrayal`);
 - a birth or a death;
@@ -124,7 +126,8 @@ never age variants of a parent. Nothing about births or deaths is fixed.
   trust and regard. Today that is the 11 featured adults; later, ship-born
   adults who become featured (children aged 23–28 by year 20).
 - **The wider ship** is a society layer: households and factions as aggregate
-  actors (bubble-society). It is fed by featured outcomes, and it feeds
+  actors (bubble-society). The game-side design is crew-population.md: 8–12
+  cohort actors with mood buckets (R2-CREW-POP). It is fed by featured outcomes, and it feeds
   morale and tension back to them.
 
 **What the host needs** (engine backlog; each item is built and verified in the
@@ -159,19 +162,28 @@ A scenario in the library is a template: crew roles, preconditions and
 events. The director binds it to the current crew and ship state. The player
 never sees the director (DD 2025-12).
 
-## 5. Open questions for Mark
+## 5. Decided (D-71) and still open
 
-1. **Skip granularity:** day turns with a speed target (recommended), or week
-   turns during long skips?
-2. **Births and the captain:** design-decisions lists "limit births" as a
-   choice, but bubble-society says the captain cannot prevent births. Which?
-3. **Mutiny:** game over and reset (DD, premise-and-loop), or "the ship
-   changes course" (black-holes)?
-4. **The 100 years:** the captain's lifespan (death near 130 at a start age of
-   30), or a budget of 100 ship-years from departure?
-5. **Crew size:** about 100 (canon) or the "~50 crew max" in
-   crew-assignment-system?
-6. **Interrupt default:** Some (recommended), or Most for a first playthrough?
+**Decided (Mark, 2026-10-13):**
+- **Skip length:** the player chooses, with a sensible default. Proposed
+  default: until the next escalation, or one ship-month, whichever comes
+  first.
+- **Births:** controlling and encouraging births is a captain's duty. Births
+  become a captain lever (encourage, neutral, restrain) that feeds the
+  household birth process.
+- **Mutiny:** losing the captaincy for good is game over. A mob-rule
+  interregnum may come first: the captain keeps playing, but decisions pass to
+  the mob through the society layer, and the captain can try to win authority
+  back. A mutiny can end with the captain murdered: the run ends, and the
+  spire resets it (premise-and-loop).
+- **The 100 years** is the captain's lifespan.
+- **Crew size:** the featured crew are a share of the ~100 aboard. The rest
+  are cohorts (crew-population.md).
+
+**Still open:**
+1. **Interrupt default:** Some (recommended), or Most for a first playthrough?
+2. **The mob-rule interregnum:** how long can it last, and what wins
+   authority back (a vote, a crisis handled well, a faction's support)?
 
 ## 6. Acceptance (when a sprint takes this up)
 

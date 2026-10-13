@@ -77,6 +77,12 @@ representation is statistical.
 Both are pure functions of (seed, inputs). Neither ever simulates the
 billions one by one.
 
+**The same tiers aboard:** the game's crew-population.md (R2-CREW-POP) makes
+the ~100 founders 8–12 cohort actors with mood and trust buckets and seeded
+transitions per bucket. That is T3 with T2 groupings, built as crew_core
+cohort actors (ailang-packages#137, CP-0/CP-1). Worlds should reuse the same
+cohort actor, at a different tempo.
+
 **Coupling between tiers:**
 - T3 → T2: a faction's strength comes from the size of its compartments.
 - T2 → T3: a faction's decision changes the rates; a reform slows unrest.
@@ -139,17 +145,21 @@ Their answers come back the same way:
 | C4 | The contact scenario from inner-shapes-outer §6.3: the crew argue, the message goes out in a voice, and the world's answer returns 40 years later | lab |
 | C5 | In the game: worlds advance between visits; messages travel at light speed; the galaxy view shows each world as you last saw it, plus what light has reached you since | game, after R2 |
 
-## 6. Open questions for Mark
+## 6. Decided (D-71) and still open
 
-1. **Does the galaxy run on its own clock?** That is, does every world
-   advance for the time that passes even while you are far away
-   (recommended: yes, cheaply, since only T2 and T3 are involved), or only
-   when you return?
-2. **Can worlds talk to each other without you,** once one knows of another?
-   (Inner-shapes-outer Q3.) Recommended: yes, at light speed, which makes the
-   network a society you seed rather than a graph you edit.
-3. **Sampled or expected-value populations?** Sampled (seeded) gives
+**Decided (Mark, 2026-10-13):**
+- **The galaxy clock always runs.** Every world advances for the time that
+  passes, wherever the ship is. This is a core concept.
+- **The bubble ship is the first interstellar ship for all worlds.** Worlds can
+  talk to each other, but they learn that others exist, and gain the
+  technology to reach them, from the ship: maps and blueprints are the
+  Perturbation Operator's gifts. Before contact, a world's network is empty.
+  After contact it grows at light speed, and every link traces back to
+  something the ship gave.
+
+**Still open:**
+1. **Sampled or expected-value populations?** Sampled (seeded) gives
    surprise, expected-value gives smoothness. Recommended: expected-value for
    the ship's founders, sampled for worlds.
-4. **Do we model Earth itself as a world** in this simulation, so the doom
+2. **Do we model Earth itself as a world** in this simulation, so the doom
    clock and the news you receive come from the same model?

@@ -1,6 +1,6 @@
 # Roadmap: Voyage Life and the Living Galaxy (the social strand)
 
-**Status:** Proposed (Mark, attended 2026-10-13: "let's create a roadmap doc for this strand of work").
+**Status:** Proposed (Mark, attended 2026-10-13: "let's create a roadmap doc for this strand of work"). The canon conflicts it raised were ruled on as **D-71**, below.
 **Scope:** everything social:
 - the crew between destinations;
 - skipping time and what it does to people;
@@ -30,13 +30,14 @@ voice of whoever aboard was willing to speak.
 | [inner-shapes-outer.md](../features/next/inner-shapes-outer.md) | How the crew and the worlds affect each other |
 | [bubble-resources.md](../features/next/bubble-resources.md) | The eight resources, D-69 |
 | [semantic-memory.md](../features/next/semantic-memory.md) | Crew recall, the Archive's misremembering, déjà vu across runs |
-| stapledons-godot `design_docs/planned/r2/crew-integration.md` | The crew host aboard: R2-CREW, D-70 |
+| stapledons-godot `design_docs/planned/r2/crew-integration.md` | The crew host aboard: R2-CREW, D-70. Includes auto-run with standing orders, escalation rules and `crew_hold` (CI-5) |
+| stapledons-godot `design_docs/planned/r2/crew-population.md` | The ~100 founders as 8–12 cohort actors with mood buckets (R2-CREW-POP): the ship's group and population tiers |
 
 ## Who does what
 
 | Agent | Works in | Owns |
 |---|---|---|
-| **Crew-lab agent** (the attended session line that built the lab) | ailang-packages `packages/crew-core`, `examples/crew-lab` | the engine (`crew_core`, `social_dynamics`), claims, evaluations, publishing |
+| **Crew-lab agent** (the attended session line that built the lab; takes ailang-packages#137) | ailang-packages `packages/crew-core`, `examples/crew-lab` | the engine (`crew_core`, `social_dynamics`), claims, evaluations, publishing |
 | **Scenario agent** (new) | the crew lab's `scenarios/` | the scenario library, COVERAGE.md, review pages for Mark |
 | **Integration agent** | stapledons-godot | R2-CREW and its successors: vendoring, sim wiring, protocol, consoles |
 | **Mark** | — | rulings (ledger), canon, reviews |
@@ -52,12 +53,12 @@ no game build.
 | ID | Milestone | Exit criteria | Depends |
 |---|---|---|---|
 | E0 ✅ | Crew host, verification loop, resources that flow, crew strain (crew_core 0.2.0, social_dynamics 0.4.0 published) | Done 2026-10-13; four sprints, each evaluated (80, 77, 80, 80) | — |
-| E1 | R2-CREW CI-0: archiving, run-time `ship_event`, run-time policy switch (D-70) | lab validate; claims unchanged; 500 turns grow linearly (< 10 s) | E0 |
+| E1 | R2-CREW CI-0, ailang-packages#137 (crew_core 0.3.0): archiving, run-time `ship_event`, `policy` switch (D-70), standing orders, escalation rules, `advance(n)` | lab validate; claims unchanged; 500 turns grow linearly; `crew-sim --auto` escalations per year; 10-year interlude < 2 s in game | E0 |
 | E2 | Kinship dimensions | household claims hold | E1 |
 | E3 | Life cycle (join and leave), age, seeded death hazard, births tied to mass and morale | lab claims on births and deaths over long runs | E1, E2 |
-| E4 | Standing orders as data, a skip driver with interrupts, and the report journal | `crew-sim --skip 365` < 5 s; interrupt claims | E1 |
+| E4 | The skip report ("What happened aboard") built from the journal; skip claims (standing orders and escalation are now in E1) | `crew-sim --auto --turns 365` report and escalation claims | E1 |
 | E5 | Scenario templates bound to crew and ship state | the orchestrator can draw and bind | E1 |
-| E6 | Society layer: T2 groups and T3 cohorts (`sunholo/society`, proposed) | founders by cohort; faction claims | E3 |
+| E6 | Cohort actors (CP-0/CP-1 in ailang-packages#137; crew-population.md): headcount, OCEAN mix, mood and trust buckets, seeded transitions per bucket, yearly births and deaths | a founders scenario of ~100; cohort claims | E1 |
 | E7 | Crew memory (semantic-memory S2) in the reply worker | variety and recall claims | E1 |
 
 ### Track L: the scenario library (scenario agent)
@@ -100,21 +101,27 @@ no game build.
 5. **E2 and E3, then L5, then G5:** households and generations.
 6. **C1 to C4** in the lab once E6 exists. **C5** follows R2.
 
-## Decisions needed from Mark (canon conflicts found while drafting)
+## Decisions (D-71, Mark, attended 2026-10-13)
 
-1. **Crew size:** about 100 people (generation-cast-plan, bubble-resources),
-   or "~50 crew max" (crew-assignment-system)?
-2. **Births:** can the captain limit births (design-decisions), or not
-   (bubble-society)?
-3. **Mutiny:** game over and a spire reset (design-decisions,
-   premise-and-loop), or "the ship changes course" (black-holes)?
-4. **The 100 years:** the captain's lifespan, or a budget of ship-years from
-   departure?
-5. **Skip granularity:** day turns with a speed target, or week turns during
-   long skips (voyage-life-loop Q1)?
-6. **The galaxy clock:** do worlds advance while you are far away (civ-mirror
-   Q1)?
-7. **Worlds talking to each other** without you (civ-mirror Q2)?
+The canon conflicts found while drafting, as ruled:
+
+1. **Crew and population.** "Crew is a % of the population I guess? not sure
+   what is practical." The featured crew are a share of the ~100 aboard. The
+   practical split comes from the scale tiers: individuals for the featured
+   crew, cohorts for the rest (crew-population.md, civ-mirror §2).
+2. **Births are a captain's duty:** "part of captain's duties to control and
+   encourage population". This supersedes bubble-society's "cannot prevent
+   births".
+3. **Mutiny.** Losing the captaincy for good is game over. Before that there
+   may be an interregnum: the captain has no power and the ship is
+   mob-ruled. A mutiny may end with the captain murdered, "an extreme
+   consequence of decisions".
+4. **100 years is the captain's lifespan.**
+5. **Skips:** the player chooses how long, with a sensible default.
+6. **The galaxy clock always runs:** "a core concept of the game".
+7. **Worlds can talk to each other,** but the bubble ship is how they discover
+   each other and the technology to talk: "we are the first interstellar
+   spaceship for all worlds".
 
 ## Risks
 
