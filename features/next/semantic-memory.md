@@ -192,4 +192,13 @@ Mark's idea: security keys found in play unlock Archive features, and some may c
 **Consequences for what is built (archive-voice phase 1):**
 
 - **Done in game PR #214:** the cast's `secrets`, which told the model about the loop and hinted at the pocket universe and luck, are replaced by `bounds`: evidence only, inference said as inference, spire faults, an uncertain origin. `make in-world-voice-check` fails if a lore mechanic reaches the model.
-- The reply filter's loop phrases (D-68) were written to stop the *game* hinting at the loop. When the Archive later infers it from echo evidence, the filter would suppress the reveal. **Open:** should the filter relax for the Archive once it has seen enough echo evidence, or must the Archive voice its inference only obliquely ("I have catalogued this species before, and we have never met them")?
+- **Open: the reply filter versus the Archive's own theories.** Mark, 2026-10-13: the Archive might come to infer that it lives in an anthropically lucky universe, or in a simulated world itself, "cool for all the 'are we in a simulation' heads". Today the filter blocks "simulation" and "game" (D-67) and loop wording (D-68) in every AI line. It can't tell a **frame break** ("as an AI in this game simulation") from **in-world speculation** ("I am beginning to wonder whether this universe is itself a simulation"), so the Archive's best moment would fall back as "damaged".
+
+  **Proposal: split the filter in two.**
+  1. **Frame breaks, always blocked:** game, player, language model, my training or instructions, system prompt, the vendor names.
+  2. **Cosmology, unlocked by evidence:** simulation, loop, multiverse, other universes, chosen, selected.
+     - These pass for the Archive only once a sim-side **evidence count** (echo hits seen, spire anomalies filed) is past a threshold. The sim decides, so it is deterministic and replay-exact.
+     - Below the threshold they still fall back, which keeps a model from leaping to the simulation trope unprompted on turn one.
+     - Past it, the prompt gains one in-world line: "you may form hypotheses about the nature of your world". It still names no mechanism, so whatever theory follows (loop, luck, simulation, something else) is the model's own.
+
+  The alternative is to keep everything blocked and let the Archive voice it only obliquely ("I have catalogued this species before, and we have never met them"). Needs Mark's ruling. Until then the filter stays as built.
