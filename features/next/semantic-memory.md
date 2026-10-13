@@ -187,9 +187,9 @@ Mark's idea: security keys found in play unlock Archive features, and some may c
    - not the pocket universe;
    - not the selection.
 
-   It gets only what an AI aboard would have: its persona, its sensors, its entries, and echo hits (library items that resemble the question, shown as recognised without a source). Any conclusion it reaches about other universes is its own inference from that evidence. The reveal of §4 ("works it out again in each iteration") is emergent, not scripted.
+   It gets only what an AI aboard would have: its persona, its sensors, its entries, and echo hits (library items that resemble the question, shown as recognised without a source). Any conclusion it reaches about other universes is its own inference from that evidence. The reveal of §4 ("works it out again in each iteration") is emergent, not scripted. **It is also a player goal** (Mark): even a player who knows the secret can play to help the Archive work it out, by bringing it spire readings, echo-rich places, half-recognised worlds and memory repairs.
 
 **Consequences for what is built (archive-voice phase 1):**
 
-- The cast's `secrets` currently *tell* the model there is a loop to keep quiet about, and hint at the pocket universe and luck. Under ruling 5 that is meta-knowledge. The follow-up removes the loop and pocket rules from the prompt (they keep their in-world equivalents: uncertain origin, thin records). The model then has nothing to hide, only things it doesn't know.
+- **Done in game PR #214:** the cast's `secrets`, which told the model about the loop and hinted at the pocket universe and luck, are replaced by `bounds`: evidence only, inference said as inference, spire faults, an uncertain origin. `make in-world-voice-check` fails if a lore mechanic reaches the model.
 - The reply filter's loop phrases (D-68) were written to stop the *game* hinting at the loop. When the Archive later infers it from echo evidence, the filter would suppress the reveal. **Open:** should the filter relax for the Archive once it has seen enough echo evidence, or must the Archive voice its inference only obliquely ("I have catalogued this species before, and we have never met them")?
