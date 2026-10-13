@@ -157,7 +157,7 @@ Mark's idea: security keys found in play unlock Archive features, and some may c
 | Phase | Ships | Key checks |
 |---|---|---|
 | S0 | Similar worlds in the sim, shown at the Archive and in the HUD | Fixture rankings asserted; VM equals the interpreter; weights in data |
-| S1 | News surfacing with Ollama, falling back to SimHash or date | Ranking recorded and replay-exact; fallback path tested with no Ollama; floors per model in a fixture |
+| S1 | News surfacing (embedder: local Ollama, cloud, or none, falling back to SimHash or date) | Ranking recorded and replay-exact; fallback path tested with no Ollama; floors per model in a fixture |
 | S2 | Crew recall, run-scoped | Nothing crosses New game (test) |
 | S3 | Archive index decay (with archive-voice phase 2) | Seeded decay reproduces; dropped and blurred entries asserted |
 | S4 | Cross-run library and the echo | Library survives New game; replay never reads it; the echo passes the reply filter and the voice check |
@@ -172,12 +172,16 @@ Mark's idea: security keys found in play unlock Archive features, and some may c
   - fix the docs that call SharedMem "persistent".
 - **#1797:** a non-exported `--entry main` exits 0 silently (hit while spiking).
 
-## Open questions for Mark
+## Rulings and open questions
 
-1. **Ollama on players' machines.** It's required for S1 and S4 semantics, the model is 1.3 GB, and it isn't bundled today. Options:
-   - optional, with the SimHash fallback;
-   - prompt to install;
-   - bundle a small embedder.
-2. **Is the library per player, or shared across players?** A shared online library would make other players' universes leak into yours. That's strong for the theme, but has privacy, moderation and cost implications.
-3. **Keys:** is (b) approved for now? Is (c) sponsored access something you'd fund later? It amends D-8 for those features.
-4. **The wall's thickness:** fixed, or thinning with each crossing, so later universes echo more?
+**Ruled (Mark, attended 2026-10-13):**
+
+1. **Embeddings are configurable and optional.** The choices are local Ollama, a cloud embedding service, or none. With none, S1 falls back to SimHash or date order and S4 stores content without vectors. The setting lives in Settings, out of world, beside the AI keys.
+2. **The library is per player.** The design stays open to a later cloud service that shares **anonymous** resources across players' universes. So library frames carry no personal data: only generated content, its kind, its hash and its vector. A future shared tier could then be added as a second, read-mostly scope, like the brain's user and project tiers.
+3. **Keys: (b) is approved, capability tokens found in play.** It leaves (c), sponsored access through our broker, open as a later option. (c) would still need a spend ruling and amends D-8 for those features.
+
+**Still open:**
+
+4. **The wall's thickness:** fixed, or thinning with each crossing? See S4 step 3. The floor is how similar a library item must be to the current question before the Archive's echo surfaces it.
+   - **Fixed:** echoes come at a roughly steady rate, which rises only as the library grows.
+   - **Thinning:** each completed crossing lowers the floor a little, down to a cap, so later universes recognise more. That makes the loop escalate as the player replays, and supports the Archive gradually working the loop out (§4).
