@@ -5,6 +5,7 @@
 - **Sprint:** Vision Integration - Sprint 4
 - **Priority:** P1 (Core NPC and narrative system)
 - **Source:** [Interview: AI Integration](../../vision/interview-log.md#2025-12-06-session-ai-integration-archive--orchestrator)
+- **2026-10-12:** the Archive's voice, secrets and model ladder are designed in [archive-voice.md](../next/archive-voice.md).
 
 ## Game Vision Alignment
 

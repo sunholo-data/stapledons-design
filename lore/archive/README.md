@@ -4,8 +4,13 @@ Player-facing explanations the ship's Archive gives about the physics the crew
 lives inside. They're canon (Mark, 2026-10-01, ledger D-11): "physics education
 … available in-game lore". The game should be interesting *and* teach.
 
-**Rule:** the bubble is the one invented thing, and the entries say so.
-Everything else is real physics, and every number comes from a check value.
+**Rule:** the entries speak in-world. The Archive believes the bubble is real
+and never calls anything invented, approximated, hand-waved or a game (D-67,
+Mark 2026-10-12: "it believes its real"; this supersedes the earlier rule that
+the entries say the bubble is invented). What is invented or approximated is
+recorded out of world, in the physics spec (`physics/higgs-bubble.md`) and the
+design docs. Everything else is real physics, and every number comes from a
+check value.
 
 ## Format
 
@@ -90,6 +95,7 @@ Prose may use the readable form; the checker treats each pair as the same unit.
 | `archive.photon-drive` | The photon drive and the cost of speed | `first_boost` |
 | `archive.ism-glow` | The interstellar medium and the glow | `cruise_above_0.9c` |
 | `archive.starbow` | Why the sky crowds forward | `cruise_above_0.9c` |
+| `archive.weather-between-the-stars` | Clouds, dust and the drive-hold limit | `cruise_above_0.9c` |
 | `archive.cmb-forward` | The blueshifted cosmic background | `cruise_above_gamma_275` |
 | `archive.tides` | Tides near black holes, and why Sgr A* is safe | `first_black_hole` |
 | `archive.shadow-ring` | The black hole's shadow and the Einstein ring | `first_black_hole` |

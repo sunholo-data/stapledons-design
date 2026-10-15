@@ -21,7 +21,7 @@
 
 The bubble is not just a ship - it's a **living micro-civilization**:
 
-- Starts with ~100 people
+- Starts with ~1,000 people and can grow to about 1,500 over the voyage (D-75)
 - Multi-generational: births, deaths, succession
 - Autonomous: player influences, doesn't control
 - Factions form around competing values

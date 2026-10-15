@@ -32,7 +32,7 @@ The Blender generator for that blockout is in the Blender repo at
 
 You captain a ship inside a Higgs bubble that can travel at any fraction of
 the speed of light. You have 100 years aboard. Every journey costs the galaxy
-centuries. Civilizations rise and die while you travel, and the ~100 people
+centuries. Civilizations rise and die while you travel, and the ~1,000 people
 inside the bubble become their own small civilization. The game is
 **conversations and consequences**. The physics is real: what you see out of
 the ship at speed is computed exactly. Stars crowd forward and turn blue, and

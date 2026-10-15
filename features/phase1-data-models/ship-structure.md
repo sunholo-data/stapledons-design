@@ -101,7 +101,7 @@ generator holds 1 g toward aft, so "down" is aft and "up" is forward (D-11):
 | Specification | Value | Notes |
 |---------------|-------|-------|
 | **Bubble radius** | 100 meters | Per bubble-ship-design |
-| **Population** | ~100 people (start) | Can grow/shrink |
+| **Population** | ~1,000 people (start), growing to ~1,500 (D-75) | Grows under the captain's birth policy; about 370 m² of floor each at 1,000 |
 | **Levels** | 15-20 | Each ~5-8m vertical spacing |
 | **Level diameter** | 30-80m | Varies by height (wider at equator) |
 | **Spire diameter** | ~10m | Central column, inaccessible interior |

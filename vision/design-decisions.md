@@ -422,6 +422,9 @@ Mutiny is not a setback to recover from. It ends your story.
 
 **Context:** The bubble-ship-design document specifies ~100 people in a 100m radius bubble. But we want a multi-generational society.
 
+> **SUPERSEDED IN PART by ledger D-75 (2026-10-13):** the ship starts with
+> about 1,000 people and grows to about 1,500. The mechanisms below stand.
+
 **Decision:** Start with ~100 people. Population can grow or shrink based on circumstances:
 - Growth possible if resources and morale allow
 - Decline risk during crises, despair, or resource pressure
@@ -955,6 +958,12 @@ assumed a flat face-on mirror. The canon sphere has half the drag, which gives
 1.52 kg (`physics/higgs-bubble.md` §5).
 
 
+The 1,000-AU arrival above records the original D-14 baseline. The current
+guided itinerary uses the existing D-54 finite-star stop under the attended
+[D-65 ruling](#2026-10-11-guided-voyage-seven-real-highlight-legs-ledger-d-65),
+without an outer-system stop followed by an inward journey. The cited
+historical physics check values are unchanged.
+
 ## [2026-10-01] Shielding, γ Range, Boundary Optics and Bubble Defaults (ledger D-15)
 
 > **SUPERSEDED IN PART by ledger D-29 (2026-10-03):** the glow fraction ε is
@@ -1322,3 +1331,141 @@ drowns the starfield, which contradicts "faint by design".
 
 **Implications:** The black hole is an invented scenario object, labelled with provenance "scenario". What counts as "sealed", and how it combines with the captain's death, is open (premise-and-loop.md §9).
 
+## [2026-10-11] Guided Voyage: Seven Real Highlight Legs (ledger D-65)
+
+**Context:** Mark found the guided outer-system arrivals and their subsequent
+inward body legs repetitive and asked for a shorter tour of interesting
+views. The position audit found real 1,000-AU inward journeys of about
+5.8 light-days, rather than a coordinate error. The existing D-54 finite-star
+planner can reach the close view in the interstellar leg itself.
+
+**Decision (Mark, attended 2026-10-11):**
+
+1. Start at Earth, then visit Sun → Jupiter → Callisto → Saturn → one close
+   Alpha Centauri A → one TRAPPIST-1 → Aldebaran: seven travel legs.
+2. Use the existing `stop_rule = 54` finite-star arrival for the three
+   interstellar destinations. Remove the duplicate 1,000-AU arrival and
+   inward hop from the current guided tour. Preserve the historical
+   `stop_rule = 0` ten-leg itinerary for legacy replays and tests.
+3. Keep the existing interstellar speeds, drive and hold/safety limits.
+   Every leg starts from the preceding actual endpoint; ship and Earth
+   clocks stay continuous. Shorter presentation does not authorize
+   position resets, teleports or invented distances.
+4. TRAPPIST-1 uses its existing D-54 finite-star stop, without the former
+   engineered habitable-zone placement beside planet e. Show and describe
+   the actual planet positions and apparent sizes at that stop.
+5. Offer Sgr A* after completion as an optional, clearly labelled separate
+   GR demonstration. It is not an eighth continuous leg from Aldebaran.
+
+**Rationale:** Grounded Strangeness keeps the views tied to real positions
+and the existing planner. Time Has Emotional Weight keeps the two clocks
+honest across the shorter itinerary. Choices Are Final keeps every travel
+leg a genuine checked commitment. Callisto remains both an interesting moon
+view and the clearance leg needed after the close Jupiter stop.
+
+**Implementation and validation:** The scoped seven-leg controller has
+134 passing checks, strict-VM/interpreter direct-chain parity, and native
+braking/arrival references. [Game PR #201](https://github.com/sunholo-data/stapledons-godot/pull/201)
+is merged on main after complete matching local/CI checks and a 98/100
+independent evaluation. Remaining R1 visual and console-journey gates stay open. This ruling
+introduces no new physics formula or lore check value. The normative current
+route and the optional-demo distinction are specified in
+[Guided voyage highlights](../features/guided-voyage-highlights.md).
+
+
+## [2026-10-13] The Generator Is the Drive; One Closed Ledger of Resources (ledger D-69)
+
+**Decision (Mark, attended):**
+
+1. **Option B: the generator is the drive.** The generator converts the
+   bubble's interior mass directly into drive light, at 100% and with no
+   waste heat, and does nothing else. This makes explicit a hand-wave the
+   canon already assumed: no real fuel or radiator can supply the guided
+   tour's ~3,100 kg of mass-energy.
+2. **The household runs on ordinary physics.** That means fusion with a
+   carried deuterium stock, and radiators limited by the wall's area.
+3. **m_eff = 1 kg.** It is the inertia the pocket shows to the outside, not
+   the ship's weight. Lowering it (towards 0.1 kg) is a candidate spire
+   discovery.
+4. **Changing the wall's shape is a discovery,** not a starting ability.
+   A pointed bow cuts drag.
+5. **The energy options form the first basis of a discoverable tech tree:**
+   basking near stars, civilisation-beamed boosts, black-hole
+   superradiance, hot-gas maps and efficiency blueprints. The tree "will
+   evolve over time".
+6. **Atoms never grow; mass-energy can be topped up by incoming light.**
+   Every resource the crew use is one of eight: `mass`, `water`, `power`,
+   `heat`, `garden`, `fabrication`, `compute` and `signal`.
+
+**Constraint:** there must be enough mass for a good game run. It holds.
+Drag mass × ship-years is fixed per light-year², so 5 t of free mass and 60
+ship-years reach about 2,500 ly at 0.1 cm⁻³, which covers the canon play
+area.
+
+**Rationale:** Grounded Strangeness, because one named hand-wave replaces a
+silent one. Choices Are Final, because every departure burns part of the
+ship. Ship Is Home, because the household loop is real and fragile.
+
+**Specified in:** [bubble-resources.md](../features/next/bubble-resources.md)
+§1–§4b. The check values RES-n there stay proposed until they move into
+[higgs-bubble.md](../physics/higgs-bubble.md) §8 and `sunholo/relativity`.
+
+
+## [2026-10-13] The Social Strand: Population, Births, Mutiny, Lifespan, the Galaxy Clock (ledger D-71)
+
+**Decision (Mark, attended):**
+
+1. **The featured crew are a share of those aboard** (~1,000, growing to ~1,500, per D-75; originally written for ~100). The practical split
+   follows the scale tiers: featured individuals, the rest as cohorts
+   ([civ-mirror.md](../features/next/civ-mirror.md) §2; stapledons-godot
+   crew-population.md).
+2. **Births are a captain's duty:** to control and encourage the
+   population. This supersedes bubble-society's "the captain cannot prevent
+   births".
+3. **Mutiny.** Losing the captaincy for good is game over. Before that there
+   may be an interregnum in which the captain has no power and the ship is
+   mob-ruled. A mutiny may end with the captain murdered, as an extreme
+   consequence of decisions. This reconciles black-holes ("the ship changes
+   course"), which belongs to the interregnum, with design-decisions and
+   premise-and-loop (game over and reset).
+4. **100 years is the captain's lifespan.**
+5. **Skips:** the player chooses how long, with a sensible default.
+6. **The galaxy clock always runs.** Worlds advance whether or not the ship is
+   near; this is a core concept.
+7. **The bubble ship is the first interstellar ship for all worlds.** Worlds
+   can talk to each other, but they discover each other, and the technology
+   to talk, through the ship.
+
+**Specified in:** [roadmap/r2-voyage-life.md](../roadmap/r2-voyage-life.md),
+[voyage-life-loop.md](../features/next/voyage-life-loop.md),
+[civ-mirror.md](../features/next/civ-mirror.md).
+
+
+## [2026-10-13] Population: About 1,000 Aboard, Growing to About 1,500 (ledger D-75)
+
+**Decision (Mark, attended):** the ship starts with about **1,000** people and
+grows to about **1,500** over the voyage. This replaces ~100 (2025-12-06). It
+is what a 100 m bubble's floor supports: about 370,000 m² over 15 levels, so
+370 m² each at 1,000 and 247 m² at 1,500.
+
+**Rescaled with it:**
+- **Mass budget, ×10:** equipment 50 t, people 70 t, stores 30 t, free mass
+  50 t, so about 200 t inside, structure excluded.
+- **Household power:** 8 MW at 1,000 and 12 MW at 1,500. That is 14% and 21%
+  of the wall's 300 K heat-shedding ceiling.
+- **Heavy water:** about 370 kg of D₂O per century.
+- **Gardens:** 40,000–60,000 m² of lit beds.
+
+**Consequences:**
+- **Mass no longer limits reach on its own:** 50 t of free mass gives about
+  7,800 ly at 0.1 cm⁻³. Growth now competes with speed: 500 more people take
+  about 35 t, leaving about 4,250 ly.
+- **Growth must be steered.** At bubble-society's 2–4% a year the ship would
+  pass 1,500 within 10–20 years. Reaching 1,500 in a century is about 0.4% net
+  a year, so the captain's birth policy (D-71) matters from the start.
+- **The featured crew** are about 1% of the people aboard. Everyone else lives
+  in cohorts (stapledons-godot crew-population.md; D-73).
+
+**Specified in:** [bubble-resources.md](../features/next/bubble-resources.md)
+(RES-9…11, 19, 20, 38…45), [mass-budget.md](../features/future/mass-budget.md),
+[ship-structure.md](../features/phase1-data-models/ship-structure.md).
