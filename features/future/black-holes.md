@@ -1,6 +1,7 @@
 # Black Holes
 
 **Status**: Planned
+**In the game (2026-10-15):** non-rotating Sgr A* implemented in M3 (game #158–#170; M3 met 2026-10-08). Kerr rotation and a true Galactic-Centre background remain future work.
 **Target**: v0.6.0 (Major Feature)
 **Priority**: P1 - High
 **Estimated**: Complex feature, multiple sprints

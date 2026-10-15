@@ -1,6 +1,7 @@
 # AI showcase: a game that talks, remembers and grows its own assets
 
 **Status:** Planned (direction ratified: ledger D-7, 2026-09-28)
+**In the game (2026-10-15):** the AI service foundation AI.1–AI.10a landed (offline stub by default); live opt-in lines ship for the Archive ([#214](https://github.com/sunholo-data/stapledons-godot/pull/214)) and the crew ([#224](https://github.com/sunholo-data/stapledons-godot/pull/224)). AI.10b (the live Medic voice audition) is open.
 **Priority:** P0: the conversations in R1 M4 depend on it, and it is a
 flagship for AILANG's AI stack.
 **Pillars:** The Ship Is Home (++), Time Has Emotional Weight (++), Grounded

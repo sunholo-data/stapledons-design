@@ -2,6 +2,7 @@
 
 ## Status
 - **Status:** Planned
+- **In the game (2026-10-15):** first slice landed: Crew console work cards with purpose, days, needs and costs, and refusals in words (crew-work W1, [#239](https://github.com/sunholo-data/stapledons-godot/pull/239)). W2–W5 wait on open questions.
 - **Priority:** P1 (Core to Ship-as-Home pillar)
 - **Estimated Effort:** 3-4 days
 - **Target Version:** v0.4.0

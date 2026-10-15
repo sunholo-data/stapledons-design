@@ -1,6 +1,7 @@
 # Bubble Ship External View HUD
 
 **Status**: Planned
+**In the game (2026-10-15):** the contextual HUD landed with R1-SHIP-UI ([#193](https://github.com/sunholo-data/stapledons-godot/pull/193)).
 **Priority**: P2 - Visual Polish / Navigation Aid
 **Feature Type**: Rendering/UI
 **Dependencies**: Tetra3D dome system (implemented), first-person navigation (implemented)

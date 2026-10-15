@@ -2,6 +2,7 @@
 
 ## Status
 - **Status:** Proposed (Mark, attended 2026-10-13: "I'm hoping that the actual game loop in between destinations is this aspect of the game, but also decisions on where to go next. We will be able to skip ahead through days/weeks/months/years as well, so need some kind of simulation on where that leaves the crew")
+- **In the game (2026-10-15):** first slice landed: the crew aboard with auto-run, standing orders and holds (R2-CREW, [#224](https://github.com/sunholo-data/stapledons-godot/pull/224)), and the Crew console ([#239](https://github.com/sunholo-data/stapledons-godot/pull/239)).
 - **Priority:** P1 for R2. This is the game's main loop between arrivals.
 - **Roadmap:** [roadmap/r2-voyage-life.md](../../roadmap/r2-voyage-life.md)
 - **Builds on:**

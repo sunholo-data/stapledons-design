@@ -5,6 +5,7 @@
 
 ## Status
 - **Status:** Planned
+**In the game (2026-10-15):** the title screen ([#160](https://github.com/sunholo-data/stapledons-godot/pull/160)) and New game with a seed (D-68, [#213](https://github.com/sunholo-data/stapledons-godot/pull/213)) landed; the full opening sequence is not built.
 - **Sprint:** Vision Integration - Sprint 1
 - **Priority:** P1 (First player experience)
 - **Source:** [Interview: Black Hole Deep Dive](../../vision/interview-log.md#2025-12-02-session-black-hole-feature-deep-dive)

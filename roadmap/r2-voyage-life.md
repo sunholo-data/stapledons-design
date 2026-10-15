@@ -30,7 +30,7 @@ voice of whoever aboard was willing to speak.
 | [inner-shapes-outer.md](../features/next/inner-shapes-outer.md) | How the crew and the worlds affect each other |
 | [bubble-resources.md](../features/next/bubble-resources.md) | The eight resources, D-69 |
 | [semantic-memory.md](../features/next/semantic-memory.md) | Crew recall, the Archive's misremembering, déjà vu across runs |
-| stapledons-godot `design_docs/planned/r2/crew-integration.md` | The crew host aboard: R2-CREW, D-70. Includes auto-run with standing orders, escalation rules and `crew_hold` (CI-5) |
+| stapledons-godot `design_docs/implemented/r2/crew-integration.md` | The crew host aboard: R2-CREW, D-70. Includes auto-run with standing orders, escalation rules and `crew_hold` (CI-5) |
 | stapledons-godot `design_docs/planned/r2/crew-population.md` | The ~1,000 aboard as 8–12 cohort actors with mood buckets (R2-CREW-POP): the ship's group and population tiers |
 
 ## Who does what
@@ -53,12 +53,12 @@ no game build.
 | ID | Milestone | Exit criteria | Depends |
 |---|---|---|---|
 | E0 ✅ | Crew host, verification loop, resources that flow, crew strain (crew_core 0.2.0, social_dynamics 0.4.0 published) | Done 2026-10-13; four sprints, each evaluated (80, 77, 80, 80) | — |
-| E1 | R2-CREW CI-0, ailang-packages#137 (crew_core 0.3.0): archiving, run-time `ship_event`, `policy` switch (D-70), standing orders, escalation rules, `advance(n)` | lab validate; claims unchanged; 500 turns grow linearly; `crew-sim --auto` escalations per year; 10-year interlude < 2 s in game | E0 |
+| E1 ✅ | R2-CREW CI-0, ailang-packages#137 (crew_core 0.3.0): archiving, run-time `ship_event`, `policy` switch (D-70), standing orders, escalation rules, `advance(n)` | lab validate; claims unchanged; 500 turns grow linearly; `crew-sim --auto` escalations per year; 10-year interlude < 2 s in game | E0 |
 | E2 | Kinship dimensions | household claims hold | E1 |
 | E3 | Life cycle (join and leave), age, seeded death hazard, births tied to mass and morale | lab claims on births and deaths over long runs | E1, E2 |
 | E4 | The skip report ("What happened aboard") built from the journal; skip claims (standing orders and escalation are now in E1) | `crew-sim --auto --turns 365` report and escalation claims | E1 |
 | E5 | Scenario templates bound to crew and ship state | the orchestrator can draw and bind | E1 |
-| E6 | Cohort actors (CP-0/CP-1 in ailang-packages#137; crew-population.md): headcount, OCEAN mix, mood and trust buckets, seeded transitions per bucket, yearly births and deaths | a founders scenario of ~100; cohort claims | E1 |
+| E6 ✅ | Cohort actors (crew_core 0.4.0, pinned in game #231) (CP-0/CP-1 in ailang-packages#137; crew-population.md): headcount, OCEAN mix, mood and trust buckets, seeded transitions per bucket, yearly births and deaths | a founders scenario of ~1,000 growing to ~1,500 (D-75); cohort claims | E1 |
 | E7 | Crew memory (semantic-memory S2) in the reply worker | variety and recall claims | E1 |
 
 ### Track L: the scenario library (scenario agent)
@@ -76,7 +76,7 @@ no game build.
 
 | ID | Milestone | Exit criteria | Depends |
 |---|---|---|---|
-| G1 | R2-CREW: the crew aboard; `last-messages-home` first; consent by default; mass bill as a readout (D-70) | its ACs (`make crew-parity`, `make crew-vendor-check`, …) | E1 |
+| G1 ✅ | R2-CREW: the crew aboard (landed, game [#224](https://github.com/sunholo-data/stapledons-godot/pull/224), 2026-10-14; Crew console [#239](https://github.com/sunholo-data/stapledons-godot/pull/239)); `last-messages-home` first; consent by default; mass bill as a readout (D-70) | its ACs (`make crew-parity`, `make crew-vendor-check`, …) | E1 |
 | G2 | Skip from the Voyage console; interrupts; "What happened aboard" in the Archive's voice | one ship-year skip < 5 s in game; a report shown | E4, G1 |
 | G3 | The orchestrator draws library scenarios by beat and tension | scenarios appear in play; parity holds | E5, L3, G1 |
 | G4 | Where to go next with the crew's voices at the navigation station | crew opinions shown from live state | G1 |
