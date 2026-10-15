@@ -1469,3 +1469,34 @@ is what a 100 m bubble's floor supports: about 370,000 m² over 15 levels, so
 **Specified in:** [bubble-resources.md](../features/next/bubble-resources.md)
 (RES-9…11, 19, 20, 38…45), [mass-budget.md](../features/future/mass-budget.md),
 [ship-structure.md](../features/phase1-data-models/ship-structure.md).
+
+
+## [2026-10-15] One Trust Scale, Never Shown; the Game Raises Archive Events
+
+**Context:** The Archive becomes a crew actor in the crew simulation
+(stapledons-godot archive-npc A1; crew_core 0.6). [archive-crew-trust.md](../features/future/archive-crew-trust.md)
+scores trust on −100..100, while the crew simulation scores all trust on
+0..100 with 50 neutral.
+
+**Decision (Mark, attended):**
+
+1. **One scale for all trust:** 0–100, 50 neutral. That covers crew to
+   captain, crew to crew, crew to Archive and the Archive to crew. The
+   archive-crew-trust table maps across by halving.
+2. **The numbers are not player-facing.** They influence descriptions: the
+   words on the crew console, the crew's lines, and the Archive's manner.
+3. **The game raises Archive events** from what happens (answer confirmed or
+   contradicted, crisis help or failure, confusion witnessed, captain backs
+   it, repair, degraded). The crew simulation only applies their effects,
+   by the table and each witness's personality, deterministically.
+4. Earlier rulings for the first release (archive-npc OQ3 and OQ4): trust in
+   the Archive only, with no captain coupling, and integrity changes only
+   from events. Both are switches, off by default.
+
+**Rationale:**
+- **The Game Doesn't Judge.** The player reads people, not meters.
+- AI text never decides anything in the simulation: the voice's words don't
+  move trust; the game's event rules do.
+- One scale lets every trust rule and readout treat the Archive like a crew
+  member.
+
