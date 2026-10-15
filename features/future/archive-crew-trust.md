@@ -39,6 +39,18 @@ From [design-decisions.md](../../vision/design-decisions.md):
 
 ## Trust Mechanics
 
+> **Scale (Mark, 2026-10-15):** all trust in the game uses one scale, 0–100
+> with 50 neutral: crew to captain, crew to crew, crew to Archive and the
+> Archive to crew. The −100..100 figures below are kept as written and map
+> across by halving (a change of −10 to −25 becomes −5 to −12; Devoted 90+,
+> Trusting 70–89, Neutral 31–69, Skeptical 11–30, Hostile 0–10). **The
+> numbers are never shown to the player.** They choose the words the game
+> uses: "Ligaya trusts it; Andrei doubts it", the crew's lines, the Archive's
+> manner. Archive events (an answer confirmed or contradicted, help or failure
+> in a crisis, confusion witnessed, repair) are raised by the game from what
+> happens. The crew simulation (crew_core) only applies them, so AI words
+> never move trust. See the decision log, 2026-10-15.
+
 ### Individual Trust Levels
 
 Each crew member rates Archive from -100 to +100:
