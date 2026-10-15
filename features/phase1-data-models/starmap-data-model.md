@@ -1,5 +1,8 @@
 # Starmap Data Model
 
+> **2026-10-06:** the real-data reach here ("0-1000 ly real Gaia") is superseded by [galaxy-beyond-measurement.md](../next/galaxy-beyond-measurement.md): complete measured data reaches 100 pc (326 ly); beyond is a measured sample plus completion, then a model galaxy.
+
+
 **Status**: Planned
 **Target**: v0.3.0
 **Priority**: P1 - High

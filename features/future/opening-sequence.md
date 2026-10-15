@@ -1,5 +1,8 @@
 # Opening Sequence
 
+> **Canon:** the consolidated premise is [vision/premise-and-loop.md](../../vision/premise-and-loop.md) (2026-10-06). Where this doc differs (e.g. the AI's knowledge, what carries over), that doc wins.
+
+
 ## Status
 - **Status:** Planned
 - **Sprint:** Vision Integration - Sprint 1
