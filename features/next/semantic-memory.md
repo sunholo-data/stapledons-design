@@ -90,6 +90,28 @@ Every news item (templated or generated) and every crew bio, home-life note and 
 
 [ai-showcase.md](../ai-showcase.md) "Crew who remember": past conversations are embedded per crew member and recalled within a run. The same index and namespaces apply, one per crew member. **This is run-scoped: memories never cross** (§6).
 
+### S2b: Memories that change as they are remembered (compaction)
+
+**Status:** proposed; Mark's direction and rulings 2026-10-14. The lab prototype plan is ailang-packages `design_docs/planned/crew-memory.md` (PR #142).
+
+A voyage lasts decades and each crew member's memory store is capped. Instead of dropping the oldest lines, old memories are **compacted**: an AI pass rewrites a span of them into fewer, shorter ones, the way a long chat is summarised. Unlike a chat summary, compaction is unfaithful in human ways.
+
+1. **Coloured by the present.** A memory is rewritten in the light of the moment it is compacted, not the moment it happened. The engineer refused rest during the reclaimer failure remembers "a hard week; we all pulled through" while they trust the captain, and "the captain worked me until I broke" after a betrayal. Inputs: mood band, stress, trust in the captain and regard for the people involved, at compaction time.
+2. **Coloured by the past.** A memory encoded under high stress or loss is more salient and survives longer, but is more emotional and less precise.
+3. **Memories of memories degrade.** Each compaction is a generation, and fidelity falls with every one. Names, numbers, dates and order go first; the gist and the feeling go last. A memory compacted three times can be vivid, confident and partly wrong.
+4. **First-hand significant events last longer** (Mark): loss, first contact, deep time, betrayal, a large trust or regard change. Retention per generation is about 95/100 for those, about 85/100 for ordinary memories.
+5. **Misremembering** (Mark: "health or personality trait?"; ruled both):
+   - **the Archive:** its Memory Health sets how fast fidelity falls and how often it misattributes, so its unreliability comes from the same process as the crew's, not a separate roll (S3);
+   - **crew:** personality and state at compaction, with no separate trait. Low conscientiousness loosens details; high neuroticism pulls memories toward threat and blame; high openness fills gaps with plausible invention; stress and fatigue raise the chance, and age raises it slowly. Two crew can remember one event differently because of who they are and what they were going through.
+6. **Players only hear memories** (Mark): in what crew and the Archive say. There is no list of memories to read.
+
+**Numbers decide, AI only words** (R2-CREW's rule):
+
+- A memory record carries its sources, span, generation, fidelity and salience (0..100), tone (−100..100) and the state at compaction. When to compact (a year turn, a departure, the end of a skip, the cap), which records, and the new numbers are pure and seeded: same seed, same records, on both engines.
+- The AI writes the compacted text from the parent texts and the numbers, which become instructions ("fidelity 40: keep the gist and the feeling, lose names and numbers; you now distrust the captain"). Checks: no identifiers, no people or events outside the sources (misattribution allowed only below a fidelity floor, by a seeded roll), tone agrees in sign with the record.
+- Cached by hash like sampled words, so replays and offline play reuse it. With no model, a template writes the gist from the numbers.
+- Grievance, trust and regard stay numbers in crew_core; behaviour never reads memory text. Memories stay run-scoped (§6): they never cross into the next universe.
+
 ### S3: The Archive's memory is its index (archive-voice phase 2)
 
 The Archive's retrieval index is real. As Memory Health falls:
