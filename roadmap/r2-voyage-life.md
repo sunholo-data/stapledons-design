@@ -56,7 +56,7 @@ no game build.
 | E1 ✅ | R2-CREW CI-0, ailang-packages#137 (crew_core 0.3.0): archiving, run-time `ship_event`, `policy` switch (D-70), standing orders, escalation rules, `advance(n)` | lab validate; claims unchanged; 500 turns grow linearly; `crew-sim --auto` escalations per year; 10-year interlude < 2 s in game | E0 |
 | E2 | Kinship dimensions | household claims hold | E1 |
 | E3 | Life cycle (join and leave), age, seeded death hazard, births tied to mass and morale | lab claims on births and deaths over long runs | E1, E2 |
-| E4 | The skip report ("What happened aboard") built from the journal; skip claims (standing orders and escalation are now in E1) | `crew-sim --auto --turns 365` report and escalation claims | E1 |
+| E4 (game half ✅) | The skip report ("What happened aboard") built from the journal; skip claims (standing orders and escalation are now in E1). **Game half done** (R2-INTERLUDE, game [#264](https://github.com/sunholo-data/stapledons-godot/pull/264), 2026-10-17): the cruise digest in the pure sim (counts, movement, up to seven moments by a local salience rule) feeds the crossing review. **Engine half open:** the journal-built report in crew_core; the game swaps its local ranking for it (I3b) | `crew-sim --auto --turns 365` report and escalation claims | E1 |
 | E5 | Scenario templates bound to crew and ship state | the orchestrator can draw and bind | E1 |
 | E6 ✅ | Cohort actors (crew_core 0.4.0, pinned in game #231) (CP-0/CP-1 in ailang-packages#137; crew-population.md): headcount, OCEAN mix, mood and trust buckets, seeded transitions per bucket, yearly births and deaths | a founders scenario of ~1,000 growing to ~1,500 (D-75); cohort claims | E1 |
 | E7 | Crew memory (semantic-memory S2) in the reply worker | variety and recall claims | E1 |
@@ -77,7 +77,7 @@ no game build.
 | ID | Milestone | Exit criteria | Depends |
 |---|---|---|---|
 | G1 ✅ | R2-CREW: the crew aboard (landed, game [#224](https://github.com/sunholo-data/stapledons-godot/pull/224), 2026-10-14; Crew console [#239](https://github.com/sunholo-data/stapledons-godot/pull/239)); `last-messages-home` first; consent by default; mass bill as a readout (D-70) | its ACs (`make crew-parity`, `make crew-vendor-check`, …) | E1 |
-| G2 | Skip from the Voyage console; interrupts; "What happened aboard" in the Archive's voice | one ship-year skip < 5 s in game; a report shown | E4, G1 |
+| G2 ✅ | Skip from the Voyage console; interrupts; "What happened aboard" in the Archive's voice. Landed for the cruise case (R2-INTERLUDE, game [#264](https://github.com/sunholo-data/stapledons-godot/pull/264), 2026-10-17; evaluation 89/100): the crossing goes in chunks the sim publishes (protocol 2.10), a crew hold stops it on its check-in day, and the crossing review (crossing, home picture per tier, aboard, moments with faces, who changed, the medium, waiting) is read at the player's pace; the Archive frames it with authored lines and, with live AI, tells it once, recorded and voiced | one ship-year skip < 5 s in game (critical_only decade 0.89 s, slowest chunk 0.11 s); a report shown | E4, G1 |
 | G3 | The orchestrator draws library scenarios by beat and tension | scenarios appear in play; parity holds | E5, L3, G1 |
 | G4 | Where to go next with the crew's voices at the navigation station | crew opinions shown from live state | G1 |
 | G5 | Households and generations aboard (births, deaths, coming of age) | portraits and new identities (DD 2025-12) | E3, G2 |
