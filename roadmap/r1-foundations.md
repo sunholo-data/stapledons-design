@@ -1,6 +1,6 @@
 # R1: Foundations, from spike to first playable journey
 
-**Status:** In progress (snapshot: 2026-10-11)
+**Status:** In progress (snapshot: 2026-10-15)
 **Target:** r1 (four milestones after the spike)
 **Priority:** P0
 **Dependencies:** [ADR 0001](../decisions/0001-engine-and-architecture.md), [relativity spec](../physics/relativity-spec.md), [Higgs bubble physics](../physics/higgs-bubble.md)
@@ -20,32 +20,27 @@ live in `stapledons-godot/design_docs/`. The first is
 | Grounded Strangeness | ++ | +2 | The universe looks exactly as it would at 0.99c or near a black hole (M1, M3) |
 | **Net** | | **+6** | **Go** |
 
-## Implementation status (2026-10-11)
+## Implementation status (2026-10-15)
 
 This table records progress; the acceptance criteria below still define completion.
 
 | Work | Current state and next gate |
 |---|---|
-| M1, relativistic sky | Rendering and catalogue work are built; final visual and performance acceptance remain open. |
+| M1, relativistic sky | Built through M1.8, including the forward CMB disc (game #79). Remaining: M1.5b (AC9 renders, bright-star render gate, report). |
 | M2, journey core | Landed: plan, commit, flight, clocks, energy and deterministic replays. |
 | M3, black holes | Nonrotating Sgr A* demo landed, including lensing, hover/orbit, clocks and tides. The labelled background is the Sol sky; true Galactic-Centre imagery and Kerr rotation remain future work. |
 | Ship and bridge | Walkable bridge/Commons, lifts, contextual HUD and Navigation/Voyage/Archive consoles landed. Lighting and art acceptance continue. |
-| M4, first journey | Transit, arrival, home news, legacy and Archive exist. The console-based complete-journey audit and remaining visual gates are next. |
-| M5, planets | Ephemerides, body navigation, physical planet rendering and guided stops are built; full system-map/flyby controls and remaining ring/lighting gates remain open. |
+| M4, first journey | Transit, arrival, home news, legacy and Archive exist; the playthrough bot drives the whole journey through the consoles (game #225, #232, #235). Remaining: the display audit AC4 (D-77, D-78), the 3D-ship goldens and captures (M4.6gR3/rR3), the scene-session golden. |
+| M5, planets | Ephemerides, body navigation, physical planet rendering, rings and shadows, the inverse-raytraced flyby view and the highlight meter are built. Remaining: flyby/ring goldens wired into `make golden`, atmosphere, the system-map/window-view UI (partly overtaken by D-46/D-54), α Cen planets, M5 report. |
 | Guided voyage highlights | D-65 landed in [game PR #201](https://github.com/sunholo-data/stapledons-godot/pull/201): Earth start, then Sun → Jupiter → Callisto → Saturn → one close Alpha Centauri A → one TRAPPIST-1 → Aldebaran. Existing D-54 finite-star stops replace duplicate outer/inward legs; clocks and checked endpoints remain continuous. Complete local/matching CI, native references, exported build and independent evaluation (98/100) pass. The wider M4/M5 gates remain open. [Current feature design](../features/guided-voyage-highlights.md). |
 | ISM and dust | D-64 follow-up landed in [game #201](https://github.com/sunholo-data/stapledons-godot/pull/201): equal-area curved wall marks, source-based false-colour density surfaces and ten pinned moon mosaics including Callisto. Complete local/matching CI, GPU references, exported build and independent review pass. Rates and emission remain unchanged; Titan radar/IR is excluded from visible imagery. PR A landed in [game #199](https://github.com/sunholo-data/stapledons-godot/pull/199): local-cloud routes, ordered media, drag/hold limits, wall glow, grain impacts, HUD and Archive. Published outlines recover 56/59 sight lines; shell depths are labelled approximate. D-62 accepts P2. Representative median CPU/GPU budgets pass on M4 Max; no universal latency guarantee. [Follow-up completion report](https://github.com/sunholo-data/stapledons-godot/blob/main/design_docs/implemented/r1/bubble-surface-and-moon-textures-report.md). Dense-cloud/LLCC PR B is [deferred](https://github.com/sunholo-data/stapledons-godot/blob/main/design_docs/planned/r1/ism-dense-clouds.md) with failed scientific comparisons. |
 | Free-navigation recovery | D-63 landed in game #199: rest start near Earth, stable body hierarchy, actionable refusals, real-time idle, visible Earth at arrival/+60s, default mouse look, panel pointer ownership, pause and default-visible local clouds. Stops are inertial standoffs. Native OS pointer capture remains unverified on the unattended desktop; the production focus guard is intact. |
-| Optional crew AI | Offline foundation/Medic stub built. First attended live run and voice review remain pending. |
+| Optional crew AI | Offline stub by default; live opt-in lines ship for the Archive (game #214) and the crew (game #224). The Medic voice audition (AI.10b) remains pending. |
+| Crew (R2 preview) | R2-CREW landed (game #224), crew_core 0.4.x, the Crew console (game #239). See [r2-voyage-life.md](r2-voyage-life.md). |
 
-The mission loop's latest published attempt, 2026-10-11 at 20:10:17 UTC,
-reports that every controller rung is unusable or its bucket is spent. The
-fleet is parked until quota is refilled or a controller lane is restored
-([issue #119](https://github.com/sunholo-data/stapledons-godot/issues/119#issuecomment-6113222904)).
-This is the controller's published status, not an independently observed
-running process.
-Its next product target is the remaining M4 console-based journey audit. The
-D-52/D-56 amended scene plan retains its existing approval checkpoint before execution.
-The attended ISM, presentation and guided-navigation work proceeds separately.
+The mission loop works the approved queue (32 iterations by 2026-10-15; records on
+[issue #119](https://github.com/sunholo-data/stapledons-godot/issues/119)). Its next product
+items are M4.6gR3 and row 7i; attended work proceeds alongside.
 
 ## Problem
 
@@ -209,7 +204,7 @@ begins and where the hard-SF promise is most visible.
    speed is **0.99c** (γ 7.0888: about 227 ship-days and 4.414 Earth-years each
    way; ISM readout 1.37 × 10¹⁷ J, or 1.52 kg; HB-20 to HB-22, HB-53, HB-54). The player can
    change it. Commit is one dialog showing both clocks (D-12).
-2. **Transit:** the **D-6 interior**, an isometric three-layer view from inside
+2. **Transit:** *(superseded in form by D-52 = A, 2026-10-08: the unified 3D painted ship)* the **D-6 interior**, an isometric three-layer view from inside
    the bubble (Blender play area, interior panorama, then the live relativistic
    sky through the panorama's exported camera). "Up" is the direction of
    travel throughout; there's no flip (D-14). Time warp; the HUD shows both

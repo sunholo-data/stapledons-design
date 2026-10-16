@@ -3,6 +3,7 @@
 ## Status
 
 - **Status:** Proposed 2026-10-12 (Mark, attended: "we need perhaps a voice/tone for the Archive - it is an AI and has a persona like we use with NPCs etc. it needs to know what secrets it keeps, and we should work out how it can be an unreliable narrator - perhaps just weaker models every now and then? kinda fun to use hallucinations as a game feature?"). He then asked whether the model voicing the Archive could believe it really is aboard the bubble ship, and asked for this doc plus a first playable version at the Archive console.
+- **In the game (2026-10-15):** phase 1 implemented: Ask the Archive with the sandboxed persona ([#214](https://github.com/sunholo-data/stapledons-godot/pull/214), reply filter [#219](https://github.com/sunholo-data/stapledons-godot/pull/219); dev.26–28).
 - **Priority:** P1. The Archive is the player's main voice of knowledge and the only interface to the spire.
 - **Builds on:**
   - [archive-system.md](../future/archive-system.md): OCEAN personality, Memory Health tiers, repair choices, the Archive as spire reader;

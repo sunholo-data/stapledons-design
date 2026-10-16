@@ -1,6 +1,7 @@
 # Journey Planning UI
 
 **Status**: Planned
+**In the game (2026-10-15):** plan and commit (one dialog, both clocks) landed in M2; the navigation console carries it on the ship (R1-SHIP-UI).
 **Target**: v0.4.0
 **Priority**: P1 - High
 **Estimated**: 1 week

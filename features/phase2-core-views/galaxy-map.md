@@ -2,6 +2,7 @@
 
 **Version:** 0.5.2
 **Status:** Planned
+**In the game (2026-10-15):** implemented in M2 (game PRs #22–#35), with D-54 "In this system" stops ([#182](https://github.com/sunholo-data/stapledons-godot/pull/182)).
 **Priority:** P0 (Core Navigation)
 **Complexity:** High
 **AILANG Workarounds:** Recursion depth (use viewport culling), lookup by ID (use Arrays + extern)

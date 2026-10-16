@@ -7,6 +7,7 @@
 > See [view-layer-ailang-migration.md](https://github.com/sunholo-data/stapledons_voyage/blob/930eca1/design_docs/planned/phase2-core-views/view-layer-ailang-migration.md) for the migration plan.
 
 **Status:** Planned
+**In the game (2026-10-15):** superseded in form by D-52 (the unified 3D painted ship); the walkable bridge, Commons and console stations shipped (R1-SHIP-UI, [#193](https://github.com/sunholo-data/stapledons-godot/pull/193)/[#195](https://github.com/sunholo-data/stapledons-godot/pull/195)/[#196](https://github.com/sunholo-data/stapledons-godot/pull/196)).
 **Priority:** P0 (Core Player Experience)
 **Complexity:** High
 **Depends On:** ~~View System (90% done)~~ View Layer Migration, Isometric Engine (done)
