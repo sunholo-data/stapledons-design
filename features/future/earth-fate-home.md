@@ -13,7 +13,7 @@
   - [endgame-legacy.md](endgame-legacy.md) ("Earth's fate is always shown at the end");
   - [black-holes.md](black-holes.md) (the rogue black hole as a scenario object);
   - the game's **R2-HOME-TIERS**: stapledons-godot `design_docs/planned/r2/home-tiers.md` (on branch `design/home-tiers` until it lands on main; ledger D-86). Its canon note says tiers 13–15 (10,000 years and later) show Earth's fate, ship as a "no threat modelled yet" baseline, and wait for this design.
-- **Reference art:** private (§7). The first, illustrated set at `gs://stapledons-voyage-dev-builds/reference/earth-fate/` is **superseded** by the art direction in §4a; the rendered set goes to `gs://stapledons-voyage-dev-builds/reference/earth-fate/rendered/`.
+- **Reference art:** private (§7). The first, illustrated set at `gs://stapledons-voyage-dev-builds/reference/earth-fate/` is **superseded** by the art direction in §4a; the rendered set (with `notes.md`) is at `gs://stapledons-voyage-dev-builds/reference/earth-fate/rendered/`.
 
 ## The rulings (Mark, attended 2026-10-19)
 
@@ -113,7 +113,7 @@ Each fate has a pool, `fate_<name>_v<k>.webp`, counted in a data module like `ho
 | **saved** | outcome at N, a salvation path completed | Today's deep-time pictures (tiers 13–15): ice ages, moved coasts, the long ordinary future. The "no threat modelled" baseline |
 | **scorched** | outcome at N, moderate kick | An eccentric orbit and climate catastrophe: at a 0.5 AU perihelion the Sun is 1.07° across and 4× as bright over burned land |
 | **ejected** | outcome at N, strong or chaotic kick | Eternal night and ice. The Sun is a dazzling point, not a disc: magnitude −16.7 at 100 AU (still brighter than the full Moon), −11.7 at 1,000 AU, and no warmth. No aurora |
-| **captured** | outcome at N: the Sargasso path, or a chaotic capture | Earth in orbit around the black hole (the Sargasso ending). The hole has no visible disc; it shows as lensed stars, an Einstein ring a few arcminutes across at AU distances (4.3′ at 1 AU), the Sun far off |
+| **captured** | outcome at N: the Sargasso path, or a chaotic capture | Earth in orbit around the black hole (the Sargasso ending). The hole has no visible disc; it shows as lensed stars, an Einstein ring at most about 0.57° across at the closest survivable orbit (~2.4 × 10⁶ km, beyond the fluid Roche limit) and a few arcminutes at AU distances (4.3′ at 1 AU). The shadow (≤ ~13″) is invisible to the eye. The Sun is far off |
 | **comet showers** | t ≥ N + S, Earth still bound to the Sun | The Oort cloud's long aftermath as a *rate*: a bright comet every few years, not a sky full; old impact scars |
 | **diaspora** | evacuation completed, no salvation | An empty, overgrown town. People left |
 
@@ -141,15 +141,27 @@ For the 10 M☉ rogue hole of premise §1: Schwarzschild radius r_s = 29.5 km; s
 | 100 AU | 26″ | invisible |
 | 10 AU | 82″ | invisible |
 | 1 AU | 4.3′ | invisible |
-| Roche limit (~1.2 × 10⁶ km) | ~0.8° | 26″: the only distance where it is resolvable at all, and still not by eye |
+| Closest survivable captured orbit (~2.4 × 10⁶ km, ~81,000 r_s) | ~0.57° | ~13″: invisible to the eye |
+| Earth's rigid Roche limit (~1.2 × 10⁶ km; not survivable, for reference) | ~0.8° | ~26″: still invisible to the eye |
 
-The ring diameter is 2√(2 r_s / D) for a source far behind the hole.
+The ring diameter is 2√(2 r_s / D) for a source far behind the hole; the shadow diameter is 2 × 76.7 km / D.
+
+**Roche limits for Earth around a 10 M☉ hole** (M/m ≈ 3.3 × 10⁶): rigid d ≈ 1.26 R⊕ (M/m)^⅓ ≈ 1.2 × 10⁶ km; fluid d ≈ 2.44 R⊕ (M/m)^⅓ ≈ 2.3 × 10⁶ km. Earth is closer to the fluid case, so **a survivable captured orbit needs r ≳ 2.4 × 10⁶ km** (about 81,000 r_s). Even there the hole's shadow is about 13″, invisible to the eye: a captured sky shows lensed stars, never a black disc. (Corrected 2026-10-19 by the render spike; the first draft used the rigid limit.)
 
 - **The hole is invisible to the naked eye on approach.** Earth detects it by astrometric microlensing of background stars, by drift in the outer planets' orbits and by a disturbed comet cloud. That is how OGLE-2011-BLG-0462 was found. It fits the canon (premise §1): Earth cannot see the doom until the ship tells it where to look.
 - **Ejected:** the Sun is magnitude −16.7 at 100 AU and −11.7 at 1,000 AU (−26.7 + 5 log₁₀ d). There is no aurora.
 - **Scorched:** a perihelion of 0.5 AU makes the Sun 1.07° across (twice today's 0.53°) and 4× as bright.
 - **Comet showers** raise the rate of bright comets to about one every few years. Not a sky full.
 - These values go into the physics spec as check values, with tests, before any fate sky ships (the game's definition of done, gate 2).
+
+### 4c. Renderer prerequisites before fate art ships
+
+The rendered reference set (`gs://stapledons-voyage-dev-builds/reference/earth-fate/rendered/`, with its `notes.md`) found four gaps in the game's tools. Each must be closed, with tests, before §4a fate art can ship:
+
+1. **No atmosphere model.** The game renders space skies only: no day or twilight sky, airglow, scattering or refraction. Every fate sky is seen from the ground.
+2. **The sim refuses `bh_r` above 1e6 r_s.** Fate skies need the hole at up to AU distances and beyond (1 AU ≈ 5 × 10⁶ r_s), so the accepted range must grow while the lensing lookup tables stay finite across it (definition of done, gate 5).
+3. **The display floor hides near-threshold stars against a bright sky.** With a bright Sun or a twilight sky, stars near the visibility threshold vanish; the floor must account for sky brightness.
+4. **Precession and proper motion over millennia are not applied.** A sky 10,000+ years on must move the pole and the stars (the catalogue's proper motions).
 
 ## 5. Lines and voice
 
@@ -167,12 +179,13 @@ A game design doc (`design_docs/planned/<release>/earth-fate-home.md`) will spec
 - `time.fate` (and the fate variant) on the wire at a new protocol minor, with older streams unchanged;
 - the host's fallback: fate picture, else the tier picture, else words only;
 - `make home-art-check` extended to the fate pools;
+- the four renderer prerequisites of §4c, each closed with a test, and the §4b values as physics-spec check values;
 - a check that no fate art or fate line reaches `website/`.
 
 ## 7. Spoilers and the reference art
 
 - **Fate art never goes on the website**, in News posts, release notes, social posts or public captions. This follows the website spoiler policy (stapledons-godot `website/news/README.md`: never endings, the long-horizon endgame, or what happens to civilisations). R2-HOME-TIERS already keeps tiers 13–15 off the site for the same reason.
-- **The reference art is private**, in the private dev-builds bucket, not the public assets bucket. The first, illustrated set at `gs://stapledons-voyage-dev-builds/reference/earth-fate/` is superseded by §4a; the rendered set goes to `gs://stapledons-voyage-dev-builds/reference/earth-fate/rendered/`.
+- **The reference art is private**, in the private dev-builds bucket, not the public assets bucket. The first, illustrated set at `gs://stapledons-voyage-dev-builds/reference/earth-fate/` is superseded by §4a; the rendered set (with `notes.md`) is at `gs://stapledons-voyage-dev-builds/reference/earth-fate/rendered/`.
 - Shipping art is a separate question (OQ6): D-18 puts game masters in the public bucket `gs://stapledons-voyage-assets`, where anyone could find them.
 
 ## Open questions
