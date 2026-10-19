@@ -37,10 +37,9 @@ effects themselves.**
 
 - **Canon:** a **transparent, perfectly spherical Higgs bubble, ~100 m radius**, containing the whole
   inhabited ship.
-  - **Spire:** runs along the vertical thrust axis. **Up is forward**; the
-    engines are at the bottom (aft).
+  - **Spire:** the **generator mast**, vertical through the levels (D-92, 2026-10-19: it is not a thrust axis). The direction of travel lies in the deck plane, along **Blender +Y (the bow)**; the ship moves sideways relative to the mast. The bubble's forward pole and its glow are on the bow side, at the equator.
   - **Levels:** 10–20+ open levels radiate from the spire.
-  - **Bridge:** a disc at the top of the spire, under the bubble's forward pole.
+  - **Bridge:** a disc at the top of the spire, looking out over the bow rail toward the forward pole near its horizon.
   - **Garden cathedral / forest level:** inside the spherical boundary. Keep
     trunks, branches, canopy and their supporting deck within the bubble; no
     detached tree or outboard garden annex.

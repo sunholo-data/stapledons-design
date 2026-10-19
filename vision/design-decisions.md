@@ -650,6 +650,10 @@ Emotionally: "sad but happy" - bittersweet remembrance.
 > Profile (ledger D-11)" (below). The 1 g is held by the bubble's generator, not
 > by continuous thrust, and there is no flip. The vertical axis, aft-is-down and
 > up-is-forward orientation stand.
+>
+> **SUPERSEDED IN PART 2026-10-19** by "Travel Runs Along the Deck, Into the
+> Screen (ledger D-92)" (below): up is no longer forward. The vertical mast and
+> the stacked levels stand; the direction of travel now lies in the deck plane.
 
 **Decision:** The ship is oriented vertically along the thrust axis. The spire runs from engines (bottom/aft) to observation deck (top/forward). Continuous 1g thrust provides artificial gravity - 'down' is toward the engines, 'up' is toward the direction of travel. Levels are stacked along this axis, with open sides facing outward toward the bubble boundary. This means when standing on any level, you look UP toward the bridge and DOWN toward engineering.
 
@@ -704,6 +708,7 @@ with the live physics.
 
 **Decision (Mark, attended; ledger D-6):**
 - **The player is inside the bubble.** Up = forward = the direction of travel.
+  *(Amended 2026-10-19, D-92: travel lies in the deck plane, toward the bow.)*
 - **Isometric play areas** are built as **Blender 3D models**, rendered in Godot
   through an orthographic camera **tilted back** (about −14°) at **room scale**
   (about 16 m in view). The player walks around. Shading is toon plus ink.
@@ -716,7 +721,7 @@ with the live physics.
   the panorama moves slowly, the play area moves 1:1, and the foreground
   silhouettes move fast.
 - **The bridge sits at the top of the spire, and its dome is the bubble's forward
-  pole.** The starbow gathers overhead there. Lower decks see the sky past the
+  pole.** The starbow gathers overhead there. *(Amended 2026-10-19, D-92: the starbow gathers ahead, over the bridge's bow rail; the bridge's dome is no longer the forward pole.)* Lower decks see the sky past the
   level rims, and it goes **dark sideways at speed**. That's physics, and it's
   what makes the bridge the place to watch from.
 - **Conversations use large portraits.**
@@ -1520,3 +1525,55 @@ whether or not the game models it. Mark was asked when the black hole destroys E
 
 **Specified in:** [earth-fate-home.md](../features/future/earth-fate-home.md) (future, unscheduled).
 The fate art is a spoiler and never goes on the website.
+
+
+## [2026-10-19] Travel Runs Along the Deck, Into the Screen (ledger D-92)
+
+**Context:** R2-CAMERA-FORWARD (game PR #281) measured that with the forward
+pole straight overhead (D-14, "up = forward"), no camera can hold the deck and
+the journey in one frame. At the fixed 78° field of view the pole is in frame
+only at a pitch of 51° or more, and from there no deck is visible. Interior
+gravity is the generator's comfort 1 g (D-11, physics/higgs-bubble.md HB-6),
+not thrust, so nothing in the physics ties "up" to the direction of travel.
+
+**Mark's ruling (verbatim):**
+> shall we chaneg it so the direction of travel is the bubble moving sideways?
+> just for asethetic reasons? may make it all simpler?
+
+He then chose **"Into the screen"**.
+
+**Decision (ledger D-92, amends D-14 and the 2026-09-28 interior decision):**
+- **The direction of travel lies in the deck plane**, toward the ship's bow.
+  The decks stay level under the generator's 1 g, and the levels stack
+  vertically along the **generator mast** (the spire), which is no longer a
+  thrust axis.
+- **The default bridge view looks over the captain toward the bow.** The
+  forward pole sits near the horizon above the deck, so the starbow, the
+  destination and the bubble's forward glow share one frame with the deck and
+  the crew.
+- **It is a change of ship basis only**, with no new physics formula. The
+  physics frame keeps +Z = the direction of travel. Only its mapping onto the
+  ship's structure (Blender +Y, the bow) changes. Goldens and forward-pole tests
+  re-baseline to the new axis.
+- **The Blender frame:** +Z = up (the mast), and **+Y = the bow** (the direction
+  of travel).
+
+**Rationale:** Pillar 3 (Time Has Emotional Weight) and Pillar 5 (Grounded
+Strangeness): the journey ahead is on screen while the player walks, not one
+key away. Pillar 4 (The Ship Is Home): every open level's bow edge sees the
+forward sky, and its stern edge sees the sky go dark. The physics lesson now
+lives on every deck, not only at the bridge.
+
+**Alternatives rejected:**
+- Keep up = forward and switch views by hot key. It was measured and works, but
+  the journey and the deck are never seen together.
+- Travel to the side of the screen (a side-scroller): the starbow would sit at
+  the frame's edge and the deck would read flat.
+
+**Implications:**
+- These are amended to match: `art/ship-interior-blender-brief.md` §2–3,
+  `art/ship-exterior-blender-brief.md` §2, `art/README.md`, and the lore entries
+  `archive/one-g.md` and `archive/starbow.md`.
+- The game re-imports the vendored lore (`make lore-import`).
+- The exterior model's bow is +Y. The exterior's forward glow sits at the bow
+  equator, not the top.
