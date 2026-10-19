@@ -45,7 +45,7 @@
 | Clock | Value | Meaning |
 |---|---|---|
 | Ship (the captain's life) | 100 subjective years | The game ends with your death or a mutiny. The bubble society can go on after you. |
-| Earth (the hook) | **a difficulty setting** (Mark, 2026-10-19), within the canon range ~10,000–24,000 Earth years until the black hole's pass. *Proposed* levels: Gentle 24,000, Standard 16,000, Hard 10,000 (to be confirmed by Mark and by playtesting) | the time Earth has. The retired doc said 10,000–100,000, with 24,000 in its opening scene. Mark (2026-10-06): "10k or 24k, whatever we find works best". Mark (2026-10-19): "lets make it a difficulty setting how much time we have left." What happens to Earth when the clock runs out: [earth-fate-home.md](../features/future/earth-fate-home.md). |
+| Earth (the hook) | **a difficulty setting** (Mark, 2026-10-19), within the canon range ~10,000–24,000 Earth years until the black hole's pass. Levels (Mark, 2026-10-19): Gentle 24,000, Standard 16,000 (default), Hard 10,000, tuned by playtesting | the time Earth has. The retired doc said 10,000–100,000, with 24,000 in its opening scene. Mark (2026-10-06): "10k or 24k, whatever we find works best". Mark (2026-10-19): "lets make it a difficulty setting how much time we have left." What happens to Earth when the clock runs out: [earth-fate-home.md](../features/future/earth-fate-home.md). |
 | Epilogue | to Year 1,000,000 | fast-forward to show what the bubble, its legacy and Earth became |
 
 **The Earth clock is a light-year budget.** At cruise, Earth time is at least the distance travelled, so every light-year of path costs at least one year of Earth's remaining time. With ~10,000 years:
@@ -109,7 +109,7 @@ Many runs are expected. Each is a different variation: different synthetic stars
 
 ## 8. Tunable parameters (to be found by playtesting)
 
-- ~~The Earth clock N (10,000 / 24,000 / difficulty-scaled).~~ **Resolved (Mark, 2026-10-19): N is a difficulty setting**, chosen at new game and fixed for the run. The levels are *proposed*, not ruled: Gentle 24,000, Standard 16,000, Hard 10,000 Earth years. Playtesting tunes the numbers, and the black hole's mass and speed follow N (§1). See [earth-fate-home.md](../features/future/earth-fate-home.md).
+- ~~The Earth clock N (10,000 / 24,000 / difficulty-scaled).~~ **Resolved (Mark, 2026-10-19): N is a difficulty setting**, chosen at new game and fixed for the run. The levels are ruled for now (Mark, 2026-10-19): Gentle 24,000, Standard 16,000, Hard 10,000 Earth years. Playtesting tunes the numbers, and the black hole's mass and speed follow N (§1). See [earth-fate-home.md](../features/future/earth-fate-home.md).
 - The selection strength: the range of anthropic luck the loop can reach, and how fast steering converges.
 - Encounter targets inside the doom window.
 - How strongly the previous run's choices weight the next variation.

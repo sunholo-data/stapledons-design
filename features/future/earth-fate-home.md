@@ -23,7 +23,7 @@ Mark's words, verbatim, answering questions about Earth's doom and the Home pict
 
 > "yeah lets have them so we can reference them later. lets make it a difficulty setting how much time we have left."
 
-- **R1. Earth's remaining time N is a difficulty setting**, inside the canon range of about 10,000 to 24,000 Earth years until the rogue black hole's pass. The levels in §1 are *proposed*, not ruled.
+- **R1. Earth's remaining time N is a difficulty setting**, inside the canon range of about 10,000 to 24,000 Earth years until the rogue black hole's pass. The levels in §1 are ruled (Mark, 2026-10-19: "yes we will use those difficulty values for now"); playtesting may tune them.
 - **R2. The crossing review's Home pictures become fate-dependent** past the point where the doom matters, with a **pool of picture variants per fate**: approaching, saved, scorched, ejected, captured, comet showers, diaspora (§4).
 
 ## Game vision alignment
@@ -128,7 +128,7 @@ Mark, verbatim: "I think its going to be terrifying to see real earth but under 
 - **Fate pictures are photographic.** Realistic Earth landscapes, not the illustrated house style of the Home tiers.
 - **The style break is the point.** Every Home picture before the doom is illustrated. When the fate arrives the style breaks into photographic reality, under a sky the player has only ever seen from the ship.
 - **The sky is not painted.** It comes from the same renderer as the ship's view, so it obeys the physics spec and its check values: the star catalogue, the lensing shader, and the Sun's angular size and magnitude computed for the fate's orbit (§4b). A fate sky that the renderer cannot produce is a renderer gap, not an art choice.
-- **Approaching and saved** keep a normal sky; the doom is not visible from Earth (§4b). Whether approaching and saved also switch to photographic is OQ8.
+- **Approaching and saved** keep a normal sky; the doom is not visible from Earth (§4b). Approaching and saved also use rendered skies over photographic landscapes (OQ8, Mark 2026-10-19: "yeah we want rendered skies"): no fate picture is illustrated.
 
 ### 4b. The physics of the fate skies
 
@@ -192,11 +192,11 @@ A game design doc (`design_docs/planned/<release>/earth-fate-home.md`) will spec
 
 | # | Question | Proposal |
 |---|---|---|
-| OQ1 | The difficulty levels and their numbers | Gentle 24,000, Standard 16,000 (default), Hard 10,000. Mark to confirm; playtesting tunes them |
+| OQ1 | The difficulty levels and their numbers | Gentle 24,000, Standard 16,000 (default), Hard 10,000. **Resolved (Mark, 2026-10-19):** these values, for now; playtesting tunes them |
 | OQ2 | May the loop's variations vary N between runs (the AI steering towards kinder clocks), or does N stay the player's choice? | N stays the player's choice; the loop varies the black hole's pass distance q instead |
 | OQ3 | Where the fate window opens | `F = min(10,000, N − 3,000)`. Should early tiers also hint that Earth knows (arks begun centuries in)? Proposal: not before F |
 | OQ4 | Diaspora after N: keep the empty-town pool, or switch to the physical outcome's pool? | Keep diaspora until the comet-shower stage; the epilogue reports the physical outcome |
 | OQ5 | A dead captured Earth (no Sargasso path) vs the Sargasso ending: one pool or two? | One pool for now; split if the reference art reads differently |
 | OQ6 | Where shipped fate art lives, given D-18's public bucket | A private or obfuscated path for spoiler art, or accept that game files are discoverable and keep only the website clean |
 | OQ7 | The comet-shower delay S | 200,000 years after N, tunable; check against an Oort infall estimate before shipping |
-| OQ8 | Do approaching and saved (normal skies) also switch to photographic, or stay illustrated so that only a doom fate breaks the style? | Stay illustrated: the break then marks the doom itself |
+| OQ8 | Do approaching and saved (normal skies) also switch to photographic, or stay illustrated so that only a doom fate breaks the style? | **Resolved (Mark, 2026-10-19): rendered skies for every fate**, approaching and saved included |
