@@ -13,7 +13,7 @@
   - [endgame-legacy.md](endgame-legacy.md) ("Earth's fate is always shown at the end");
   - [black-holes.md](black-holes.md) (the rogue black hole as a scenario object);
   - the game's **R2-HOME-TIERS**: stapledons-godot `design_docs/planned/r2/home-tiers.md` (on branch `design/home-tiers` until it lands on main; ledger D-86). Its canon note says tiers 13–15 (10,000 years and later) show Earth's fate, ship as a "no threat modelled yet" baseline, and wait for this design.
-- **Reference art:** being generated; private, at `gs://stapledons-voyage-dev-builds/reference/earth-fate/` (§7).
+- **Reference art:** private (§7). The first, illustrated set at `gs://stapledons-voyage-dev-builds/reference/earth-fate/` is **superseded** by the art direction in §4a; the rendered set goes to `gs://stapledons-voyage-dev-builds/reference/earth-fate/rendered/`.
 
 ## The rulings (Mark, attended 2026-10-19)
 
@@ -109,15 +109,47 @@ Each fate has a pool, `fate_<name>_v<k>.webp`, counted in a data module like `ho
 
 | Fate | When (§2) | What the pictures show |
 |---|---|---|
-| **approaching** | F ≤ t < N, or after N until the outcome's light reaches the ship | Earth knows. Arks under construction, launch towers on the skyline, a world organised around leaving or holding on |
+| **approaching** | F ≤ t < N, or after N until the outcome's light reaches the ship | Earth knows. Arks under construction, launch towers on the skyline, a world organised around leaving or holding on. The sky is still the normal sky: the hole is invisible to the eye (§4b) |
 | **saved** | outcome at N, a salvation path completed | Today's deep-time pictures (tiers 13–15): ice ages, moved coasts, the long ordinary future. The "no threat modelled" baseline |
-| **scorched** | outcome at N, moderate kick | An eccentric orbit: a swollen Sun, burned land, climate catastrophe |
-| **ejected** | outcome at N, strong or chaotic kick | Eternal night: a frozen Earth drifting between the stars, the Sun one star among many |
-| **captured** | outcome at N: the Sargasso path, or a chaotic capture | Earth in orbit around the black hole: the black hole's ring in the sky (the Sargasso ending) |
-| **comet showers** | t ≥ N + S, Earth still bound to the Sun | The Oort cloud's long aftermath: a sky full of comets, impact scars |
+| **scorched** | outcome at N, moderate kick | An eccentric orbit and climate catastrophe: at a 0.5 AU perihelion the Sun is 1.07° across and 4× as bright over burned land |
+| **ejected** | outcome at N, strong or chaotic kick | Eternal night and ice. The Sun is a dazzling point, not a disc: magnitude −16.7 at 100 AU (still brighter than the full Moon), −11.7 at 1,000 AU, and no warmth. No aurora |
+| **captured** | outcome at N: the Sargasso path, or a chaotic capture | Earth in orbit around the black hole (the Sargasso ending). The hole has no visible disc; it shows as lensed stars, an Einstein ring a few arcminutes across at AU distances (4.3′ at 1 AU), the Sun far off |
+| **comet showers** | t ≥ N + S, Earth still bound to the Sun | The Oort cloud's long aftermath as a *rate*: a bright comet every few years, not a sky full; old impact scars |
 | **diaspora** | evacuation completed, no salvation | An empty, overgrown town. People left |
 
-Reference art for every pool is being generated (§7). Shipped pictures will be chosen from it the way D-86 chose the tier variants.
+Reference art for every pool is generated to §4a and §4b (§7). Shipped pictures will be chosen from it the way D-86 chose the tier variants.
+
+### 4a. Art direction: rendered skies, photographic Earth (Mark, attended 2026-10-19)
+
+Mark, verbatim: "ok lets make them more accurate not illustrations". Asked what that meant, he chose: **the sky is rendered by the game's own physics renderer** (the real star catalogue, the Schwarzschild lensing shader, the Sun's true size and brightness for each orbit), with the landscape composited underneath.
+
+Mark, verbatim: "I think its going to be terrifying to see real earth but under skys only explored via the space ship, cold or hot etc."
+
+- **Fate pictures are photographic.** Realistic Earth landscapes, not the illustrated house style of the Home tiers.
+- **The style break is the point.** Every Home picture before the doom is illustrated. When the fate arrives the style breaks into photographic reality, under a sky the player has only ever seen from the ship.
+- **The sky is not painted.** It comes from the same renderer as the ship's view, so it obeys the physics spec and its check values: the star catalogue, the lensing shader, and the Sun's angular size and magnitude computed for the fate's orbit (§4b). A fate sky that the renderer cannot produce is a renderer gap, not an art choice.
+- **Approaching and saved** keep a normal sky; the doom is not visible from Earth (§4b). Whether approaching and saved also switch to photographic is OQ8.
+
+### 4b. The physics of the fate skies
+
+For the 10 M☉ rogue hole of premise §1: Schwarzschild radius r_s = 29.5 km; shadow radius (3√3/2) r_s = 76.7 km.
+
+| Viewer's distance from the hole | Einstein ring diameter (background stars) | Shadow |
+|---|---|---|
+| 3 ly | 0.6″ | invisible |
+| 1,000 AU | 8″ | invisible |
+| 100 AU | 26″ | invisible |
+| 10 AU | 82″ | invisible |
+| 1 AU | 4.3′ | invisible |
+| Roche limit (~1.2 × 10⁶ km) | ~0.8° | 26″: the only distance where it is resolvable at all, and still not by eye |
+
+The ring diameter is 2√(2 r_s / D) for a source far behind the hole.
+
+- **The hole is invisible to the naked eye on approach.** Earth detects it by astrometric microlensing of background stars, by drift in the outer planets' orbits and by a disturbed comet cloud. That is how OGLE-2011-BLG-0462 was found. It fits the canon (premise §1): Earth cannot see the doom until the ship tells it where to look.
+- **Ejected:** the Sun is magnitude −16.7 at 100 AU and −11.7 at 1,000 AU (−26.7 + 5 log₁₀ d). There is no aurora.
+- **Scorched:** a perihelion of 0.5 AU makes the Sun 1.07° across (twice today's 0.53°) and 4× as bright.
+- **Comet showers** raise the rate of bright comets to about one every few years. Not a sky full.
+- These values go into the physics spec as check values, with tests, before any fate sky ships (the game's definition of done, gate 2).
 
 ## 5. Lines and voice
 
@@ -140,7 +172,7 @@ A game design doc (`design_docs/planned/<release>/earth-fate-home.md`) will spec
 ## 7. Spoilers and the reference art
 
 - **Fate art never goes on the website**, in News posts, release notes, social posts or public captions. This follows the website spoiler policy (stapledons-godot `website/news/README.md`: never endings, the long-horizon endgame, or what happens to civilisations). R2-HOME-TIERS already keeps tiers 13–15 off the site for the same reason.
-- **The reference art is private:** `gs://stapledons-voyage-dev-builds/reference/earth-fate/` (the private dev-builds bucket), not the public assets bucket.
+- **The reference art is private**, in the private dev-builds bucket, not the public assets bucket. The first, illustrated set at `gs://stapledons-voyage-dev-builds/reference/earth-fate/` is superseded by §4a; the rendered set goes to `gs://stapledons-voyage-dev-builds/reference/earth-fate/rendered/`.
 - Shipping art is a separate question (OQ6): D-18 puts game masters in the public bucket `gs://stapledons-voyage-assets`, where anyone could find them.
 
 ## Open questions
@@ -154,3 +186,4 @@ A game design doc (`design_docs/planned/<release>/earth-fate-home.md`) will spec
 | OQ5 | A dead captured Earth (no Sargasso path) vs the Sargasso ending: one pool or two? | One pool for now; split if the reference art reads differently |
 | OQ6 | Where shipped fate art lives, given D-18's public bucket | A private or obfuscated path for spoiler art, or accept that game files are discoverable and keep only the website clean |
 | OQ7 | The comet-shower delay S | 200,000 years after N, tunable; check against an Oort infall estimate before shipping |
+| OQ8 | Do approaching and saved (normal skies) also switch to photographic, or stay illustrated so that only a doom fate breaks the style? | Stay illustrated: the break then marks the doom itself |
