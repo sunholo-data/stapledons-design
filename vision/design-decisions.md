@@ -1500,3 +1500,23 @@ scores trust on −100..100, while the crew simulation scores all trust on
 - One scale lets every trust rule and readout treat the Archive like a crew
   member.
 
+
+
+## [2026-10-19] The Earth Clock Is a Difficulty Setting; Home Pictures Follow Earth's Fate
+
+**Context:** R2-HOME-TIERS (stapledons-godot, D-86) gives the crossing review 16 home-time tiers.
+Tiers 13–15 (10,000 years and later) fall inside the canon doom window, so they show Earth's fate
+whether or not the game models it. Mark was asked when the black hole destroys Earth.
+
+**Decision (Mark, attended; game ledger D-87):**
+
+1. **N is a difficulty setting**, inside the canon ~10,000–24,000 Earth years: "lets make it a
+   difficulty setting how much time we have left." Proposed levels (not yet ruled): Gentle 24,000,
+   Standard 16,000, Hard 10,000.
+2. **Home pictures become fate-dependent** once the doom matters, with a pool of variants per fate
+   (approaching, saved, scorched, ejected, captured, comet showers, diaspora): "we could even have
+   a variation of the doom if the ship is uncuccessful" and "yeah lets have them so we can
+   reference them later."
+
+**Specified in:** [earth-fate-home.md](../features/future/earth-fate-home.md) (future, unscheduled).
+The fate art is a spoiler and never goes on the website.
