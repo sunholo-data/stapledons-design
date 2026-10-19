@@ -67,7 +67,7 @@ not "clean functional sci-fi".
 
 - **Ship frame:**
   - units are metres;
-  - **Blender +Z = the thrust axis = up = the direction of travel**;
+  - **Blender +Z = up = the generator mast (the spire)**. Since D-92 (2026-10-19) the direction of travel lies in the deck plane, along **Blender +Y (the bow)**, not up;
   - the origin is the bubble's centre.
 
   The bubble is a **perfect sphere**, about 100 m in radius and transparent,

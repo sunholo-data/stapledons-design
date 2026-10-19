@@ -41,8 +41,7 @@ bittersweet. Read `vision/core-pillars.md` and `vision/game-vision.md` first.
 
 ## 2. How the interior is presented (decided)
 
-The player is **inside the bubble**, walking the ship. **Up is forward**, the
-direction of travel. The screen is built from five layers, far to near:
+The player is **inside the bubble**, walking the ship. **The direction of travel lies in the deck plane** (D-92, 2026-10-19; amends D-14): the default view looks over the captain toward the bow, with the forward pole near the horizon above the deck, so the journey and the deck share one frame. Levels stack vertically along the mast. The screen is built from five layers, far to near:
 
 | # | Layer | Who makes it | When the camera pans sideways |
 |---|---|---|---|
@@ -62,9 +61,7 @@ From `vision/design-decisions.md`, 2025-12-06 to 2025-12-08 and 2026-09-28:
   origin. It's a boundary, not a hull: the levels are open to it. Its faint glow
   (interstellar gas hitting it at speed, strongest forward) is rendered by the
   engine. **Never paint it.**
-- **Orientation:** the ship is vertical along the thrust axis.
-  **Blender +Z = up = the direction of travel**, and 1 g "down" points to the
-  engines.
+- **Orientation (D-92):** levels are horizontal and stack along the vertical **generator mast**. **Blender +Z = up = the mast**; **the direction of travel is Blender +Y (the bow)**, in the deck plane. The 1 g "down" is the generator's comfort gravity (D-11, HB-6) toward the lower levels, not thrust.
 - **The spire:** a monolithic, calm, faintly luminous **Higgs Generator Spire**
   runs up the central axis and tapers to a needle at the top. It's visible from
   every level, and nobody can enter it. Archive terminals sit against it on
@@ -84,9 +81,7 @@ From `vision/design-decisions.md`, 2025-12-06 to 2025-12-08 and 2026-09-28:
   - **industrial / engineering:** mostly background;
   - **Archive shrine:** at the spire;
   - **enclosed rooms** (medical, private quarters): claustrophobic, no sky.
-- **The bridge:** a disc at **the very top of the spire**, directly beneath the
-  bubble's **forward pole**, which **is** its dome. It's the decision hub, and
-  where the starbow gathers overhead at speed.
+- **The bridge:** a disc at **the very top of the spire**. It's the decision hub. Its **bow rail faces the forward pole**, which sits near the bridge's horizon: at speed the starbow gathers ahead, over the rail, and the bubble's forward glow is on the bow side of the wall. Every open level's bow edge sees the same forward sky; the stern edges see it go dark.
 - **Scale:** **tiny humans in cathedral-scale spaces.** Levels are about 25 m
   apart, and the spire is about 14 m across at its base.
 
@@ -127,7 +122,7 @@ brightness for the ship's speed. Your deliveries must let it do that exactly.
    ```json
    {
      "shot": "bridge",
-     "frame": "ship: +Z = direction of travel (up), origin = bubble centre, metres",
+     "frame": "ship structure: +Z = up (the mast), +Y = the bow (direction of travel, D-92), origin = bubble centre, metres",
      "position_m": [16.0, -8.0, 83.7],
      "forward": [-0.271, 0.135, 0.953],
      "up": [0.852, -0.426, 0.303],

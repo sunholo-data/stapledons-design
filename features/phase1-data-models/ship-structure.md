@@ -24,7 +24,7 @@
 - [2025-12-08] Higgs Bubble Ship: 10-20+ Levels Around Spire
 - [2025-12-08] Visual Aesthetic: French 70s Comic (Moebius/Métal Hurlant)
 - [2025-12-08] Spire: Monolithic Superstructure with Archive Interface
-- [2025-12-08] Ship Orientation: Vertical Thrust Axis with 1g Gravity (superseded in part: the 1 g is the generator's)
+- [2025-12-08] Ship Orientation: Vertical Thrust Axis with 1g Gravity (superseded in part: the 1 g is the generator's; travel along the deck plane since D-92, 2026-10-19)
 - [2026-10-01] The Higgs Bubble Model and the Journey Profile (ledger D-11)
 - [2025-12-08] Archive: Distributed Terminals Plus Robots
 - [2025-12-08] Open Levels: Views Outward Through Bubble
