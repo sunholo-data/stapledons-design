@@ -1,10 +1,30 @@
 # Higgs Bubble Ship Structure
 
-**Status**: Planned
+**Status**: Planned (superseded in part; see "Current model" below)
 **Target**: v0.4.0
 **Priority**: P0 - Foundation for all ship gameplay
 **Estimated**: 3-4 weeks (art-heavy)
 **Dependencies**: View System, Isometric Engine
+
+> **Current model (2026-10-20).** Read this before the sections below. They predate it in four ways:
+> - **Seven tiers, not 10–20 levels** (D-34, D-35; `art/ship-dimensions-v2/layout.json` in the game repo):
+>
+>   | Tier | Floor | Radius |
+>   |---|---|---|
+>   | Bridge | +82 m | 22 m |
+>   | Commons | +57 m | 75.9 m |
+>   | Homes | +32 m | 89.4 m |
+>   | Garden (the forest) | +7 m | 94.7 m |
+>   | Workshops | −18 m | 93.0 m |
+>   | Farms | −43 m | 84.1 m |
+>   | Engineering | −68 m | 65.2 m |
+>
+>   Floors are 25 m apart with a 24 m clear gap between slabs, inside a 95 m architectural envelope.
+> - **Travel runs along the deck plane, toward the bow** (D-92). "Up" is the generator mast, not the direction of travel.
+> - **The interior is seen through fixed views that slide with the captain and never turn** (D-91 to D-93). They replace the isometric renderer.
+> - **Levels are intricate 2.5D spaces** (stages with several heights, routes, finds and set pieces), built through a repeatable pipeline. See the game repo's `design_docs/planned/r2/levels.md` (R2-LEVELS) and `design_docs/levels/README.md`. Roofed tiers see the forward sky through a band between the floor rim and the slab above; its measured height per tier is in R2-LEVELS §B4.
+>
+> The zones, the spire, the terminals and the style below still hold, mapped onto the seven tiers.
 
 ## Game Vision Alignment
 
