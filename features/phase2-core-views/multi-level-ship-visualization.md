@@ -1,11 +1,31 @@
 # Multi-Level Ship Visualization
 
-**Status**: Planned
+**Status**: Superseded in part by R2-LEVELS (2026-10-20)
 **Target**: v0.4.0
 **Priority**: P1 (Foundation for Ship Exploration)
 **Estimated**: 3-4 days
 **Dependencies**: Isometric Depth & Parallax System, Viewport Compositing
 **Enables**: Ship Exploration, Bridge Interior, Full Bubble Ship Experience
+
+> **Superseded in part (2026-10-20).** This plan predates the following:
+> - the fixed sliding views (D-91 to D-93);
+> - travel along the deck (D-92);
+> - the seven tiers (D-34);
+> - opaque floors (D-36).
+>
+> What still holds:
+> - the spire as the anchor on every level, with a character per zone;
+> - showing that there are levels above and below, now through the lift ride and the roof's underside;
+> - a distinct identity per zone;
+> - terminals on every level.
+>
+> What doesn't:
+> - isometric tiles;
+> - transparent cut-aways;
+> - 15–20 levels;
+> - "up = travel".
+>
+> The current plan is R2-LEVELS in the game repo: `design_docs/planned/r2/levels.md` §C5 and `design_docs/levels/README.md`.
 
 ## Game Vision Alignment
 
