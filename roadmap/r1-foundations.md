@@ -281,7 +281,8 @@ Recorded in `vision/design-decisions.md` and the game repo's charter ledger:
   Existing D-54 stops and true three-dimensional distances determine the
   seven successive legs. The historical rule-zero ten-leg tour is retained
   for replay compatibility. TRAPPIST-1 is no longer an engineered beside-e/HZ
-  stop. Sgr A* is an optional, clearly labelled separate demo after completion.
+  stop. Sgr A* is the tour's final stop (Mark, attended 2026-10-20): a clearly labelled
+  separate demo session the tour hands over to after Aldebaran, not a travel leg.
 - **D-60 / D-61:** the medium is the real one (status 2026-10-11: PR A landed in game #199). New games fly `lism-1` ([ism-structure.md](../physics/ism-structure.md)):
   the Local Interstellar Cloud, 14 Redfield & Linsky clouds and the Local
   Bubble's hot gas, driving the glow, drag and ledger; a route above the
