@@ -1529,6 +1529,8 @@ The fate art is a spoiler and never goes on the website.
 
 ## [2026-10-19] Travel Runs Along the Deck, Into the Screen (ledger D-92)
 
+*(Implemented 2026-10-20: R2-CAMERA-FORWARD, game PRs #282 and #286, evaluation 88/100; Mark accepted the Bow view in play, D-94: "this looks great. we can do more ship building assets now assuming these".)*
+
 **Context:** R2-CAMERA-FORWARD (game PR #281) measured that with the forward
 pole straight overhead (D-14, "up = forward"), no camera can hold the deck and
 the journey in one frame. At the fixed 78° field of view the pole is in frame

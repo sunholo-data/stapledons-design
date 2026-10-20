@@ -81,6 +81,7 @@ no game build.
 | G3 | The orchestrator draws library scenarios by beat and tension | scenarios appear in play; parity holds | E5, L3, G1 |
 | G4 | Where to go next with the crew's voices at the navigation station | crew opinions shown from live state | G1 |
 | G5 | Households and generations aboard (births, deaths, coming of age) | portraits and new identities (DD 2025-12) | E3, G2 |
+| G6 ✅ | The ship as a stage: travel along the deck (D-92) and a fixed Bow view that slides with the captain and never turns (D-91). Landed (R2-CAMERA-FORWARD, game [#282](https://github.com/sunholo-data/stapledons-godot/pull/282) and [#286](https://github.com/sunholo-data/stapledons-godot/pull/286), 2026-10-20; evaluation 88/100; Mark accepted F1 in play, D-94): the starbow, the destination and the deck in one frame, Astern on 9, consoles zoom; a guided stop turns the body 30° off the bow, and the Sgr A* hole sits on the bow. Next: the bridge deck re-planned facing the bow (D-90), then per-level 2.5D views with parallax and per-view set dressing | `make camera-forward-test`, `make camera-views-capture` | G1 |
 
 ### Track C: civilisations (crew-lab agent, then integration)
 
