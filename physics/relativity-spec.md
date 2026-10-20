@@ -24,6 +24,7 @@ must be accurate in all directions".
 | Spectrum | A blackbody at T is seen as a blackbody at D·T (because I_ν/ν³ is invariant) | |
 | Point-source brightness | F'_band/F_band = (Y(D·T)/Y(T)) / D², where Y is CIE luminance of the Planck spectrum | Bolometric total = D² |
 | Extended-source brightness (sky, nebulae) | Radiance I' = D⁴ I bolometric; in a band, the radiance of a blackbody at D·T | |
+| Resolved emitter with surface structure (a star's disc; proposed, star-surfaces) | A map of local temperature T(x): each surface element is a blackbody at T(x), seen at D·T(x); at rest the map is normalised so the disc-integrated band luminance equals the uniform disc's | RS-24. The surface's apparent evolution rate is D × its proper rate, which follows from the emission time t − (light travel time); D is not applied twice (RS-25) |
 | Colour | Planck × CIE 1931 2° observer → XYZ → linear sRGB (D65). Out-of-gamut colours are desaturated at constant Y | 2856 K → (0.4476, 0.4074) ±0.002. 6500 K → (0.3135, 0.3236). |
 | 3D objects nearby (planets, ships) | Aberrate every vertex. For rapidly moving geometry, use retarded-time positions (Terrell–Penrose rotation) | Sphere stays circular in outline |
 
@@ -178,6 +179,8 @@ dimensionless.
 | RS-21 | Photon sphere radius | 1.5 | r_s |
 | RS-22 | Reference speed for RS-1, RS-3 and RS-4 | 0.9 | c |
 | RS-23 | Reference speed for RS-2 | 0.5 | c |
+| RS-24 | Proposed (star-surfaces): disc-integrated V luminance of a temperature-mapped stellar disc ÷ the uniform disc's, at β = 0 (tolerance 1e-4 by quadrature, 1e-6 for a closed-form single spot, 0.5% GPU) | 1 | — |
+| RS-25 | Proposed (star-surfaces): apparent ÷ proper rate of a static source's surface evolution, straight ahead at 0.9c (√19; receding 0.22942) | 4.3589 | — |
 
 Qualitative checks (not numbers, so not in the registry):
 - **RS-Q1:** straight ahead and straight behind are unchanged by aberration,
