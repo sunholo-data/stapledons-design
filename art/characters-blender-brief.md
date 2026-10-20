@@ -42,7 +42,8 @@ Generate and retain a reference image for each proposed identity, then use it
 throughout the expression and age set. Match facial structure, clothing,
 hairstyle and palette between portraits and avatar. Dialogue changes expression
 by selecting another image; it does not animate a face. Blender character
-models, humanoid rigs, shape keys and animation clips are no longer required.
+models, humanoid rigs, shape keys and animation clips are no longer required. (The
+player's captain is the one exception: see "Motion" in §3.1.)
 This change concerns character assets; the environment remains Blender-built.
 
 
@@ -114,6 +115,15 @@ This change concerns character assets; the environment remains Blender-built.
 - **Motion:** deliver static art. Rigged GLBs and idle, walk, talk or other
   animation clips are not required for this direction. Any engine positioning
   or image transitions are implementation work, separate from authored art.
+- **Exception, the player's captain (D-98, Mark 2026-10-20: "obviously we need
+  animation on the captain a bit"):** the captain's mini avatar gains painted
+  animation frames (idle, jog, start, stop, station use, the chair, the lift, a
+  look-up), in the same illustrated style and identity as the stills. Frames are
+  identity-preserving edits posed by Blender **pose guides** (silhouettes from a
+  rig, never shown in game); the rig is an authoring tool, not a character
+  model. Crew avatars stay static. Implementation: stapledons-godot
+  `design_docs/planned/r2/captain-animation.md` (R2-CAPTAIN-ANIMATION; spend
+  and the look are Mark's calls at its pilot and review points).
 
 ### 3.2 Large portraits
 - **Framing:** bust or three-quarter, **2048×2048 RGBA**, transparent
