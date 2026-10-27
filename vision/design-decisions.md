@@ -193,6 +193,8 @@ Each archetype has baseline OCEAN values that inform dialogue tone, event reacti
 
 ## [2025-12-02] Launch Order = Arrival Order
 
+> **AMENDED 2026-10-27** (Mark, attended; see "Others Travel Sub-Light" below): no one else ever gets the bubble, so no one else reaches arbitrary γ. Other worlds travel sub-light, so their arrival order depends on launch time *and* speed. They can never overtake the bubble ship, but they can still reach Earth before the doom if they launch early enough.
+
 **Decision:** With Higgs bubble, any ship can achieve arbitrary γ instantly. Therefore arrival order depends ONLY on launch time in galaxy frame, not on technology level. Uplifted civs can reach destinations before you IF they launch earlier (while you detour or delay). They cannot overtake you mid-flight.
 
 **Rationale:** Pillar 5 (Grounded): Clean physics rule with no paradoxes. Creates strategic tension: share tech and they might beat you to Earth.
@@ -1579,3 +1581,26 @@ lives on every deck, not only at the bridge.
 - The game re-imports the vendored lore (`make lore-import`).
 - The exterior model's bow is +Y. The exterior's forward glow sits at the bow
   equator, not the top.
+
+
+## [2026-10-27] Others Travel Sub-Light; Earth Aims Only at Plans It Has Heard
+
+**Context:** R3 Signals and Contact (stapledons-design PR #40). Mark, attended: "noone can replicate the bubble but we perhaps get tech that is good for sub-light travel at least, or ai probes etc. and for the earth communication I guess its only straight lines - so as soon as we change course the signal will be lost unless we say where we are going - which we do - but they will need to point and broadcast assuming we get there at right time."
+
+**Decision:**
+- **No one can replicate the bubble.** What worlds can learn from the ship, through blueprints and maps, is **sub-light travel** (fusion and beamed-sail drives at a fraction of c) and **AI probes**. The bubble ship stays the only vessel at arbitrary γ for the whole run.
+- **Earth's link runs in straight lines.** Earth beams to where the ship *will be* when the light arrives, so it can aim only at a plan it has heard. The ship tells Earth where it is going, and Earth points and broadcasts so that its light arrives while the ship is there.
+
+**Consequences, from the geometry (computed 2026-10-27):**
+- **A plan sent from Earth before departure** lets Earth's light be waiting at every port on it.
+- **A beam covers everything behind its target.** Continuing outward along Earth's line of sight stays inside the beam, so no re-pointing is needed.
+- **A change of plan announced from port A** reaches Earth d_A years later, and Earth's beam reaches the new port B a further d_B years after that. The ship, arriving after about |AB| years, hears Earth at B only if it stays for the **triangle excess d_A + d_B − |AB|**. Example: from a port 40 ly out, a 30 ly sideways turn costs 60 years of waiting; doubling back towards Earth costs 20; going across the sky past Sol costs nothing.
+- **Off-plan photons are lost.** Everything Earth sent towards a plan the ship abandoned is aimed at empty space (signals-and-instruments §3.1).
+- **Other worlds are slow.** A sub-light ship or probe from a world you uplifted takes centuries to millennia to reach Earth. It can still arrive inside the doom window, so "others reach Earth first" stays possible, and every such arrival traces back to what the ship gave (D-71).
+
+**Rationale:** Pillar 1 (Choices Are Final): a change of plan has a physical cost at home. Pillar 3 (Time Has Emotional Weight): staying in touch with Earth means telling it your route and keeping to it. Pillar 5 (Grounded Strangeness): everything here follows from light travel time and beam geometry. Keeping the bubble unique keeps the premise (premise-and-loop §1).
+
+**Alternatives rejected:**
+- Worlds learn the bubble from the ship: contradicts the premise.
+- An Earth link that follows the ship anywhere: violates light travel time.
+
