@@ -58,12 +58,15 @@ former habitable-zone stop engineered beside planet e. Planet positions,
 clearance, phase and apparent size come from the actual system feed; the
 tour must not claim the older beside-e view.
 
-## Optional GR demonstration
+## Final stop: the Sgr A* GR demonstration
 
-After the guided voyage completes, the player may open the clearly labelled
-Sgr A* GR demo. This is a separate demonstration session placed at the black
-hole, not an eighth continuous travel leg or an arrival from Aldebaran.
-The existing nonrotating-hole and labelled Sol-background limitations apply.
+Sgr A* is the guided voyage's last stop (Mark, attended 2026-10-20). After the Aldebaran stop dwells like every other (or at Skip dwell), the
+tour hands over to the clearly labelled Sgr A* GR demo, with the ship's nose on
+the hole so it sits ahead in the Bow view. It is still a separate demonstration
+session placed at the black hole, announced as a demonstration jump, not an
+eighth continuous travel leg or an arrival from Aldebaran. The navigation
+station's entry still opens it directly. The existing nonrotating-hole and
+labelled Sol-background limitations apply.
 
 ## Validation and remaining gates
 
