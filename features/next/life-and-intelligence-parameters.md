@@ -3,6 +3,7 @@
 ## Status
 
 - **Status:** Proposed 2026-10-06 (Mark, attended: "we are going to weight anthropic values such as density of life and intelligence etc. so will need to see how much we need to vary those from expected 'normal' Drake values to have an interesting game experience"). Not approved.
+- **Reaffirmed 2026-10-27** (Mark, attended): "we are consciously going to tip the scales to have interesting games, and the in game reason is that each run we start a new multiverse that has these crazy conditions"; "but we will have pure physics for other things". The dial sets what exists; detection, travel and light-lag stay pure physics ([signals-and-instruments.md](signals-and-instruments.md)). Roadmap: [R3](../../roadmap/r3-signals-and-contact.md) track W.
 - **Priority:** P1. It sets how often the player meets life, and why.
 - **Builds on:**
   - [world-gen-settings.md](../future/world-gen-settings.md) (presets and sliders);

@@ -93,7 +93,7 @@ no game build.
 | C2 | T2 groups and tier coupling | faction claims | C1, E6 |
 | C3 | One world end to end in the lab, with light-lag news | world claims over seeds | C2 |
 | C4 | The contact scenario (crew argue, voice, a 40-year answer) | claims; words | C3 |
-| C5 | Worlds advance between visits in the game; light-speed messages | the galaxy view shows last-seen state plus arrived light | C4, G1 |
+| C5 | Worlds advance between visits in the game; light-speed messages. **Moved to R3** ([r3-signals-and-contact.md](r3-signals-and-contact.md) track C, 2026-10-27) | the galaxy view shows last-seen state plus arrived light | C4, G1 |
 
 ## Order of work (next)
 
@@ -102,7 +102,7 @@ no game build.
 3. **G1** (integration agent), on E1.
 4. **E4, then L6, then G2:** skipping, which is the heart of the loop.
 5. **E2 and E3, then L5, then G5:** households and generations.
-6. **C1 to C4** in the lab once E6 exists. **C5** follows R2.
+6. **C1 to C4** in the lab once E6 exists. **C5** follows R2, in [R3](r3-signals-and-contact.md) with the contact console.
 
 ## Decisions (D-71, Mark, attended 2026-10-13)
 

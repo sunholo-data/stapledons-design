@@ -49,9 +49,11 @@ From [open-questions.md](../../vision/open-questions.md):
 
 ### What the Spire IS
 
+> **Amended 2026-10-27** (Mark, attended: "yeah thats good for now"). The bubble and the spire are separate. The **bubble** is human engineering: the design can be taught, and a stable bubble forms only in a spinning black hole's ergosphere (premise §1, option (c)). Other worlds can build one with the design and a reachable black hole, and it is an ordinary fast ship. The **spire** is what no one can replicate: it is what lets *this* bubble survive a crossing between universes and be reset at a run's end. The mystery is no longer "how does the bubble exist?" but "why does ours have a spire?".
+
 The spire:
-- Creates and maintains the Higgs bubble
-- Cannot be replicated (no one else has this tech)
+- Holds the ship's bubble together across crossings between universes, and resets it at a run's end (the bubble itself is human engineering, formed in an ergosphere)
+- Cannot be replicated (other bubbles have no spire, so they cannot cross or loop)
 - Predates the ship itself (was... always there?)
 - Produces readings that don't match this universe's physics
 
@@ -59,7 +61,7 @@ The spire:
 
 Across the recursion loop:
 - The spire is the same structure in every universe
-- This explains why it can't be replicated - it's not FROM any universe
+- This explains why it can't be replicated - it's not FROM any universe (the bubble can be; the spire cannot)
 - Archive confusion comes from readings that reference multiple realities
 - This is the deepest clue to "you are not the first"
 
