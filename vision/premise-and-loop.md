@@ -10,7 +10,7 @@
 
 ## 1. The situation
 
-- **You are the pilot of Earth's only bubble ship.** The Higgs bubble isolates its interior from external mass-energy, so only light, signals and near-massless particles cross. Nobody can replicate it: it formed under extreme conditions on the maiden voyage, and every other attempt collapses.
+- **You are the pilot of Earth's only bubble ship.** The Higgs bubble isolates its interior from external mass-energy, so only light, signals and near-massless particles cross. Humans designed it, and the design can be taught, but **a stable bubble forms only inside the ergosphere of a spinning black hole**; everywhere else, every attempt collapses (Mark, 2026-10-27, option (c): "its not divine"). On the maiden voyage, Earth's Alpha Centauri mission, the ship ended up in the ergosphere of the rogue black hole and the bubble formed there. How it came to be there is part of the spire mystery (§4). So the one black hole is the ship's **forge**, Earth's **doom**, and the **door** between runs.
 - **You come back.** The ship emerges violently from the ergosphere of a spinning black hole: the same rogue black hole that is heading for the Solar System. The crew's memories are erased and the ship's AI is confused. You stabilise the tumbling ship amid full SR and GR distortion. Then the ship is **thrown clear, towards Earth**. A Penrose-process slingshot out of the ergosphere is the physics-adjacent reading; *why* the throw points home is part of the spire mystery (§4). You coast in past Saturn and reach Earth.
 - **Earth says:** *"Welcome back. We lost contact four years ago. Did the Alpha Centauri mission succeed?"* You remember nothing of it.
 - **You bring the news** (Mark, 2026-10-06; this supersedes the retired doc, where Earth told you). Earth doesn't know it is doomed. A dark, non-accreting black hole a few light-years away is very hard to see. Your ship's records of the emergence are the only evidence. **You bring both the news of the doom and its only possible salvation: the one ship that can travel.**
@@ -37,6 +37,11 @@
 > A few per cent makes Earth's orbit eccentric enough for climate catastrophe; ~10 % or more ends habitability. Within a few AU it's chaotic: Earth is ejected into interstellar space or **captured into orbit around the black hole** (which gives the "Sargasso ending" its meaning: keep a dark, captured Earth alive). Tearing the Sun apart needs a pass within 0.01 AU, so the Sun survives and Earth is the casualty. A pass through the Oort cloud also sends comet showers inward for a long time afterwards, a slow second threat that suits the Year 1,000,000 epilogue.
 >
 > **Why saving Earth is very hard:** pushing a 10 AU pass out to 100 AU while the hole is still 3 ly away means changing its velocity by 21 m/s. On 10 M☉ that's 4 × 10³² N·s. Moving the Sun and Earth together instead needs ~50 m/s over 10,000 years; known stellar-engine concepts are orders of magnitude too slow.
+>
+> **How the black hole is seen** (computed 2026-10-27). It emits nothing, and since it is heading for the Solar System almost all of its motion is towards us, so it hangs nearly still on the sky, slowly growing. Three ways to see it:
+> 1. **The ship's records** of the emergence.
+> 2. **From the ship as it is thrown clear:** the sky astern is lensed, a dark disc inside an Einstein ring (the game's M3 renderer).
+> 3. **Earth's confirmation, once told where to look.** For 10 M☉ at 3 ly the Einstein radius is about 0.3″ and the parallax about 1.1″, so Earth's orbit sweeps the hole across the background each year. Stars within an arcminute shift by milliarcseconds (θ_E²/separation), tens of milliarcseconds within a few arcseconds: within reach of Gaia-class astrometry. No light and no motion on the sky is why no one noticed; the data could have shown it to anyone who looked there.
 >
 > That's in or just beyond the Oort cloud: the opening is a short, real journey home (a few years of Earth time, already spent from the clock). The black hole itself is an **invented scenario object**, the second invented thing after the bubble. It's labelled as such in the star registry (provenance "scenario") and in the Archive, so it's never passed off as a catalogued object. Its mass and speed are tunable along with N.
 
@@ -105,7 +110,7 @@ This replaces the old constraint "no information survives the BH crossing (that'
 
 ## 7. Replayability
 
-Many runs are expected. Each is a different variation: different synthetic stars beyond the measured core, different civilisation distributions, different luck. Across runs the player (and the AI) assemble the knowledge of which technologies and philosophies, combined, might save Earth. Saving it is the rare, hard ending that runs build towards.
+Many runs are expected (Mark, 2026-10-27: "when we get to end of game and have a start again or new game, we get sent back to play the same situation but in a slightly different multiverse instance"). Each is a different variation: different synthetic stars beyond the measured core, different civilisation distributions, different luck. Across runs the player (and the AI) assemble the knowledge of which technologies and philosophies, combined, might save Earth. Saving it is the rare, hard ending that runs build towards.
 
 ## 8. Tunable parameters (to be found by playtesting)
 

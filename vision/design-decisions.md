@@ -193,7 +193,7 @@ Each archetype has baseline OCEAN values that inform dialogue tone, event reacti
 
 ## [2025-12-02] Launch Order = Arrival Order
 
-> **UNDER REVIEW 2026-10-27:** whether any other world can ever build a bubble is open (see "Earth Aims Only at Plans It Has Heard" below, and contact-console.md Q1). Worlds without a bubble travel sub-light, so their arrival order depends on launch time *and* speed.
+> **AMENDED 2026-10-27** (Mark, attended; see "Earth Aims Only at Plans It Has Heard; Bubbles Form Only in an Ergosphere" below): a world can build a bubble only with the design and a reachable spinning black hole. Worlds without one travel sub-light, so their arrival order depends on launch time *and* speed.
 
 **Decision:** With Higgs bubble, any ship can achieve arbitrary γ instantly. Therefore arrival order depends ONLY on launch time in galaxy frame, not on technology level. Uplifted civs can reach destinations before you IF they launch earlier (while you detour or delay). They cannot overtake you mid-flight.
 
@@ -1583,13 +1583,14 @@ lives on every deck, not only at the bridge.
   equator, not the top.
 
 
-## [2026-10-27] Earth Aims Only at Plans It Has Heard; Bubble Replication Reopened
+## [2026-10-27] Earth Aims Only at Plans It Has Heard; Bubbles Form Only in an Ergosphere
 
 **Context:** R3 Signals and Contact (stapledons-design PR #40). Mark, attended: "noone can replicate the bubble but we perhaps get tech that is good for sub-light travel at least, or ai probes etc. and for the earth communication I guess its only straight lines - so as soon as we change course the signal will be lost unless we say where we are going - which we do - but they will need to point and broadcast assuming we get there at right time."
 
 **Decision:**
 - **Worlds can learn sub-light travel and AI probes** from the ship's blueprints and maps.
-- **Whether they can ever learn the bubble is reopened** (Mark, attended 2026-10-27: "im not decided about the bubble technology. i guess it does make sense as humans invented it in the first place and so we should know how to pass it on. its not divine"). The premise (§1) says no one can replicate it. The options are in contact-console.md Q1. Until Mark rules, the docs assume the premise.
+- **The bubble: option (c)** (Mark, attended 2026-10-27: "yeah c is good and gives good motivation to the original story"; first raised the same day: "it does make sense as humans invented it in the first place and so we should know how to pass it on. its not divine"). Humans designed the bubble and the design can be taught, but a stable bubble forms only inside the ergosphere of a spinning black hole; every attempt elsewhere collapses. The ship's bubble formed in the rogue black hole's ergosphere on the maiden voyage. Premise §1 is amended to match.
+- **Consequences of (c):** the Archive must rebuild the design over the run, unreliably, because the crossing erased the crew's memories. A world can build a bubble only with the design *and* a reachable spinning black hole. The rogue black hole approaching Earth is the nearest one, so the doom is also the one place near home where bubbles could be made, and the run's deepest goal is stopping the very black hole that made the ship.
 - **Earth's link runs in straight lines.** Earth beams to where the ship *will be* when the light arrives, so it can aim only at a plan it has heard. The ship tells Earth where it is going, and Earth points and broadcasts so that its light arrives while the ship is there.
 
 **Consequences, from the geometry (computed 2026-10-27):**

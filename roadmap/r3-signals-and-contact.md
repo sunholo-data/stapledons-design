@@ -88,7 +88,7 @@ Each run is a universe the loop chose because it is unusually kind to minds (pre
 | K2 | Primers and decoding as crew work; translation confidence | contact-console AC 3; crew events for contested readings | K1, C5, V3 |
 | K3 | Compose, the voice and consent | Messages in a crew voice; refusal and orders work as aboard | K2, R2 G1 |
 | K4 | Exchange: blueprints, maps, philosophies, warnings, favours, wired to the civ simulation | ACs 1–2, 5–6 | K3, C6 |
-| K5 | Emergent travel: worlds build **sub-light** drives and **AI probes** from what we give them (agreed 2026-10-27), and bubbles only if decision 6 allows; their ships and probes can reach Earth inside the doom window | A world's launch traces to a blueprint the ship gave; arrival times follow launch and speed | K4, decision 6 |
+| K5 | Emergent travel: worlds build **sub-light** drives and **AI probes** from what we give them (agreed 2026-10-27), and bubbles only with our design and a reachable spinning black hole (decision 6); their ships and probes can reach Earth inside the doom window | A world's launch traces to a blueprint the ship gave; arrival times follow launch and speed | K4, decision 6 |
 
 ### Track V: living worlds and alien voices
 
@@ -140,7 +140,7 @@ Collected from the design documents, each with a recommendation in its doc:
 | 3 | Reception at cruise | signals Q3 | Low γ only, Doppler shown honestly |
 | 4 | The homecoming torrent as a console feature | signals Q4 | Yes |
 | 5 | Predictions use the ship's estimate of the dial, not the truth | finder Q2 | Yes, until the Archive's reveal |
-| 6 | Can worlds ever build a bubble? (sub-light drives and AI probes agreed 2026-10-27) | console Q1 | (c): the design can be passed on, but forming a bubble needs an ergosphere |
+| 6 | ~~Can worlds ever build a bubble?~~ | console Q1 | **Decided 2026-10-27: (c).** The design can be passed on; forming a bubble needs a spinning black hole's ergosphere |
 | 7 | Unauthorised transmissions | console Q2 | Yes, mutiny-adjacent |
 | 8 | Telling worlds about Earth's doom | console Q3 | Allowed from the first message |
 | 9 | Encounter targets for the default preset | life-and-intelligence Q1 | 20–50 biospheres detected, 3–8 visited, 2–5 remnants, 1–3 signals, 0–2 living contacts |

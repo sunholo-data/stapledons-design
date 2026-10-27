@@ -95,7 +95,7 @@ Nothing material crosses either way, so **every exchange is information** (Proto
 | Give or receive | What it is | Its effect |
 |---|---|---|
 | **Blueprints** | Designs and science | Raise an efficiency in the receiver's resource graph. For the ship: food, water, heat, **instruments** (seeing further), compute. For them: whatever they lack. |
-| **Maps** | Where other worlds are, and what we saw there | Their network grows (Perturbation Operator). They may contact others, or send sub-light ships and AI probes there, and may reach Earth before the doom if they launch early enough (Launch Order, under review 2026-10-27). |
+| **Maps** | Where other worlds are, and what we saw there | Their network grows (Perturbation Operator). They may contact others, or send sub-light ships and AI probes there, and may reach Earth before the doom if they launch early enough (Launch Order, amended 2026-10-27). |
 | **Philosophies** | Values, argued | Shift the factions that accept them; schism with those that reject them |
 | **Warnings** | Earth's doom; a dangerous neighbour | They may help, exploit it, or ignore it, by their values |
 | **Favours** | A commitment across light-years: relay our messages, beam to Earth, prepare for our return, act at Earth when they can | Kept or broken generations later, by people who never met us. Commitments use the crew engine's rules at the civilisation tempo. |
@@ -136,12 +136,7 @@ Every exchange serves the game's goals:
 
 ## Open questions for Mark
 
-1. **Can worlds ever build a bubble?** Sub-light drives and AI probes are agreed (Mark, 2026-10-27). The bubble is **reopened** (Mark, attended 2026-10-27: "im not decided about the bubble technology. i guess it does make sense as humans invented it in the first place and so we should know how to pass it on. its not divine"). The premise (§1) currently says no one can replicate it. Options:
-   - **(a) Unique:** keep the premise; only the ship ever has a bubble.
-   - **(b) Transferable:** humans designed it, so it can be passed on. Earth could build more too, which changes the doom (evacuation becomes easy), and uplifted worlds reach Earth at any γ.
-   - **(c) Engineering plus a rare condition:** the design is human and can be passed on, but forming a stable bubble needs a real extreme environment, such as a spinning black hole's ergosphere, where the ship itself emerged. Not divine, just rare. The crossing erased the crew's memories, so the Archive must rebuild the design over the run, unreliably. The rogue black hole approaching Earth is itself an ergosphere, so the doom may carry the means of escape.
-
-   Recommended: (c). Until Mark rules, the docs assume (a).
+1. ~~**Can worlds ever build a bubble?**~~ **Decided: option (c)** (Mark, attended 2026-10-27: "yeah c is good and gives good motivation to the original story"). The design can be passed on, but a stable bubble forms only in a spinning black hole's ergosphere. Worlds learn sub-light drives and AI probes from us; a world builds a bubble only with our design and a reachable spinning black hole. See design-decisions 2026-10-27 and premise §1.
 2. **Unauthorised transmissions.** Can a crew member send a message the captain forbade? Recommended: yes, as a mutiny-adjacent act with its own consequences.
 3. **Telling worlds about Earth's doom.** Allowed from the first message? Recommended: yes. Whether to tell, and whom, is one of the run's biggest choices.
 4. **How long decoding takes.** Proposed: a primer takes weeks of crew work at a stop, and a working vocabulary takes months; long gaps between letters let both sides decode more.
