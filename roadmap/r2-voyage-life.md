@@ -1,6 +1,6 @@
 # Roadmap: Voyage Life and the Living Galaxy (the social strand)
 
-**Status:** Proposed (Mark, attended 2026-10-13: "let's create a roadmap doc for this strand of work"). The canon conflicts it raised were ruled on as **D-71**, below.
+**Status:** Approved 2026-10-27 (Mark, attended). Proposed (Mark, attended 2026-10-13: "let's create a roadmap doc for this strand of work"). The canon conflicts it raised were ruled on as **D-71**, below.
 **Scope:** everything social:
 - the crew between destinations;
 - skipping time and what it does to people;

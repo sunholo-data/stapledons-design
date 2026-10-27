@@ -2,7 +2,7 @@
 
 ## Status
 
-- **Status:** Proposed 2026-10-06 (Mark, attended: "I'm looking at basically what the game play area will be and when we need to start making up star positions"). Not approved.
+- **Status:** Approved 2026-10-27 (Mark, attended; decisions recorded below). Proposed 2026-10-06 (Mark, attended: "I'm looking at basically what the game play area will be and when we need to start making up star positions").
 - **Priority:** P1. It sets the play area and the boundary between real and generated data.
 - **Supersedes:** the reach figures in [starmap-data-model.md](../phase1-data-models/starmap-data-model.md) ("Local Bubble (0-1000 ly): Real Gaia DR3 stars"); see Problem.
 - **Companions:**
@@ -121,12 +121,12 @@ One registry holds every star the game has ever shown.
 
 ---
 
-## Open questions for Mark
+## Decisions (Mark, attended 2026-10-27)
 
-1. **Which Milky Way model?** Default: Besançon (best documented, regularly updated), pinned by citation and version.
-2. **Show the provenance overlay on the map by default?** Default: yes. "The edge of the known" is part of the experience.
-3. **How to bridge the 326 ly → ~2 kpc band?** Default: the measured sample plus completion (no wholesale synthesis), which needs the Gaia DR3 selection function (Cantat-Gaudin et al. 2023) in the pipeline.
-4. **Real exoplanet systems beyond TRAPPIST-1:** pull all confirmed systems within the measured core from the NASA archive (about 1,000 hosts within 100 pc), each with labelled assumed appearance?
+1. **Milky Way model: Besançon**, pinned by citation and version.
+2. **The provenance overlay is on by default** on the map: "the edge of the known" is part of the experience.
+3. **The 326 ly → ~2 kpc band: measured sample plus completion.** Every measured star stays; synthetic stars fill only Gaia's known gaps, using the Gaia DR3 selection function (Cantat-Gaudin et al. 2023) in the pipeline. No wholesale synthesis.
+4. **Real exoplanet systems: all confirmed systems within ~100 pc** from the NASA archive (about 1,000 hosts), each with its assumed appearance labelled as assumed.
 
 ## Reconciles
 

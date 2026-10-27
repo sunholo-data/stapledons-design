@@ -6,7 +6,7 @@
 
 ## Status
 
-- **Status:** Future. **Unscheduled.** No release or sprint owns it yet.
+- **Status:** Approved 2026-10-27 (Mark, attended; OQ1–OQ8 resolved below). Future and **unscheduled**: no release or sprint owns it yet.
 - **Rulings:** Mark, attended 2026-10-19 (game ledger **D-87**).
 - **Builds on:**
   - [vision/premise-and-loop.md](../../vision/premise-and-loop.md) §1 (the physics of the threat), §2 (the three clocks), §3 (paths to saving Earth), §4 (the spire seals the run), §8–9;
@@ -96,9 +96,9 @@ This fate value is also what [endgame-legacy.md](endgame-legacy.md) shows at the
 
 R2-HOME-TIERS gives each crossing a tier from Earth years (16 tiers, 0–15) and each tier a pool of variants picked per voyage from the seed (D-86). This design adds a second axis on top of it.
 
-- **Before the fate window (t < F):** the tier picture, exactly as R2-HOME-TIERS ships it. Nothing changes.
+- **Before the fate window (t < F):** the tier picture, exactly as R2-HOME-TIERS ships it. Nothing changes. The exception is **faint early hints** (OQ3, 2026-10-27): a few tier variants in the centuries before F may carry quiet signs that Earth knows (ark scaffolds, new observatories). They are drawn as ordinary tier art and never show the fate itself.
 - **From the fate window on (t ≥ F):** the picture comes from the **fate pool** of `shown_fate(t)`, not the tier pool. The tier still sets the line's time words and the narration key.
-- **Where the window opens (proposed; OQ3):** `F = min(10,000, N − 3,000)`. That is the canon floor already used by the home-tiers canon note (tiers 13–15), pulled earlier on Hard so that Hard still has an approaching stage: Gentle and Standard open at 10,000 years, Hard at 7,000 (inside tier 12).
+- **Where the window opens (OQ3, resolved 2026-10-27):** `F = min(10,000, N − 3,000)`. That is the canon floor already used by the home-tiers canon note (tiers 13–15), pulled earlier on Hard so that Hard still has an approaching stage: Gentle and Standard open at 10,000 years, Hard at 7,000 (inside tier 12).
 - **Today's tiers 13–15 pictures become the Saved pool** (§4). They were drawn as "no threat modelled", which is what a saved Earth looks like in deep time.
 - **The pick.** Same rule as D-86, with its own salt: `fateVariant(seed, fate, tier) = top53(splitmix64(fateKey(seed), fate × 16 + tier)) mod count(fate)`. It draws nothing from the world's `Rng`. One voyage, fate and tier always give the same picture; different tiers inside one fate can give different pictures.
 - **Older streams.** Streams below the protocol minor that adds `time.fate` show the tier picture, byte-identical to today.
@@ -193,10 +193,10 @@ A game design doc (`design_docs/planned/<release>/earth-fate-home.md`) will spec
 | # | Question | Proposal |
 |---|---|---|
 | OQ1 | The difficulty levels and their numbers | Gentle 24,000, Standard 16,000 (default), Hard 10,000. **Resolved (Mark, 2026-10-19):** these values, for now; playtesting tunes them |
-| OQ2 | May the loop's variations vary N between runs (the AI steering towards kinder clocks), or does N stay the player's choice? | N stays the player's choice; the loop varies the black hole's pass distance q instead |
-| OQ3 | Where the fate window opens | `F = min(10,000, N − 3,000)`. Should early tiers also hint that Earth knows (arks begun centuries in)? Proposal: not before F |
-| OQ4 | Diaspora after N: keep the empty-town pool, or switch to the physical outcome's pool? | Keep diaspora until the comet-shower stage; the epilogue reports the physical outcome |
-| OQ5 | A dead captured Earth (no Sargasso path) vs the Sargasso ending: one pool or two? | One pool for now; split if the reference art reads differently |
-| OQ6 | Where shipped fate art lives, given D-18's public bucket | A private or obfuscated path for spoiler art, or accept that game files are discoverable and keep only the website clean |
-| OQ7 | The comet-shower delay S | 200,000 years after N, tunable; check against an Oort infall estimate before shipping |
+| OQ2 | May the loop's variations vary N between runs (the AI steering towards kinder clocks), or does N stay the player's choice? | N stays the player's choice; the loop varies the black hole's pass distance q instead **Resolved (Mark, 2026-10-27):** N stays the player's choice; the loop varies q. |
+| OQ3 | Where the fate window opens | `F = min(10,000, N − 3,000)`. Should early tiers also hint that Earth knows (arks begun centuries in)? Proposal: not before F **Resolved (Mark, 2026-10-27):** F as proposed, **with faint early hints**: before F, a few tier pictures may carry quiet signs that Earth knows (ark scaffolds, new observatories), for players who look closely. Never a fate picture before F. |
+| OQ4 | Diaspora after N: keep the empty-town pool, or switch to the physical outcome's pool? | Keep diaspora until the comet-shower stage; the epilogue reports the physical outcome **Resolved (Mark, 2026-10-27):** as proposed. |
+| OQ5 | A dead captured Earth (no Sargasso path) vs the Sargasso ending: one pool or two? | One pool for now; split if the reference art reads differently **Resolved (Mark, 2026-10-27):** one pool for now. |
+| OQ6 | Where shipped fate art lives, given D-18's public bucket | A private or obfuscated path for spoiler art, or accept that game files are discoverable and keep only the website clean **Resolved (Mark, 2026-10-27):** the public bucket; accept that game files are discoverable, and keep fate art off the website, news, release notes and social (§ spoiler rule). |
+| OQ7 | The comet-shower delay S | 200,000 years after N, tunable; check against an Oort infall estimate before shipping **Resolved (Mark, 2026-10-27: "it depends? i guess we may see this only in the fast forward, not in game"):** S comes from an Oort-cloud infall estimate (200,000 years as the placeholder) and is seen only in the end-of-run fast-forward and epilogue, never in play. |
 | OQ8 | Do approaching and saved (normal skies) also switch to photographic, or stay illustrated so that only a doom fate breaks the style? | **Resolved (Mark, 2026-10-19): rendered skies for every fate**, approaching and saved included |

@@ -1,7 +1,7 @@
 # Inner Shapes Outer: the crew loop and the civilisation loop
 
 ## Status
-- **Status:** Proposed (draft for Mark's review, 2026-10-13)
+- **Status:** Approved 2026-10-27 (Mark, attended; decisions recorded below). Proposed (draft for Mark's review, 2026-10-13)
 - **Priority:** P1 for design, P3 for build (after crew integration and the resource ledger)
 - **Builds on:**
   - [bubble-resources.md](bubble-resources.md) (what the ship has);
@@ -189,10 +189,10 @@ the pure simulation, like AI words, so determinism is untouched.
    intended behaviour ("an isolationist civilisation given a map of an
    expansionist one becomes less stable within 300 years in most seeds").
 
-## 7. Open questions for Mark
+## 7. Decisions
 
-1. Is a civilisation's tempo one step per visit, or does the galaxy run on its own clock between visits regardless of where you are?
-2. Who chooses the voice of a transmission: always the captain, or can crew send unauthorised messages (a mutiny-adjacent act)?
-3. Can civilisations talk to each other without you once they know of each other? This decides whether the network is a graph you edit or a society you seed.
-4. Should the déjà-vu library cross runs from day one, or wait for the loop reveal?
-5. Efficiency blueprints as the main reward: agreed, or should philosophies sometimes outrank them?
+1. **Tempo: the galaxy runs on its own clock** between visits, wherever the ship is (D-71 §6: "a core concept of the game").
+2. **Voice of a transmission:** the captain chooses, but a crew member can send an unauthorised message, close to mutiny (Mark, attended 2026-10-27; contact-console decision 2).
+3. **Civilisations talk to each other once they know of each other** (D-71 §7). The ship is how they discover each other and the technology to talk, so the network is a society you seed, not a graph you edit.
+4. **The déjà-vu library crosses runs from day one, unexplained** (Mark, attended 2026-10-27). Recurrences start in run 2, since a first run has no library, and the loop reveal explains them.
+5. **Efficiency blueprints are the main reward; a philosophy can sometimes outrank them** (Mark, attended 2026-10-27), when it reshapes the crew more than any efficiency would.

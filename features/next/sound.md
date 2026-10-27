@@ -2,7 +2,7 @@
 
 ## Status
 
-- **Status:** Proposed 2026-10-20 (game-repo ledger D-98). After playing the bow-facing bridge, Mark said: "it looks really great. obviously we need animation on the captain a bit and sound effects and the level design but such good potential".
+- **Status:** Approved (game-repo ledger D-101, 2026-10-20; built as R2-SOUND). Proposed 2026-10-20 (game-repo ledger D-98). After playing the bow-facing bridge, Mark said: "it looks really great. obviously we need animation on the captain a bit and sound effects and the level design but such good potential".
 - **Priority:** P1 for R2.
 - **Implementation:** game repo `design_docs/planned/r2/sound.md` and its sprint plan (R2-SOUND). This document holds the **what**, the canon the implementation must keep.
 - **Builds on:**

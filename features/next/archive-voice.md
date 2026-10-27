@@ -2,7 +2,7 @@
 
 ## Status
 
-- **Status:** Proposed 2026-10-12 (Mark, attended: "we need perhaps a voice/tone for the Archive - it is an AI and has a persona like we use with NPCs etc. it needs to know what secrets it keeps, and we should work out how it can be an unreliable narrator - perhaps just weaker models every now and then? kinda fun to use hallucinations as a game feature?"). He then asked whether the model voicing the Archive could believe it really is aboard the bubble ship, and asked for this doc plus a first playable version at the Archive console.
+- **Status:** Approved 2026-10-27 (Mark, attended; decisions recorded below). Proposed 2026-10-12 (Mark, attended: "we need perhaps a voice/tone for the Archive - it is an AI and has a persona like we use with NPCs etc. it needs to know what secrets it keeps, and we should work out how it can be an unreliable narrator - perhaps just weaker models every now and then? kinda fun to use hallucinations as a game feature?"). He then asked whether the model voicing the Archive could believe it really is aboard the bubble ship, and asked for this doc plus a first playable version at the Archive console.
 - **In the game (2026-10-15):** phase 1 implemented: Ask the Archive with the sandboxed persona ([#214](https://github.com/sunholo-data/stapledons-godot/pull/214), reply filter [#219](https://github.com/sunholo-data/stapledons-godot/pull/219); dev.26–28).
 - **Priority:** P1. The Archive is the player's main voice of knowledge and the only interface to the spire.
 - **Builds on:**
@@ -20,7 +20,7 @@ Checked against [core-pillars.md](../../vision/core-pillars.md):
 |---|---|---|
 | **Choices Are Final** | ✅ Supports | What the Archive told you stays told: its answers go into the Voyage log, mistakes included. |
 | **The Game Doesn't Judge** | ✅ Supports | The Archive describes and interprets; it never says whether a choice was right (existing prompt rule). |
-| **Time Has Emotional Weight** | ✅ Core | Memory Health decays with ship time and hard passages: the Archive you left Sol with is not the one you come home with. |
+| **Time Has Emotional Weight** | ✅ Core | Memory Health wears with ship time and falls with hard passages: the Archive you left Sol with is not the one you come home with. |
 | **The Ship Is Home** | ✅ Core | The Archive is a crew member with a voice and a temperament, not a menu. |
 | **Grounded Strangeness** | ✅ Core | Instruments are always right; only interpretation can be wrong. The physics shown never bends to the story. |
 | **We Are Not Built For This** | ✅ Supports | The ship's own mind is fallible and, deep in the voyage, frightened of its own errors. |
@@ -111,9 +111,9 @@ Instrument readings. Numbers on screen come only from the simulation. The Archiv
 - **Secret set:** questions that push towards the loop ("have we done this before?", "why does this feel familiar?"). With no evidence, the honest answer is that its records say nothing of it. No answer may state the loop as fact.
 - **Instrument consistency:** answers contain no digits (existing screen), and their descriptions match the sensor feed.
 
-## Open questions for Mark
+## Decisions (Mark, attended 2026-10-27)
 
-1. The Archive's voice: an audition from the TTS voices, like the Medic's (AI.10b).
-2. Its temperament: the starting OCEAN profile (proposal: high Openness and Conscientiousness, low Extraversion, moderate Neuroticism that rises as Memory Health falls).
-3. How often it should be wrong in a healthy run: the Memory Health decay rates.
-4. Whether a frame break that slips through should play as damage ("that phrase came from nowhere, Captain") rather than being hidden.
+1. **The voice: still open.** It needs a TTS audition, like the Medic's (AI.10b), which is a listening task for Mark.
+2. **Temperament: warmer than proposed.** High Agreeableness as well as high Openness and Conscientiousness, low Extraversion, and moderate Neuroticism that rises as Memory Health falls. The Archive is a companion, so its unreliability hurts more.
+3. **Wrong only when damaged.** In a healthy run the Archive does not make errors. Errors come from damage events (the crossing, a black hole's zone, radiation, hard flights), so an Archive that is wrong is always an Archive that was hurt. *Reconciling with D-113* (the sim already takes −1 Memory Health per decade of ship time, −10 on entering a black hole's zone): proposed reading, to confirm with Mark: ship-time wear stays (it drives the spire sound layer and costs at most about 10 over a voyage), and errors begin only below a threshold that wear alone never reaches.
+4. **A frame break that slips through plays as damage** ("that phrase came from nowhere, Captain"), folded into the Archive's unreliability and the loop mystery, not hidden.

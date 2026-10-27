@@ -1,7 +1,7 @@
 # Bubble Resources: one closed ledger
 
 ## Status
-- **Status:** Accepted in part: option B, m_eff = 1 kg, wall shape as a discovery (ledger D-69, Mark, attended 2026-10-13). The resource list and check values remain proposed.
+- **Status:** Approved 2026-10-27 in full (Mark, attended; decisions recorded below). Earlier accepted in part: option B, m_eff = 1 kg, wall shape as a discovery (ledger D-69, Mark, attended 2026-10-13). The resource list and check values were approved with the rest on 2026-10-27.
 - **Priority:** P1 (defines what every crew scenario, crisis and upgrade spends)
 - **Supersedes in part:** [mass-budget.md](../future/mass-budget.md) (mass sinks and visibility stay; the resource list and the energy source are new)
 - **Physics:** [physics/higgs-bubble.md](../../physics/higgs-bubble.md) §4, §5 and §8 (the "later energy ledger" this document proposes)
@@ -402,13 +402,13 @@ The current pack uses fourteen ad hoc resources ("paper stock", "clinic hours",
 "diagnostic cartridges"). They were mapped onto the eight in ailang-packages #133,
 and every claim verdict over 20 seeds was unchanged (33 of 36 hold).
 
-## 7. Open questions for Mark
+## 7. Decisions
 
 1. ~~Option B, A or C?~~ B (D-69).
 2. ~~m_eff?~~ 1 kg (D-69); lowering it is a discovery (§4a).
-3. Show the drive's mass cost at plan time in kilograms, or as people-equivalents?
-4. Start the household on D–T (neutrons, simplest) or D–³He (cleaner, but where did the ³He come from)?
-5. Should the scrap, brine and ash pools be visible places in the ship, for example on the industrial level?
+3. **Mass cost at plan time: kilograms, with people-equivalents as the gloss** ("3,100 kg, about 40 people's worth of mass" on hover) (Mark, attended 2026-10-27).
+4. **The household starts on D–T** (Mark, attended 2026-10-27). Neutron damage and tritium breeding become maintenance work.
+5. **The scrap, brine and ash pools are visible places** on the industrial level (Mark, attended 2026-10-27), built through the levels pipeline (game-repo R2-LEVELS).
 
 ## 8. Acceptance (when a sprint takes this up)
 

@@ -2,7 +2,7 @@
 
 ## Status
 
-- **Status:** Proposed 2026-10-13 (Mark, attended). He asked to explore AILANG's semantic cache, which "we planned to have within the game to help find similar planets, news feed surfacing, etc. We could be generating a lot of data over many runs, and a way some leak into this universe run vs others perhaps." He later added that embeddings will run locally, through Ollama running embeddinggemma-2, and floated in-game security keys that unlock Archive features and may correspond to real API keys.
+- **Status:** Approved 2026-10-27 (Mark, attended; decisions recorded below). Proposed 2026-10-13 (Mark, attended). He asked to explore AILANG's semantic cache, which "we planned to have within the game to help find similar planets, news feed surfacing, etc. We could be generating a lot of data over many runs, and a way some leak into this universe run vs others perhaps." He later added that embeddings will run locally, through Ollama running embeddinggemma-2, and floated in-game security keys that unlock Archive features and may correspond to real API keys.
 - **Priority:** P2. Phase S0 is P1, because it is cheap and needs nothing new.
 - **Builds on:**
   - [premise-and-loop.md](../../vision/premise-and-loop.md):
