@@ -108,6 +108,26 @@ At arrival a hindsight card compares the prediction with the world found:
 
 This is the epistemic gap made tangible (design-decisions 2025-12-02). Over a run, these cards record how often the player's bets came good.
 
+### 8. Earth's beams: the home anchor on the map
+
+(Mark, 2026-10-27: "we could then have a map graphic showing which direction earth is sending its signals as far as we know, and where they will point, I guess an important anchor for the ship.")
+
+Earth's link runs in straight lines towards plans Earth has heard (signals-and-instruments §3.1). The map draws that link as the ship believes it to be:
+
+| Element | What it shows | Drawn as |
+|---|---|---|
+| **Beams Earth should be sending** | Every plan whose message has had time to reach Earth: a cone from Sol towards that port | A solid cone, with Earth's light-front moving along it at c |
+| **Beams Earth cannot send yet** | Plans whose message is still in flight to Earth | A dashed cone, plus the message's own light-front crawling back towards Sol, with the date it arrives |
+| **Abandoned beams** | Plans the ship has left | A fading cone: that light is aimed at empty space |
+| **Coverage behind a port** | A beam covers everything beyond its target on Earth's line of sight | The cone continues past the port |
+| **The link window at each port** | From the earliest arrival of Earth's light there to the ship's planned departure | A bar on the port: green when it overlaps the stay, with "wait n years to hear Earth" when it does not (the triangle excess) |
+| **Silence** | No new Earth light since date X | The last known light-front, labelled with its age |
+
+Rules:
+- **It is a belief, not the truth.** The overlay shows what Earth *should* be doing given what it was told and when. If Earth has stopped, the ship finds out only when the silence arrives, d years later.
+- **Changing course shows its cost before the commit.** Selecting a new destination previews the triangle excess at the new port, and which beams the change abandons.
+- **The ship's own messages home** appear as light-fronts travelling towards Sol, so the player can see when Earth will hear what.
+
 ---
 
 ## Acceptance criteria (for the implementation design that follows)
@@ -118,6 +138,7 @@ This is the epistemic gap made tangible (design-decisions 2025-12-02). Over a ru
 4. The Earth-time and ship-time costs equal the journey core's plan for the same leg, exactly.
 5. No candidate shows a "recommended" label or a single predicted state.
 6. The hindsight card's "predicted" column equals the distribution shown at commit time, byte for byte.
+7. Earth's beams: each cone exists only for a plan whose message has reached Earth by light travel time; the link window at each port equals the triangle excess d_A + d_B − |AB| for re-plans, and zero for a port beyond an existing beam's target on Earth's line of sight.
 
 ## Open questions for Mark
 

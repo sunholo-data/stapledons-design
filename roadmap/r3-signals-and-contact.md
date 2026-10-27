@@ -70,6 +70,7 @@ Each run is a universe the loop chose because it is unusually kind to minds (pre
 | F3 | The reason card, with the Archive's interpretation | Reviewed in play | F2 |
 | F4 | The crew's voices on candidates (= R2 G4) | Opinions from live crew state | F3, R2 G1 |
 | F5 | The hindsight card at arrival | AC 6; reviewed in play | F2 |
+| F6 | Earth's beams on the map: beams Earth should be sending, beams it cannot send yet, abandoned beams, link windows per port, silence | destination-finder AC 7; reviewed in play | S1, F1 |
 
 ### Track C: civilisations (continues R2 track C)
 
@@ -87,7 +88,7 @@ Each run is a universe the loop chose because it is unusually kind to minds (pre
 | K2 | Primers and decoding as crew work; translation confidence | contact-console AC 3; crew events for contested readings | K1, C5, V3 |
 | K3 | Compose, the voice and consent | Messages in a crew voice; refusal and orders work as aboard | K2, R2 G1 |
 | K4 | Exchange: blueprints, maps, philosophies, warnings, favours, wired to the civ simulation | ACs 1–2, 5–6 | K3, C6 |
-| K5 | Emergent travel: worlds build **sub-light** drives and **AI probes** from what we give them (no one else gets the bubble, 2026-10-27); their ships and probes can reach Earth inside the doom window | A world's launch traces to a blueprint the ship gave; arrival times follow launch and speed | K4 |
+| K5 | Emergent travel: worlds build **sub-light** drives and **AI probes** from what we give them (agreed 2026-10-27), and bubbles only if decision 6 allows; their ships and probes can reach Earth inside the doom window | A world's launch traces to a blueprint the ship gave; arrival times follow launch and speed | K4, decision 6 |
 
 ### Track V: living worlds and alien voices
 
@@ -112,7 +113,7 @@ It needs W1–W2, S1–S3 (the subset for those two worlds), F1–F3 and F5, C5 
 
 ## Order of work (next)
 
-1. **S1 and K1** (integration). The light cone and Earth's signal with the live Earth rate. It uses physics the game already has, and makes the comms station useful on day one.
+1. **S1, K1 and F6** (integration). The light cone, Earth's signal with the live Earth rate, and Earth's beams on the map. They use physics the game already has, and make home the ship's anchor from day one.
 2. **W1 then W2** (*loop*). Everything else needs a populated galaxy.
 3. **S2 then S3** (packages, then integration). The evidence ledger.
 4. **F1, F2, F3, F5.** Reasons to go.
@@ -139,7 +140,7 @@ Collected from the design documents, each with a recommendation in its doc:
 | 3 | Reception at cruise | signals Q3 | Low γ only, Doppler shown honestly |
 | 4 | The homecoming torrent as a console feature | signals Q4 | Yes |
 | 5 | Predictions use the ship's estimate of the dial, not the truth | finder Q2 | Yes, until the Archive's reveal |
-| 6 | ~~What worlds learn from us, to travel~~ | console Q1 | **Decided 2026-10-27:** sub-light drives and AI probes; no one else gets the bubble |
+| 6 | Can worlds ever build a bubble? (sub-light drives and AI probes agreed 2026-10-27) | console Q1 | (c): the design can be passed on, but forming a bubble needs an ergosphere |
 | 7 | Unauthorised transmissions | console Q2 | Yes, mutiny-adjacent |
 | 8 | Telling worlds about Earth's doom | console Q3 | Allowed from the first message |
 | 9 | Encounter targets for the default preset | life-and-intelligence Q1 | 20–50 biospheres detected, 3–8 visited, 2–5 remnants, 1–3 signals, 0–2 living contacts |
