@@ -59,6 +59,7 @@ Each run is a universe the loop chose because it is unusually kind to minds (pre
 | S3 *loop* | The census, spectroscopy and technosignature instruments, writing the evidence ledger and beliefs | ACs 4–6; a desiccated M-dwarf O₂ world never reads as life | S2, W2 |
 | S4 | The lens look: the trip to the focal line, months of integration, the lens image | A GPU golden of the lens product against the CPU model; renders reviewed (gate 2) | S3, V2 |
 | S5 | The homecoming torrent on the console | Earth's compressed history plays at D on a return leg; reviewed in play | S1, K1 |
+| S6 | Lens relays and Earth's own lens observatory: Earth builds relays towards the stars on the itinerary it was sent, and sends candidates it finds; the ship can listen from a destination's focal line | Link budgets with and without a relay match `sunholo/observe`; Earth's relays exist only for itineraries Earth received | S2, S4, Earth as a world (civ-mirror Q2) |
 
 ### Track F: the destination finder
 
@@ -82,7 +83,7 @@ Each run is a universe the loop chose because it is unusually kind to minds (pre
 
 | ID | Milestone | Exit criteria | Depends |
 |---|---|---|---|
-| K1 | The comms station: Listen (Earth first, with the Earth rate) and the Exchange log | Earth's signal shown with Doppler, light age and rate on every leg | S1 |
+| K1 | The comms station: Listen (Earth first, with the Earth rate) and the Exchange log; Earth's link fails only by the physical causes in signals-and-instruments §3.1 (Earth stops, aims off-plan, band out of reach, distance, medium) | Earth's signal shown with Doppler, light age and rate on every leg; going off-plan loses exactly the photons already aimed at the plan | S1 |
 | K2 | Primers and decoding as crew work; translation confidence | contact-console AC 3; crew events for contested readings | K1, C5, V3 |
 | K3 | Compose, the voice and consent | Messages in a crew voice; refusal and orders work as aboard | K2, R2 G1 |
 | K4 | Exchange: blueprints, maps, philosophies, warnings, favours, wired to the civ simulation | ACs 1–2, 5–6 | K3, C6 |

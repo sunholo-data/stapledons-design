@@ -92,6 +92,44 @@ Earth is a source like any other, and the physics is stark (computed 2026-10-27)
 
 The game's shipped "news from home" (M4.4) already uses the light-delayed epoch for α Cen (t_e = 0.044 yr). This section generalises it to every source and every leg.
 
+#### 3.1 Earth's link, strictly (Mark, 2026-10-27: "how does it work with earth sending signals to us at light speed and we moving away - and what communication medium possibly works and how would it degrade? keeping strict physics")
+
+**Space is the buffer; speed is the playback rate.** Light always catches a subluminal ship. A signal sent one day after departure reaches a ship cruising at β after 1/(1 − β) days: 11 days at 0.9c, 2.7 years at 0.999c, 2,738 years at γ 707. Everything Earth sends is in flight behind the ship and is delivered when the ship's motion allows.
+
+Received from a source the ship recedes from with Doppler factor D, at Earth-frame distance d at reception:
+
+| Quantity | Scales as | Note |
+|---|---|---|
+| Playback rate | D | per ship second |
+| Wavelength | 1/D | 10 GHz → 709 MHz at 0.99c, 7 MHz at γ 707; 1 µm → 14 µm, 1.4 mm |
+| Received power | D² / d² | one D for photon energy, one for arrival rate (the receiving area perpendicular to the motion is invariant) |
+| Photons captured per Earth-second of broadcast | 1 / d² | speed does not cost photons, only time |
+
+So **photon-counting optical links lose only time to speed, and information only to distance.** Noise-limited links (radio, and anything redshifted into the far infrared where hν ≲ kT_receiver) also lose information to speed.
+
+Illustrative budgets (Friis with apertures, P_r = P_t A_t A_r D² / (λ² d²), 10 m apertures, cold receiver):
+
+| Link | At rest | Receding |
+|---|---|---|
+| 1 MW X-band, 70 m dish, at α Cen | ~1 kbit/s | ~5 bit/s at 0.99c |
+| 1 GW laser at 1 µm, at 1,000 ly | ~3 × 10⁵ photons/s | ~250 photons/s at γ 707, arriving at 1.4 mm |
+
+**Which medium works:**
+- **Radio:** nearby stars, ship at rest. Effectively useless beyond that.
+- **Optical and near-UV lasers** from large apertures in Earth orbit are the real link. A 10 m aperture at 1 µm spreads to only ~8 AU radius at 1,000 ly.
+- **Pre-shifting has a floor.** Earth can transmit shorter wavelengths so they land in the ship's band, but below the Lyman limit (91.2 nm) interstellar hydrogen absorbs everything over tens of parsecs. At γ 707 receding, the best possible received band is far-infrared to sub-millimetre. Because D changes through boost, cruise and brake, Earth sends a **comb of bands** so that one lands in the receivers' range.
+- **Lens relays** (§4.4) amplify a beam towards one star by ~10¹¹ at 1 µm.
+- **The background astern is cold:** the CMB behind a ship at γ 707 is 1.9 mK. The ship's own heat (forward glow, ISM heating, `heat`) warms its receivers.
+
+**How the link fails** (the sim's inputs):
+1. **Earth stops sending,** by its own state: collapse, the doom, politics, neglect. The silence travels at c too; the ship hears it d years after it began.
+2. **Earth aims at the wrong place.** Earth points where the ship *will be*, which it knows only from the itinerary the ship sent. If the ship goes off-plan, every photon already sent is aimed at empty space and lost. This is the only true information loss.
+3. **The receivers cannot cover the shifted band** at the current D.
+4. **Distance:** the inverse square against Earth's power. Earth's technology growing (bigger beams, lens relays) or declining changes how far home can reach.
+5. **The medium:** dust in dense clouds (the game's ISM model), plasma smearing at low radio frequencies, absorption below 91.2 nm.
+
+The same physics runs the other way for the ship's messages home, with the ship's much smaller transmitter.
+
 ### 4. The instrument suite
 
 Each instrument is defined by physics parameters (aperture, band, resolving power, detector noise, integration time). Its reach for a given target follows from a photon budget, not from an authored range. The suite grows when worlds give the ship better designs (efficiency blueprints, [inner-shapes-outer §3](inner-shapes-outer.md)), and costs `mass` and `fabrication` to build.
@@ -144,6 +182,20 @@ Every star is a gravitational lens. A telescope on the far side of a star, on th
 
 - **What it gives:** a reconstructed image of another world's surface (continents, oceans, cloud bands, night-side lights), with resolution down to tens of kilometres at about 100 ly after long integration. It also gives deep spectra of that one world.
 - **What it costs:** a short in-system trip to the focal line (the M5.5 in-system navigation already flies this), then **months of integration**, while the galaxy clock runs. One target per positioning.
+- **The gain is the mass:** about 4π² r_s / λ at the focal line: 1.2 × 10¹¹ for the Sun at 1 µm, 2.3 × 10¹⁰ for a 0.2 M☉ red dwarf, 2.4 × 10¹¹ for Sirius A.
+- **Choosing the lens star is a real choice** (and a reason to go to a star with no life of its own):
+
+  | Lens | Gain | Focal distance | Noise | Note |
+  |---|---|---|---|---|
+  | Sun-like | high | ~550 AU | a bright star in the coronagraph | the home lens, available from the start |
+  | Red dwarf | ~5× lower | ~110 AU | dim, but flares | the most common lens; short trip |
+  | Massive A star | ~2× higher | ~780 AU | very bright | rare, powerful |
+
+- **A lens near the target sees more.** The image of the target at the focal line scales as (telescope distance from the lens) / (target distance from the lens). An Earth-size planet 100 ly behind the Sun images to a disc 0.65 km across at 650 AU; through a lens star only 5 ly from the planet, the same disc is 13 km across, 20× larger and so far more resolvable. A star on the way to a candidate can be the place to look before the last, most expensive leg.
+- **The image is built pixel by pixel.** The telescope moves across the image region to map it, which is why a lens look takes months (Turyshev & Toth 2020).
+- **Lenses also carry signals** (Maccone 2009). A transmitter on a star's focal line has the same gain towards the opposite star. Earth can build relays on the Sun's focal lines towards the stars on the ship's itinerary (an Earth project, and a reason to send the itinerary home); the ship can sit on a destination star's focal line towards Sol to hear home far more clearly.
+- **Earth is an observatory too.** Earth can run its own lens telescopes on the Sun's focal lines and send what it finds. Candidates can come from home, at light speed, as long as Earth is willing and able.
+- **The maths is already in the package:** the focal distance follows from the weak-field deflection 2 r_s / b at the stellar limb, which `sunholo/relativity` computes and the M3 black-hole work verified (0.15 % at b = 1000 r_s). A star is a much gentler lens than Sgr A*.
 - **Why it matters for play:** this is the Bubble ship's own instrument. No planet-bound civilisation can easily reach a focal line, so it is the ship's edge. It turns "a faint O₂ line at 300 ly" into "a picture of a living world", before you spend centuries going there. Red dwarfs make short lenses, and they are the most common stars.
 
 ### 5. Observing at speed
