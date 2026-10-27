@@ -7,7 +7,7 @@
 **Repos:** design (this repo), `sunholo-data/stapledons-godot` (game)
 **Implementation:** milestone design docs, sprints and the mission charter
 live in `stapledons-godot/design_docs/`. The first is
-[M1 relativistic sky](https://github.com/sunholo-data/stapledons-godot/blob/main/design_docs/planned/r1/m1-relativistic-sky.md).
+[M1 relativistic sky](https://github.com/sunholo-data/stapledons-godot/blob/main/design_docs/implemented/r1/m1-relativistic-sky.md).
 
 ## Game vision alignment
 
@@ -26,7 +26,7 @@ This table records progress; the acceptance criteria below still define completi
 
 | Work | Current state and next gate |
 |---|---|
-| M1, relativistic sky | Built through M1.8, including the forward CMB disc (game #79). Remaining: M1.5b (AC9 renders, bright-star render gate, report). |
+| M1, relativistic sky | **Done; bar clause 1 met** (Mark approved the renders, R-f, 2026-10-27). M1.5b landed in [game PR #337](https://github.com/sunholo-data/stapledons-godot/pull/337): renders from rest to 0.999c, the bright-star render gate on real renders (93/93 within 1 px), the bench (p99 9.7 ms at 2560 × 1440 with 335k stars), evaluation 87/100. [Report](https://github.com/sunholo-data/stapledons-godot/blob/main/design_docs/implemented/r1/m1-report.md). |
 | Constellation inspection | Landed 2026-10-19 in [game PR #271](https://github.com/sunholo-data/stapledons-godot/pull/271) (`633a4259`): holding I shows Orion, Cassiopeia, Crux and the Big Dipper using actual catalogue stars. Guides follow velocity and observer position; unavailable endpoints omit connectors and GR suppresses guides. Full local suite, 33 GPU cases, 32 inspected reference images, benchmark and packaged smoke pass; independent evaluation 96/100. Mark explicitly accepted the existing crew-performance CI timing failure before merge; CI is not claimed green. [Implementation report](https://github.com/sunholo-data/stapledons-godot/blob/main/design_docs/implemented/r1/constellation-inspection-report.md). The broader M1 gates remain open. |
 | M2, journey core | Landed: plan, commit, flight, clocks, energy and deterministic replays. |
 | M3, black holes | Nonrotating Sgr A* demo landed, including lensing, hover/orbit, clocks and tides. The labelled background is the Sol sky; true Galactic-Centre imagery and Kerr rotation remain future work. |
@@ -63,7 +63,7 @@ docs demand.
 - Tests: 27 physics reference checks, 9 GPU-vs-CPU golden cases (under 0.1 px),
   simulation vs closed form, VM/interpreter parity.
 
-### M1: The relativistic sky (visual foundation)
+### M1: The relativistic sky (visual foundation) — done 2026-10-27
 **Goal:** what the player sees out any window is correct in every direction, at
 any speed and orientation.
 
