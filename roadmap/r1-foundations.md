@@ -82,10 +82,13 @@ any speed and orientation.
 - 60 fps at 1440p with the 330k catalogue and the background on M4 Max.
 
 ### M2: Simulation protocol and the journey core (gameplay foundation)
+
+**Status:** Implemented in the game, 10/10 sprint features pass; M2.5 and M2.6b independently PASS 93/100. [Implementation report](https://github.com/sunholo-data/stapledons-godot/blob/mission/stapledon-iter9-m2-landing/design_docs/implemented/r1/m2-report.md), [sprint state](https://github.com/sunholo-data/stapledons-godot/blob/mission/stapledon-iter9-m2-landing/.ailang/state/sprints/sprint_R1-M2-JOURNEY.json). Implementation main `6da03f8` (PR #35) has [successful CI](https://github.com/sunholo-data/stapledons-godot/actions/runs/36982239622). Final P5 supplemental review and bookkeeping landing/merged CI remain pending; this roadmap edit also needs its separate PR/CI.
+
 **Goal:** the game's central mechanic, trading your years against the
 galaxy's, runs in AILANG and can be tested with no Godot at all.
 
-1. **Protocol v1.** Versioned NDJSON messages: `hello`/`version` handshake,
+1. **Protocol v2 (`2.0`).** Versioned NDJSON messages: `hello`/`version` handshake,
    `input` (tick, player intents), and `state` (change sets for ship, clock and
    journey). Hand-written AILANG codecs with round-trip tests. Message shapes
    follow AILANG's planned `Render`/`Input`/`Clock` host effects

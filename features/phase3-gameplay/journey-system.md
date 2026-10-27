@@ -177,6 +177,9 @@ pure func velocityPresets() -> [VelocityPreset] {
 
 ### Time Dilation Calculation
 
+**Superseded maths (D-11, M2 implementation):** the `calculateJourneyTimes` example below assumes instant acceleration and is retained as historical design context. Gameplay uses `sunholo/relativity@0.4.0` boost–cruise–brake planning and stepping, with the normative model and check values in [higgs-bubble](../../physics/higgs-bubble.md). See the game's [M2 completion report](https://github.com/sunholo-data/stapledons-godot/blob/mission/stapledon-iter9-m2-landing/design_docs/implemented/r1/m2-report.md).
+
+
 ```ailang
 -- Lorentz factor: gamma = 1 / sqrt(1 - v^2/c^2)
 -- Where v is velocity as fraction of c
