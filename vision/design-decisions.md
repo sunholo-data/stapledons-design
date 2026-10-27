@@ -1596,8 +1596,8 @@ lives on every deck, not only at the bridge.
 
 **Consequences, from the geometry (computed 2026-10-27):**
 - **A plan sent from Earth before departure** lets Earth's light be waiting at every port on it.
-- **A beam covers everything behind its target.** Continuing outward along Earth's line of sight stays inside the beam, so no re-pointing is needed.
-- **A change of plan announced from port A** reaches Earth d_A years later, and Earth's beam reaches the new port B a further d_B years after that. The ship, arriving after about |AB| years, hears Earth at B only if it stays for the **triangle excess d_A + d_B − |AB|**. Example: from a port 40 ly out, a 30 ly sideways turn costs 60 years of waiting; doubling back towards Earth costs 20; going across the sky past Sol costs nothing.
+- **A beam covers its whole line.** A beam aimed at a port runs along the line from Sol through it, so a new port beyond it, or back along it towards Sol, is already covered; no re-pointing is needed.
+- **A change of plan announced from port A** reaches Earth d_A years later, and Earth's beam reaches the new port B a further d_B years after that. The ship, arriving after about |AB| years, hears Earth at B only if it stays for the **triangle excess d_A + d_B − |AB|**. Example: from a port 40 ly out, a 30 ly sideways turn costs 60 years of waiting; a star 10 ly from Sol off to the side costs 8.8; going across the sky past Sol costs nothing.
 - **Off-plan photons are lost.** Everything Earth sent towards a plan the ship abandoned is aimed at empty space (signals-and-instruments §3.1).
 - **Sub-light worlds are slow.** A sub-light ship or probe from a world you uplifted takes centuries to millennia to reach Earth. It can still arrive inside the doom window, so "others reach Earth first" stays possible, and every such arrival traces back to what the ship gave (D-71).
 

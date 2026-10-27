@@ -125,14 +125,15 @@ Illustrative budgets (Friis with apertures, P_r = P_t A_t A_r D² / (λ² d²), 
 1. **Earth stops sending,** by its own state: collapse, the doom, politics, neglect. The silence travels at c too; the ship hears it d years after it began.
 2. **Earth aims at the wrong place.** Earth points where the ship *will be*, which it knows only from the itinerary the ship sent (Mark, 2026-10-27: "it's only straight lines … they will need to point and broadcast assuming we get there at right time"). If the ship goes off-plan, every photon already sent is aimed at empty space and lost. This is the only true information loss. The geometry:
    - **A plan sent from Earth before departure:** Earth's light can be waiting at every port.
-   - **Continuing outward along Earth's line of sight:** the old beam already covers the new port.
+   - **Anywhere on the beam line:** a beam aimed at a port runs along the whole line from Sol through it, so a new port beyond it, or back along it towards Sol, is already covered.
    - **A change announced from port A to port B:** the plan reaches Earth after d_A years, and Earth's beam reaches B d_B years later. The ship hears Earth at B only if it stays for the **triangle excess d_A + d_B − |AB|**:
 
      | From a port 40 ly out | Excess (years to wait at B) |
      |---|---|
      | a 30 ly sideways turn | 60 |
-     | doubling back 30 ly towards Earth | 20 |
+     | a star 10 ly from Sol, off to the side | 8.8 |
      | 80 ly across the sky, past Sol | 0 |
+     | anywhere on the beam line (beyond the port, or back towards Sol) | 0 (already in the beam) |
 3. **The receivers cannot cover the shifted band** at the current D.
 4. **Distance:** the inverse square against Earth's power. Earth's technology growing (bigger beams, lens relays) or declining changes how far home can reach.
 5. **The medium:** dust in dense clouds (the game's ISM model), plasma smearing at low radio frequencies, absorption below 91.2 nm.

@@ -119,7 +119,7 @@ Earth's link runs in straight lines towards plans Earth has heard (signals-and-i
 | **Beams Earth should be sending** | Every plan whose message has had time to reach Earth: a cone from Sol towards that port | A solid cone, with Earth's light-front moving along it at c |
 | **Beams Earth cannot send yet** | Plans whose message is still in flight to Earth | A dashed cone, plus the message's own light-front crawling back towards Sol, with the date it arrives |
 | **Abandoned beams** | Plans the ship has left | A fading cone: that light is aimed at empty space |
-| **Coverage behind a port** | A beam covers everything beyond its target on Earth's line of sight | The cone continues past the port |
+| **Coverage along the line** | A beam covers its whole line from Sol, before and beyond its port | The cone runs from Sol past the port |
 | **The link window at each port** | From the earliest arrival of Earth's light there to the ship's planned departure | A bar on the port: green when it overlaps the stay, with "wait n years to hear Earth" when it does not (the triangle excess) |
 | **Silence** | No new Earth light since date X | The last known light-front, labelled with its age |
 
@@ -138,7 +138,7 @@ Rules:
 4. The Earth-time and ship-time costs equal the journey core's plan for the same leg, exactly.
 5. No candidate shows a "recommended" label or a single predicted state.
 6. The hindsight card's "predicted" column equals the distribution shown at commit time, byte for byte.
-7. Earth's beams: each cone exists only for a plan whose message has reached Earth by light travel time; the link window at each port equals the triangle excess d_A + d_B − |AB| for re-plans, and zero for a port beyond an existing beam's target on Earth's line of sight.
+7. Earth's beams: each cone exists only for a plan whose message has reached Earth by light travel time; the link window at each port equals the triangle excess d_A + d_B − |AB| for re-plans, and zero for a port on an existing beam's line (beyond its target or between it and Sol).
 
 ## Open questions for Mark
 
