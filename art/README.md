@@ -10,7 +10,7 @@ where each brief lives. **Read this first, then the brief for your task.**
 | [handoff-m4-2-blender.md](handoff-m4-2-blender.md) | **Current Blender task:** finish bridge v1 for M4.2 (overscan, iso camera, `WALK_` rules), delivered as a PR to the game repo | R1 M4 | **Ready (Mark, 2026-10-03).** Bridge only in R1 |
 | [handoff-codex-art.md](handoff-codex-art.md) | **Current 2D art task (Codex agents, self-contained):** (a) the captain sprite at 4 life stages, then (b) the cast's emotion-portrait sets | R1 M4 | **Ready (Mark, 2026-10-03)** |
 | [m4-2-requirements.md](m4-2-requirements.md) | One-page area-bundle contract for M4.2 (files, manifest, cameras, `WALK_`, checks) | R1 M4 | Reference for both handoffs |
-| [ship-interior-blender-brief.md](ship-interior-blender-brief.md) | Isometric play areas, interior panoramas, foreground plates | R1 M4 | **Approved; bridge v1 approved for build-out (D-16).** For R1, work from the Blender handoff |
+| [ship-interior-blender-brief.md](ship-interior-blender-brief.md) | Play areas read from fixed views (Bow, Astern, console zoom), interior panoramas, foreground plates | R1 M4 | **Approved; bridge v1 approved for build-out (D-16).** For R1, work from the Blender handoff |
 | [characters-blender-brief.md](characters-blender-brief.md) | Crew, captain, Archive robots, background people: illustrated portraits and matching static mini avatars | R1 M4 | Illustrated direction accepted. [Generation cast plan](generation-cast-plan.md) in development. Specs for the current work are in the Codex handoff |
 | [ship-exterior-blender-brief.md](ship-exterior-blender-brief.md) | Exterior bubble ship, departure/arrival camera moves, galaxy-map marker | R1 M2 (marker), M4 (views) | Revised spherical silhouette and boundary review pending |
 | [../features/ai-showcase.md](../features/ai-showcase.md) | **Runtime AI** (D-7): emotion markers selecting portraits, generated voices, the growing asset library, recorded outputs for replay | R1 M4 | Planned. Voice and marker style frame on the accepted Medic |
@@ -26,7 +26,7 @@ where each brief lives. **Read this first, then the brief for your task.**
 
 | The engine (Godot) renders, live and physically exact: | You author: |
 |---|---|
-| the relativistic sky: catalogue stars and the full-sky galaxy, with aberration, Doppler colour and brightness | ship interiors: isometric play areas, panoramas, foreground plates |
+| the relativistic sky: catalogue stars and the full-sky galaxy, with aberration, Doppler colour and brightness | ship interiors: play areas for the fixed views, panoramas, foreground plates |
 | black holes: shadow, lensing, Einstein rings (M3) | characters: generated illustrated portraits and matching static mini avatars |
 | planets (NASA textures, procedural), rings and moons | ship exterior model and camera moves |
 | the bubble boundary's speed-dependent glow | alien species, civilization and ruin kits (R2) |

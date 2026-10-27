@@ -48,7 +48,7 @@ The player is **inside the bubble**, walking the ship. **The direction of travel
 | 1 | Full-sky galaxy | engine (live, relativistic) | **fixed**: at infinity |
 | 2 | Catalogue stars | engine (live, relativistic) | **fixed** |
 | 3 | **Interior panorama:** the ship's own structure beyond the play area | **you** (rendered plate) | slow (about ×0.15) |
-| 4 | **Isometric play area:** the room-sized space the player walks | **you** (GLB models) | 1:1 |
+| 4 | **Play area:** the level's stage the player walks, seen from its fixed views (§6) | **you** (GLB models) | 1:1 |
 | 5 | **Foreground silhouettes:** fronds, struts, rails near the viewer | **you** (rendered plate) | fast (about ×1.6) |
 
 Conversations use **large portraits** (a separate brief; §8).
@@ -134,10 +134,10 @@ brightness for the ship's speed. Your deliveries must let it do that exactly.
 
    Use a real perspective camera with a vertical sensor fit: no shift and no
    lens distortion. The engine renders the sky through exactly this camera, so
-   the starbow lands where the architecture says "up".
-3. **Aim panorama cameras upward and outward** wherever you can. The physics
+   the starbow lands where the architecture says "ahead" (the bow).
+3. **Aim panorama cameras toward the bow and outward** wherever you can. The physics
    rewards it:
-   - **Forward (up) is where the sky blazes at speed.** Sideways goes dark.
+   - **Forward (the bow, D-92) is where the sky blazes at speed.** Sideways goes dark, and astern darkest.
    - **The bridge panorama is mostly sky,** by design.
    - **Lower levels** should frame the ship's interior across the void (the
      spire, the level above as a ceiling, far decks) with **bands of open space
@@ -146,15 +146,32 @@ brightness for the ship's speed. Your deliveries must let it do that exactly.
    them at the edges and the bottom: never across the centre, never over a
    likely spot for the player.
 
-## 6. The isometric play areas (GLB kit)
+## 6. The play areas (GLB kit)
 
 - **Build a modular kit** in real metres: floor tiles or pads, walls and
   railings, the rim edge (open to the void), doors or arches, lift and ramp
   heads, Archive terminals, consoles, dwellings, garden beds, furniture, props.
   Lay areas out on a **1 m grid**, with pieces snapping on **2 m** multiples.
-- **Areas are room-sized:** the camera shows about **16 m of height**, tilted
-  back about 14°. Design every area to read well from that one angle, rotated
-  45° (the spike's `iso_cam.rotation_degrees = (-14, 45, 0)`).
+- **Each level is a stage read from a few fixed views** (D-91, D-93; game repo
+  `design_docs/planned/r2/camera-forward.md`). The views never turn; they slide
+  with the captain. On the bridge: **Bow** (the default) looks toward the bow
+  from **9 m sternward of the captain and 5.5 m above the deck, pitched down
+  8°**, with a 78° vertical field of view; **Astern** is its mirror; a **console
+  zoom** frames each station's screen from about 1.25 m on the operator's side.
+  The old isometric angle (−14° tilt, 45° yaw) is retired.
+- **Dress what the views see.** In the Bow view that is the stern-facing
+  surfaces of props, the deck, and the bow rail against the sky; in Astern, the
+  deck toward the mast; in the zoom, each station's operator face. Backs and
+  undersides no view reaches can stay rough.
+- **Stations face the bow** where a level has them (proposed in the game repo's R2-DECK-LAYOUT re-plan, pending Mark's approval): the operator stands on the
+  stern side, so the captain works toward the journey and the zoom has the
+  forward sky beyond the screen. Mark the operator spot with an
+  `INTERACT_<station>_use` empty and the player start with `SPAWN_captain`.
+- **Depth comes from parallax.** On an open level (the bridge) the real 3D
+  props give it; roofed levels add the painted panorama and foreground plates
+  (layers 3 and 5). Tall props near a view's line of sight (the mast, rail
+  fronds) are a level's foreground layer: the game fades them, and they are
+  named per level in the game's `views.json`.
 - **Walkable surfaces are flat and marked:** include a `WALK_` collection (a
   navmesh source) and `SPAWN_<role>_<n>` empties for crew positions. Put
   interactables (consoles, terminals, doors) in an `INTERACT_` collection, one
@@ -199,7 +216,7 @@ In the Blender repo, with scripts and scenes committed. `exports/` and
 
 ```
 exports/stapledon/areas/<area>/
-  play_<area>.glb           # isometric play area (flat materials; WALK_, SPAWN_, INTERACT_ collections)
+  play_<area>.glb           # play area (flat materials; WALK_, SPAWN_, INTERACT_ collections)
   pano_<area>.png           # 3840x2160 RGBA, transparent where space is visible
   cam_<area>.json           # §5.2
   fg_<area>.png             # 3840x2160 RGBA foreground silhouettes (edges/bottom only)
@@ -213,7 +230,7 @@ exports/stapledon/ship/stapledon_exterior.glb
 {
   "area": "bridge",
   "layers": {"panorama": {"file": "pano_bridge.png", "parallax": 0.15},
-             "play": {"file": "play_bridge.glb", "iso_pitch_deg": -14, "iso_yaw_deg": 45, "iso_size_m": 16},
+             "play": {"file": "play_bridge.glb", "views": ["bow", "astern"]},
              "foreground": {"file": "fg_bridge.png", "parallax": 1.6}},
   "camera": "cam_bridge.json",
   "focus_m": [-8.0, 1.0, 9.0],
