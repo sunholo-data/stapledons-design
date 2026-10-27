@@ -3,6 +3,7 @@
 ## Status
 - **Status:** Proposed (Mark, attended 2026-10-13: "perhaps they run a similar simulation on their planets, then influenced by our visits and communication once it gets there between systems, that will mirror the interpersonal dynamics of internals"; "what are our limits for crew size, can we run it with tens, hundreds, thousands or even millions of citizens to represent planets? I guess we don't do it all deterministically and use statistics at some point")
 - **Priority:** P2 (design now; build after the crew loop, roadmap track C)
+- **Contact:** what the ship can do at a world, and alien value spaces in this engine, are in [contact-console.md](contact-console.md) (§3 the contact ladder, §7 alien values); roadmap [R3](../../roadmap/r3-signals-and-contact.md).
 - **Extends:** [inner-shapes-outer.md](inner-shapes-outer.md). That doc covers the coupling: crew state shapes messages, and civs answer with efficiencies and minds. This doc covers how a civilisation is simulated, and at what scale.
 - **Builds on:**
   - [civilization-trade.md](../future/civilization-trade.md) (civ data, philosophies);

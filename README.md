@@ -19,6 +19,8 @@ See [ADR 0001](decisions/0001-engine-and-architecture.md) for the reasons.
 | [lore/archive/](lore/archive/) | Player-facing physics entries for the in-game Archive; their numbers are checked against HB/RS check values |
 | [decisions/](decisions/) | Architecture decision records |
 | [roadmap/r1-foundations.md](roadmap/r1-foundations.md) | Current roadmap: spike → relativistic sky → journey core → black holes → first playable journey |
+| [roadmap/r2-voyage-life.md](roadmap/r2-voyage-life.md) | The social strand: the crew between destinations, skipping time, households, the civilisation lab |
+| [roadmap/r3-signals-and-contact.md](roadmap/r3-signals-and-contact.md) | The outward strand: signals and instruments, the destination finder, the contact console, living worlds |
 | [reference/](reference/) | Cross-cutting references: AI capabilities, RNG and determinism, eval system, performance |
 | [rejected/](rejected/) | Rejected directions, and why |
 | [legacy/](legacy/) | Documents tied to the retired Go/Ebiten engine, kept for history |
