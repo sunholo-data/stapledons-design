@@ -128,7 +128,7 @@ Illustrative budgets (Friis with apertures, P_r = P_t A_t A_r D² / (λ² d²), 
    - **Anywhere on the beam line:** a beam aimed at a port runs along the whole line from Sol through it, so a new port beyond it, or back along it towards Sol, is already covered.
    - **A change announced from port A to port B:** the plan reaches Earth after d_A years, and Earth's beam reaches B d_B years later. The ship hears Earth at B only if it stays for the **triangle excess d_A + d_B − |AB|**:
 
-     | From a port 40 ly out | Excess (years to wait at B) |
+     | From a port 40 ly out | Wait at B, years (the triangle excess at high γ; 0 where a heard beam already covers B) |
      |---|---|
      | a 30 ly sideways turn | 60 |
      | a star 10 ly from Sol, off to the side | 8.8 |
