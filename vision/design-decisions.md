@@ -1606,3 +1606,35 @@ lives on every deck, not only at the bridge.
 **Alternatives rejected:**
 - An Earth link that follows the ship anywhere: violates light travel time.
 
+
+
+## [2026-10-27] R3 Approved; the Default Universe Is Rich in Contact
+
+**Context:** R3 Signals and Contact (`roadmap/r3-signals-and-contact.md`) and its feature docs were proposed earlier the same day (PR #40). Mark answered all 18 open questions in an attended session and approved the roadmap together with signals-and-instruments, destination-finder, contact-console, living-worlds and life-and-intelligence-parameters.
+
+**Decision:**
+- **At least 5 living contacts per default voyage.** Mark: "at least 5 living contacts - we are in a very rich loaded part of anthropic luck." The default targets, per typical 100-year voyage inside the doom window and range, are 40–80 biospheres detected, 5–10 visited, 3–6 remnants, 5–10 signals and at least 5 living contacts (5–8 typical). Near the realistic baseline, contact is rare. The default universe is deliberately far from that baseline, and the calibration records by how many orders of magnitude. Lonely and Teeming stay as the honest extremes either side.
+- **The ship listens at any speed.** No cut-off at cruise. The console shows the Earth rate and the fraction the instruments can recover, which at high γ is usually tiny or none. Physics, not a rule, limits reception.
+- **The rest follow the docs' recommendations:**
+  - deliberate observation is paid in time;
+  - apertures are 10 m class, larger as blueprints from worlds;
+  - the homecoming torrent is a console feature;
+  - the finder lists everything above the noise and defaults to the ten nearest by Earth-time cost;
+  - predictions use the ship's estimate of the dial until the Archive reveals the luck number;
+  - messages addressed to us are pinned;
+  - unauthorised transmissions are possible, close to mutiny;
+  - Earth's doom may be told from the first message;
+  - a primer takes weeks and a vocabulary months;
+  - watching and revealing are in the slice, and signalling to animals comes later;
+  - M-dwarf habitability is on, labelled "debated";
+  - planets are photometric, with console art in the comic style;
+  - portraits and surfaces start procedural;
+  - the decoding crew member reads untranslated messages aloud.
+- `gamma_max` is retired (D-15).
+
+**Rationale:** Pillar 5 (Grounded Strangeness): a contact-rich universe is honest when it is presented as a selected universe, with its distance from the baseline measured and, in time, revealed. That selection is the multiverse loop's own anthropic argument (premise §5). Pillar 4 (The Ship Is Home): several contacts per voyage make the crew's decoding, voices and arguments a recurring part of ship life, not one set piece. Reception at any speed keeps the game out of the way of the physics: the instruments, not a menu rule, decide what can be heard.
+
+**Alternatives rejected:**
+- 0–2 living contacts, the first proposal: too sparse for a strand built around contact, and at odds with a universe tipped towards minds.
+- Raising only the contact count: most contacts would be silent until the ship arrived, so the signals and remnants rise with it.
+- Cutting reception off at γ ≈ 20: an arbitrary rule where the Doppler maths already gives the answer.

@@ -102,7 +102,7 @@ For players who want precise control:
 | `f_complex` | 0.0-1.0 | 0.1 | Fraction of life that becomes complex |
 | `f_tech` | 0.0-1.0 | 0.05 | Fraction of complex life that develops tech |
 | `civ_lifetime_mean` | 100-100000 | 10000 | Mean civ technological lifetime (years) |
-| `gamma_max` | 5-100 | 20 | Player ship max Lorentz factor |
+| ~~`gamma_max`~~ | — | — | Retired 2026-10-27 (superseded by D-15; life-and-intelligence-parameters decision 4) |
 | `local_cluster_radius` | 200-2000 | 800 | Dense region radius (ly) |
 | `local_cluster_boost` | 1.0-10.0 | 5.0 | Density multiplier in local cluster |
 

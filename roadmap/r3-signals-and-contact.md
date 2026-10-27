@@ -1,6 +1,6 @@
 # Roadmap R3: Signals and Contact (the outward strand)
 
-**Status:** Proposed 2026-10-27 (Mark, attended: "can we get some good design docs up and a roadmap for this part of the game?"). Not approved.
+**Status:** Approved 2026-10-27 (Mark, attended; every decision below is answered). Proposed 2026-10-27 (Mark, attended: "can we get some good design docs up and a roadmap for this part of the game?").
 **Scope:** everything between the ship and other worlds:
 - what reaches the ship, and what it can measure;
 - how the player finds reasons to go somewhere;
@@ -129,23 +129,30 @@ It needs W1–W2, S1–S3 (the subset for those two worlds), F1–F3 and F5, C5 
 - New maths goes into packages first (gate 3): `sunholo/observe`, `sunholo/relativity`, `sunholo/celestial`.
 - World and contact simulation stays pure and deterministic (gates 4 and 6); model output writes words only (D-20).
 
-## Decisions needed
+## Decisions (Mark, attended 2026-10-27)
 
-Collected from the design documents, each with a recommendation in its doc:
+All answered; each doc records its own under "Decisions".
 
-| # | Question | Doc | Recommendation |
+| # | Question | Doc | Decision |
 |---|---|---|---|
-| 1 | Deliberate observation (lens looks, deep stares, listening, paid in time) alongside "No Survey Budget"? | signals §6 | Yes |
-| 2 | The ship's apertures | signals Q2 | 10 m class; larger as blueprints from worlds |
-| 3 | Reception at cruise | signals Q3 | Low γ only, Doppler shown honestly |
-| 4 | The homecoming torrent as a console feature | signals Q4 | Yes |
-| 5 | Predictions use the ship's estimate of the dial, not the truth | finder Q2 | Yes, until the Archive's reveal |
-| 6 | ~~Can worlds ever build a bubble?~~ | console Q1 | **Decided 2026-10-27: (c).** The design can be passed on; forming a bubble needs a spinning black hole's ergosphere |
-| 7 | Unauthorised transmissions | console Q2 | Yes, mutiny-adjacent |
-| 8 | Telling worlds about Earth's doom | console Q3 | Allowed from the first message |
-| 9 | Encounter targets for the default preset | life-and-intelligence Q1 | 20–50 biospheres detected, 3–8 visited, 2–5 remnants, 1–3 signals, 0–2 living contacts |
-| 10 | M-dwarf habitability on by default | life-and-intelligence Q3 | On, labelled "habitability debated" |
-| 11 | Art direction for living worlds | living-worlds Q1 | Photometric planets, comic-style console art |
+| 1 | Deliberate observation alongside "No Survey Budget" | signals 1 | Yes, paid in time |
+| 2 | The ship's apertures | signals 2 | 10 m class; larger as blueprints from worlds |
+| 3 | Reception at cruise | signals 3 | **At any speed**, with Doppler and the recoverable fraction shown honestly (not cut off at γ ≈ 20) |
+| 4 | The homecoming torrent | signals 4 | A comms-console feature |
+| 5 | How many candidates | finder 1 | All above the noise; default filter the ten nearest by Earth-time cost |
+| 6 | Predictions use the ship's estimate of the dial | finder 2 | Yes, until the Archive's reveal |
+| 7 | Messages addressed to us | finder 3 | Pinned, with their own filter |
+| 8 | Can worlds ever build a bubble? | console 1 | (c): the design can be passed on; forming a bubble needs a spinning black hole's ergosphere |
+| 9 | Unauthorised transmissions | console 2 | Yes, close to mutiny |
+| 10 | Telling worlds about Earth's doom | console 3 | Allowed from the first message |
+| 11 | Decoding time | console 4 | Weeks for a primer, months for a vocabulary |
+| 12 | Signalling to animals and pre-technological minds | console 5 | Watching and revealing in the slice; animal signalling later |
+| 13 | Encounter targets for the default preset | life-and-intelligence 1 | **40–80 biospheres detected, 5–10 visited, 3–6 remnants, 5–10 signals, ≥ 5 living contacts** ("we are in a very rich loaded part of anthropic luck") |
+| 14 | When the player sees the luck number | life-and-intelligence 2 | The Archive reveals it; visible on New Game+ |
+| 15 | M-dwarf habitability | life-and-intelligence 3 | On, labelled "habitability debated" |
+| 16 | Art direction for living worlds | living-worlds 1 | Photometric planets, comic-style console art |
+| 17 | Generated images | living-worlds 2 | Procedural first, generated in the slice's second pass |
+| 18 | Who reads untranslated messages | living-worlds 3 | The decoding crew member, in their own voice |
 
 ## Risks
 

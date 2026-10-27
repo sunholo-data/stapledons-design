@@ -2,7 +2,7 @@
 
 ## Status
 
-- **Status:** Proposed 2026-10-06 (Mark, attended: "we are going to weight anthropic values such as density of life and intelligence etc. so will need to see how much we need to vary those from expected 'normal' Drake values to have an interesting game experience"). Not approved.
+- **Status:** Approved 2026-10-27 (Mark, attended; the open questions are answered below). Proposed 2026-10-06 (Mark, attended: "we are going to weight anthropic values such as density of life and intelligence etc. so will need to see how much we need to vary those from expected 'normal' Drake values to have an interesting game experience").
 - **Reaffirmed 2026-10-27** (Mark, attended): "we are consciously going to tip the scales to have interesting games, and the in game reason is that each run we start a new multiverse that has these crazy conditions"; "but we will have pure physics for other things". The dial sets what exists; detection, travel and light-lag stay pure physics ([signals-and-instruments.md](signals-and-instruments.md)). Roadmap: [R3](../../roadmap/r3-signals-and-contact.md) track W.
 - **Priority:** P1. It sets how often the player meets life, and why.
 - **Builds on:**
@@ -139,9 +139,9 @@ In play, the Archive can explain the factors as lore with real citations.
 
 ---
 
-## Open questions for Mark
+## Decisions (Mark, attended 2026-10-27)
 
-1. **Encounter targets** for the default preset, per typical 100-year voyage, **counted inside the doom window and range**, since those are the encounters that can help Earth. A starting proposal: 20–50 biospheres detected, 3–8 visited, 2–5 remnants, 1–3 signals, **0–2 living contacts**, with contact more likely the further and longer you go.
-2. **Show the luck number to the player, and when?** It's a spoiler for the multiverse loop. Proposed default: hidden at world generation (presets are named only); the ship's AI reveals the number as part of its secret ("this universe is 10^3 kinder to minds than chance would give; that is not an accident"); fully visible on New Game+.
-3. **M-dwarf habitability:** count M-dwarf habitable-zone planets (about 75 % of stars, so up to 4× more biospheres) or flag them as debated and off by default? Default: on, with the planet labelled "habitability debated".
-4. **Reconcile the four existing civilisation counts** to whatever targets are chosen in question 1, and retire `gamma_max` (superseded by D-15).
+1. **Encounter targets for the default preset**, per typical 100-year voyage, counted inside the doom window and range: **40–80 biospheres detected, 5–10 visited, 3–6 remnants, 5–10 signals, and at least 5 living contacts (5–8 typical).** Mark: "at least 5 living contacts - we are in a very rich loaded part of anthropic luck." The default universe is deliberately far from the §2 baseline, where contact is rare; that departure is the anthropic tipping the premise depends on (premise §5), and the calibration (§3) records how many orders of magnitude it takes. Lonely and Teeming stay as honest extremes either side.
+2. **The luck number is revealed by the Archive.** Hidden at world generation (presets are named only); the ship's AI reveals it as part of its secret ("this universe is 10^3 kinder to minds than chance would give; that is not an accident"); fully visible on New Game+.
+3. **M-dwarf habitability is on by default,** with each such planet labelled "habitability debated".
+4. **The older civilisation counts are superseded** by the per-voyage targets in decision 1. The figures quoted in §Problem ("5–15 within 500–1,000 ly", "8–15 in 1,000 ly", "~12", "maybe 1 within 500 ly") stay as history; whatever the calibration gives for "civilisations alive within 1,000 ly" at the default preset becomes the one figure, written from its output. `gamma_max` is retired (D-15).

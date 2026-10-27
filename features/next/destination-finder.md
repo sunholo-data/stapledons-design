@@ -2,7 +2,7 @@
 
 ## Status
 
-- **Status:** Proposed 2026-10-27 (Mark, attended: "adding tools to the map so we can filter down to the likely destinations - we need reasons to go to systems, most often due to suspecting they hold a civilisation we will interact with"). Not approved.
+- **Status:** Approved 2026-10-27 (Mark, attended; the open questions are answered below). Proposed 2026-10-27 (Mark, attended: "adding tools to the map so we can filter down to the likely destinations - we need reasons to go to systems, most often due to suspecting they hold a civilisation we will interact with").
 - **Priority:** P1. It is the decision surface for the whole strand.
 - **Roadmap:** [r3-signals-and-contact.md](../../roadmap/r3-signals-and-contact.md), track F.
 - **Builds on:**
@@ -140,8 +140,8 @@ Rules:
 6. The hindsight card's "predicted" column equals the distribution shown at commit time, byte for byte.
 7. Earth's beams: each cone exists only for a plan whose message has reached Earth by light travel time; the link window at each port equals the triangle excess d_A + d_B − |AB| for re-plans, and zero for a port on an existing beam's line (beyond its target or between it and Sol).
 
-## Open questions for Mark
+## Decisions (Mark, attended 2026-10-27)
 
-1. **How many candidates at once?** Proposed: show everything above the noise, filtered down to the ten nearest by Earth-time cost by default.
-2. **Should the prediction use the dial's true rates or the ship's estimate of them?** Recommended: the ship's estimate. The ship does not know this universe's luck until the Archive works it out (premise §5), so early predictions are pessimistic. When the Archive reveals the luck number, the predictions shift.
-3. **Messages addressed to us** (a beacon aimed at the ship's route, or a reply). Pin them to the top of the list? Recommended: yes, as their own filter, since they are the strongest reason to go.
+1. **Candidates: everything above the noise**, with the default filter showing the ten nearest by Earth-time cost.
+2. **Predictions use the ship's estimate of the dial,** not the true rates. Early predictions are pessimistic; when the Archive reveals this universe's luck (life-and-intelligence-parameters, decision 2), the predictions shift.
+3. **Messages addressed to us are pinned** to the top of the list, with their own filter.
