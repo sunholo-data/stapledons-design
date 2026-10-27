@@ -2,7 +2,7 @@
 
 ## Status
 
-- **Status:** Proposed 2026-10-27 (Mark, attended: "we need the graphics for the planets with life civ etc, and fun with generating alien communication"). Not approved.
+- **Status:** Approved 2026-10-27 (Mark, attended; the open questions are answered below). Proposed 2026-10-27 (Mark, attended: "we need the graphics for the planets with life civ etc, and fun with generating alien communication").
 - **Priority:** P2. It follows the evidence, finder and console work, but its art direction should be agreed early.
 - **Roadmap:** [r3-signals-and-contact.md](../../roadmap/r3-signals-and-contact.md), track V.
 - **Builds on:**
@@ -95,8 +95,8 @@ The fun is in learning a system across a run. The first message is noise and str
 4. Glyph and sonification generation is deterministic. The same seed gives byte-identical glyph sheets and audio.
 5. Every generated asset is labelled as generated and recorded in the content library with its seed.
 
-## Open questions for Mark
+## Decisions (Mark, attended 2026-10-27)
 
-1. **Art direction for living worlds.** Keep the planet renders photometric, as now, with the Moebius style reserved for interiors and UI, or push living worlds towards the comic look? Recommended: photometric planets (they are the "true sky"), comic-style console art.
-2. **Generated images for species and surfaces.** Use the D-7 image generation for species portraits and surface detail from the start, or begin with procedural art? Recommended: procedural first, generated in the slice's second pass.
-3. **Who reads untranslated messages aloud?** Recommended: the crew member decoding them, in their own voice, which keeps contact inside the ship's social life.
+1. **Art direction:** photometric planets (the "true sky"); console art, glyphs and species portraits in the comic style.
+2. **Procedural first.** Species portraits and surface detail start procedural; D-7 generated images come in the slice's second pass.
+3. **Untranslated messages are read aloud by the crew member decoding them,** in their own voice.

@@ -2,7 +2,7 @@
 
 ## Status
 
-- **Status:** Proposed 2026-10-27 (Mark, attended: "we need some kind of session on how we get signals from earth and other suns/planets to the ship. what instrumentation we use"; "we will have pure physics for other things, so I expect something like we detect what looks like organic life or industry spectrum and other detections that make us confident to go to that planet spending our precious time resources"). Not approved.
+- **Status:** Approved 2026-10-27 (Mark, attended; the open questions are answered below). Proposed 2026-10-27 (Mark, attended: "we need some kind of session on how we get signals from earth and other suns/planets to the ship. what instrumentation we use"; "we will have pure physics for other things, so I expect something like we detect what looks like organic life or industry spectrum and other detections that make us confident to go to that planet spending our precious time resources").
 - **Priority:** P1. Every reason to go somewhere starts here.
 - **Roadmap:** [r3-signals-and-contact.md](../../roadmap/r3-signals-and-contact.md), track S.
 - **Builds on:**
@@ -255,9 +255,9 @@ Following the project rule (physics maths lives in packages first), the photon b
 5. Every false positive in the §4.2 table is modelled: a desiccated M-dwarf world with abiotic O₂ and no CH₄ never reaches more than the configured confidence for life.
 6. The evidence ledger is deterministic: VM and interpreter are byte-identical, and the same seed gives the same beliefs.
 
-## Open questions for Mark
+## Decisions (Mark, attended 2026-10-27)
 
-1. **Deliberate acts vs "No Survey Budget".** Is §6 (lens looks, deep stares, listening, all paid in time) acceptable alongside the automatic survey? Recommended: yes. They are commitments, not a budget.
-2. **The ship's apertures.** What can the ship carry? A 100 m-class sparse aperture across the bubble would make life detection a hundreds-of-light-years task without the lens. A 10 m class keeps the lens essential. Recommended: start at 10 m class, with larger apertures as blueprints from worlds (a reward from contact).
-3. **Listening at cruise.** Allow coarse reception at low γ, or only at rest? Recommended: low-γ reception allowed, with Doppler shown honestly; nothing at γ ≳ 20.
-4. **The homecoming torrent** (§3). Play Earth's compressed history on the way home as a feature of the comms console? Recommended: yes. It is the strongest Pillar 3 moment the physics offers for free.
+1. **Deliberate acts alongside "No Survey Budget": yes, paid in time.** The automatic survey stays free. Lens looks, deep stares and long listening (§6) cost time at a stop: they are commitments, not a budget.
+2. **Apertures: 10 m class, growing through blueprints.** The lens stays essential for detail. Larger sparse apertures arrive as blueprints from worlds, a reward from contact.
+3. **Reception at any speed.** The receivers listen at every γ; nothing is switched off at cruise. Doppler is shown honestly (§3, §5): the console shows the Earth rate and the fraction the instruments can actually recover. At high γ that fraction is usually tiny or zero, and the console says so, rather than the game forbidding it.
+4. **The homecoming torrent is a comms-console feature.** Earth's compressed history plays as it arrives on the way home (§3).

@@ -2,7 +2,7 @@
 
 ## Status
 
-- **Status:** Proposed 2026-10-27 (Mark, attended: "we communicate maybe with just bacteria or animals or a species etc. and we use our social dynamics system and resources to communicate - need a new pane for that I guess for ship to planet communication - and setup possibly trade of information and resources with other civs all with the aim to help our game goals. and we have made the interior social dynamics extendable to also simulate these planets interacting, but with alien values, perhaps"; "fun with generating alien communication"; "we are going to be in a universe where we are the first fraction of light speed ship, but perhaps by game end others learn it from us"). Not approved.
+- **Status:** Approved 2026-10-27 (Mark, attended; the open questions are answered below). Proposed 2026-10-27 (Mark, attended: "we communicate maybe with just bacteria or animals or a species etc. and we use our social dynamics system and resources to communicate - need a new pane for that I guess for ship to planet communication - and setup possibly trade of information and resources with other civs all with the aim to help our game goals. and we have made the interior social dynamics extendable to also simulate these planets interacting, but with alien values, perhaps"; "fun with generating alien communication"; "we are going to be in a universe where we are the first fraction of light speed ship, but perhaps by game end others learn it from us").
 - **Priority:** P1 for design, P2 for build (after the civilisation lab, R2 track C).
 - **Roadmap:** [r3-signals-and-contact.md](../../roadmap/r3-signals-and-contact.md), track K.
 - **Builds on:**
@@ -134,10 +134,10 @@ Every exchange serves the game's goals:
 5. World decisions are seeded and authored; model output never changes an outcome (the existing words pipeline check).
 6. Replay: the same seed and the same transmissions give byte-identical world histories.
 
-## Open questions for Mark
+## Decisions (Mark, attended 2026-10-27)
 
-1. ~~**Can worlds ever build a bubble?**~~ **Decided: option (c)** (Mark, attended 2026-10-27: "yeah c is good and gives good motivation to the original story"). The design can be passed on, but a stable bubble forms only in a spinning black hole's ergosphere. Worlds learn sub-light drives and AI probes from us; a world builds a bubble only with our design and a reachable spinning black hole. See design-decisions 2026-10-27 and premise §1.
-2. **Unauthorised transmissions.** Can a crew member send a message the captain forbade? Recommended: yes, as a mutiny-adjacent act with its own consequences.
-3. **Telling worlds about Earth's doom.** Allowed from the first message? Recommended: yes. Whether to tell, and whom, is one of the run's biggest choices.
-4. **How long decoding takes.** Proposed: a primer takes weeks of crew work at a stop, and a working vocabulary takes months; long gaps between letters let both sides decode more.
-5. **Light signalling to animals and pre-technological minds.** In scope for the first contact slice, or later? Recommended: watching first, revealing in the slice (it is the strongest pre-tech choice), animal signalling later.
+1. **Can worlds ever build a bubble? Option (c)** ("yeah c is good and gives good motivation to the original story"). The design can be passed on, but a stable bubble forms only in a spinning black hole's ergosphere. Worlds learn sub-light drives and AI probes from us; a world builds a bubble only with our design and a reachable spinning black hole. See design-decisions 2026-10-27 and premise §1.
+2. **Unauthorised transmissions: yes, close to mutiny.** A crew member can send a message the captain forbade, with consequences: lost trust, a split crew, and a world that hears a second voice.
+3. **Telling worlds about Earth's doom: allowed from the first message.** Whether to tell, and whom, is one of the run's biggest choices.
+4. **Decoding time:** a primer takes weeks of crew work at a stop, and a working vocabulary takes months. Both sides decode more during the long gaps between letters.
+5. **Pre-technological minds and animals:** the First Contact slice has watching, and revealing yourself to pre-technological minds. Light signalling to animals comes later.
