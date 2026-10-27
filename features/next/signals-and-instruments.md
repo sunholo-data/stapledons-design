@@ -94,7 +94,7 @@ The game's shipped "news from home" (M4.4) already uses the light-delayed epoch 
 
 #### 3.1 Earth's link, strictly (Mark, 2026-10-27: "how does it work with earth sending signals to us at light speed and we moving away - and what communication medium possibly works and how would it degrade? keeping strict physics")
 
-**Space is the buffer; speed is the playback rate.** Light always catches a subluminal ship. A signal sent one day after departure reaches a ship cruising at β after 1/(1 − β) days: 11 days at 0.9c, 2.7 years at 0.999c, 2,738 years at γ 707. Everything Earth sends is in flight behind the ship and is delivered when the ship's motion allows.
+**Space is the buffer; speed is the playback rate.** Light always catches a subluminal ship. A signal sent one day after departure reaches a ship cruising at β after 1/(1 − β) days: 10 days at 0.9c, 2.7 years at 0.999c, 2,738 years at γ 707. Everything Earth sends is in flight behind the ship and is delivered when the ship's motion allows.
 
 Received from a source the ship recedes from with Doppler factor D, at Earth-frame distance d at reception:
 

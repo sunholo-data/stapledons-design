@@ -21,6 +21,7 @@ must be accurate in all directions".
 | Aberration | n' = (n + ((γ−1)(n·β̂) + γβ) β̂) / (γ(1 + β n·β̂)); scalar form cos θ' = (cos θ + β)/(1 + β cos θ) | 90° at 0.9c → 25.842°. 90° at 0.5c → 60°. Straight ahead and straight behind are unchanged. Result is unit length. |
 | Inverse aberration (sky sampling) | n = aberrate(n', −β) | Round trip error < 1e-6 |
 | Doppler | D = γ(1 + β cos θ) = 1/(γ(1 − β cos θ')) | Ahead at 0.9c: √19 = 4.3589. Astern: 0.22942. Appearing at 90°: 1/γ |
+| Light cone and Earth's link (signals-and-instruments §2–§3.1) | A static source at distance d is seen as it was at t − d/c. The Earth rate (Earth-seconds of history per ship-second) is the Doppler factor for Sol's direction; straight astern D = e^(−φ) = 1/(γ(1+β)), straight ahead e^(φ). A signal sent Δ after departure catches a ship on a straight outbound cruise at Δ/(1 − β) after departure. A plan announced from port A to port B is first heard at B after the triangle excess d_A + d_B − \|AB\|; on the Sol→A line it is 0 | Earth rate astern 0.99c: 0.070888; at β = 0.999999: 7.0711 × 10⁻⁴; ahead at β = 0.999999: 1414.2. Catch-up of a signal sent one day after leaving, 0.9c: 10 days. Excess from a port 40 ly out, a 30 ly sideways turn: 60 ly |
 | Spectrum | A blackbody at T is seen as a blackbody at D·T (because I_ν/ν³ is invariant) | |
 | Point-source brightness | F'_band/F_band = (Y(D·T)/Y(T)) / D², where Y is CIE luminance of the Planck spectrum | Bolometric total = D² |
 | Extended-source brightness (sky, nebulae) | Radiance I' = D⁴ I bolometric; in a band, the radiance of a blackbody at D·T | |
@@ -181,6 +182,16 @@ dimensionless.
 | RS-23 | Reference speed for RS-2 | 0.5 | c |
 | RS-24 | Proposed (star-surfaces): disc-integrated V luminance of a temperature-mapped stellar disc ÷ the uniform disc's, at β = 0 (tolerance 1e-4 by quadrature, 1e-6 for a closed-form single spot, 0.5% GPU) | 1 | — |
 | RS-25 | Proposed (star-surfaces): apparent ÷ proper rate of a static source's surface evolution, straight ahead at 0.9c (√19; receding 0.22942) | 4.3589 | — |
+| RS-26 | Earth rate (Doppler factor for Sol straight astern) at 0.99c | 0.070888 | — |
+| RS-27 | Earth rate straight astern at 0.999c | 0.022366 | — |
+| RS-28 | Earth rate straight astern at the top speed, β = 0.999999 (γ 707.1, D-15) | 7.0711 × 10⁻⁴ | — |
+| RS-29 | Earth rate straight ahead (heading home) at 0.99c | 14.107 | — |
+| RS-30 | Earth rate straight ahead at β = 0.999999 | 1414.2 | — |
+| RS-31 | Catch-up: a signal sent one day after departure reaches a 0.9c ship, days after departure, 1/(1 − β) | 10 | day |
+| RS-32 | Catch-up of the same signal at β = 0.999999: 1/(1 − β) = 10⁶ days | 2,737.9 | yr |
+| RS-33 | Triangle excess d_A + d_B − \|AB\|: from a port 40 ly out, a 30 ly turn at right angles | 60 | ly |
+| RS-34 | Triangle excess: from a port 40 ly out to a star 10 ly from Sol, off to the side at right angles to the Sol–port line | 8.769 | ly |
+| RS-35 | Triangle excess for a new port on the Sol→A line (beyond A, or between A and Sol) | 0 | ly |
 
 Qualitative checks (not numbers, so not in the registry):
 - **RS-Q1:** straight ahead and straight behind are unchanged by aberration,
