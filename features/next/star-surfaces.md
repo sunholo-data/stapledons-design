@@ -2,7 +2,7 @@
 
 ## Status
 
-- **Status:** Proposed 2026-10-20 (Mark, attended, ledger D-99): "another strand is we could have more impressive textures for the stars/sun - we are dimming them anyway, so we can see structure?"
+- **Status:** Implemented (approved as game-repo ledger D-105; landed as R2-STAR-SURFACES, stapledons-godot `design_docs/implemented/r2/star-surfaces.md`). Proposed 2026-10-20 (Mark, attended, ledger D-99): "another strand is we could have more impressive textures for the stars/sun - we are dimming them anyway, so we can see structure?"
 - **Priority:** P2.
 - **Implementation design:** stapledons-godot `design_docs/planned/r2/star-surfaces.md` (R2-STAR-SURFACES), awaiting Mark's approval.
 - **Spike frames (throwaway shader, real game views):** https://storage.googleapis.com/stapledons-voyage-assets/refs/star_surfaces/contact_sheet.png

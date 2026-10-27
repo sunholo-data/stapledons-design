@@ -1,7 +1,7 @@
 # Crew Scenario Library: a growing set of situations aboard
 
 ## Status
-- **Status:** Proposed (Mark, attended 2026-10-13: "make a design doc for a new agent to take on, that can iterate and make lots of new scenarios that we can grow over time")
+- **Status:** Approved 2026-10-27 (Mark, attended; decisions recorded below). Proposed (Mark, attended 2026-10-13: "make a design doc for a new agent to take on, that can iterate and make lots of new scenarios that we can grow over time")
 - **Owner:** a dedicated **scenario agent** working in the crew lab. Game integration is a separate agent (stapledons-godot R2-CREW, D-70).
 - **Roadmap:** [roadmap/r2-voyage-life.md](../../roadmap/r2-voyage-life.md), track L
 - **Consumers:** the narrative orchestrator ([voyage-life-loop.md](voyage-life-loop.md) §4) and the game's `data/crew/` (R2-CREW AC7)

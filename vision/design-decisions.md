@@ -1638,3 +1638,38 @@ lives on every deck, not only at the bridge.
 - 0–2 living contacts, the first proposal: too sparse for a strand built around contact, and at odds with a universe tipped towards minds.
 - Raising only the contact count: most contacts would be silent until the ship arrived, so the signals and remnants rise with it.
 - Cutting reception off at γ ≈ 20: an arbitrary rule where the Doppler maths already gives the answer.
+
+
+## [2026-10-27] Remaining Design Questions Answered; Older Strand Docs Approved
+
+**Context:** After approving R3, Mark asked to bring every open design decision up to date. The answers below close the open questions in galaxy-beyond-measurement, bubble-resources, inner-shapes-outer, archive-voice and earth-fate-home. With them, the R2 roadmap, civ-mirror, crew-scenario-library, voyage-life-loop and semantic-memory are approved. Sound (D-101) and star-surfaces (D-105, implemented) were already approved through the game ledger, and their status lines were stale.
+
+**Decision:**
+- **Galaxy:**
+  - the Besançon model, pinned;
+  - the provenance overlay on by default;
+  - the measured sample plus completion through the Gaia DR3 selection function, with no wholesale synthesis;
+  - every confirmed exoplanet system within ~100 pc, with assumed appearances labelled.
+- **Bubble resources:**
+  - the mass cost in kilograms, with people-equivalents as the gloss;
+  - the household starts on D–T;
+  - the scrap, brine and ash pools are places on the industrial level.
+- **Worlds and the crew:**
+  - the déjà-vu library crosses runs from day one, unexplained until the reveal;
+  - blueprints are the main reward, but a philosophy can sometimes outrank them.
+- **The Archive:**
+  - warmer than first proposed (high Agreeableness): a companion whose unreliability hurts;
+  - wrong only when damaged, with the D-113 ship-time wear reading to confirm;
+  - a frame break that slips through plays as damage;
+  - its voice still needs a TTS audition.
+- **Earth's fate:**
+  - N stays the player's choice;
+  - the fate window opens at min(10,000, N − 3,000), with faint early hints that Earth knows;
+  - the diaspora pictures continue until the comet shower;
+  - a captured Earth and Sargasso share one pool;
+  - fate art lives in the public bucket but never appears on the website;
+  - the comet-shower delay is physics-derived and seen only in the end-of-run fast-forward.
+
+**Rationale:** Pillar 4 (The Ship Is Home): a warm Archive that is only wrong when hurt makes its failures events, not noise. Pillar 3 (Time Has Emotional Weight): early hints at home let a careful player feel Earth's fear coming. Pillar 5 (Grounded Strangeness): the galaxy keeps every measured star, and the synthesis around them is labelled.
+
+**Alternatives rejected:** a colder Archive, and an Archive unreliable from day one (both read as a broken tool, not a character); wholesale synthesis of the 326 ly to ~2 kpc band (it loses real stars); a private bucket for fate art (it adds friction, and the website rule already keeps players from being spoiled by accident).
