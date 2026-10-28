@@ -1683,3 +1683,13 @@ lives on every deck, not only at the bridge.
 **Rationale:** Pillar 5 (Grounded Strangeness): the strangeness is believable because the Archive can explain it, and the explanations are true. D-11 already made physics education canon in-game lore; this makes it a habit of the build, not a backlog.
 
 **Alternatives rejected:** a separate education mode or codex outside the fiction (it breaks the in-world Archive); writing entries only at release (the explanation is clearest while the feature is being built).
+
+## [2026-10-28] Standing Order: Visual First, Words Last
+
+**Context:** Mark reviewed the first comms station (R3-EARTH-LINK EL3): two panes of correct, sim-bound sentences. "the comms station is boring - this is the connection of the crew to home it should be a wash of images, text, emotions and feelings, and a good visual UI not lots of text. can we have standing orders not to use text for everything?" He had said the same of the Crew console on 2026-10-17 ("the UI is still a bit text heavy").
+
+**Decision:** a standing order. Game UI shows state visually first: images, faces and crew emotion, colour, motion, diagrams, icons and meters. Text is the last layer: short labels and the few words that matter, with long sentences behind a hover, a tap or a detail view. Every UI feature's design doc carries a visual concept (a mock-up) before its copy is written, saying what the player sees at a glance and what they feel. D-21 still holds: what a visual encodes comes from sim fields.
+
+**Rationale:** Pillar 2 (The Ship Is Home) and Pillar 3 (Time Is the Cost): the player has to feel home receding and the crew's tie to it, not read a report about it. A panel of sentences carries the information but not the feeling.
+
+**Alternatives rejected:** fixing the comms station alone (the crew console needed the same note, so the habit is the problem); dropping the words entirely (labels and the few sentences that matter stay, for clarity and accessibility).
