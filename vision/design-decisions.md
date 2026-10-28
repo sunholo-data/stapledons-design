@@ -1673,3 +1673,13 @@ lives on every deck, not only at the bridge.
 **Rationale:** Pillar 4 (The Ship Is Home): a warm Archive that is only wrong when hurt makes its failures events, not noise. Pillar 3 (Time Has Emotional Weight): early hints at home let a careful player feel Earth's fear coming. Pillar 5 (Grounded Strangeness): the galaxy keeps every measured star, and the synthesis around them is labelled.
 
 **Alternatives rejected:** a colder Archive, and an Archive unreliable from day one (both read as a broken tool, not a character); wholesale synthesis of the 326 ly to ~2 kpc band (it loses real stars); a private bucket for fate art (it adds friction, and the website rule already keeps players from being spoiled by accident).
+
+## [2026-10-28] Standing Order: the Archive Teaches the Real Physics Behind Each Feature
+
+**Context:** while building Earth's link (R3-EARTH-LINK), Mark asked whether Earth could really track a ship crossing its sky at nearly the speed of light. The answer turned out to be real and teachable: distance makes the aim swing gently (1.418° a year for a 0.99c crossing forty light-years out, RS-38). The aim never needs to swing faster than βγ / r (RS-39, RS-40). The hard part is aiming ahead along a known course, as NASA's Psyche laser link did in 2023. Mark: "very interesting educational and could be in the in game archive? ... standing order to add interesting real life physics to archive where relevant to the game".
+
+**Decision:** a standing order. Every feature that adds or shows physics also adds the interesting real physics behind it to the in-game Archive (`lore/archive/`), where it is relevant to play. That covers what the player sees, why it is so, and the real-world analogue. Entries follow the Archive rules: in-world voice (D-67), every number a spec check value, and an unlock tied to the moment the physics first matters. Design docs list their Archive entries alongside their acceptance criteria. The first two under the order are `archive.earths-voice` (the light cone, the Earth rate, signals that chase you, the wait after a turn) and `archive.following-light` (how Earth aims at a fast ship).
+
+**Rationale:** Pillar 5 (Grounded Strangeness): the strangeness is believable because the Archive can explain it, and the explanations are true. D-11 already made physics education canon in-game lore; this makes it a habit of the build, not a backlog.
+
+**Alternatives rejected:** a separate education mode or codex outside the fiction (it breaks the in-world Archive); writing entries only at release (the explanation is clearest while the feature is being built).
