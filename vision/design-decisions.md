@@ -1690,6 +1690,6 @@ lives on every deck, not only at the bridge.
 
 **Decision:** a standing order. Game UI shows state visually first: images, faces and crew emotion, colour, motion, diagrams, icons and meters. Text is the last layer: short labels and the few words that matter, with long sentences behind a hover, a tap or a detail view. Every UI feature's design doc carries a visual concept (a mock-up) before its copy is written, saying what the player sees at a glance and what they feel. D-21 still holds: what a visual encodes comes from sim fields.
 
-**Rationale:** Pillar 2 (The Ship Is Home) and Pillar 3 (Time Is the Cost): the player has to feel home receding and the crew's tie to it, not read a report about it. A panel of sentences carries the information but not the feeling.
+**Rationale:** Pillar 3 (Time Has Emotional Weight) and Pillar 4 (The Ship Is Home): the player has to feel home receding and the crew's tie to it, not read a report about it. A panel of sentences carries the information but not the feeling.
 
 **Alternatives rejected:** fixing the comms station alone (the crew console needed the same note, so the habit is the problem); dropping the words entirely (labels and the few sentences that matter stay, for clarity and accessibility).
