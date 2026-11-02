@@ -29,7 +29,7 @@ voice of whoever aboard was willing to speak.
 | [civ-mirror.md](../features/next/civ-mirror.md) | Civilisations as the same simulation one level up, with scale tiers (individuals, groups, populations) and deterministic statistics |
 | [inner-shapes-outer.md](../features/next/inner-shapes-outer.md) | How the crew and the worlds affect each other |
 | [bubble-resources.md](../features/next/bubble-resources.md) | The eight resources, D-69 |
-| [semantic-memory.md](../features/next/semantic-memory.md) | Crew recall, the Archive's misremembering, déjà vu across runs |
+| [semantic-memory.md](../features/next/semantic-memory.md) | Crew recall, the Archive's misremembering, déjà vu across runs. **S0 (similar worlds in the sim, protocol 2.14) landed 2026-11-02**; S1 onwards is design-side |
 | stapledons-godot `design_docs/implemented/r2/crew-integration.md` | The crew host aboard: R2-CREW, D-70. Includes auto-run with standing orders, escalation rules and `crew_hold` (CI-5) |
 | stapledons-godot `design_docs/planned/r2/crew-population.md` | The ~1,000 aboard as 8–12 cohort actors with mood buckets (R2-CREW-POP): the ship's group and population tiers |
 

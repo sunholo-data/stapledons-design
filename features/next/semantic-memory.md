@@ -4,6 +4,7 @@
 
 - **Status:** Approved 2026-10-27 (Mark, attended; decisions recorded below). Proposed 2026-10-13 (Mark, attended). He asked to explore AILANG's semantic cache, which "we planned to have within the game to help find similar planets, news feed surfacing, etc. We could be generating a lot of data over many runs, and a way some leak into this universe run vs others perhaps." He later added that embeddings will run locally, through Ollama running embeddinggemma-2, and floated in-game security keys that unlock Archive features and may correspond to real API keys.
 - **Priority:** P2. Phase S0 is P1, because it is cheap and needs nothing new.
+- **S0 implemented** (2026-11-02): similar worlds ship in the stapledons-godot sim at protocol 2.14 (sprint R2-SIMILAR-S0, PRs #305, #323, #366 and #368; design, plan and report in stapledons-godot `design_docs/implemented/r2/semantic-memory-s0*.md`). The sim emits the ranking once per new game; the bridge stores it exactly as sent. Showing it at the Archive or in the HUD is parked for attended review. S1 onwards is still design-side.
 - **Builds on:**
   - [premise-and-loop.md](../../vision/premise-and-loop.md):
     - §4: the loop is the secret.
@@ -65,7 +66,7 @@ Measured on the Solar System plus TRAPPIST-1:
 |---|---|
 | Earth | TRAPPIST-1 e (0.26), Venus (0.33), TRAPPIST-1 d (0.40) |
 | TRAPPIST-1 e | Earth, TRAPPIST-1 f |
-| Jupiter | Saturn, Neptune |
+| Jupiter | Saturn (0.75), Uranus (1.95), Neptune (2.27) |
 
 **Uses:**
 
