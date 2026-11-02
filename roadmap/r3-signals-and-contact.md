@@ -54,7 +54,7 @@ Each run is a universe the loop chose because it is unusually kind to minds (pre
 
 | ID | Milestone | Exit criteria | Depends |
 |---|---|---|---|
-| S1 *loop* | The light cone `seen()`, and Earth's signal on every leg: the news epoch generalised, the **Earth rate** D as a live value in the sim | signals-and-instruments ACs 1–2; M4.4's α Cen epoch unchanged | — |
+| S1 *loop* ✅ | The light cone `seen()`, and Earth's signal on every leg: the news epoch generalised, the **Earth rate** D as a live value in the sim | signals-and-instruments ACs 1–2; M4.4's α Cen epoch unchanged | — |
 | S2 *loop* | `sunholo/observe` 0.1: photon and link budgets, SNR, lens focal distance and gain, false-positive likelihoods; spec check values added first | Package tests and `pkg quality` clean; the §4.4 focal table to 0.1 % | — |
 | S3 *loop* | The census, spectroscopy and technosignature instruments, writing the evidence ledger and beliefs | ACs 4–6; a desiccated M-dwarf O₂ world never reads as life | S2, W2 |
 | S4 | The lens look: the trip to the focal line, months of integration, the lens image | A GPU golden of the lens product against the CPU model; renders reviewed (gate 2) | S3, V2 |
@@ -70,7 +70,7 @@ Each run is a universe the loop chose because it is unusually kind to minds (pre
 | F3 | The reason card, with the Archive's interpretation | Reviewed in play | F2 |
 | F4 | The crew's voices on candidates (= R2 G4) | Opinions from live crew state | F3, R2 G1 |
 | F5 | The hindsight card at arrival | AC 6; reviewed in play | F2 |
-| F6 | Earth's beams on the map: beams Earth should be sending, beams it cannot send yet, abandoned beams, link windows per port, silence | destination-finder AC 7; reviewed in play | S1, F1 |
+| F6 ✅ | Earth's beams on the map: beams Earth should be sending, beams it cannot send yet, abandoned beams, link windows per port, silence | destination-finder AC 7; reviewed in play | S1, F1 |
 
 ### Track C: civilisations (continues R2 track C)
 
@@ -84,7 +84,7 @@ Each run is a universe the loop chose because it is unusually kind to minds (pre
 
 | ID | Milestone | Exit criteria | Depends |
 |---|---|---|---|
-| K1 | The comms station: Listen (Earth first, with the Earth rate) and the Exchange log; Earth's link fails only by the physical causes in signals-and-instruments §3.1 (Earth stops, aims off-plan, band out of reach, distance, medium) | Earth's signal shown with Doppler, light age and rate on every leg; going off-plan loses exactly the photons already aimed at the plan | S1 |
+| K1 ✅ | The comms station: Listen (Earth first, with the Earth rate) and the Exchange log; Earth's link fails only by the physical causes in signals-and-instruments §3.1 (Earth stops, aims off-plan, band out of reach, distance, medium) | Earth's signal shown with Doppler, light age and rate on every leg; going off-plan loses exactly the photons already aimed at the plan | S1 |
 | K2 | Primers and decoding as crew work; translation confidence | contact-console AC 3; crew events for contested readings | K1, C5, V3 |
 | K3 | Compose, the voice and consent | Messages in a crew voice; refusal and orders work as aboard | K2, R2 G1 |
 | K4 | Exchange: blueprints, maps, philosophies, warnings, favours, wired to the civ simulation | ACs 1–2, 5–6 | K3, C6 |
@@ -113,7 +113,7 @@ It needs W1–W2, S1–S3 (the subset for those two worlds), F1–F3 and F5, C5 
 
 ## Order of work (next)
 
-1. **S1, K1 and F6** (integration). The light cone, Earth's signal with the live Earth rate, and Earth's beams on the map. They use physics the game already has, and make home the ship's anchor from day one.
+1. ✅ **S1, K1 and F6** (integration; landed 2026-10-30: game [#344](https://github.com/sunholo-data/stapledons-godot/pull/344) with the visual comms station, sound from home [#361](https://github.com/sunholo-data/stapledons-godot/pull/361), `sunholo/observe` 0.1.0). The light cone, Earth's signal with the live Earth rate, and Earth's beams on the map. They use physics the game already has, and make home the ship's anchor from day one.
 2. **W1 then W2** (*loop*). Everything else needs a populated galaxy.
 3. **S2 then S3** (packages, then integration). The evidence ledger.
 4. **F1, F2, F3, F5.** Reasons to go.
