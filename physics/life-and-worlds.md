@@ -62,7 +62,7 @@ Constants for check cases: AU=149597870700 m, nominal Rsun=695700000 m,
 G=6.67430e-11 SI, solar mass=1.98847e30 kg, Earth mass=5.9722e24 kg,
 year=365.25 days, day=86400 s. The RV cases below use these constants,
 P(Earth)=365.25 d and P(Jupiter)=4332.59 d, m(Jupiter)=317.828 Earth masses,
-sin(i)=1, e=0; tolerances are 0.01 m/s for Jupiter and 0.0001 m/s for Earth.
+sin(i)=1, e=0; rounding tolerances are 0.05 m/s for Jupiter and 0.0001 m/s for Earth.
 
 ## 3. Count model and historical reference cases
 
@@ -97,7 +97,21 @@ lifetimes extend endings. PreTech precedes technology by a log-uniform
 M-dwarf HZ worlds are labelled “habitability debated”. No synthetic planets
 are added to measured systems (D-144).
 
+### Planet occurrence away from measured systems
+
+[NASA Exoplanet Standards Team final report (2019)](https://science.nasa.gov/wp-content/uploads/2023/04/Standards_Team_Final_Report_2019-Oct-17.pdf),
+§3.a.i.1, Eq. 1 and Table 1, printed p. 5: SAG13 nominal G-dwarf occurrence
+is d²N/(d ln R d ln P)=Gamma R^alpha P^beta, R in Earth radii and P in
+**years**. Below 3.4 Earth radii (Gamma,alpha,beta)=(0.38,-0.19,0.26);
+above it (0.73,-1.18,0.59). Integrate piecewise across the radius break.
+The [SAG13 closeout](https://exoplanets.nasa.gov/system/internal_resources/details/original/680_SAG13_closeout_8.3.17.pdf),
+slide 18, explicitly supplies those units. Applying this law to M dwarfs is
+an adopted extrapolation; the dedicated etaEarth slot fixes HZ occurrence
+separately. Cold-period extrapolation beyond ~640 days is poorly constrained
+and must be labelled. This is not an observational upper limit on unseen planets.
+
 ## 4. LW check-value registry
+
 
 Each row is one scalar. Values are model/check cases unless §1 labels them
 measured. Printed precision defines rounding tolerance; no row claims an exact
@@ -117,27 +131,27 @@ uncertain astronomical measurement. HZ checks use Teff=5780 K, L=1.
 | LW-10 | Canon lifetime median | 100000 | yr |
 | LW-11 | Epoch window | 5000000000 | yr |
 | LW-12 | Complex-life split median (design) | 0.316227766016838 | — |
-| LW-13 | Solar recent Venus flux | 1.776 | Earth flux |
-| LW-14 | Solar runaway greenhouse flux | 1.107 | Earth flux |
-| LW-15 | Solar maximum greenhouse flux | 0.356 | Earth flux |
-| LW-16 | Solar early Mars flux | 0.320 | Earth flux |
+| LW-13 | Solar recent Venus flux | 1.776 | S⊕ |
+| LW-14 | Solar runaway greenhouse flux | 1.107 | S⊕ |
+| LW-15 | Solar maximum greenhouse flux | 0.356 | S⊕ |
+| LW-16 | Solar early Mars flux | 0.320 | S⊕ |
 | LW-17 | Solar conservative inner HZ | 0.950 | AU |
 | LW-18 | Solar conservative outer HZ | 1.676 | AU |
 | LW-19 | Earth equilibrium temperature at Teff 5772 K and albedo 0.3 | 255 | K |
 | LW-20 | Circular Jupiter RV on solar-mass star | 12.5 | m/s |
 | LW-21 | Circular Earth RV on solar-mass star | 0.0895 | m/s |
 | LW-22 | Earth geometric transit probability | 0.00465 | — |
-| LW-23 | Disc stars within 500 ly | 9.92e5 | stars |
-| LW-24 | Disc stars within 1000 ly | 6.70e6 | stars |
-| LW-25 | Disc stars within 3000 ly | 1.04e8 | stars |
-| LW-26 | Disc stars within 5000 ly | 3.24e8 | stars |
-| LW-27 | Disc stars within 10000 ly | 1.37e9 | stars |
+| LW-23 | Disc stars within 500 ly | 9.92 × 10⁵ | stars |
+| LW-24 | Disc stars within 1000 ly | 6.70 × 10⁶ | stars |
+| LW-25 | Disc stars within 3000 ly | 1.04 × 10⁸ | stars |
+| LW-26 | Disc stars within 5000 ly | 3.24 × 10⁸ | stars |
+| LW-27 | Disc stars within 10000 ly | 1.37 × 10⁹ | stars |
 | LW-28 | Reference alive within 1000 ly | 0.00161 | civilisations |
 | LW-29 | Reference overlap 1e6 yr within 10000 ly | 33.3 | civilisations |
 | LW-30 | Reference overlap 24000 yr within 3000 ly | 0.085 | civilisations |
 | LW-31 | Optimistic alive within 1000 ly | 1.07 | civilisations |
 | LW-32 | Optimistic alive within 10000 ly | 220 | civilisations |
-| LW-33 | Pessimistic alive within 1000 ly | 1.07e-8 | civilisations |
+| LW-33 | Pessimistic alive within 1000 ly | 1.07 × 10⁻⁸ | civilisations |
 | LW-34 | Collapse share (design) | 0.75 | — |
 | LW-35 | Ecocide share (design) | 0.15 | — |
 | LW-36 | Transcendence share (design) | 0.10 | — |
