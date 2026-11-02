@@ -196,6 +196,19 @@ intervals of R, initial past-directed radial branch and horizon access.
 Returning rays have an accessible turning root; step exhaustion is an error,
 never evidence of capture. Check null norm, constants, turns and convergence.
 
+One regular lens-angle representation removes the radial dragging rotation
+from a unit angular direction m. In past Mino time its equation is
+m''=s²q e_z−(K+2s²q²)m, q=m_z, K=λ²+η. Let B be the positive root of
+B²−(K−s²)B−s²η=0, A=−sign(n_θ)√(η/B), C=−λ/√(B+s²). Then
+m=Rot_z(node)(cosν,C sinν,A sinν), ν'=√(B+s²q²), and the full node rate is
+drag−λs²/[√(B+s²)(√(B+s²)+ν')]. The rationalized node rate has no polar
+denominator. For η=0 retain the constant equator, ν'=|λ|, A=0,
+C=−sign(λ); radial λ=η=0 has ν=0. The two stored bending/twist angles may
+be δ_∥=ν+ψ−π and δ_⊥=node. Remove the flat-space arc before float32
+storage, and reconstruct the actual Cartesian direction with A,C above.
+These are unwrapped asymptotic phases; a finite-far BL φ is a different
+coordinate and must not be substituted for the sky azimuth.
+
 **Tables and limits.** Use n_Z=−e_r cosψ+sinψ(e_φ cosχ+e_θ sinχ),
 ψ,χ in radians, χ periodic. Store the capture boundary angle ψ_b(χ,R),
 and both unwrapped lens channels. If using logarithmic regularisation,
@@ -274,6 +287,27 @@ smaller ordinary-ray differences do not extend that claim to critical rays.
 Package publication/evaluation, table coefficient fitting and cutoff/resolution
 convergence, CPU/GPU goldens and visual review remain separate acceptance gates;
 these reproducible headless data alone do not satisfy them.
+
+The attended continuation's independent near-axis fixture at game commit
+[`53d9bc65`](https://github.com/sunholo-data/stapledons-godot/commit/53d9bc65)
+adds 336 rays (280 escaping), seven spins0/.1/.25/.5/.75/.9/.998,
+u=4/6/2e6, both hemispheres and azimuth senses, with maximum oracle
+refinement3.51e-15 and null residual1.38e-13. Reproduce with
+`python3 -I tools/kerr_null_ref.py --nearaxis`; the source still requires
+the pinned NumPy/SciPy environment. Discrete coverage is not a continuum
+conditioning proof. The same commit records a400-ray sweep and a5,880-ray
+near-axis sweep with zero solver failures on the regular/compact package
+solver. Solver-failure coverage is separate from accuracy coverage.
+
+**Implementation preflight disposition (2026-11-02):** the planned
+single-F32-boundary/1536-column consumer format has not passed. At u=6,
+s=.9,χ=.7 its1,535 refined midpoint probes give9.01e-4rad maximum even
+with the exact boundary; single-F32 boundary rounding causes59 false
+captures. Doubling to3072 columns reduces the former to2.26e-4rad, still
+above1.2e-4; it does not repair boundary precision. This is failed
+implementation evidence, not a changed physical accuracy budget. Review a
+precision-preserving boundary and antipode interpolation/chart before any
+production pins or visuals; do not narrow the cutoff or omit those probes.
 
 ## 4. Test requirements
 
