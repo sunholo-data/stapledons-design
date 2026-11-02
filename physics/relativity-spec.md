@@ -184,6 +184,13 @@ Constant-equator solutions stay on the equator; double radial roots are
 critical rays. Axis rays require a regular angular chart. Never hide an
 invalid potential by unconditional sqrt(max(0,potential)); any roundoff clamp
 has a fixed scale-aware tolerance validated independently.
+Longitude is undefined at a pole: keep unwrapped φ within each regular chart
+and retain the chart-transition phase, so no winding or physical twist is
+reset or reflected. A regular Cartesian angular direction plus accumulated
+dragging is an equivalent geometric representation. Test exact λ=0 crossings
+and arbitrary small nonzero λ on both sides of the axis at the same angular
+accuracy budget. Exact-axis examples alone do not establish near-axis accuracy;
+a coordinate singularity cannot be counted as capture or used to omit a probe.
 Classify capture separately from integration by the real roots and allowed
 intervals of R, initial past-directed radial branch and horizon access.
 Returning rays have an accessible turning root; step exhaustion is an error,
@@ -207,9 +214,14 @@ part, projected into ZAMO then the same ship boost: E_ij=C_i a j b UᵃUᵇ,
 relative acceleration −E·separation. A principal-frame scalar alone is
 insufficient. Before claiming numeric tides, an independent metric-derivative
 curvature oracle must verify trace, sign, units and both orbit senses/radial
-motion at all accepted spins/domain edges. No Kerr tide digits are asserted
-by this amendment; failure to verify blocks release, never authorizes a null
-or Schwarzschild substitute. At s=0 call existing Schwarzschild scalar clock,
+motion at all accepted spins/domain edges. The reproducible metric-derived
+curvature fixture below supplies numeric acceptance probes, in M⁻²; multiply
+by 4 for package units c²/r_s² before the SI acceleration conversion.
+Stretch is minus the minimum electric-tensor eigenvalue, squeeze the maximum;
+retain the full tensor and its frame, not only those extrema. Finite fixture
+coverage does not establish a continuum-wide conditioning bound. Failure to
+verify blocks release, never authorizes a null or Schwarzschild substitute.
+At s=0 call existing Schwarzschild scalar clock,
 orbit-speed and tide exports directly; use a nonsingular circle for shadow
 maths. At nonzero s on the equator evaluate the static clock as
 sqrt(1−1/(u/2)), preserving the legacy operation order. The production s=0
@@ -230,11 +242,38 @@ c=299792458 m/s. The reproducible Decimal60 scalar oracle and fixture are
 [`tools/kerr_ref.py`](https://github.com/sunholo-data/stapledons-godot/blob/2b47456b4ef43033607694e6c528911b8ab267db/tools/kerr_ref.py)
 and [`tests/fixtures/kerr/rk.json`](https://github.com/sunholo-data/stapledons-godot/blob/2b47456b4ef43033607694e6c528911b8ab267db/tests/fixtures/kerr/rk.json):
 `python3 -I tools/kerr_ref.py --check tests/fixtures/kerr/rk.json`.
-The scalar fixture covers RK-1–13, RK-18 and RK-Q1; RK-14–17 provenance is
-the retained Decimal60 `shadow` oracle in the approved
-[`R2-KERR design, V32 and Scratch oracle source`](https://github.com/sunholo-data/stapledons-godot/blob/6d92d2cb/design_docs/planned/r2/kerr-black-holes.md).
-Promoting those shadow records into the maintained oracle is a required
-package/shadow milestone, not evidence already supplied by the scalar fixture.
+The scalar fixture covers RK-1–13, RK-18 and RK-Q1. The maintained Decimal60
+[`shadow` oracle](https://github.com/sunholo-data/stapledons-godot/blob/878236b05f1ff0d5e2e724eddfff717ada354be2/tools/kerr_ref.py)
+now promotes the approved design's retained V32 calculation into
+[`shadow.json`](https://github.com/sunholo-data/stapledons-godot/blob/878236b05f1ff0d5e2e724eddfff717ada354be2/tests/fixtures/kerr/shadow.json),
+including RK-14–17 roots/extrema and the complete N=200000 sums.
+
+Additional independent acceptance data at immutable game commit
+[`878236b0`](https://github.com/sunholo-data/stapledons-godot/commit/878236b05f1ff0d5e2e724eddfff717ada354be2):
+
+| Oracle source | Fixture and exact scope | Reproduction from game root |
+|---|---|---|
+| [`kerr_ref.py`](https://github.com/sunholo-data/stapledons-godot/blob/878236b05f1ff0d5e2e724eddfff717ada354be2/tools/kerr_ref.py), Decimal60 polynomial roots | [`shadow.json`](https://github.com/sunholo-data/stapledons-godot/blob/878236b05f1ff0d5e2e724eddfff717ada354be2/tests/fixtures/kerr/shadow.json), RK-14–17 at infinity | `python3 -I tools/kerr_ref.py --shadow` |
+| [`kerr_curvature_ref.py`](https://github.com/sunholo-data/stapledons-godot/blob/878236b05f1ff0d5e2e724eddfff717ada354be2/tools/kerr_curvature_ref.py), Decimal60 analytic metric derivatives and full Riemann projection | [`curvature.json`](https://github.com/sunholo-data/stapledons-godot/blob/878236b05f1ff0d5e2e724eddfff717ada354be2/tests/fixtures/kerr/curvature.json), 80 tensors: s=0/.5/.9/.998 × u=4/6/20/2000000 × ZAMO/hover/pro/retro/radial b=−.5 | `python3 -I tools/kerr_curvature_ref.py` |
+| [`kerr_null_ref.py`](https://github.com/sunholo-data/stapledons-godot/blob/878236b05f1ff0d5e2e724eddfff717ada354be2/tools/kerr_null_ref.py), compactified second-order Hamiltonian DOP853 | [`null.json`](https://github.com/sunholo-data/stapledons-godot/blob/878236b05f1ff0d5e2e724eddfff717ada354be2/tests/fixtures/kerr/null.json), 72 rays, 49 escaping: s=0/.9/.998 × u=4/6/20 × eight directions | `python3 -I tools/kerr_null_ref.py` |
+| Same independent null oracle | [`nearcritical.json`](https://github.com/sunholo-data/stapledons-godot/blob/878236b05f1ff0d5e2e724eddfff717ada354be2/tests/fixtures/kerr/nearcritical.json), 12 escaping rays: s=.9/.998 × prograde endpoint/u=3/retrograde endpoint critical orbit × tangent perturbation 1e-5/1e-8, observer u=6 | `python3 -I tools/kerr_null_ref.py --nearcritical` |
+
+These Python tools are test oracles, never production table generators. The
+curvature oracle uses metric derivatives rather than the package's principal
+Weyl construction. The null oracle uses independent radial polynomial topology,
+a regular angular sphere chart and adaptive second-order integration rather
+than the package's first-integral RK4 solver. Its reference environment is
+NumPy 2.5.4 / SciPy 1.18.1 (scalar/curvature tools need only the standard library).
+Null sky values include a checked asymptotic tail; stored BL t and chart φ are
+at the recorded finite far sphere. A finite BL arrival time at infinity is not
+claimed. Tolerance refinement, null/conservation and domain tests accompany
+fixture matching; none substitutes for the near-axis or whole-range gates.
+At the 1e-8 near-critical cutoff, the independent null oracle's worst recorded
+refinement difference is 9.94e-6 rad, within the 1.2e-4 rad budget. The much
+smaller ordinary-ray differences do not extend that claim to critical rays.
+Package publication/evaluation, table coefficient fitting and cutoff/resolution
+convergence, CPU/GPU goldens and visual review remain separate acceptance gates;
+these reproducible headless data alone do not satisfy them.
 
 ## 4. Test requirements
 
