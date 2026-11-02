@@ -58,7 +58,7 @@ Radial velocity K=(2 pi G/P)^(1/3) m sin(i)/(Mstar+m)^(2/3)/sqrt(1-e²), SI.
 Mutual Hill radius is ((m1+m2)/(3 Mstar))^(1/3) (a1+a2)/2; separation in Hill
 radii is (a2-a1)/RH ([Chambers et al. 1996](https://doi.org/10.1006/icar.1996.0019),
 original §2 locator **unverified** because the full text was inaccessible).
-The formula is verified against [Pu & Wu's follow-up literature](https://academic.oup.com/mnras/article/463/3/3226/2646619),
+The formula is verified against [Carrera, Davies & Johansen 2016](https://academic.oup.com/mnras/article/463/3/3226/2646619),
 Eqs. 1–2. No stability guarantee is inferred from a single separation test.
 
 Constants for check cases: AU=149597870700 m, nominal Rsun=695700000 m,
