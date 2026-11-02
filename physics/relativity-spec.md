@@ -206,3 +206,9 @@ Qualitative checks (not numbers, so not in the registry):
 - **RS-Q3:** photon-ring images converge on b_c.
 - **RS-Q4:** an Einstein ring appears for any source behind the hole, at the
   predicted angle.
+- **RS-Q5 (proposed, game R3-TRUE-PROCESSED):** a picture decoded from
+  Earth's link (data on an optical carrier, signals-and-instruments §3.1)
+  keeps the colours Earth encoded at every Earth rate D. The Doppler shift
+  is in the playback rate (D, RS-26 to RS-30) and the carrier's wavelength
+  (1/D), never in the decoded pixels. A colour shift by D is physical only
+  for light seen directly (the spectrum rows of §2), not for a broadcast.
