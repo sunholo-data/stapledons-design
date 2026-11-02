@@ -79,7 +79,7 @@ edges. Count the epoch overlap once, not once per endpoint.
 The two tables in the life feature are computed from **ref-2026-10-06**:
 FGK=0.20, etaFGK=0.4, M off, fLife=0.3, fMinds*fTech=0.005, L=10000 yr,
 Twin=5e9 yr. They are not tables of baseline-prior medians. Existing rounded
-cells remain historical reference arithmetic. Optimistic uses fLife=1,
+cells remain historical reference arithmetic. Two historical cells disagree with\nstrict rounding of the formula: 1000-ly everTech=803.838985686 (prints 804,\nnot 805); 5000-ly overlap over 24000 yr=0.264501263335 (prints 0.26, not\n0.27). Package tests use the derived values and report these transcription\ndiscrepancies; they do not tune the density to reproduce inconsistent rounding. Optimistic uses fLife=1,
 fMinds=0.1, fTech=0.1, L=1e6 yr. Pessimistic uses fLife=fMinds=0.001,
 fTech=0.1 (reconstruction: omitted in the old text), L=1000 yr.
 
