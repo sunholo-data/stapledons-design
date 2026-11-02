@@ -39,6 +39,13 @@ No document states a realistic reference value. So the game can't yet say how fa
 
 ## What the numbers imply (computed 2026-10-06)
 
+The inputs (reference point `ref-2026-10-06`, not baseline-prior medians;
+see [the normative registry](../../physics/life-and-worlds.md)):
+
+W1.0 source audit (2026-11-02, D-144) corrects three rounding cells:
+805 → 804, 1.7 × 10⁵ → 1.6 × 10⁵, and 0.27 → 0.26. The equations and
+point inputs are unchanged.
+
 The inputs:
 - the measured local stellar density, 0.079 stars/pc³ (GCNS: 331,312 within 100 pc);
 - a thin disc with scale height 300 pc;
@@ -48,9 +55,9 @@ The inputs:
 
 | Within | Stars | Biospheres (f_life 0.3) | Tech civs ever | Alive at any instant | Exist at some point in a game window of 10³ / 10⁵ / 10⁶ yr |
 |---|---|---|---|---|---|
-| 1,000 ly | 6.7 × 10⁶ | 1.6 × 10⁵ | 805 | **0.0016** | 0.002 / 0.018 / 0.16 |
+| 1,000 ly | 6.7 × 10⁶ | 1.6 × 10⁵ | 804 | **0.0016** | 0.002 / 0.018 / 0.16 |
 | 3,000 ly | 1.0 × 10⁸ | 2.5 × 10⁶ | 1.3 × 10⁴ | 0.025 | 0.03 / 0.28 / 2.5 |
-| 10,000 ly | 1.4 × 10⁹ | 3.3 × 10⁷ | 1.7 × 10⁵ | 0.33 | 0.36 / 3.6 / **33** |
+| 10,000 ly | 1.4 × 10⁹ | 3.3 × 10⁷ | 1.6 × 10⁵ | 0.33 | 0.36 / 3.6 / **33** |
 
 For comparison, under the same star counts:
 - **Optimistic-expert** values (f_l 1, f_i 0.1, f_c 0.1, L 10⁶ yr) give about 1 civilisation alive within 1,000 ly at any instant, and about 220 within 10,000 ly.
@@ -72,7 +79,7 @@ The mission bounds both range and time. The useful volume is about 500–3,000 l
 | 500 ly | 2.4 × 10⁴ | 0.0005 / 0.0008 |
 | 1,000 ly | 1.6 × 10⁵ | 0.003 / 0.005 |
 | 3,000 ly | 2.5 × 10⁶ | 0.05 / 0.09 |
-| 5,000 ly | 7.8 × 10⁶ | 0.16 / 0.27 |
+| 5,000 ly | 7.8 × 10⁶ | 0.16 / 0.26 |
 
 So the time-dilation lever only works for players who leave Earth behind. For the mission itself, **a few civilisations within reach before impact need about 10²–10³ over the world-gen defaults**, and far more over the realistic median.
 
@@ -88,8 +95,8 @@ So the time-dilation lever only works for players who leave Earth behind. For th
   - R★: Licquia & Newman 2015, about 1.65 M☉/yr;
   - f_p ≈ 1 (Kepler);
   - η⊕: Bryson 2021 for FGK, and Dressing & Charbonneau 2015 for M dwarfs, flagged as "habitability debated";
-  - f_l, f_i, f_c: log-uniform per Sandberg et al. 2018;
-  - L: log-uniform from 10² to 10⁸ yr.
+  - f_l: Sandberg et al. 2018 §3.1.1 rate model (`log10(lambda Vt) ~ Normal(0,50²)`, `f_l = 1-exp(-lambda Vt)`); f_i and f_c: log-uniform per Table 1;
+  - L: log-uniform from 10² to 10⁸ yr (canon, D-144; Sandberg Table 1 instead uses 10²–10¹⁰ yr).
 
   It's living data: new results (JWST biosignature limits, η⊕ updates) re-pin it.
 - **The dial:** a world's parameters are written as **offsets from the baseline median, in orders of magnitude**, per factor. For example, "f_i +2.0 (100× the baseline median)". Presets become named offset sets. The existing "anthropic luck" becomes the sum of offsets, shown to the player as one number: *"This universe is 10^3.5 times kinder to minds than the median expert estimate."*
@@ -145,3 +152,13 @@ In play, the Archive can explain the factors as lore with real citations.
 2. **The luck number is revealed by the Archive.** Hidden at world generation (presets are named only); the ship's AI reveals it as part of its secret ("this universe is 10^3 kinder to minds than chance would give; that is not an accident"); fully visible on New Game+.
 3. **M-dwarf habitability is on by default,** with each such planet labelled "habitability debated".
 4. **The older civilisation counts are superseded** by the per-voyage targets in decision 1. The figures quoted in §Problem ("5–15 within 500–1,000 ly", "8–15 in 1,000 ly", "~12", "maybe 1 within 500 ly") stay as history; whatever the calibration gives for "civilisations alive within 1,000 ly" at the default preset becomes the one figure, written from its output. `gamma_max` is retired (D-15).
+
+## Implementation rulings (Mark, 2026-11-02, D-144)
+
+All R3-WORLDS OQ1–OQ9 recommendations accepted. Only the cautious local
+explorer and mid-range wanderer bind the preset bands at Standard's Earth
+clock; the pilgrim and waiter are reported, with a living-contact floor.
+Only life, minds, technology and lifetime are dialled. The slice uses a seed
+chosen by search after calibration. S2 photon budgets precede the calibration.
+The four preset names and targets are retained; their offsets and the default
+alive-within-range figure remain pending the calibration output.
