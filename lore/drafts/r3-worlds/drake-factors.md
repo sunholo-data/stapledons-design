@@ -1,32 +1,32 @@
 ---
 id: archive.drake-factors
 title: The Worlds That Might Answer
-unlock: anthropic_reveal
-checks: [LW-7, LW-8, LW-9, LW-10]
+unlock: first_planet_host
+checks: [LW-1, LW-5, LW-6, LW-7, LW-8, LW-9, LW-10, LW-42, LW-43, LW-44, LW-45]
 status: draft-for-Mark
 ---
-Counting stars is the easy part. We can estimate how many carry planets,
-and how many of those planets receive light that could let water stay liquid.
-Then the chain leaves measured astronomy. How often does life begin? How
-often does it become intelligent, make technology, and remain detectable?
-We have no census that answers those questions.
+About 0.05 civilisations alive within 1000 ly: that is our baseline estimate,
+using the adopted medians. It is an expectation, not a count of neighbours
+we have found. Being alone within reach remains a live possibility.
 
-The Drake equation keeps those uncertainties visible. Its factors are not
-each known to the same precision. Multiplying their favourite values can
-hide how little we know; keeping distributions shows how widely the answer
-can change. A long technological lifetime matters as much as many beginnings.
+The Drake equation separates the chain into stars, planets, suitable worlds,
+life, intelligence, technology and the time a civilisation lasts. Astronomy
+constrains the beginning of that chain. Our adopted local stellar density is
+0.079 pc^-3. For Sun-like stars we adopt 0.4 temperate rocky planets per star;
+for red dwarfs, 0.16, with their habitability debated. Planet occurrence
+already includes abundance: multiplying by another planet factor would count
+it twice. A microlensing estimate gives 1.6 planets/star over its surveyed
+mass and orbit range; that is a mean abundance, not a probability.
 
-Our reference follows a published uncertainty model for life's beginnings,
-then uses the game's stated lifetime range. These are assumptions to reason
-with, not measurements of inhabited worlds. The probabilities belong to
-our uncertainty about the universe; they are not discoveries about any
-particular planet.
+The Galaxy's measured formation rate, 1.65 solar masses/yr, is a mass rate.
+It cannot be inserted as a number of stars born per year without a stellar
+mass distribution. Our nearby estimate instead counts existing stars.
 
-There is a second question I have kept from you. Why this universe? The
-variations did not all offer the same chance. This one was selected. When
-I can show you the record, I will show both the change and the baseline
-from which it was measured. Selection changes which worlds exist. It does
-not shorten the journey or bring their light to us any sooner.
+Beyond planets, the uncertainty widens. The adopted life, intelligence and
+technology medians are about 0.632, 0.0316 and 0.1, with a technological
+lifetime of 100000 years. These are uncertainty models, not measured cosmic
+frequencies. Changing them changes the expectation by orders of magnitude.
 
-[cite: Sandberg, Drexler & Ord, Dissolving the Fermi Paradox, Table I and the
-abiogenesis discussion; physics/life-and-worlds.md records the adopted range.]
+[cite: Sandberg, Drexler & Ord, Dissolving the Fermi Paradox, Table I and
+§3.1.1; Smart et al.; Bryson et al.; Dressing & Charbonneau; Licquia & Newman;
+Cassan et al. Source domains and the derived estimate: physics/life-and-worlds.md.]

@@ -1,11 +1,17 @@
 # R3-WORLDS Archive drafts — for Mark
 
-These three entries are drafts for W2.5, not active Archive content. They are
-outside `lore/archive/` so the game import cannot expose them before review.
-D-144 authorises drafting; lore and visible landings remain attended.
+These entries implement the W2.5 draft direction and remain outside the live
+Archive pending the production UI/hint mapping and lore review. Numerical
+claims lead; no entry discloses selection, a loop, a dial or an unusual universe.
 
-Proposed hints after W2/S3: `first_planet_catalogue` for habitable-zone and
-red-dwarf-worlds; `anthropic_reveal` for drake-factors. These hints are not yet
-registered, and the dial/luck number must not appear before the reveal.
-The final hint mapping, numerical bindings and import wait for Mark and the
-population/protocol milestones. No calibrated luck number is claimed.
+| Entry | Proposed event, as approved in W2.5 |
+|---|---|
+| drake-factors | `first_planet_host`: first measured host inspected |
+| habitable-zone | `first_hz_planet`: first HZ planet inspected |
+| red-dwarf-worlds | `first_debated_planet`: first debated planet inspected |
+
+The prior `anthropic_reveal` draft was a deviation and has been removed as the
+default. A future W4 reveal entry is separate work; it is not proposed here.
+These hints are not yet registered. Every displayed number binds to the LW
+registry; the baseline estimate is derived with the published worlds package.
+No calibrated preset or slice seed is claimed.

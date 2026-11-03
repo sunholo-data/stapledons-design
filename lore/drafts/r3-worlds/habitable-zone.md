@@ -1,28 +1,33 @@
 ---
 id: archive.habitable-zone
 title: A Place for Liquid Water
-unlock: first_planet_catalogue
-checks: [LW-14, LW-15, LW-17, LW-18, LW-19]
+unlock: first_hz_planet
+checks: [LW-5, LW-14, LW-15, LW-17, LW-18, LW-19]
 status: draft-for-Mark
 ---
-The green ring is a question about starlight. At what distances could a
-rocky world, with a suitable atmosphere, keep liquid water on its surface?
-Closer in, a runaway greenhouse can remove that possibility. Farther out,
-even a thick carbon dioxide atmosphere may fail to keep the surface warm.
+Around the Sun, our conservative habitable zone runs from 0.950 AU to
+1.676 AU. Its inner and outer boundaries receive 1.107 and 0.356 times
+Earth's starlight. Those numbers describe a climate calculation, not a
+survey of inhabited worlds.
 
-That is the habitable zone. It is not a ring of inhabited planets. A world
-inside it may have lost its air, have no water, or have a climate unlike
-anything our simple boundary models assume. A world outside it may still
-shelter liquid water beneath ice. We mark what the model permits, and leave
-what we have not measured as a question.
+Closer in, a runaway greenhouse can remove the possibility of surface
+liquid water. Farther out, even a thick carbon dioxide atmosphere may fail
+to keep the surface warm. Venus and Mars help us ask where to look; they
+do not supply a universal temperature threshold.
 
-The star's colour matters as well as its brightness. A cool star and a hot
-star with equal luminosity do not warm the same atmosphere in quite the
-same way. Our boundaries follow a climate calculation with a stated range
-of stellar temperatures. Beyond that range the catalogue labels the estimate.
+Earth's equilibrium temperature is about 255 K under the stated radiation
+balance assumptions. That is not its surface temperature: an atmosphere,
+clouds and heat transport matter. A world inside the band might have lost
+its water or its air. A world outside it might shelter water beneath ice.
 
-A measured orbit is a measurement. A temperate label is an inference. Life
-would require evidence of its own.
+For Sun-like stars we adopt 0.4 temperate rocky planets per star. That
+occurrence estimate carries substantial uncertainty. The star's spectrum
+also matters: equal luminosities need not warm an atmosphere identically.
+Our model labels estimates beyond its calibrated temperature range.
+
+A measured orbit is a measurement. A habitable-zone label is an inference.
+Life would require evidence of its own.
 
 [cite: Kopparapu et al., Habitable Zones around Main-sequence Stars:
-Dependence on Planetary Mass, Table I and the effective-flux polynomial.]
+Dependence on Planetary Mass, Table I and Eqs. 4–5; Bryson et al., Table 5.
+Source definitions and assumptions: physics/life-and-worlds.md.]
