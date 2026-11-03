@@ -21,7 +21,7 @@
 |---|---|---|
 | **Choices Are Final** | ✅ Supports | The commit sounds final: a tone that rises while you hold, and one sealing chord when the ship accepts it. There is no undo sound because there is no undo. |
 | **The Game Doesn't Judge** | ✅ Supports | No fanfare and no failure stinger anywhere. Arrival, a crew concern and a hold limit are neutral instrument cues. |
-| **Time Has Emotional Weight** | ✅ Supports | The coast is quiet: when the drive falls silent, the ship is its hum and its people. A home beacon (proposed) drops in pitch as Earth recedes. |
+| **Time Has Emotional Weight** | ✅ Supports | The coast is quiet: when the drive falls silent, the ship is its hum and its people. The home beacon keeps Earth's own clock: flying away at 0.99c its pips come 14 s apart, turning for home 14 a second. |
 | **The Ship Is Home** | ✅ Supports | Footsteps, consoles, the lift, the spire, and the crew's voices, which always win the mix. |
 | **Grounded Strangeness** | ✅ Supports | Hard physics heard honestly: nothing from space, no rumble from a drive you cannot feel. |
 | **We Are Not Built For This** | ✅ Supports | A 100 m dome answers every footstep; between stars the only constant is a machine nobody can enter. |
@@ -36,7 +36,7 @@
 4. **The spire always hums**, low and constant, from the mast. Its light dims when a star takes over (D-96); its hum does not.
 5. **Instruments may make the outside audible**, because they are machines aboard:
    - the **dust counter**, which ticks for every grain that flashes on the dome, faster at speed and in the warm clouds;
-   - the **home beacon** (proposed): Earth's carrier at the helm, its pitch following the Doppler factor, compressed so it stays audible; low as Earth recedes, true at a stop, rising on the way home.
+   - the **home beacon** (ruled yes, D-101; in Earth's beam only, 2026-10-27; exact, 2026-11-02 by the standing order of 2026-10-30): Earth's carrier at the helm, keyed once a second of Earth's time, played at the true Earth rate D in two settings, as at the comms station. **True**: as it arrives, uncorrected: outbound at 0.99c the 400 Hz carrier is heard at 28 Hz and its pips come 14 s apart; homebound it is 5.6 kHz with 14 pips a second; outside human hearing nothing is heard. **Receiver** (labelled, the default): the receiver corrects the frequency, as the DSN corrects a spacecraft's Doppler shift, so the carrier keeps its true pitch and only Earth's clock is slowed or sped, exactly, at every D (the station's real-time range applies to its recorded feed, not to a live carrier). Nothing is compressed.
 6. **One quiet interface layer** for clicks, outside the fiction.
 7. **No judgement.** Nothing sounds like a reward or a punishment.
 8. **Voices win.** Crew and the Archive always sit on top of the mix; everything else ducks under them.
