@@ -172,7 +172,7 @@ uncertain astronomical measurement. HZ checks use Teff=5780 K, L=1.
 | LW-41 | Sandberg lifetime upper bound (comparison only) | 10000000000 | yr |
 | LW-42 | Baseline-median alive within 1000 ly (M dwarfs included) | 0.05 | civilisations |
 | LW-43 | Baseline reach for LW-42 | 1000 | ly |
-| LW-44 | Galactic mass formation rate (not a stars/yr rate) | 1.65 | solar masses/yr |
+| LW-44 | Galactic mass formation rate (not a stars/yr rate) | 1.65 | M☉/yr |
 | LW-45 | Microlensing mean abundance in the cited mass/orbit domain | 1.6 | planets/star |
 
 LW-42 is distinct from the historical reference parameters of LW-28. With

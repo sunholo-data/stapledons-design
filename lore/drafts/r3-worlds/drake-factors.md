@@ -12,13 +12,13 @@ we have found. Being alone within reach remains a live possibility.
 The Drake equation separates the chain into stars, planets, suitable worlds,
 life, intelligence, technology and the time a civilisation lasts. Astronomy
 constrains the beginning of that chain. Our adopted local stellar density is
-0.079 pc^-3. For Sun-like stars we adopt 0.4 temperate rocky planets per star;
-for red dwarfs, 0.16, with their habitability debated. Planet occurrence
+0.079 pc^-3. For Sun-like stars we adopt 0.4 planets/star in temperate rocky orbits;
+for red dwarfs, 0.16 planets/star, with their habitability debated. Planet occurrence
 already includes abundance: multiplying by another planet factor would count
 it twice. A microlensing estimate gives 1.6 planets/star over its surveyed
 mass and orbit range; that is a mean abundance, not a probability.
 
-The Galaxy's measured formation rate, 1.65 solar masses/yr, is a mass rate.
+The Galaxy's measured formation rate, 1.65 M☉/yr, is a mass rate.
 It cannot be inserted as a number of stars born per year without a stellar
 mass distribution. Our nearby estimate instead counts existing stars.
 

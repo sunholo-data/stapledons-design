@@ -7,7 +7,7 @@ status: draft-for-Mark
 ---
 Our adopted local stellar model assigns red dwarfs a fraction of 0.75.
 That is a nominal approximation, not a measured fraction at that precision.
-For these stars we adopt 0.16 temperate rocky planets per star from Kepler's
+For these stars we adopt 0.16 planets/star in temperate rocky orbits from Kepler's
 occurrence estimates. Neither number establishes a living world.
 
 Temperate orbits around a cool, dim star lie close in. Planets there circle
