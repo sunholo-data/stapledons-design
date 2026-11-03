@@ -2,9 +2,9 @@
 
 ## Status
 
-- **Status:** Approved (game-repo ledger D-101, 2026-10-20; built as R2-SOUND). Proposed 2026-10-20 (game-repo ledger D-98). After playing the bow-facing bridge, Mark said: "it looks really great. obviously we need animation on the captain a bit and sound effects and the level design but such good potential".
+- **Status:** Implemented 2026-11-03 (R2-SOUND S0–S2: game #298, #319, #375; Mark on S2: "the sounds are awesome"). Approved (game-repo ledger D-101, 2026-10-20). Proposed 2026-10-20 (game-repo ledger D-98). After playing the bow-facing bridge, Mark said: "it looks really great. obviously we need animation on the captain a bit and sound effects and the level design but such good potential".
 - **Priority:** P1 for R2.
-- **Implementation:** game repo `design_docs/planned/r2/sound.md` and its sprint plan (R2-SOUND). This document holds the **what**, the canon the implementation must keep.
+- **Implementation:** game repo `design_docs/implemented/r2/sound.md`, its sprint plan and report (R2-SOUND; open items in the report). This document holds the **what**, the canon the implementation must keep.
 - **Builds on:**
   - [ship-structure.md](../phase1-data-models/ship-structure.md), The Spire: "Low constant hum, felt as much as heard."
   - [lore/archive/one-g.md](../../lore/archive/one-g.md): "Inside, the teacup on the table does not tremble. And when the drive is silent and the ship coasts between stars, you still weigh what you weigh."
