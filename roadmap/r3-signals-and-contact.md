@@ -114,6 +114,7 @@ It needs W1–W2, S1–S3 (the subset for those two worlds), F1–F3 and F5, C5 
 ## Order of work (next)
 
 1. ✅ **S1, K1 and F6** (integration; landed 2026-10-30: game [#344](https://github.com/sunholo-data/stapledons-godot/pull/344) with the visual comms station, sound from home [#361](https://github.com/sunholo-data/stapledons-godot/pull/361), `sunholo/observe` 0.1.0). The light cone, Earth's signal with the live Earth rate, and Earth's beams on the map. They use physics the game already has, and make home the ship's anchor from day one.
+1a. ✅ **Comms station v2** (landed 2026-11-06: game [#379](https://github.com/sunholo-data/stapledons-godot/pull/379), archive [#55](https://github.com/sunholo-data/stapledons-design/pull/55), Earth's Carrier with RS-41..RS-47). Every week of light received this voyage on a history wall (protocol 2.18 `earth_log`), each opening its light-cone diagram; the bridge's monitor wall on the bow rail (the signal from home as a True waterfall with the Receiver's 400 Hz line, Earth's clock against the ship's, the course, the crew) with the consoles under their screens.
 2. **W1 then W2** (*loop*). Everything else needs a populated galaxy.
 3. **S2 then S3** (packages, then integration). The evidence ledger.
 4. **F1, F2, F3, F5.** Reasons to go.
