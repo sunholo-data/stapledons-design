@@ -276,12 +276,14 @@ The contacts are no longer independent. Five contacts could be one origin and fo
 |---|---|---|---|---|---|
 | 3.2 × 10⁷ yr (today) | 1 | — | 0.05 % | 0.002 % | 0.016 % |
 | 10⁶ yr | 32 | 156 million yr | 1.6 % | 0.06 % | 0.5 % |
-| 10⁵ yr | 320 | 15.6 million yr | 15 % | 0.6 % | 5 % |
-| 10⁴ yr | 3,200 | 1.56 million yr | 80 % | 6 % | 23 % |
+| 10⁵ yr | 320 | 15.6 million yr | 16 % | 0.6 % | 5 % |
+| 10⁴ yr | 3,200 | 1.56 million yr | 100 % | 6 % | 23 % |
 
-All four rows are 5.2 dex of luck and have the same number of living civilisations. They are very different universes. In the first, nothing the player meets will ever die and ruins are 0.16 per map. In the third, one contact in seven ends during the game and there are about 50 ruined worlds inside the map (1,000 × 0.05).
+All four rows are 5.2 dex of luck and have the same number of living civilisations. They are very different universes. In the first, nothing the player meets will ever die and ruins are 0.16 per map. In the third, one contact in six ends during the game and there are about 50 ruined worlds inside the map (1,000 × 0.05).
 
 The remnant share uses the 75 % collapse share and the mean trace time, capped at the gap between lineages.
+
+*Corrected 2026-11-12.* The fourth column is min(1, G/L) with G = 16,000 years: the history model gives every civilisation exactly L years, so a living one's remaining life is uniform on [0, L]. The first printing used 1 − exp(−G/L), a memoryless lifetime the model does not have, and showed 15 % and 80 % in the last two rows (found by the independent review of `sunholo/worlds` 0.3.0, whose `lateShare` uses the model's form). With the Earth clock at 100,000 years (premise §2) the column becomes 0.3 %, 10 %, 100 % and 100 %.
 
 **Effect of shared origins.** fLife is 0.63 at the baseline and 1 when dialled, so the most it can add to technological counts is 0.2 dex, and nothing at the calibrated values. It raises the number of *biospheres per inhabited system*, and it makes them related.
 
@@ -531,7 +533,7 @@ This is offered beside the model changes in §5.1, not in place of them.
 | Biospheres visited | 5–10 | **5–10 (keep)** | Set by the voyage, not the universe | 0 |
 | Signals | 5–10 | **5–10, counted across every technosignature class, and including sources that have since ended** | A sign from the dead is still a signal. With the ladder of §3.1 this is what the instruments report anyway | 0 on the dial; removes the pressure on lifetime |
 | Living contacts | at least 5 (5–8 typical) | **at least 3 (3–5 typical)** | 0.22 dex by itself. Its real effect is with the next row: 3 of 5–10 signals alive is a 30–60 % conversion, which a universe of mortal civilisations can give | **0.22 dex** |
-| Late contacts (new) | — | **1–2: a civilisation that was alive in the light the ship saw and had ended by arrival, or ends during the game** | Needs mortality on the game's timescale: with rank 2 at L = 10⁵ yr, 15 % of contacts end within the 16,000-year clock, so 1 of 5–8 known civilisations. Not reachable at L = 32 million yr (0.05 %) | 0; it is what rank 2 buys |
+| Late contacts (new) | — | **1–2: a civilisation that was alive in the light the ship saw and had ended by arrival, or ends during the game** | Needs mortality on the game's timescale: with rank 2 at L = 10⁵ yr, 16 % of contacts end within a 16,000-year clock (all of them within the 100,000-year clock now ruled), so 1 of 5–8 known civilisations. Not reachable at L = 32 million yr (0.05 %) | 0; it is what rank 2 buys |
 | Remnants | 3–6 | **2–4, at least 1 visited** | Today: 0.16 per map. With rank 2 at L = 10⁶ yr: 1,000 × 0.005 = 5 remnant worlds inside the map. With rank 1 instead: 3 to 6 need every remnant found out to 230–270 ly, which needs the ladder's long-lived classes. The lower figure allows for imperfect detection | Makes the target reachable; 0 on the dial |
 | Range over which all of these are counted | the 81.5 ly map (in effect) | **the mission range: 1,000 ly as the reference, as decision 1 already says** | §2.3 | **3.1 dex** before detection losses; about **2 dex** net |
 
