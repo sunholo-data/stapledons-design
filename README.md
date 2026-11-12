@@ -16,6 +16,7 @@ See [ADR 0001](decisions/0001-engine-and-architecture.md) for the reasons.
 | [features/](features/) | Feature designs by phase (data models, core views, gameplay, polish, future backlog) |
 | [physics/relativity-spec.md](physics/relativity-spec.md) | **Normative** accuracy spec for the SR/GR visuals, with check values (RS-n) and the audit of the old implementation |
 | [physics/higgs-bubble.md](physics/higgs-bubble.md) | **Normative**: the Higgs bubble as the one admitted hand-wave, and every consequence derived exactly, with check values (HB-n) |
+| [physics/observation.md](physics/observation.md) | **Normative** (draft): photon budgets, link budgets and detection thresholds, with check values (OB-n). An instrument's reach follows from a budget, never an authored range |
 | [lore/archive/](lore/archive/) | Player-facing physics entries for the in-game Archive; their numbers are checked against HB/RS check values |
 | [decisions/](decisions/) | Architecture decision records |
 | [roadmap/r1-foundations.md](roadmap/r1-foundations.md) | Current roadmap: spike → relativistic sky → journey core → black holes → first playable journey |

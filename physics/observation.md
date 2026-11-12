@@ -2,7 +2,8 @@
 
 **Version:** baseline-2026.11 (2026-11-12). **Status:** draft normative registry for
 R3-REASONS milestone RT0. It awaits review in its draft PR. The labels in §3
-(Verified, Adopted, Design, unverified) are part of the data, not footnotes.
+(Verified, Adopted, Design, Ruling, unverified) are part of the data, not footnotes.
+Four rulings (Mark, attended 2026-11-12) are recorded in §6.
 
 ## 1. What this registry pins
 
@@ -26,6 +27,10 @@ The functions it needs are named beside each formula. This file extends
 obeys [life-and-worlds §5](life-and-worlds.md): "Use S2 photon budgets, never a
 literal detection radius." The reach in LW-42 and LW-43 is the radius of a
 count model. It is not an instrument range, and nothing here changes it.
+
+This registry lives in its own file, not in `relativity-spec.md` (ruling 4,
+§6). The game's `sim/tools/lore_values.ail` must be taught to read this file in
+RT1, or `make lore-values` will not list the OB rows.
 
 ## 2. Formulas
 
@@ -103,11 +108,10 @@ The planet's photon rate is C times the star's rate from §2.2.
 All rates are counted photons per second in one resolution element.
 
 - S: the planet's rate.
-- B: the background rate. Here B = ζ × N★ + Z. ζ is the coronagraph's **raw
+- B: the background rate. B = ζ × N★ + Z. ζ is the coronagraph's **raw
   contrast**: the starlight left at the planet's position, as a fraction of
-  the star's rate N★ through the same throughput. Z is zodiacal light, the
-  glow of dust in both planetary systems. Z is optional and every row in §4
-  sets Z = 0.
+  the star's rate N★ through the same throughput. Z is **zodiacal light**,
+  the glow of sunlit dust (below).
 - D: the **dark rate**, counts the detector makes with no light.
   D = n_pix × ξ, for n_pix pixels and a dark current ξ per pixel.
 
@@ -118,6 +122,35 @@ SNR(t) = S t / sqrt((S + B + D) t)
 t(SNR) = SNR² (S + B + D) / S²
 ```
 
+**Two thresholds are pinned** (ruling 2, §6). SNR 5 is **a hint**. SNR 10 is
+**strong**; it is the LUVOIR study's requirement.
+
+**Zodiacal light.** Dust fills the plane of a planetary system and scatters
+its star's light. The telescope looks through two layers: the dust of the
+system it sits in (**local zodi**) and the dust around the target star
+(**exozodi**). Both are spread over the sky, so their brightness is given per
+square arcsecond, in magnitudes. A source 5 magnitudes fainter is 100 times
+dimmer; the factor for m magnitudes is 10^(−0.4 m).
+
+```
+Z  = N₀ × Ω × (ℓ × 10^(−0.4 z) + n × 10^(−0.4 z₁))
+N₀ = N★(10 pc) × 10^(0.4 M_V)
+Ω  = π (X × λ₀/D)²           (converted to arcsec²)
+```
+
+- N₀ is the counted rate of a star of apparent magnitude 0 with the host
+  star's spectrum, through the same instrument and resolution element. M_V is
+  the star's **absolute magnitude**: its magnitude as seen from 10 pc.
+- Ω is the **photometric aperture**: the patch of sky whose light is added up
+  with the planet's. Its radius is X diffraction scales.
+- z is the surface brightness of local zodi and ℓ its level. ℓ = 1 is the
+  view from 1 AU inside a system like the Sun's.
+- z₁ is the surface brightness of one "zodi" of exozodi, and n is how many
+  zodis the target system has.
+
+N₀ grows as D² and Ω shrinks as D⁻², so Z does not depend on the aperture. It
+does not depend on distance either. A larger telescope collects more planet
+light against the same zodiacal rate.
 ### 2.5 What the coronagraph can reach
 
 Three limits apply before any photon is counted.
@@ -178,8 +211,9 @@ that uses its star's whole output.
 
 "Verified" means the cited location was opened for this registry and the
 number read there. "Adopted" means a verified number is used in a simplified
-way. "Design" means a game choice with no literature claim. "unverified" means
-the source was not opened or does not state the number.
+way. "Design" means a game choice with no literature claim. "Ruling" means a
+choice Mark made (attended 2026-11-12, §6). "unverified" means the source was
+not opened or does not state the number.
 
 | Quantity | Adopted value | Evidence and precise location | Status |
 |---|---|---|---|
@@ -190,24 +224,27 @@ the source was not opened or does not state the number.
 | Raw contrast ζ | 10⁻¹⁰ | [LUVOIR Final Report 2019](https://arxiv.org/abs/1912.06219), Table 1-8 and Table 8-7 (1 × 10⁻¹⁰); Stark et al. 2019, Table 2 (ζ_floor = 10⁻¹⁰); [HabEx Final Report 2019](https://arxiv.org/abs/2001.06683), fact sheet (coronagraph 2.5 × 10⁻¹⁰ at the IWA, starshade 1 × 10⁻¹⁰) | Verified |
 | Inner working angle | n_IWA = 3.5 | LUVOIR Final Report, Table 1-8 and Table 8-7: visible channel 3.5 λ/D. HabEx fact sheet: 2.4 λ/D = 62 mas at 0.5 µm for a 4 m. Stark et al. 2019, §4.1: useful throughput exists inside the classical IWA | Verified; adopted as a hard edge, a game approximation |
 | Resolving power; O₂ A band | R = 140 at λ₀ = 0.76 µm | LUVOIR Final Report, §1 instrument overview beside Table 1-8: the visible spectrograph has "R=140, chosen for optimal study of the narrow O2 absorption band at 760 nm" | Verified |
-| Target SNR | 5 per resolution element (OB-16 gives 10) | LUVOIR Final Report, §3.4.2 step 7, asks SNR ~ 10 at R = 140. Stark et al. 2019, Table 2, uses S/N 5 per spectral bin in the continuum, at R = 70 | Sources verified; SNR 5 is a Design choice |
+| Detection thresholds | SNR 5 per resolution element is "a hint"; SNR 10 is "strong" | LUVOIR Final Report, §3.4.2 step 7, asks SNR ~ 10 at R = 140. Stark et al. 2019, Table 2, uses S/N 5 per spectral bin in the continuum, at R = 70 | Sources verified; both thresholds pinned by Ruling 2 (Mark, attended 2026-11-12) |
 | Dark current ξ | 3 × 10⁻⁵ counts pixel⁻¹ s⁻¹ | Stark et al. 2019, Table 2 | Verified |
 | Pixels per resolution element n_pix | 192 | Stark et al. 2019, Table 2 and the text after Eq. 14: 192 pixels per spectral bin at R = 70 and 1 µm | Verified there; used here at R = 140 and 0.76 µm, Adopted |
 | Throughput τ | 0.04, the same at all wavelengths | Stark et al. 2019, Eq. 16 and Table 2: 0.95 (contamination) × 0.21 (optics, low case at 1 µm) × 0.9 (detector) × 0.75 (read-out) = 0.135. A coronagraph core throughput of 0.30 gives 0.0404, rounded to 0.04 | Components verified; the core throughput 0.30 is **unverified** (Stark gives it only as curves in figures); the product is Design |
 | Noise floor | Δmag_floor = 26.5 | Stark et al. 2019, Table 2; HabEx fact sheet (Δmag limit 26.5) | Verified |
-| Zodiacal light | Z = 0 in every row | Stark et al. 2019, Table 1: local zodi 23 mag arcsec⁻², one exozodi 22 mag arcsec⁻², median exozodi level 4.5 | Verified values, deliberately not used (§5) |
-| Integration-time formula | t = SNR² (S + B + D)/S² | Stark et al. 2019, Eq. 5, uses (S + 2B')/S², where B' is all background and the 2 pays for background subtraction | Verified; this registry drops the factor 2, a game approximation |
+| Zodiacal light | z = 23 mag arcsec⁻² (local, V band), z₁ = 22 mag arcsec⁻² (one zodi of exozodi, V band, solar twin), n = 4.5 zodis | Stark et al. 2019, Table 1 (rows z, z′ and n; n is the median of the LBTI HOSTS best-fit distribution) and Eq. 8–9 for the count rates | Verified; included by Ruling 1 (Mark, attended 2026-11-12). Used at 0.76 µm and for every star, Adopted (§5) |
+| Local zodi level | ℓ = 1 in every row | Game choice: the view from 1 AU in a Sun-like system, as the studies assume. A ship in interstellar space would have ℓ = 0 | Design |
+| Photometric aperture | radius X = 0.7 λ/D | Stark et al. 2019, Table 2 (rows X and Ω). Stark measures it in units of the Lyot-stop diameter; this registry uses the full aperture D | Verified; Adopted |
+| Sun's absolute V magnitude | M_V = 4.81 | [Willmer 2018](https://arxiv.org/abs/1804.07788), abstract and Table 3, Johnson V, Vega system | Verified |
+| Integration-time formula | t = SNR² (S + B + D)/S² | Stark et al. 2019, Eq. 5, uses (S + 2B')/S², where B' is all background and the 2 pays for background subtraction | Verified; this registry keeps plain Poisson noise and drops the factor 2, a game approximation (confirmed, Mark, attended 2026-11-12) |
 | Reference aperture | 10 m; also 4 m and 100 m | Game ruling (sprint R3-REASONS, OQ1). The studies span 4 m (HabEx), 8 m and 15 m (LUVOIR Final Report, fact sheet) | Design |
-| V-like band | top hat, centre 0.551 µm, width 0.088 µm | Game band, shaped like the Johnson V filter | Design; its match to Johnson V is **unverified** |
+| V-like band | top hat, centre 0.551 µm, width 0.088 µm | Game band. Willmer 2018, Table 4, gives Johnson V a pivot wavelength of 0.5511 µm and a bandwidth of 0.0871 µm | Design; the comparison values are Verified |
 | Jupiter-twin albedo; hot-Jupiter albedo | 0.5; 0.1 | Game values for two comparison rows | Design; **unverified** against measurements |
 | Radiometer equation | §2.6 | [Sheikh et al. 2025](https://arxiv.org/abs/2502.02614), Eq. 1–3, which cite Enriquez et al. 2017 | Verified in Sheikh; Enriquez not opened |
 | Radar EIRP | 2 × 10¹³ W | Sheikh et al. 2025, §2 case 1: Arecibo's S-band EIRP "is 20 TW (Ekers et al. 2002)" | Verified in the secondary source; Ekers not opened |
 | Large-array SEFD | 1.5 Jy | Sheikh et al. 2025, §2: SKA1-Mid with MeerKAT, from Braun et al. 2017 Table 4 | Verified in Sheikh; Braun not opened. Used only in OB-33 |
-| Radar reach, published | 12000 ly | Sheikh et al. 2025, §2 result list, case 1: SNR 5, 0.01 Hz, 1 hour | Verified; OB-33 reproduces it (11930 ly). The same formula also reproduces their case 4 (0.97 ly). It gives 83 ly for case 2 (they print 65 ly) and 0.8 ly for case 3 (they print 4.0 ly); the paper does not state the inputs that explain these two |
+| Radar reach, published | 12000 ly | Sheikh et al. 2025, §2 result list, case 1: SNR 5, 0.01 Hz, 1 hour | Verified; OB-33 reproduces it (11930 ly). The same formula also reproduces their case 4 (0.97 ly). It gives 83 ly for case 2 (they print 65 ly) and 0.80 ly for case 3 (they print 4.0 ly, in both §2 and Table 2). A second reading of §2 found one SEFD, one SNR and one integration time stated for all four cases, so no stated input explains the two. Case 3's printed value is 5 times the formula's, the size of the SNR factor; that is an observation, not a finding about the paper. No row uses cases 2 or 3 |
 | TV station power and carrier | ERP 1000 kW; 0.4 of it in the video carrier; EIRP = 1.64 × ERP; carrier width 0.1 Hz | [Sullivan & Knowles 1985](https://doi.org/10.1017/S0074180900146662), IAU Symposium 112, pp. 327–334, §2: carriers "of width 0.1–1.0 Hz", effective radiated power "typically 100–1000 kw", the factors 1.64 and 0.4 | Verified; the top of the power range and the narrowest width are Adopted |
 | Leakage reach, published | about 30 ly for an Arecibo-like antenna, about 500 ly for a Cyclops-like array (radars) | Sullivan & Knowles 1985, §1, summarising [Sullivan, Brown & Wetherill 1978](https://doi.org/10.1126/science.199.4327.377) | Verified in the 1985 paper. The 1978 paper's own tables are **unverified**: only its abstract was opened. Context only; no row uses it |
-| Reference dish | 100 m, aperture efficiency 0.70, T_sys 25 K | Game receiver | Design |
-| Square-kilometre receiver | A_e = 10⁶ m², T_sys 25 K | Game receiver | Design |
+| Reference dish | 100 m, aperture efficiency 0.70, T_sys 25 K | The ship's starting radio receiver | Ruling 3 (Mark, attended 2026-11-12) |
+| Square-kilometre receiver | A_e = 10⁶ m², T_sys 25 K | The later, large radio receiver | Ruling 3 (Mark, attended 2026-11-12) |
 | Waste-heat model | §2.7 | [Wright et al. 2014](https://arxiv.org/abs/1408.1134) (the Ĝ search, paper II), §2.2 Eq. 2 and Eq. 5–6 with α = γ and ε = ν = 0; Table 1 defines γ and T_waste | Verified |
 | Waste-heat temperature | 300 K | Wright et al. 2014, Table 1, gives about 285 K for humanity and §2.2 gives about 250 K for a classical Dyson sphere | Design, inside the verified range |
 | Infrared excess threshold | E = 0.1 | Game threshold for OB-40 | Design |
@@ -224,10 +261,13 @@ count as significant figures. Unless a row says otherwise:
 - the star is the Sun of §2.1 as a blackbody;
 - the "Earth twin" has R⊕, A_g = 0.2, a = 1 AU, and is at quadrature;
 - the "reference instrument" has D = 10 m, τ = 0.04, ζ = 10⁻¹⁰, n_IWA = 3.5,
-  n_pix = 192, ξ = 3 × 10⁻⁵ s⁻¹, Z = 0;
+  n_pix = 192, ξ = 3 × 10⁻⁵ s⁻¹;
+- zodiacal light is included: ℓ = 1, z = 23, n = 4.5, z₁ = 22, X = 0.7,
+  M_V = 4.81;
 - "O₂ A element" is one resolution element at λ₀ = 0.76 µm, R = 140;
-- "reference dish" is 100 m across with aperture efficiency 0.70 and
-  T_sys = 25 K; radio rows use n_pol = 1.
+- "reference dish" is the ship's starting receiver: 100 m across, aperture
+  efficiency 0.70, T_sys = 25 K. "Large array" is A_e = 10⁶ m² at
+  T_sys = 25 K. Radio rows use n_pol = 1.
 
 | ID | Quantity | Value | Unit |
 |---|---|---|---|
@@ -242,22 +282,22 @@ count as significant figures. Unless a row says otherwise:
 | OB-9 | Counted rate from the Sun at 10 pc, O₂ A element, reference instrument | 1.914 × 10⁷ | photons s⁻¹ |
 | OB-10 | Counted rate S from the Earth twin at 10 pc, O₂ A element, reference instrument | 2.215 × 10⁻³ | photons s⁻¹ |
 | OB-11 | The same at 10 ly | 2.356 × 10⁻² | photons s⁻¹ |
-| OB-12 | Residual starlight B for OB-10 (ζ × OB-9) | 1.914 × 10⁻³ | photons s⁻¹ |
+| OB-12 | Residual starlight ζ × N★ for OB-10 (ζ × OB-9) | 1.914 × 10⁻³ | photons s⁻¹ |
 | OB-13 | Dark rate D of the reference instrument (192 × 3 × 10⁻⁵) | 5.760 × 10⁻³ | counts s⁻¹ |
-| OB-14 | SNR on the Earth twin at 10 pc after 10 hours (36000 s), O₂ A element | 4.226 | — |
-| OB-15 | Time to SNR 5 on the Earth twin at 10 pc, O₂ A element, reference instrument | 14.00 | hours |
-| OB-16 | The same to SNR 10 | 55.99 | hours |
-| OB-17 | Time to SNR 5 at 10 ly, reference instrument | 0.6214 | hours |
-| OB-18 | Time to SNR 5 at 10 ly with D = 4 m | 6.248 | hours |
-| OB-19 | Time to SNR 5 at 10 pc with D = 4 m. Photon budget only: OB-25 puts this planet inside the inner working angle, so it is not observable | 355.0 | hours |
-| OB-20 | Time to SNR 5 at 10 pc with D = 100 m | 0.05926 | hours |
+| OB-14 | SNR on the Earth twin at 10 pc after 10 hours (36000 s), O₂ A element | 3.477 | — |
+| OB-15 | Time to a hint (SNR 5) on the Earth twin at 10 pc, O₂ A element, reference instrument | 20.68 | hours |
+| OB-16 | The same to strong (SNR 10) | 82.70 | hours |
+| OB-17 | Time to a hint (SNR 5) at 10 ly, reference instrument (strong: OB-49) | 0.6805 | hours |
+| OB-18 | Time to SNR 5 at 10 ly with D = 4 m | 8.554 | hours |
+| OB-19 | Time to SNR 5 at 10 pc with D = 4 m. Photon budget only: OB-25 puts this planet inside the inner working angle, so it is not observable | 615.9 | hours |
+| OB-20 | Time to SNR 5 at 10 pc with D = 100 m | 0.05993 | hours |
 | OB-21 | Diffraction scale λ/D at 0.76 µm for D = 10 m | 15.68 | mas |
 | OB-22 | Inner working angle 3.5 λ/D at 0.76 µm for D = 10 m | 54.87 | mas |
 | OB-23 | Angular separation of 1 AU at 10 pc | 100.0 | mas |
 | OB-24 | Largest distance at which 1 AU clears the inner working angle at 0.76 µm, D = 10 m | 59.45 | ly |
 | OB-25 | The same for D = 4 m | 23.78 | ly |
 | OB-26 | The same for D = 100 m | 594.5 | ly |
-| OB-27 | Time to SNR 5 on the Earth twin at the distance of OB-24, reference instrument | 109.4 | hours |
+| OB-27 | Time to a hint (SNR 5) on the Earth twin at the distance of OB-24, reference instrument (strong: OB-50) | 183.1 | hours |
 | OB-28 | Effective area of the reference dish, 0.70 × π × 100²/4 | 5498 | m² |
 | OB-29 | SEFD of the reference dish | 12.56 | Jy |
 | OB-30 | `linkSnr` for EIRP 2 × 10¹³ W at 100 ly, reference dish, B = 1 Hz | 14.16 | — |
@@ -266,11 +306,23 @@ count as significant figures. Unless a row says otherwise:
 | OB-33 | Distance at which EIRP 2 × 10¹³ W gives SNR 5: SEFD 1.5 Jy, B = 0.01 Hz, t = 3600 s (Sheikh et al. 2025 print 12000 ly) | 1.193 × 10⁴ | ly |
 | OB-34 | EIRP of a TV video carrier: 1.64 × 0.4 × 1000 kW | 6.560 × 10⁵ | W |
 | OB-35 | Distance at which OB-34 gives SNR 1: reference dish, B = 0.1 Hz, t = 3600 s | 0.9388 | ly |
-| OB-36 | The same with A_e = 10⁶ m², T_sys = 25 K | 12.66 | ly |
+| OB-36 | The same with the large array | 12.66 | ly |
 | OB-37 | The same as OB-36 at SNR 10 | 4.004 | ly |
 | OB-38 | Waste-heat spectral factor K at 10 µm, T_w = 300 K, Sun-like star | 323.2 | — |
 | OB-39 | Excess E at 10 µm for γ = 0.01 (1 % of a Kardashev type II), T_w = 300 K | 3.265 | — |
 | OB-40 | Smallest γ whose excess at 10 µm reaches E = 0.1, T_w = 300 K | 3.093 × 10⁻⁴ | — |
+| OB-41 | Threshold SNR for "a hint" | 5 | — |
+| OB-42 | Threshold SNR for "strong" | 10 | — |
+| OB-43 | Photometric aperture Ω at 0.76 µm for D = 10 m, X = 0.7 | 3.783 × 10⁻⁴ | arcsec² |
+| OB-44 | Zero-magnitude rate N₀: Sun's spectrum, O₂ A element, reference instrument | 1.607 × 10⁹ | photons s⁻¹ |
+| OB-45 | Local zodi rate (ℓ = 1, z = 23) for OB-10; the same for any aperture and distance | 3.835 × 10⁻⁴ | photons s⁻¹ |
+| OB-46 | Exozodi rate (n = 4.5, z₁ = 22) for OB-10; the same for any aperture and distance | 4.335 × 10⁻³ | photons s⁻¹ |
+| OB-47 | Total background B for OB-10 (OB-12 + OB-45 + OB-46) | 6.633 × 10⁻³ | photons s⁻¹ |
+| OB-48 | OB-15 with no zodiacal light (Z = 0), for comparison | 14.00 | hours |
+| OB-49 | Time to strong (SNR 10) at 10 ly, reference instrument | 2.722 | hours |
+| OB-50 | Time to strong (SNR 10) at the distance of OB-24, reference instrument | 732.3 | hours |
+| OB-51 | Distance at which EIRP 2 × 10¹³ W gives a hint (SNR 5): reference dish, B = 1 Hz, t = 1 s | 168.3 | ly |
+| OB-52 | Distance at which OB-34 gives a hint (SNR 5): large array, B = 0.1 Hz, t = 3600 s | 5.662 | ly |
 
 ### What the rows say about reach
 
@@ -278,16 +330,22 @@ These are outputs, not rules. They are stated so a reviewer can compare them
 with the feature document.
 
 - **Life is a tens-of-light-years question at 10 m, and the angle sets it.**
-  The reference instrument takes 14 hours on an Earth twin at 10 pc (OB-15).
-  Beyond 59 ly (OB-24) the planet is too close to its star to separate at
-  0.76 µm, however long the exposure. A 4 m aperture stops at 24 ly (OB-25); a
+  The reference instrument takes 21 hours for a hint and 83 hours for a
+  strong reading of an Earth twin at 10 pc (OB-15, OB-16). Beyond 59 ly
+  (OB-24) the planet is too close to its star to separate at 0.76 µm, however
+  long the exposure. At that edge a hint takes 183 hours and a strong reading
+  732 hours, a month (OB-27, OB-50). A 4 m aperture stops at 24 ly (OB-25); a
   100 m aperture reaches 594 ly (OB-26). This agrees with
   signals-and-instruments §4.2.
+- **Zodiacal light costs about half again at 10 pc.** Without it OB-15 would
+  be 14 hours (OB-48), not 21. Most of it is the target system's own dust
+  (OB-46 against OB-45). It matters most where the planet is faint: at 10 ly
+  the cost is a tenth (OB-17), at the 59 ly edge it is two thirds.
 - **Radar-like leakage reaches further than the feature document says.**
   §4.3 there says "up to hundreds of light-years ... with a large receiver".
-  A 100 m dish hears a 2 × 10¹³ W radar at 376 ly in one second at 1 Hz
-  (OB-31), and a large array hears it at about 12000 ly in an hour at 0.01 Hz
-  (OB-33). The budget is not what hides a radar. Its beam covers a tiny part
+  The ship's 100 m dish hears a 2 × 10¹³ W radar at 376 ly in one second at
+  1 Hz (OB-31; 168 ly for a hint, OB-51), and a large array hears it at about
+  12000 ly in an hour at 0.01 Hz (OB-33). This PR corrects that cell. The budget is not what hides a radar. Its beam covers a tiny part
   of the sky for a short time. That chance belongs to the likelihood model
   (RT1b), not to this file.
 - **TV-like leakage is a light-years signal** (OB-35 to OB-37), as §4.3 says.
@@ -302,12 +360,18 @@ with the feature document.
 Each item is a **game approximation**. None is a claim about a real mission.
 
 1. **The star is a blackbody.** Real stars have absorption lines and are not
-   Planck curves. The error in a broad visible band is not quantified here.
+   Planck curves. For the Sun in V the blackbody gives 0.955 of the photon
+   flux that Willmer 2018's magnitude and zero point give (4.81; Table 4:
+   3.62701 × 10⁻⁹ erg s⁻¹ cm⁻² Å⁻¹, bandwidth 0.0871 µm). Other bands are not
+   checked.
 2. **Bands are top hats, and throughput is grey.** One τ applies at every
    wavelength. Real optics and detectors vary with wavelength.
-3. **No zodiacal or exozodiacal light** (Z = 0), although §3 records the
-   values the studies use. Adding them lengthens every integration time, most
-   of all for small apertures.
+3. **Zodiacal light is smooth and has the star's colour.** The V-band
+   surface brightnesses are used at 0.76 µm. Every target system has the
+   median 4.5 zodis at 22 mag arcsec⁻², whatever its star and wherever the
+   planet sits. Real systems differ by orders of magnitude. The local level
+   is fixed at ℓ = 1, as if the ship observed from 1 AU in a system like the
+   Sun's. The photometric aperture uses the full aperture D.
 4. **No factor 2 for background subtraction**, no read noise, and no
    clock-induced charge. The dark rate uses a pixel count taken from a
    different resolving power and wavelength.
@@ -329,20 +393,33 @@ Each item is a **game approximation**. None is a claim about a real mission.
     spectrum's shape while it dims. OB-40's threshold is a game number, not a
     survey's calibration limit.
 
-## 6. Remaining evidence
+## 6. Rulings and remaining evidence
 
-**Unverified:** the coronagraph core throughput of 0.30 inside τ; the match
-between the V-like band and Johnson V; the two giant-planet albedos; the
-tables of Sullivan, Brown & Wetherill 1978 (abstract only). The primary
+**Unverified:** the coronagraph core throughput of 0.30 inside τ; the two
+giant-planet albedos; the
+tables of Sullivan, Brown & Wetherill 1978 (abstract only); Sheikh et al.
+2025's cases 2 and 3, which the formula does not reproduce (§3). The primary
 sources behind three secondary citations were not opened: Ekers et al. 2002
 (radar EIRP), Enriquez et al. 2017 (radiometer equation) and Braun et al.
 2017 (array SEFD). No Habitable Worlds Observatory document was opened; the
 6 m class figure in signals-and-instruments §4.2 is not checked here.
 
-**Open for review:** whether the game adopts SNR 5 or the LUVOIR study's
-SNR 10 (OB-15 against OB-16); whether to add zodiacal light before RT2
-measures candidate counts; and the ship's actual radio receiver, which no
-ruling fixes yet.
+**Rulings (Mark, attended 2026-11-12).**
+
+1. Zodiacal light is included: local zodi and exozodi enter the background
+   (§2.4). OB-48 keeps the Z = 0 value of OB-15 for comparison.
+2. Two detection thresholds are pinned: SNR 5 is "a hint" and SNR 10 is
+   "strong" (OB-41, OB-42).
+3. The 100 m dish (efficiency 0.70, 25 K) is the ship's starting radio
+   receiver. The 10⁶ m² array is the later large case.
+4. The registry stays in this file. `sim/tools/lore_values.ail` must be
+   taught to read it in RT1.
+
+The same session confirmed the plain Poisson SNR formula, without the factor
+2 for background subtraction, as a game approximation.
+
+**Open for review:** the local zodi level ℓ for a ship that is not inside a
+planetary system; the core throughput inside τ.
 
 **Oracle.** An independent Python script (standard library only) recomputes
 every row from §2 and compares it with the table above at the printed
