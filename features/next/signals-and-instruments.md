@@ -170,8 +170,8 @@ Each instrument is defined by physics parameters (aperture, band, resolving powe
 | Signal | Physics | Reach (order of magnitude; pinned in the implementation) |
 |---|---|---|
 | **Intentional beacons** (narrowband radio, optical laser pulses) | Directed power; reach ∝ √(EIRP × receiving area) | Across the galaxy if they are aimed at you |
-| **Leakage** (radio and radar) | Undirected; Earth's TV leakage is weak, planetary radar is strong | Light-years for TV-like leakage; up to hundreds of light-years for radar-like leakage with a large receiver |
-| **Industrial gases** (CFCs, NF₃, NO₂) | No known abiotic source for CFCs | Tens of light-years for a large telescope (Kopparapu et al. 2021 for NO₂; Lin, Gonzalez Abad & Loeb 2014 for CFCs) |
+| **Leakage** (radio and radar) | Undirected; Earth's TV leakage is weak, planetary radar is strong | Pinned by [the observation registry](../../physics/observation.md). TV-like leakage in an hour: about 1 ly for the ship's 100 m dish, about 13 ly for a 10⁶ m² array (OB-35, OB-36). Radar-like leakage: 376 ly for the 100 m dish in one second (OB-31), about 12,000 ly for a large array in an hour (OB-33). The link budget does not hide a radar. Its narrow, brief beam does, and the likelihood model carries that chance |
+| **Industrial gases** (CFCs, NF₃, NO₂) | No known abiotic source for CFCs | No range is authored here: the reach follows from the photon budget in [the observation registry](../../physics/observation.md). NO₂ at Earth's present level: SNR ~ 5 in ~ 400 hours at 10 pc with a 15 m class telescope, cloud-free (Kopparapu et al. 2021). CFCs at 10 times Earth's level: 1.2 to 1.7 days with JWST, for a planet transiting a white dwarf (Lin, Gonzalez Abad & Loeb 2014); that paper states no reach in light-years |
 | **Artificial light on the night side** | City illumination | Very close only, or with the lens |
 | **Waste heat** (mid-infrared excess) | Energy use must be radiated (Wright et al. 2014) | A Dyson swarm shows across the galaxy |
 | **Artificial transits** (megastructures, swarms) | Non-planetary light-curve shapes | Wherever transits are seen |
