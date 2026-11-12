@@ -50,12 +50,19 @@
 | Clock | Value | Meaning |
 |---|---|---|
 | Ship (the captain's life) | 100 subjective years | The game ends with your death or a mutiny. The bubble society can go on after you. |
-| Earth (the hook) | **a difficulty setting** (Mark, 2026-10-19), within the canon range ~10,000–24,000 Earth years until the black hole's pass. Levels (Mark, 2026-10-19): Gentle 24,000, Standard 16,000 (default), Hard 10,000, tuned by playtesting | the time Earth has. The retired doc said 10,000–100,000, with 24,000 in its opening scene. Mark (2026-10-06): "10k or 24k, whatever we find works best". Mark (2026-10-19): "lets make it a difficulty setting how much time we have left." What happens to Earth when the clock runs out: [earth-fate-home.md](../features/future/earth-fate-home.md). |
+| Earth (the hook) | **a difficulty setting** (Mark, 2026-10-19). **Standard is 100,000 Earth years** (Mark, 2026-11-12: "I think the game is more naturally balanced at 100000 - and it also means the art for home becomes super crazy as well"). The other levels are to be set from the calibration; first proposal Hard 50,000 and Gentle 200,000. The earlier levels (Gentle 24,000, Standard 16,000, Hard 10,000; 2026-10-19) are superseded | the time Earth has. **Why 100,000:** the clock is a range budget, and range is what lets the universe stay close to the literature's median values. With 16,000 years a contact-rich voyage needed the universe tilted by about 10⁵; at a reach of 5,000–10,000 ly the median universe supplies contacts with little or no tilt (table and sources in [seti-factors.md](../features/next/seti-factors.md) §5.8). The price is paid at home: a crew that spends tens of thousands of Earth years abroad returns as strangers. The retired doc said 10,000–100,000, with 24,000 in its opening scene. Mark (2026-10-06): "10k or 24k, whatever we find works best". Mark (2026-10-19): "lets make it a difficulty setting how much time we have left." What happens to Earth when the clock runs out: [earth-fate-home.md](../features/future/earth-fate-home.md). |
 | Epilogue | to Year 1,000,000 | fast-forward to show what the bubble, its legacy and Earth became |
 
-**The Earth clock is a light-year budget.** At cruise, Earth time is at least the distance travelled, so every light-year of path costs at least one year of Earth's remaining time. With ~10,000 years:
-- the mission-relevant play area is roughly a 500–3,000 ly sphere around Sol;
-- Sgr A* (27,000 ly) is a choice to leave Earth behind.
+**The Earth clock is a light-year budget.** At cruise, Earth time is at least the distance travelled, so every light-year of path costs at least one year of Earth's remaining time. With 100,000 years (2026-11-12):
+- the mission-relevant play area grows from the earlier 500–3,000 ly sphere to roughly 5,000–10,000 ly around Sol, depending on how many legs a voyage makes;
+- Sgr A* (27,000 ly) and back is 54,000 years of the clock: no longer a choice to leave Earth behind, but more than half of everything Earth has.
+
+Knock-on work this ruling creates, none of it done here:
+- **The black hole's speed and distance.** To arrive in 100,000 years it is further away or slower than the table in §1 shows: 15 ly at 45 km/s, 10 ly at 30 km/s, or 4 ly at 12 km/s. The opening has Earth say "we lost contact four years ago" and calls the trip home "a few years", which fits only a hole about 4 ly away, so a slow hole (about 12 km/s) keeps the opening as written; a faster, more distant one changes that line. Open for Mark.
+- **The tidal-kick table in §1** uses the impulse approximation at 45–300 km/s. At 12 km/s a pass at 10 AU lasts about as long as an orbit, so the approximation fails and the table must be recomputed by integration before any number is quoted. The Einstein radius and parallax figures (for 3 ly) and the 21 m/s deflection figure also change with the distance and the time available.
+- **The pictures of home.** The crossing review's home tiers stop far short of 100,000 years; the far end needs new tiers.
+- **The play area in the game.** The reach design's outer tier ends at 3,000 ly and must extend.
+- **The calibration** reruns with this clock, and sets the Hard and Gentle levels.
 
 (See [galaxy-beyond-measurement.md](../features/next/galaxy-beyond-measurement.md).)
 

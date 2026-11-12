@@ -661,7 +661,7 @@ Mark, later the same session: "does this open up that perhaps we change our targ
 | 5,000 ly | 3.2 × 10⁸ | 2.6 | about 1 | 10^1.06 |
 | 10,000 ly | 1.4 × 10⁹ | 11 | none | 10^0.44 |
 
-- Premise §2 sets the clock as a difficulty level inside a canon range of about 10,000–24,000 years (Standard 16,000). A clock of 50,000–100,000 years, which the retired design once allowed, would put the median universe's contacts within reach with little or no tilt. That is a canon change and is not made here; the next calibration reports contacts against clock length so Mark can rule with numbers.
+- Premise §2 sets the clock as a difficulty level inside a canon range of about 10,000–24,000 years (Standard 16,000). A clock of 50,000–100,000 years, which the retired design once allowed, would put the median universe's contacts within reach with little or no tilt. **Ruled the same day (Mark: "I think the game is more naturally balanced at 100000"): Standard is 100,000 Earth years.** Recorded in [premise-and-loop.md](../../vision/premise-and-loop.md) §2 with the knock-on work it creates. The next calibration runs at this clock and sets the other levels.
 - A longer clock is physically natural: it is a slower or more distant black hole. At a typical stellar speed of 30 km/s, 100,000 years is a hole 10 ly away at the start.
 - **The price is the point** (pillar 3). A crew that spends 50,000 Earth years abroad returns as strangers to whatever Earth has become. The less the universe is tilted, the more the voyage costs at home.
 - What a longer reach does not buy is knowing where to go. At thousands of light-years nothing is heard unless it is aimed at the ship; the lens, Earth's observatories and signatures that outlast their makers carry that.
