@@ -646,6 +646,38 @@ What that means here:
 
 Open, for the implementation design: whether the selection runs at start-up (it must be fast, so the test for "matches the setting" has to be a closed form or a cheap census, not a simulated voyage); whether a universe's draw number is shown at once in hardcore mode; and how presets map to acceptance tests ("Lonely" accepts the first draw).
 
+### Direction: the calibration becomes a scenario runner (Mark, attended 2026-11-12)
+
+Mark, later the same session: "does this open up that perhaps we change our targets a bit - the more time we have to save earth, the more realistic the density of contact? and I think it would be nice to use it to simulate other scenarios - such as if life can spread. I assumed also earth is first to get light speed - but what changes if that is not there? ... we can keep it open and configurable later perhaps? and pick good gameplay but accurate defaults - that's why we run these simulations." And: "dark forest as well. yeah I think we can review the doomsday clock a little if it lets us not tip the scales so much - of course the sacrifice for the player is they are practically aliens for earth that has extreme time dilation when they arrive back?"
+
+**The Earth clock is a third lever, beside luck and range.** Every light-year of path costs at least a year of Earth's time (premise §2), so a longer clock means a wider reach, and a wider reach needs less luck. From the audited model (registry baseline, single exponential disc, living technological worlds at the median values; closed form, not a simulated voyage; rough beyond about 3,000 ly):
+
+| Reach | Stars | Living civilisations at the median values | Luck for 3 in range | If one in ten can be found |
+|---|---|---|---|---|
+| 81.5 ly | 5.0 × 10³ | 4.0 × 10⁻⁵ | 10^4.9 | 10^5.9 |
+| 326 ly | 2.9 × 10⁵ | 0.0023 | 10^3.1 | 10^4.1 |
+| 1,000 ly | 6.7 × 10⁶ | 0.054 | 10^1.75 | 10^2.75 |
+| 3,000 ly | 1.04 × 10⁸ | 0.83 | 10^0.56 | 10^1.56 |
+| 5,000 ly | 3.2 × 10⁸ | 2.6 | about 1 | 10^1.06 |
+| 10,000 ly | 1.4 × 10⁹ | 11 | none | 10^0.44 |
+
+- Premise §2 sets the clock as a difficulty level inside a canon range of about 10,000–24,000 years (Standard 16,000). A clock of 50,000–100,000 years, which the retired design once allowed, would put the median universe's contacts within reach with little or no tilt. **Ruled the same day (Mark: "I think the game is more naturally balanced at 100000"): Standard is 100,000 Earth years.** Recorded in [premise-and-loop.md](../../vision/premise-and-loop.md) §2 with the knock-on work it creates. The next calibration runs at this clock and sets the other levels.
+- A longer clock is physically natural: it is a slower or more distant black hole. At a typical stellar speed of 30 km/s, 100,000 years is a hole 10 ly away at the start.
+- **The price is the point** (pillar 3). A crew that spends 50,000 Earth years abroad returns as strangers to whatever Earth has become. The less the universe is tilted, the more the voyage costs at home.
+- What a longer reach does not buy is knowing where to go. At thousands of light-years nothing is heard unless it is aimed at the ship; the lens, Earth's observatories and signatures that outlast their makers carry that.
+
+**Scenarios to run, each a named set of switches with the same outputs** (what a voyage finds, the luck needed, the one-in-N):
+
+| Scenario | The switch | What it tests |
+|---|---|---|
+| Life spreads | living worlds seed neighbours (§3.4) | clusters of life; finding one predicts others |
+| Earth is not first | other species already have a near-light drive | the sharp form of Fermi's question: empty sky, settlement fronts, or old travellers who stay quiet |
+| Dark forest | minds choose silence, and being heard carries a risk | only unintended signatures are seen; the ship's own messages and Earth's beams become a danger, not just a cost |
+| Longer clock | 16,000 to 100,000 years | how much tilt each length removes |
+| Pure physics | one unselected draw | the standing rule's hardcore mode |
+
+Defaults are chosen from these runs for good play and accuracy. The switches stay available as start-up settings later; none is built by this note.
+
 ## 6. Source ledger
 
 **Opened in full text and read at the passage cited (Verified, text):** Sandberg, Drexler and Ord 2018; Wright, Kanodia and Lubar 2018 (arXiv version); Carroll-Nellenback et al. 2019; Schmidt and Frank 2019; Socas-Navarro et al. 2021; Schwieterman et al. 2024 (the lifetime passage); Carter 1983 (first page and abstract); Hart 1975 (a reprint with OCR errors, not checked against the journal); the Science News article quoting Drake (2010).
