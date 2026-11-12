@@ -4,6 +4,9 @@
 R3-REASONS milestone RT0. It awaits review in its draft PR. The labels in §3
 (Verified, Adopted, Design, Ruling, unverified) are part of the data, not footnotes.
 Four rulings (Mark, attended 2026-11-12) are recorded in §6.
+**Addendum (2026-11-13, draft):** transits, observing from the moving ship and
+host magnitudes: §2.8–§2.11 and rows OB-53 to OB-118. Four design values in
+§6 await a ruling.
 
 ## 1. What this registry pins
 
@@ -207,6 +210,104 @@ does not depend on distance. Distance matters only through the photon rate
 (§2.2) needed to measure it. γ = 1 is a Kardashev type II civilisation, one
 that uses its star's whole output.
 
+### 2.8 Transit photometry (the census)
+
+A planet **transits** when it crosses its star's disc as seen by the
+observer. The star dims a little for a few hours. Orbits here are circular,
+with radius a and period P. The **inclination** i is the angle between the
+orbit's axis and the line of sight; i = 90° is edge-on. The **impact
+parameter** b = a |cos i| / R★ is how far from the disc's centre the planet
+crosses, in stellar radii.
+
+```
+transits if    b = a |cos i| / R★ < 1
+probability    p = R★ / a                       (random orientation)
+depth          δ = (R_p / R★)²
+period         P = 2π sqrt(a³ / GM★)            (when P is not measured)
+duration       T = (P/π) asin( sqrt((R★ + R_p)² − (b R★)²) / (a sin i) )
+SNR            = δ × sqrt(N★ × T × N_tr)
+```
+
+T runs from first to last contact. N★ is the star's counted rate in the band
+(§2.2), with the throughput of an instrument that has no coronagraph, and
+N_tr is the number of transits added together. The noise is photon noise on
+the in-transit light only: the brightness out of transit is taken as known.
+p agrees with LW-22.
+
+In a stay of t_stop, the transits that are certain to fall inside it number
+floor(t_stop / P). A planet with P > t_stop shows a transit only by luck, with
+chance t_stop / P.
+
+### 2.9 Transit spectroscopy (reading air in transit)
+
+During a transit a thin ring of the planet's atmosphere is backlit. At a
+wavelength where a gas absorbs, the planet looks slightly larger, so the dip
+is slightly deeper. The extra depth is the **signal**.
+
+```
+scale height   H = k T_atm / (μ m_u g),   g = G M_p / R_p²
+signal         Δ = 2 n R_p H / R★²
+SNR per transit, per resolution element = Δ × sqrt(N★ × T)
+transits to a target SNR:  N_tr = (SNR / SNR_per_transit)²
+calendar time:             N_tr × P       (every transit observed)
+```
+
+The **scale height** H is the height over which air pressure falls by a
+factor e. μ is the mean molecular mass in atomic mass units m_u. n is how many
+scale heights the absorbing band adds to the planet's apparent radius. N★ is
+the star's counted rate in one resolution element (§2.2), with no coronagraph.
+
+Transit is the only way to read a planet that sits inside the inner working
+angle (§2.5). Most habitable-zone planets of M dwarfs do.
+
+### 2.10 Observing from the moving ship
+
+The ship moves at speed β (in units of c) with γ = 1/sqrt(1 − β²). For a
+source whose direction makes angle θ with the heading in the galaxy's frame
+(θ = 0 is dead ahead), the **Doppler factor** is
+
+```
+D = γ (1 + β cos θ) = 1 / (γ (1 − β cos θ′))
+```
+
+θ′ is the angle at which the source appears from the ship. Both forms, the
+aberration formula and the rules below are in
+[relativity-spec §1–§2](relativity-spec.md) (rows RS-1 to RS-4); nothing here
+re-derives them. D > 1 ahead (bluer, brighter), D < 1 astern.
+
+Every observed quantity changes as follows. Primed values are what the ship
+measures, per second of ship time.
+
+| Quantity | From the ship | Note |
+|---|---|---|
+| Wavelength of any feature | λ′ = λ / D | The O₂ A band sits at 0.76/D µm |
+| Spectrum of a blackbody | a blackbody at T × D | relativity-spec §2, "Spectrum" |
+| Solid angle of a small source | Ω′ = Ω / D² | So the star's angular radius is (R/d)/D |
+| Angle between two nearby directions | separation / D | Planet–star separation shrinks ahead and grows astern |
+| Counted rate in a fixed instrument band [λ₁, λ₂] | N′ = D × N_rest([D λ₁, D λ₂]) | Any spectrum. For a blackbody this equals T → T D with Ω → Ω/D² |
+| All photons, every wavelength | × D | Energy flux is × D² (relativity-spec §2, "Bolometric total = D²") |
+| Planet-to-star contrast | unchanged | Both transform the same way; compare at the same emitted wavelength |
+| Surface brightness (exozodi) in the same band, relative to the star's rate | × D² per ship-frame arcsec² | The star's light is squeezed into a smaller solid angle, the photometric aperture is not |
+| Rates of change at the source (a transit's duration) | duration / D | relativity-spec §2, "Resolved emitter" (RS-24) |
+| Instrument: aperture, band, IWA in radians, dark rate | unchanged | The instrument is at rest in the ship |
+
+The O₂ A band is inside a design band [λ_lo, λ_hi] when
+0.76/λ_hi ≤ D ≤ 0.76/λ_lo. The heading angles follow from
+cos θ = (D/γ − 1)/β and cos θ′ = (cos θ + β)/(1 + β cos θ).
+
+### 2.11 Host absolute magnitude from a blackbody
+
+§2.4 needs each host star's absolute V magnitude M_V. For a blackbody of
+temperature T and radius R it is defined relative to the Sun:
+
+```
+M_V(T, R) = 4.81 − 2.5 log₁₀( R² P_V(T) / (R☉² P_V(T☉)) )
+```
+
+P_V(T) is the integral of §2.2 over the V-like band. The Sun's value is 4.81
+by construction. This is the magnitude the blackbody model implies; §5 says
+how far real cool stars are from it.
+
 ## 3. Provenance
 
 "Verified" means the cited location was opened for this registry and the
@@ -250,6 +351,21 @@ not opened or does not state the number.
 | Infrared excess threshold | E = 0.1 | Game threshold for OB-40 | Design |
 | NO₂ as a technosignature | no number adopted | [Kopparapu et al. 2021](https://arxiv.org/abs/2102.05027), abstract: present Earth-level NO₂ at 10 pc, SNR ~ 5 in ~ 400 hours with a 15 m telescope, cloud-free | Verified; context for the likelihood work in RT1b |
 | CFCs as a technosignature | no number adopted | [Lin, Gonzalez Abad & Loeb 2014](https://arxiv.org/abs/1406.3025), abstract: JWST, a planet transiting a white dwarf, about 1.2 days (CCl₃F) and 1.7 days (CF₄) for 10 times the terrestrial level | Verified; the paper covers white-dwarf hosts only and states no reach in light-years |
+| Planet and solar mass parameters | GM☉ = 1.3271244 × 10²⁰, GM⊕ = 3.986004 × 10¹⁴ m³ s⁻² | IAU 2015 Resolution B3, recommendation 3 | Verified |
+| Atomic mass constant | m_u = 1.66053906660 × 10⁻²⁷ kg | CODATA 2018 | Adopted; not re-opened |
+| Transit geometry | §2.8 | Standard results for a circular orbit. Check: the formula gives 55.84 min for TRAPPIST-1 e against 55.76 ± 0.26 min measured ([Agol et al. 2021](https://arxiv.org/abs/2010.01074), Table 5), and 13.10 h for Earth against 13.1 h in [Rodler & López-Morales 2014](https://arxiv.org/abs/1312.1585), Table 1 | Adopted; no derivation source opened, the two checks are Verified |
+| TRAPPIST-1 | R★ = 0.1192 R☉, T = 2566 K | Agol et al. 2021, Table 7 | Verified |
+| TRAPPIST-1 e | R = 0.920 R⊕, M = 0.692 M⊕ (Table 6); P = 6.101013 d (Table 2); a = 0.02925 AU (Table 6); b = 0.191 (Table 5) | Agol et al. 2021. Table 6 also gives g = 8.01 m s⁻², which the formula reproduces | Verified |
+| TRAPPIST-1 distance | 12.42988881 pc | NASA Exoplanet Archive, `pscomppars`, `sy_dist` for TRAPPIST-1 e, reference Gaia DR2; queried 2026-11-13. The same record gives V = 17.02 and Ic = 14.0 | Verified |
+| Throughput with no coronagraph | τ_T = 0.135 | Stark et al. 2019, Eq. 16 and Table 2: 0.95 × 0.21 × 0.9 × 0.75 = 0.1347, the spectrograph path without the coronagraph's core loss | Components verified; use for transit work is Design |
+| Scale heights in a band | n = 2 | [Kreidberg 2018](https://arxiv.org/abs/1709.05941), Eq. 2–3 and the sentence after: n is "typically around two for cloud-free atmospheres at low spectral resolution" | Verified; used for the O₂ A band, Adopted |
+| Earth-like atmosphere | μ = 28.97, T_atm = 255 K | Game values; 255 K is LW-19 | Design; μ **unverified** (standard value, no source opened) |
+| Hot Jupiter | R_J, a = 0.05 AU, Sun-like star, 10 pc, b = 0 | Game case, the planet of OB-5 | Design |
+| Warm sub-Neptune and host | 2.5 R⊕, 8 M⊕, 300 K, μ = 2.3; a = 0.15 AU; star 3430 K, 0.361 R☉, 0.40 M☉, 10 pc | Game case. The star's T and R are the M3V row of [Mamajek's dwarf sequence](https://www.pas.rochester.edu/~emamajek/EEM_dwarf_UBVIJHK_colors_Teff.txt) (version 2022.04.16; Pecaut & Mamajek 2013 updated) | Design; star T and R Verified; the 0.40 M☉ is **unverified** |
+| Oxygen in transit, published | no number adopted | Rodler & López-Morales 2014, Table 2: the 39 m E-ELT at high resolution needs 31–48 transits (about 3–5 years) for a 3σ O₂ detection on an Earth twin of an M7V–M8V star at 5 pc; abstract: feasible only within 8 pc and later than M3. [Snellen et al. 2013](https://arxiv.org/abs/1302.3251), abstract: "a few dozen transits" with the extremely large telescopes. [Lustig-Yaeger, Meadows & Lincowski 2019](https://arxiv.org/abs/1905.07070), abstract: with JWST, biogenic O₂ and O₃ "will be extremely challenging to detect" on the TRAPPIST-1 planets | Verified; compared with the rows after §4 |
+| Dwarf sequence (T, R, M_V) | K5V: 4440 K, 0.701 R☉, M_V 7.28. M4V: 3210 K, 0.274 R☉, M_V 12.61, V−Ic 2.831. M8V: 2570 K, 0.114 R☉, M_V 18.60, V−Ic 4.62 | Mamajek's dwarf sequence, version 2022.04.16 | Verified |
+| Sun in the I band | M_I = 4.10; Cousins I pivot 0.8034 µm, bandwidth 0.1482 µm | Willmer 2018, Table 3 and Table 4 | Verified; used only for the comparison in §5 |
+| Doppler and aberration | §2.10 | relativity-spec §1–§2 and rows RS-1 to RS-4. The photon-count forms (N′, × D, the surface-brightness rule) follow from its invariant I_ν/ν³; they are not printed there | Adopted from the spec; the photon-count forms are this registry's statement and are checked two ways by the oracle |
 | Vegetation red edge | no number adopted | [Kiang et al. 2007](https://arxiv.org/abs/astro-ph/0701391) (paper II), introduction: the edge is a steep rise in reflectance over about 700–850 nm, and may sit in the near-infrared for M stars | Verified; context only |
 
 ## 4. OB check-value registry
@@ -265,6 +381,8 @@ count as significant figures. Unless a row says otherwise:
 - zodiacal light is included: ℓ = 1, z = 23, n = 4.5, z₁ = 22, X = 0.7,
   M_V = 4.81;
 - "O₂ A element" is one resolution element at λ₀ = 0.76 µm, R = 140;
+- transit rows (OB-53 on) use D = 10 m, τ_T = 0.135, no coronagraph, no
+  zodiacal light and no dark counts; "30-day stay" is a design value (§6);
 - "reference dish" is the ship's starting receiver: 100 m across, aperture
   efficiency 0.70, T_sys = 25 K. "Large array" is A_e = 10⁶ m² at
   T_sys = 25 K. Radio rows use n_pol = 1.
@@ -323,6 +441,72 @@ count as significant figures. Unless a row says otherwise:
 | OB-50 | Time to strong (SNR 10) at the distance of OB-24, reference instrument | 732.3 | hours |
 | OB-51 | Distance at which EIRP 2 × 10¹³ W gives a hint (SNR 5): reference dish, B = 1 Hz, t = 1 s | 168.3 | ly |
 | OB-52 | Distance at which OB-34 gives a hint (SNR 5): large array, B = 0.1 Hz, t = 3600 s | 5.662 | ly |
+| OB-53 | Transit probability of an Earth twin, R☉/1 AU (LW-22) | 0.004650 | — |
+| OB-54 | Transit depth of the Earth twin | 8.405 × 10⁻⁵ | — |
+| OB-55 | Period at 1 AU from GM☉ | 365.3 | days |
+| OB-56 | Transit duration of the Earth twin, b = 0 | 13.10 | hours |
+| OB-57 | Counted rate from the Sun at 10 pc, V-like band, 10 m, τ_T = 0.135 | 1.058 × 10⁹ | photons s⁻¹ |
+| OB-58 | Photon-limited SNR of one Earth-twin transit at 10 pc, V-like band | 593.5 | — |
+| OB-59 | Chance that an Earth-twin transit falls inside a 30-day stay (30 d / P) | 0.08213 | — |
+| OB-60 | Earth-twin transits certain to fall inside a 30-day stay: none | 0 | transits |
+| OB-61 | Transit probability of TRAPPIST-1 e | 0.01895 | — |
+| OB-62 | Transit depth of TRAPPIST-1 e (measured: 0.5012 %) | 5.007 × 10⁻³ | — |
+| OB-63 | Transit duration of TRAPPIST-1 e, b = 0.191 (measured: 55.76 min) | 55.84 | minutes |
+| OB-64 | Photon-limited SNR of one TRAPPIST-1 e transit, V-like band, blackbody star | 54.00 | — |
+| OB-65 | TRAPPIST-1 e transits certain to fall inside a 30-day stay | 4 | transits |
+| OB-66 | SNR of OB-64 over those 4 transits | 108.0 | — |
+| OB-67 | Transit probability of the hot Jupiter (a = 0.05 AU) | 0.09301 | — |
+| OB-68 | Transit depth of the hot Jupiter | 0.01056 | — |
+| OB-69 | Period of the hot Jupiter | 4.084 | days |
+| OB-70 | Transit duration of the hot Jupiter, b = 0 | 3.205 | hours |
+| OB-71 | Photon-limited SNR of one hot-Jupiter transit at 10 pc, V-like band | 3.689 × 10⁴ | — |
+| OB-72 | The same over the 7 transits of a 30-day stay | 9.761 × 10⁴ | — |
+| OB-73 | Scale height on TRAPPIST-1 e with Earth-like air (μ = 28.97, 255 K) | 9.136 | km |
+| OB-74 | Transit-spectroscopy signal of TRAPPIST-1 e, n = 2 | 31.18 | ppm |
+| OB-75 | Counted rate from TRAPPIST-1 (blackbody) in the O₂ A element, 10 m, τ_T | 9501 | photons s⁻¹ |
+| OB-76 | SNR per transit in the O₂ A element, TRAPPIST-1 e, 10 m | 0.1759 | — |
+| OB-77 | Transits to a hint (SNR 5), TRAPPIST-1 e, 10 m | 807.8 | transits |
+| OB-78 | Calendar time for OB-77, every transit observed | 13.49 | years |
+| OB-79 | Transits to strong (SNR 10), TRAPPIST-1 e, 10 m | 3231 | transits |
+| OB-80 | Calendar time for OB-79: not within a working lifetime | 53.97 | years |
+| OB-81 | SNR per transit in the O₂ A element, TRAPPIST-1 e, D = 100 m | 1.759 | — |
+| OB-82 | Transits to a hint, TRAPPIST-1 e, 100 m | 8.078 | transits |
+| OB-83 | Calendar time for OB-82 | 0.1349 | years |
+| OB-84 | Transits to strong, TRAPPIST-1 e, 100 m | 32.31 | transits |
+| OB-85 | Calendar time for OB-84 | 0.5397 | years |
+| OB-86 | Scale height on the Earth twin (μ = 28.97, 255 K) | 7.469 | km |
+| OB-87 | Transit-spectroscopy signal of the Earth twin across the Sun, n = 2 | 0.3937 | ppm |
+| OB-88 | SNR per transit in the O₂ A element, Earth twin at 10 pc, 10 m | 0.6871 | — |
+| OB-89 | Calendar time to a hint, Earth twin, 10 m (one transit a year) | 52.96 | years |
+| OB-90 | Calendar time to strong, Earth twin, 10 m: hopeless | 211.8 | years |
+| OB-91 | SNR per transit, Earth twin at 10 pc, D = 100 m (photon noise only; the signal is OB-87) | 6.871 | — |
+| OB-92 | Scale height on the warm sub-Neptune (μ = 2.3, 300 K) | 86.47 | km |
+| OB-93 | Transit-spectroscopy signal of the sub-Neptune across its M3V star, n = 2 | 87.44 | ppm |
+| OB-94 | Period of the sub-Neptune (0.15 AU, 0.40 M☉) | 33.55 | days |
+| OB-95 | SNR per transit in one R = 140 element at 0.76 µm, sub-Neptune at 10 pc, 10 m | 8.530 | — |
+| OB-96 | Transits to strong (SNR 10), sub-Neptune, 10 m | 1.374 | transits |
+| OB-97 | Transit duration of the sub-Neptune, b = 0 | 3.051 | hours |
+| OB-98 | Sun dead ahead at 0.9c: counted rate in the fixed V-like band, relative to rest | 2.667 | — |
+| OB-99 | Sun dead astern at 0.9c: the same | 5.851 × 10⁻⁶ | — |
+| OB-100 | 0.9c: smallest angle θ from the heading (galaxy frame) at which the O₂ A band is inside 0.5–1.0 µm | 112.0 | deg |
+| OB-101 | 0.9c: largest such angle θ | 138.0 | deg |
+| OB-102 | 0.9c: the same inner edge as an apparent angle θ′ on the ship's sky | 37.58 | deg |
+| OB-103 | 0.9c: the outer edge as an apparent angle θ′ | 61.72 | deg |
+| OB-104 | Sun dead ahead at 0.99c: counted rate in the fixed V-like band, relative to rest | 1.232 | — |
+| OB-105 | Sun dead astern at 0.99c: the same | 3.423 × 10⁻²³ | — |
+| OB-106 | 0.99c: smallest angle θ (galaxy frame) with the O₂ A band inside 0.5–1.0 µm | 142.5 | deg |
+| OB-107 | 0.99c: largest such angle θ | 154.4 | deg |
+| OB-108 | 0.99c: the inner edge as an apparent angle θ′ | 23.60 | deg |
+| OB-109 | 0.99c: the outer edge as an apparent angle θ′ | 34.65 | deg |
+| OB-110 | Largest β at which the O₂ A band stays inside 0.5–1.0 µm over the whole sky | 0.2677 | — |
+| OB-111 | Separation of 1 AU at 10 pc seen dead ahead at 0.9c (OB-23 / RS-3) | 22.94 | mas |
+| OB-112 | The same dead astern at 0.9c (OB-23 / RS-4) | 435.9 | mas |
+| OB-113 | Blackbody M_V of the Sun (the anchor) | 4.810 | mag |
+| OB-114 | Blackbody M_V of a K5V star: 4440 K, 0.701 R☉ (sequence value 7.28) | 7.063 | mag |
+| OB-115 | Blackbody M_V of an M4V star: 3210 K, 0.274 R☉ (sequence value 12.61) | 11.54 | mag |
+| OB-116 | Blackbody M_V of TRAPPIST-1: 2566 K, 0.1192 R☉ (M8V sequence value 18.60) | 15.55 | mag |
+| OB-117 | SNR in the O₂ A element on TRAPPIST-1 e from the 4 transits of a 30-day stay, 10 m | 0.3519 | — |
+| OB-118 | The same with D = 100 m | 3.519 | — |
 
 ### What the rows say about reach
 
@@ -354,6 +538,44 @@ with the feature document.
   (OB-39: the excess alone is 3.3 times the starlight). A fraction below
   3 × 10⁻⁴ hides under a 10 % threshold (OB-40). Humanity's fraction of the
   Sun's output is far below that.
+
+- **The 10 m telescope cannot read oxygen on a transiting M-dwarf planet.**
+  On TRAPPIST-1 e the signal is 31 parts per million (OB-74) and one transit
+  gives SNR 0.18 in the O₂ A element (OB-76). A hint needs 808 transits,
+  13.5 years of catching every one (OB-77, OB-78). A strong reading needs 54
+  years (OB-80). A 30-day stay gives SNR 0.35 (OB-117). These rows are
+  optimistic in two known ways. The blackbody star is 1.7 to 2.5 times too
+  bright near 0.8 µm (§5, item 11). And the published simulations are harsher:
+  Rodler & López-Morales 2014, scaled by aperture, distance and threshold to
+  this case, give about 8,000 to 12,500 transits, ten to fifteen times the
+  row. Their method (high resolution, from the ground, with real noise) is not
+  the registry's, so the scaling is rough. Both say the same thing: not at
+  10 m.
+- **A 100 m telescope can.** It reaches a hint in 8 transits and a strong
+  reading in 32, about half a year (OB-82 to OB-85). A 30-day stay gives
+  SNR 3.5 (OB-118), short of a hint. Scaled from Rodler & López-Morales it is
+  80 to 125 transits, one to two years. So with 100 m, oxygen on a nearby
+  transiting M-dwarf planet is a stay of months to years, not days.
+- **An Earth twin across a Sun-like star is hopeless in transit.** One planet
+  in 215 is aligned (OB-53). It transits once a year, so a 30-day stay
+  usually sees none (OB-59, OB-60). The signal is 0.39 parts per million
+  (OB-87). The 10 m needs 53 years for a hint (OB-89). Photon noise alone
+  would let a 100 m see it in one transit (OB-91), but that needs the star
+  and the instrument steady to a fraction of a part per million, which these
+  rows do not model. That planet is read with the coronagraph (OB-15), not in
+  transit.
+- **Finding transits is easy; photons are never the limit.** Even the
+  Earth twin's dip has SNR 594 in one transit (OB-58). What limits a real
+  census is the star's own flicker and the wait for a transit. Neither is in
+  these rows.
+- **From the moving ship the sky is not one sky.** At 0.9c a Sun-like star
+  dead ahead is 2.7 times brighter in the V-like band and one dead astern
+  is 170,000 times fainter (OB-98, OB-99). The O₂ A band falls inside a
+  0.5–1.0 µm instrument only for stars in a ring: 38° to 62° from the heading
+  on the ship's sky at 0.9c, 24° to 35° at 0.99c (OB-102, OB-103, OB-108,
+  OB-109). Below 0.27c it is in band everywhere (OB-110). Ahead, planets
+  crowd toward their stars: 1 AU at 10 pc shrinks from 100 mas to 23 mas at
+  0.9c, inside the inner working angle (OB-111 against OB-22).
 
 ## 5. Scope: what is simplified on purpose
 
@@ -393,6 +615,35 @@ Each item is a **game approximation**. None is a claim about a real mission.
     spectrum's shape while it dims. OB-40's threshold is a game number, not a
     survey's calibration limit.
 
+11. **A blackbody is a poor M dwarf in visible light.** Cool stars are
+    darkened by molecular bands that a Planck curve does not have. In V the
+    blackbody is too bright by 0.22 mag for a K5V star, 1.07 mag for an M4V
+    and 3.05 mag for TRAPPIST-1 against the M8V sequence value (OB-114 to
+    OB-116; 1.0 mag against that star's own catalogued V = 17.02). One
+    magnitude is a factor 2.5 in photons; three are a factor 16. Near 0.8 µm
+    the error is smaller: the blackbody TRAPPIST-1 is 0.55 mag too bright
+    against its catalogued Ic = 14.0 and 1.0 mag against the sequence, a
+    factor 1.7 to 2.5; for an M4V it is 0.13 mag. Every M-dwarf rate in this
+    file carries that error: OB-64, OB-66 and OB-75 to OB-85 are too
+    favourable. If a catalogue M_V is mixed with a blackbody rate in §2.4's
+    N₀, the zodiacal rate is wrong by the V error. Use the blackbody M_V
+    with the blackbody rate, or real values for both.
+12. **Transit noise is photon noise only.** No stellar flicker, no spots, no
+    instrument drift, no noise floor, no limb darkening. The out-of-transit
+    brightness is taken as known, which is the same choice as the plain
+    Poisson formula of §2.4. A signal of a fraction of a part per million
+    (OB-87) passes these formulas; nothing here says an instrument could
+    hold steady enough to see it.
+13. **The O₂ signal is n = 2 scale heights in one R = 140 element.** No
+    clouds, no refraction, no blending with the star's own lines. The
+    published high-resolution method adds many narrow lines together and is a
+    different measurement.
+14. **Every transit is observed.** Calendar times assume the ship stays and
+    never misses one.
+15. **At cruise the star is still a blackbody and the instrument band is a
+    top hat.** The rule N′ = D × N_rest holds for any spectrum, but the rows
+    use the Planck curve far from its peak, where real stars differ most.
+
 ## 6. Rulings and remaining evidence
 
 **Unverified:** the coronagraph core throughput of 0.30 inside τ; the two
@@ -420,6 +671,24 @@ The same session confirmed the plain Poisson SNR formula, without the factor
 
 **Open for review:** the local zodi level ℓ for a ship that is not inside a
 planetary system; the core throughput inside τ.
+
+**Design values awaiting a ruling (addendum).** The sim's evidence ledger
+uses these. This registry records them and does not rule.
+
+| Value | Used by the builder | What the rows show |
+|---|---|---|
+| Integration time per target at a stop | 30 days | Enough for coronagraph spectra to 59 ly except a strong reading at the very edge (OB-50: 732 hours is 30.5 days). Catches 4 transits of TRAPPIST-1 e and usually none of a one-year planet (OB-60, OB-65) |
+| Integration time per target at cruise | 1 hour | Ship time. At rest, an hour gives a hint on an Earth twin only out to about 10 ly (OB-17: 0.68 hours at 10 ly) |
+| Design band of the spectrograph | 0.5–1.0 µm | Sets the ring of headings in OB-100 to OB-110 |
+| Geometric albedo | 0.2 for every planet | Verified for an Earth twin only (§3). OB-4 and OB-5 use other design values |
+
+Also open, from this addendum: a noise floor for transit work (none is set,
+scope item 12); the throughput 0.135 with no coronagraph; n = 2 for the
+O₂ A band.
+
+**Unverified in the addendum:** μ = 28.97; the 0.40 M☉ of the M3V host; the
+CODATA value of m_u (not re-opened). The transit formulas are standard and no
+derivation source was opened; two published values check them (§3).
 
 **Oracle.** An independent Python script (standard library only) recomputes
 every row from §2 and compares it with the table above at the printed
