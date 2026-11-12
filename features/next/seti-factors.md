@@ -2,7 +2,7 @@
 
 ## Status
 
-- **Status:** Proposed 2026-11-12. A research review and a proposal. Not approved. It changes no baseline value, no check value and no code. Every number computed here is an estimate and is labelled; none is a check value yet.
+- **Status:** Rulings recorded 2026-11-12 (§5.8: Mark, attended, the six rulings and the adjusted targets as recommended, and the standing rule on departures from physics). Proposed 2026-11-12. A research review and a proposal. Not approved. It changes no baseline value, no check value and no code. Every number computed here is an estimate and is labelled; none is a check value yet.
 - **Origin:** the R3-WORLDS calibration found that giving a player 5 or more living contacts per voyage needs about 10⁵ times baseline luck, with civilisations lasting 32 million years. Mark (attended, 2026-11-12): this fine-tuning is "exactly a deep lesson of the game"; he wants the numbers right, asks what factors the model is missing and what could honestly be added, and wants it to teach SETI. Mark, same day, on the encounter targets: "if we can move the expected numbers a bit that's ok if it makes it easier - but this is all good research on its own."
 - **Priority:** P1 for the rulings it asks for (§5.6), because they decide what the default preset means. The model changes are P2.
 - **Roadmap:** [r3-signals-and-contact.md](../../roadmap/r3-signals-and-contact.md), tracks W and S.
@@ -617,6 +617,34 @@ Rank 1 and rank 5 touch neither rule. Rank 3 stays inside the rule provided flag
 - **The remaining habitable time for Earth** (about a billion years) is from memory and is used only as context.
 
 ---
+
+## 5.8 Decisions (Mark, attended 2026-11-12)
+
+Mark, on the six rulings of §5.6 and the adjusted targets of §5.3: "ok good yes we can go with these". Recorded as ruled, each as recommended to him in session:
+
+1. **Count over the mission range,** not the 81.5 ly map. The reach work (game design `r3/reach.md`, approved the same day) supplies the worlds.
+2. **The dial may act on how often technological species arise on a planet** (successive lineages). The default universe sits between ancients and mortals, so that some contacts end by arrival or during the voyage.
+3. **Loudness is not independent of age.** A civilisation's signatures fade and change type over its life, and some persist after its end (the ladder of §3).
+4. **Settlement between stars is out of the default.** It may return as an option.
+5. **The adjusted encounter targets of §5.3 are adopted:** at least 3 living contacts (3–5 typical), 1–2 late contacts, 2–4 remnants with at least 1 visited, 5–10 signals across all signature classes including sources since ended; biospheres detected (40–80) and visited (5–10) unchanged. They supersede decision 1 of `life-and-intelligence-parameters.md`.
+6. **The Archive leads with the "one in N" statement of the luck.** The other two statements (§3.8) stay available.
+
+These rulings set direction. The numbers that follow from them (dial offsets, class prevalences, N) come from the next calibration and from check values pinned first; nothing in §5.4 is pinned by this section.
+
+### The standing rule: a departure from physics is documented, and pure physics stays playable
+
+Mark, the same day: "basic rule is if we depart from physics we at least document why for gameplay reasons and give an option to play with pure physics - hardcore mode? where people may just need to restart a lot? how many times? or perhaps we randomly generate seeds until it hits what universe they configure in start up settings etc."
+
+What that means here:
+
+- **Every gameplay departure is written down with its reason,** in the design doc and where the player can find it (the Archive).
+- **Select, do not distort.** The game need not multiply the literature's values by a boost. It can draw whole universes from the literature's own uncertainty ranges (Sandberg, Drexler and Ord's distributions for life, minds, technology and lifetime) and keep drawing until one matches the start-up setting. Each universe is then an honest draw; only the choosing is deliberate. That is the anthropic principle done literally, and it is the loop's fiction: each failed voyage seeded another universe.
+- **Two layers of chance, kept apart.** The first is which universe: its parameters, drawn once from the ranges. The second is where things fall inside it: the seed. Searching seeds alone cannot do the job at the median values, where a universe expects about 0.00004 living civilisations within 81.5 ly and five contacts would not turn up in any practical number of tries. Drawing parameters can, because the ranges are wide.
+- **How many restarts?** That is the "one in N". §3.8's first estimate for today's model and targets is about one in 3,500 (a quick simulation and a closed form agree at 2.9 × 10⁻⁴; it must be computed exactly in the package before anyone quotes it). With the rulings above (mission range, signature ladder, adjusted targets) the estimate is about one in 15 to 20. So hardcore play is plausible: tens of restarts, not thousands.
+- **Hardcore mode:** the universe is one unselected draw, and the player is told so. Most such universes are empty within reach. The game says how many draws a contact-rich one takes on average, and counts the player's own.
+- **The default mode:** the game does the drawing for the player and reports the count. The Archive's reveal becomes a number that is literally true: this is the Nth universe.
+
+Open, for the implementation design: whether the selection runs at start-up (it must be fast, so the test for "matches the setting" has to be a closed form or a cheap census, not a simulated voyage); whether a universe's draw number is shown at once in hardcore mode; and how presets map to acceptance tests ("Lonely" accepts the first draw).
 
 ## 6. Source ledger
 
