@@ -251,7 +251,10 @@ fix. Options:
 it, and makes the closed-mass rule bite where it matters most:
 
 - The speed slider becomes a mass decision as well as an Earth-years decision.
-  0.99c to α Cen costs about 76 kg; pushing a long leg to 0.999999c costs tonnes.
+  With the canon drive (m_eff 1 kg, D-69), 0.99c to α Cen costs about 6.8 kg, one way,
+  brake included (5.3 kg boost and brake, 1.5 kg drag at RES-36's 0.349 kg per ly). The 76 kg of
+  RES-21 is the guided tour's leg: 0.999c with its 10 kg drive. Pushing a long leg to 0.999999c
+  costs tonnes.
 - "Everything competes for the same atoms" (mass-budget) now includes the
   journey itself.
 - It fits the spire mystery. The generator is the only machine aboard that
