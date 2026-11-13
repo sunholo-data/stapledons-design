@@ -63,6 +63,8 @@ Each run is a universe the loop chose because it is unusually kind to minds (pre
 
 ### Track F: the destination finder
 
+**Delivered observation UI, 2026-11-13:** [game PR #438](https://github.com/sunholo-data/stapledons-godot/pull/438) adds a visible Telescope in Navigation, the captain's chair and object inspection, reusing the existing live stellar renderer and 3D map. Its bounded offline Euclid archive has a registered Abell 3128 VIS field with 40 catalogue sources and three explicitly unregistered colour outreach plates. Shared facts carry sources/methods; survey directions have no fabricated depth and cannot become local journey targets. Inspection preserves the plotted destination; plotting is a separate helm action. Mark explicitly directed merge after the combined dev build was published; independent code review passed 80/100. [Implementation and evidence](https://github.com/sunholo-data/stapledons-godot/blob/main/design_docs/implemented/r3/telescope-survey-inspection.md). This is archive/inspection delivery, with no new survey-time mechanic or completion claim for S2/S3's physical instrument budgets.
+
 | ID | Milestone | Exit criteria | Depends |
 |---|---|---|---|
 | F1 | Candidates and filters on the galaxy map and in a list | destination-finder ACs 1–2, 5 | S3 |
