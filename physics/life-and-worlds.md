@@ -4,6 +4,9 @@
 R3-WORLDS W1.0; Mark approved the implementation recommendations in game ledger
 D-144. This registry awaits review in its draft PR. Its measured, adopted and
 unverified labels are part of the data, not editorial footnotes.
+**Addendum (2026-11-12, draft, R3-UNIVERSE-LAB UL1a):** derived rows LW-46 to
+LW-54 (§4); what the baseline's factors already include (§6); the deliberate
+departures from the literature (§7). No baseline value changes.
 
 ## 1. Baseline and provenance
 
@@ -24,9 +27,9 @@ A future measurement changes the version, never a running universe.
 | fLife | X=log10(lambda Vt) ~ Normal(0,50^2); f=1-exp(-10^X); median 0.632120558828558 | [Sandberg, Drexler & Ord 2018](https://arxiv.org/html/1806.02404), §3.1.1 (PDF p. 9), Table 1 life entry refers to that model | Verified rate prior; paper's evolutionarily competent life mapped here to biosphere probability as an explicit game assumption; dial life |
 | fMinds | log-uniform [0.001,1], median 0.0316227766016838 | Sandberg et al., Table 1 | Verified expert-uncertainty model, not a measured frequency; dial minds |
 | fComplex | fixed split, median 0.316227766016838, always >= fMinds | Game design: the split of the intelligence pathway; not a literature estimate | Design; scales with minds, clamped to [fMinds,1] |
-| fTech | log-uniform [0.01,1], median 0.1 | Sandberg et al., Table 1 | Verified expert-uncertainty model; dial tech |
-| L | log-uniform [100,100000000] yr; median 100000 yr | D-144 keeps the [life feature](../features/next/life-and-intelligence-parameters.md) range. Sandberg Table 1 actually uses [100,10000000000] yr, median 1000000 yr | Source verified; canon range is a deliberate difference; dial lifetime |
-| Epoch window | 5000000000 yr | Life feature's analytic model | Design; fixed |
+| fTech | log-uniform [0.01,1], median 0.1 | Sandberg et al., Table 1, row f_c. §1, after Eq. 1, defines it: "f_c is the fraction of intelligent civilizations that are detectable/contactable" | Verified expert-uncertainty model; it is a fraction **detectable**, read here as "builds technology" (§6); dial tech |
+| L | log-uniform [100,100000000] yr; median 100000 yr | D-144 keeps the [life feature](../features/next/life-and-intelligence-parameters.md) range. Sandberg Table 1 actually uses [100,10000000000] yr, median 1000000 yr. Sandberg §1 defines L as "the average longevity of such detectable civilizations" | Source verified; canon range is a deliberate difference (§7, row 1); dial lifetime |
+| Epoch window | 5000000000 yr; onsets uniform inside it, centred on now | Life feature's analytic model. No source gives this window or a uniform onset law | Design; fixed. Estimated effect on counts: within about ±0.5 dex, sign unknown ([seti-factors §3.6](../features/next/seti-factors.md): a judgement from four abstracts, not a calculation) |
 | Remnant persistence | log-uniform [1000,10000000] yr | D-144, not a measurement. [Schmidt & Frank 2019](https://doi.org/10.1017/S1473550418000095), §§2–4 discuss preservation and ambiguity, not this numerical lifetime distribution | Design; fixed |
 | Ending shares collapse / ecocide / transcendence | 0.75 / 0.15 / 0.10 | D-144, superseding example rates in planet-state-transitions | Design; fixed |
 | Loudness | No calibrated numeric prior yet | [Price et al. 2020](https://doi.org/10.3847/1538-3881/ab65f1), §5 and sensitivity/occurrence discussion: narrowband search of 1327 stars, 1.10–3.45 GHz | Null results constrain specified transmitters and selection functions, not universal fTech; never dialled. Instrument/loudness choices belong to S2/S3 |
@@ -139,7 +142,7 @@ uncertain astronomical measurement. HZ checks use Teff=5780 K, L=1.
 | LW-8 | Intelligence median | 0.0316227766016838 | — |
 | LW-9 | Technology median | 0.1 | — |
 | LW-10 | Canon lifetime median | 100000 | yr |
-| LW-11 | Epoch window | 5000000000 | yr |
+| LW-11 | Epoch window (design; onsets uniform inside it) | 5000000000 | yr |
 | LW-12 | Complex-life split median (design) | 0.316227766016838 | — |
 | LW-13 | Solar recent Venus flux | 1.776 | S⊕ |
 | LW-14 | Solar runaway greenhouse flux | 1.107 | S⊕ |
@@ -174,6 +177,15 @@ uncertain astronomical measurement. HZ checks use Teff=5780 K, L=1.
 | LW-43 | Baseline reach for LW-42 | 1000 | ly |
 | LW-44 | Galactic mass formation rate (not a stars/yr rate) | 1.65 | M☉/yr |
 | LW-45 | Microlensing mean abundance in the cited mass/orbit domain | 1.6 | planets/star |
+| LW-46 | Mean of the canon lifetime prior, (LW-40 − LW-39)/ln(LW-40/LW-39) | 7.238 × 10⁶ | yr |
+| LW-47 | Mean of the intelligence prior, (1 − 0.001)/ln(1000) | 0.1446 | — |
+| LW-48 | Mean of the technology prior, (1 − 0.01)/ln(100) | 0.2150 | — |
+| LW-49 | Mean of the remnant-persistence prior (design), (LW-38 − LW-37)/ln(LW-38/LW-37) | 1.086 × 10⁶ | yr |
+| LW-50 | Remnant-state share of habitable-zone worlds when life, minds and technology are all 1: LW-34 × LW-49 / LW-11 | 1.63 × 10⁻⁴ | — |
+| LW-51 | Baseline living share A₀ = LW-7 × LW-8 × LW-9 × LW-10 / LW-11 | 3.998 × 10⁻⁸ | — |
+| LW-52 | Habitable-zone worlds per star, LW-3 × LW-5 + LW-4 × LW-6 | 0.200 | planets/star |
+| LW-53 | Luck for 5 expected living technological worlds within 81.5 ly, every one found: log₁₀(5/(N(81.5 ly) × LW-52)) − log₁₀(LW-51) | 5.10 | dex |
+| LW-54 | The same within 1000 ly | 1.97 | dex |
 
 LW-42 is distinct from the historical reference parameters of LW-28. With
 `sunholo/worlds` 0.1.0, `applyDial(baseline(), zeroDial())`, the adopted disc,
@@ -183,6 +195,42 @@ figure. This is an expectation under adopted medians, not a posterior mean or
 a measurement. The game regression `worlds_test.baselineReachVm` computes it.
 LW-44 and LW-45 transcribe the cited evidence and domain in §1; neither is
 an additional multiplier in the local count model.
+
+**LW-46 to LW-54 (UL1a, 2026-11-12).** Each is arithmetic on rows above. No new
+source is needed; the inputs carry their own labels.
+
+- The mean of a log-uniform value between a and b is (b − a)/ln(b/a). LW-46 to
+  LW-49 are that formula. LW-49 inherits the Design label of LW-37 and LW-38.
+- LW-50 is the share of habitable-zone worlds that are in a remnant state now,
+  if every such world had a technological lineage. It does not depend on the
+  lifetime L. It is exact only while the trace time is short beside the window.
+- LW-51 is A₀, the share of habitable-zone worlds that hold a living
+  technological lineage now, at the prior medians. "Dex" means orders of
+  magnitude: 2 dex is a factor of 100.
+- LW-52 inherits the unverified label of LW-4.
+- LW-53 and LW-54 use N(R) of §3: 5005 stars within 81.5 ly and LW-24 within
+  1000 ly. "Luck" is the factor by which the product fLife × fMinds × fTech × L
+  must exceed its median value. Both rows assume every living world is found.
+  They are reference arithmetic for the count model, not targets.
+- These were proposed as LW-46p to LW-54p in
+  [seti-factors §5.4](../features/next/seti-factors.md). A second reader
+  recomputed each one; all nine stand as proposed.
+
+**Still provisional: LW-55p.** The chance, under the priors of §1, that
+fLife × fMinds × fTech × L is at least 10^7.5 (the first calibration's universe:
+every fraction 1 and L = 3.16 × 10⁷ yr). The oracle gives **2.884 × 10⁻⁴, 1 in
+3467**, by a one-dimensional integral over the life prior, and a Monte Carlo of
+4 × 10⁶ draws agrees (2.85 × 10⁻⁴ ± 0.08 × 10⁻⁴). The review's figure was
+"about 2.9 × 10⁻⁴". The value depends on the cube of the gap below the largest
+possible product, so the threshold must be exact: at 3.2 × 10⁷ it is
+2.796 × 10⁻⁴. This row is pinned from the `sunholo/worlds` package's own value
+when `selection` is published (sprint R3-UNIVERSE-LAB, UL1c), not before.
+
+The oracle for this file is a Python script (standard library only). It
+recomputes LW-7 to LW-10, LW-23 to LW-33, LW-42 and LW-46 to LW-54, each by
+two methods where the row is not a single product. The design repo has no
+tools directory, so the script and its output are in the draft PR's
+description.
 
 ## 5. Attended decisions and remaining evidence
 
@@ -196,3 +244,89 @@ the Archive reveals their luck later.
 **Unverified:** the nominal M=0.75 fraction's empirical attribution to Reylé; the original Chambers section locator (the formula itself has the verified alternate primary citation above).
 No calibrated loudness distribution, preset offset, encounter count or slice
 seed is established by W1.0. Archive prose remains a draft for Mark.
+
+## 6. What the baseline's factors already include (no factor twice)
+
+This section fixes what each factor means, so that the count model, the
+signature ladder ([observation §7](observation.md)) and the calibration cannot
+apply the same loss twice.
+
+**The source's definitions** (Sandberg, Drexler & Ord 2018, §1, the sentence
+after Eq. 1; re-opened 2026-11-12): "f_c is the fraction of intelligent
+civilizations that are detectable/contactable, and L is the average longevity
+of such detectable civilizations in years." Table 1 gives f_c as log-uniform
+from 0.01 to 1 and L as log-uniform from 100 to 10¹⁰ years. §3 says of f_c:
+"the range of estimates in the literature from 10⁻² to 1".
+
+**How the game reads them.**
+
+- LW-9 (fTech) is the source's f_c. A **technological world** is a world that
+  emits at least one sign of technology that a good enough instrument, in the
+  right place at the right time, could record.
+- LW-10 (L) is the time for which that stays true.
+- The game calls this "builds technology" and "technological lifetime". That
+  is a reading of the source, and it is listed as a departure (§7, row 4).
+
+**Four rules that follow.**
+
+1. **No second "share that is detectable".** Every technological world emits
+   something, by definition. Nothing may multiply the count of technological
+   worlds by a further fraction of worlds that are "detectable at all".
+2. **A class prevalence is a conditional share.** In the ladder, the
+   prevalence of a signature class is the share of technological worlds that
+   have that class at some time in their life. Classes are not exclusive: a
+   world can have several. The leakage classes together must cover every
+   technological world for all of L. A ladder that leaves part of a life with
+   no class on has shortened L, and that must be listed as a departure with
+   its reason.
+3. **What turns "exists" into "recorded" is applied once, in the ladder and
+   the instruments:** reach (a budget in the observation registry), geometry
+   (the share of the sky a beam covers), time (how often the beam is on and
+   for how long it crosses the receiver), and the ages at which a class is on.
+   None of these is in LW-7 to LW-10, and the dial and the selection never
+   change them.
+4. **The old "one technological world in ten is radar class" is retired as a
+   share of worlds.** It was applied on top of LW-9 and so counted "detectable"
+   twice. In the evidence ledger it acted as the chance that a radar beam
+   crosses the ship during one look. That chance now comes from the ladder's
+   beam and duty values ([observation §7](observation.md), OB-139 to OB-144).
+
+**Prevalences with no measurement behind them are Design.** No source gives
+the prevalence of any signature class among technological worlds. Each is a
+Design value with a swept range, listed in the observation registry.
+
+**"Detected" is defined once,** in [observation §8](observation.md): a world
+is detected when the ship's evidence ledger holds a record for it. The
+encounter targets count ledger records. "Biospheres detected" is the number of
+worlds with a biosignature record, false positives included.
+
+## 7. Deliberate departures from the literature
+
+The owner's standing rule (2026-11-12): "if we depart from physics we at least
+document why for gameplay reasons". This table lists every place where the
+baseline differs from its source or from the wider literature. "Size" is the
+effect on the count of living technological worlds unless the row says
+otherwise. Pure physics stays playable: the lab's `sandberg-as-printed` and
+`pure` scenarios run rows 1 and 2 as the source prints them.
+
+| # | The baseline | The literature | Size | Reason | Kind of reason |
+|---|---|---|---|---|---|
+| 1 | Lifetime prior stops at 10⁸ yr (LW-40) | Sandberg Table 1: 10¹⁰ yr (LW-41) | The prior's mean falls from 5.43 × 10⁸ to 7.24 × 10⁶ yr (LW-46): 1.88 dex | A civilisation that outlasts the 5 Gyr window (LW-11) never ends in play, and the count formula alive = everTech × L / window stops being a share once L nears the window. Ruled: D-144; kept as OQ2 of R3-UNIVERSE-LAB (D-156) | Modelling and gameplay |
+| 2 | Lifetime median 10⁵ yr (LW-10) | 10⁶ yr, the median of Sandberg's range | 1.00 dex | It follows from row 1: the median of a log-uniform range is the geometric middle of its ends | Modelling |
+| 3 | fLife is the chance that a habitable-zone world has a biosphere | Sandberg §3.1.1: a rate model for "evolutionarily competent life" | None on the number; it changes what the number means | The game needs a state a telescope can read (a biosphere), not a rate | Gameplay |
+| 4 | fTech is "builds technology"; L is the technological lifetime | Sandberg §1: f_c is "detectable/contactable"; L is the longevity "of such detectable civilizations" | None, if §6 is obeyed. A second "detectable" share would count it twice (the old one in ten: 1 dex) | The game models detection with instruments, so "detectable" must not be a hidden extra factor | Modelling |
+| 5 | Stars and planets come from measurements: density LW-1, occurrence LW-52 = 0.20 habitable-zone worlds per star | Sandberg Table 1: R★, f_p and n_e are log-uniform (1–100 per year; 0.1–1; 0.1–1). The medians give f_p × n_e = 0.10 | +0.30 dex against those medians | The map is made of real stars. The count is over space near the Sun, not a Galactic birth rate | Modelling |
+| 6 | M-dwarf habitable zones count in full: 0.12 of the 0.20 (LW-4 × LW-6) | Disputed. Snyder-Beattie et al. 2021 predict M-dwarf planets are uninhabitable; Shields et al. 2016 review the open questions (both read at the abstract only, in seti-factors §3.6–§3.7) | 0.40 dex fewer worlds if they are excluded | Ruled: life feature decision 3. Each such world is labelled "habitability debated" | Gameplay, labelled |
+| 7 | Onsets are uniform over 5 Gyr centred on now; planets have no ages (LW-11) | Star formation is not flat (Mor et al. 2019); most Earth-like planets are older than Earth (Lineweaver 2001). Both read at the abstract only | About ±0.5 dex, sign unknown: an estimate, not a calculation | One keyed draw per world gives the same history in every preset. A planet-age model is a named follow-up (R3-UNIVERSE-LAB UL-E) | Modelling |
+| 8 | One technological lineage per planet, ever | No source measures this. Wright 2018 and Schmidt & Frank 2019 treat an earlier species as an open question | None at the prior medians (a second lineage is a 10⁻⁵ event). It caps the dial at 2.70 dex in the fractions | The exact propagation law assumes one lineage. Successive lineages are ruled in as a later option (seti-factors §5.8, ruling 2) | Modelling |
+| 9 | Every civilisation in one universe has the same lifetime L | Lifetimes are a population; what is detected is length-biased (Kipping, Frank & Scharf 2020, abstract only) | None on counts at equal mean; it changes who is met | The dial sets one L. A spread is a named follow-up (UL-B) | Modelling |
+| 10 | No settlement between stars | Hart 1975, Newman & Sagan 1981, Carroll-Nellenback et al. 2019: a long-lived civilisation spreads (seti-factors §3.3) | −0.6 to −1.0 dex of luck needed, if 3 to 9 daughter worlds each | Ruled out of the default (seti-factors §5.8, ruling 4) | Gameplay |
+| 11 | Ending shares 0.75 / 0.15 / 0.10 (LW-34 to LW-36); remnant traces last 10³ to 10⁷ yr (LW-37, LW-38); the complex-life split (LW-12) | No source gives any of these | Remnant counts scale with LW-50 | The game needs ended states and ruins. D-144 | Gameplay (Design values) |
+| 12 | Density 0.079 pc⁻³, a raw count (LW-1) | The same paper's corrected density is 0.081 ± 0.003 | −0.011 dex | Kept from the approved reference; inside the paper's error | Modelling |
+| 13 | A local thin disc only: no radial gradient, no thick disc or halo (LW-2) | Jurić et al. 2008 fit two discs and a halo | Small inside 3000 ly; not valid toward the Galactic centre | The play area is local. The pilgrim to Sgr A* waits for the model galaxy | Modelling |
+| 14 | Type shares 0.20 / 0.75 / 0.05 (LW-3, LW-4) | Reylé et al. 2021 count objects within 10 pc; the 0.75 is not a measured share for this model's denominator | Not sized; LW-4 stays **unverified** | Kept as the approved nominal value | Modelling |
+
+Sizes in rows 1, 2, 5, 6 and 12 are recomputed by the oracle. Rows 7 and 10
+quote the review's estimates. A departure on the instrument side (how a signal
+is detected, not whether a world exists) belongs to the observation registry's
+scope list and its ladder, not here.
